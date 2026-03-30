@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, animate, motion, useInView } from "framer-motion";
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 // ─── Data: pemisahan data dan UI ─────────────────────────────────────────────
 
@@ -70,7 +71,7 @@ function LiveRollingCounter() {
   }, []);
 
   return (
-    <div className="inline-flex overflow-hidden h-[1.2em] relative align-bottom">
+    <span className="inline-flex overflow-hidden h-[1.2em] relative align-bottom">
       <AnimatePresence mode="popLayout">
         <motion.span
           key={count}
@@ -83,7 +84,7 @@ function LiveRollingCounter() {
           {count}
         </motion.span>
       </AnimatePresence>
-    </div>
+    </span>
   );
 }
 
@@ -360,6 +361,7 @@ function SectionPaket({
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
       <main className="flex flex-col">
       <section className="relative flex min-h-[85vh] w-full flex-col items-center justify-center bg-zinc-950 px-4 text-center sm:px-6 lg:px-8">
   {/* Foto Background. Ganti /hero-pangalengan-trip.webp dengan nama file foto Anda yang ada di folder public */}
@@ -374,11 +376,11 @@ export default function Home() {
   {/* Konten Teks Hero */}
   <div className="relative z-10 mx-auto max-w-4xl space-y-6">
     <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-      Jeda Sejenak dari <br className="hidden sm:block" />
-      <span className="text-emerald-400">Bisingnya Kota.</span>
+      Pusat Info & Reservasi Wisata <br className="hidden sm:block" />
+      <span className="text-emerald-400">Pangalengan Terlengkap.</span>
     </h1>
     <p className="mx-auto max-w-2xl text-base leading-relaxed text-zinc-200 sm:text-lg md:text-xl">
-      Eksplorasi Pangalengan dengan cara yang berbeda. Dari rafting penuh tawa, hingga malam tenang di glamping premium. Kami urus detailnya, Anda tinggal menikmati momen.
+      Dapatkan transparansi harga, detail fasilitas, dan rekomendasi destinasi wisata terbaik. Masih bingung memilih? Hubungi layanan pelanggan kami untuk konsultasi perjalanan Anda, gratis.
     </p>
     <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
       <a
