@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, animate, motion, useInView } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 
 // ─── Data: pemisahan data dan UI ─────────────────────────────────────────────
@@ -268,40 +269,45 @@ const kategoriCorporate: PaketItem[] = [
   },
 ];
 
-// ─── Komponen kartu paket (digunakan oleh .map()) ─────────────────────────────
-
-function PaketCard({ item }: { item: PaketItem }) {
+// ─── Komponen Kartu Paket (Sudah Menjadi Link) ────────────────────────────
+function PaketCard({ item }: { item: any }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/90 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200/80 hover:shadow-xl hover:shadow-emerald-500/5">
+    <Link 
+      href={`/paket/${item.id}`}
+      className="w-[80vw] sm:w-[350px] shrink-0 snap-start group flex flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/90 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/10 cursor-pointer"
+    >
       <div className="relative h-48 w-full overflow-hidden bg-zinc-100">
         <Image
           src={item.image}
           alt={item.nama}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         {item.label ? (
-          <span className="absolute right-0 top-0 rounded-bl-lg bg-red-500/90 px-3 py-1 text-xs font-bold text-white">
+          <span className="absolute right-0 top-0 z-10 rounded-bl-lg bg-red-500/90 px-3 py-1 text-xs font-bold text-white">
             {item.label}
           </span>
         ) : null}
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="mb-2 text-base font-semibold tracking-tight text-zinc-900">
+        <h3 className="mb-2 text-base font-semibold tracking-tight text-zinc-900 group-hover:text-emerald-600 transition-colors">
           {item.nama}
         </h3>
         <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-zinc-600">
           {item.deskripsi}
         </p>
+        
+        {/* Fasilitas Checkmark */}
         <ul className="mb-5 space-y-2 text-sm text-zinc-600">
-          {item.fasilitas.map((fasilitasItem) => (
+          {item.fasilitas.map((fasilitasItem: string) => (
             <li key={fasilitasItem} className="flex items-start gap-2">
               <span className="mt-0.5 text-emerald-600">✓</span>
               <span>{fasilitasItem}</span>
             </li>
           ))}
         </ul>
+        
         <div className="mt-auto">
           <div className="flex items-end justify-between gap-3">
             <p className="text-sm text-zinc-400 line-through">{item.hargaAsli}</p>
@@ -310,15 +316,14 @@ function PaketCard({ item }: { item: PaketItem }) {
               <span className="ml-1 text-xs font-medium text-zinc-500">/pax</span>
             </p>
           </div>
-          <a
-            href="#"
-            className="mt-4 inline-flex w-full items-center justify-center rounded-md bg-emerald-600 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
-          >
-            Pilih Paket
-          </a>
+          
+          {/* Tombol yang Menyatu dengan Animasi Hover */}
+          <div className="mt-5 flex w-full items-center justify-center rounded-xl bg-zinc-50 px-4 py-2.5 text-sm font-semibold text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
+            Lihat Detail Paket &rarr;
+          </div>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 
@@ -337,18 +342,58 @@ function SectionPaket({
   items: PaketItem[];
   bgClass: string;
 }) {
+  // Sihir JavaScript untuk menggeser rel
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const slide = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      // Geser sejauh 350px (seukuran 1 kartu)
+      const scrollAmount = direction === "left" ? -370 : 370;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
   return (
     <section id={id} className={`${bgClass} px-4 py-20 sm:px-6 lg:px-8`}>
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 space-y-2">
-          <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
-            {title}
-          </h2>
-          <p className="max-w-2xl text-sm text-zinc-600 sm:text-base">
-            {subtitle}
-          </p>
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div className="space-y-2">
+            <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
+              {title}
+            </h2>
+            <p className="max-w-2xl text-sm text-zinc-600 sm:text-base">
+              {subtitle}
+            </p>
+          </div>
+          
+          {/* Tombol Navigasi Kiri Kanan (Tampil Elegan) */}
+          <div className="flex shrink-0 items-center gap-2">
+            <button 
+              onClick={() => slide("left")}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:bg-zinc-50 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              aria-label="Geser ke kiri"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <button 
+              onClick={() => slide("right")}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:bg-zinc-50 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              aria-label="Geser ke kanan"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
         </div>
-        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+        {/* Jalur Rel Carousel (Ditambahkan ref={scrollRef}) */}
+        <div 
+          ref={scrollRef}
+          className="flex gap-4 sm:gap-6 overflow-x-auto pb-8 pt-2 snap-x snap-mandatory scroll-smooth px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
           {items.map((item) => (
             <PaketCard key={item.id} item={item} />
           ))}
@@ -418,19 +463,19 @@ export default function Home() {
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:grid-rows-3">
-                {/* Nimo Highland - tinggi 2 baris */}
-                <div className="group relative overflow-hidden rounded-2xl bg-zinc-200 md:row-span-2">
-                  <div className="relative aspect-[4/5] w-full md:aspect-auto md:min-h-[420px]">
+                {/* Nimo Highland - Tinggi 2 Baris di Laptop */}
+                <Link href="/destinasi/nimo-highland" className="group relative block overflow-hidden rounded-2xl bg-zinc-200 md:row-span-2">
+                  <div className="relative h-64 w-full md:h-full md:min-h-[420px]">
                     <Image
                       src="/destinasi.jpg"
                       alt="Nimo Highland"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 md:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 md:p-6 transition-transform duration-300 group-hover:-translate-y-2">
                     <p className="mb-1 text-xs font-medium uppercase tracking-wider text-emerald-300/90">
                       Pangalengan
                     </p>
@@ -441,80 +486,75 @@ export default function Home() {
                       Padang rumput hijau dan langit luas. Rasakan dinginnya pagi
                       dan keheningan yang memulihkan.
                     </p>
-                    <p className="text-xs text-zinc-400">
-                      Cocok untuk: Camping, Fotografi, Keluarga
+                    <p className="text-xs font-semibold text-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      Lihat Detail Destinasi ↗
                     </p>
                   </div>
-                </div>
-                {/* Sunrise Point Cukul */}
-                <div className="group relative overflow-hidden rounded-2xl bg-zinc-200">
-                  <div className="relative aspect-[16/10] w-full">
+                </Link>
+
+                {/* Sunrise Point Cukul - Normal di Laptop */}
+                <Link href="/destinasi/sunrise-cukul" className="group relative block overflow-hidden rounded-2xl bg-zinc-200">
+                  <div className="relative h-64 w-full md:h-full md:min-h-[200px]">
                     <Image
                       src="/destinasi.jpg"
                       alt="Sunrise Point Cukul"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 transition-transform duration-300 group-hover:-translate-y-2">
                     <p className="mb-1 text-xs font-medium uppercase tracking-wider text-emerald-300/90">
                       Cukul, Pangalengan
                     </p>
                     <h3 className="mb-2 text-lg font-semibold tracking-tight sm:text-xl">
                       Sunrise Point Cukul
                     </h3>
-                    <p className="mb-3 text-sm leading-relaxed text-zinc-200">
-                      Sambut pagi di atas awan. Hamparan teh tanpa batas yang
-                      menenangkan jiwa.
-                    </p>
-                    <p className="text-xs text-zinc-400">
-                      Cocok untuk: Sunrise, Fotografi, Santai
+                    <p className="text-xs font-semibold text-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100 mt-3">
+                      Lihat Detail Destinasi ↗
                     </p>
                   </div>
-                </div>
-                {/* Hutan Pinus Rahong */}
-                <div className="group relative overflow-hidden rounded-2xl bg-zinc-200">
-                  <div className="relative aspect-[16/10] w-full">
+                </Link>
+
+                {/* Hutan Pinus Rahong - Normal di Laptop */}
+                <Link href="/destinasi/hutan-pinus-rahong" className="group relative block overflow-hidden rounded-2xl bg-zinc-200">
+                  <div className="relative h-64 w-full md:h-full md:min-h-[200px]">
                     <Image
                       src="/destinasi.jpg"
                       alt="Hutan Pinus Rahong"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 transition-transform duration-300 group-hover:-translate-y-2">
                     <p className="mb-1 text-xs font-medium uppercase tracking-wider text-emerald-300/90">
                       Rahong, Pangalengan
                     </p>
                     <h3 className="mb-2 text-lg font-semibold tracking-tight sm:text-xl">
                       Hutan Pinus Rahong
                     </h3>
-                    <p className="mb-3 text-sm leading-relaxed text-zinc-200">
-                      Jalan setapak di antara pinus, udara segar, dan cahaya
-                      keemasan yang tembus dari sela-sela pepohonan.
-                    </p>
-                    <p className="text-xs text-zinc-400">
-                      Cocok untuk: Trekking, Fotografi, Healing
+                    <p className="text-xs font-semibold text-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100 mt-3">
+                      Lihat Detail Destinasi ↗
                     </p>
                   </div>
-                </div>
-                {/* Situ Cileunca - full width baris ketiga */}
-                <div className="group relative overflow-hidden rounded-2xl bg-zinc-200 md:col-span-2">
-                  <div className="relative aspect-[21/9] w-full">
+                </Link>
+
+                {/* Situ Cileunca - Lebar 2 Kolom di Laptop */}
+                <Link href="/destinasi/situ-cileunca" className="group relative block overflow-hidden rounded-2xl bg-zinc-200 md:col-span-2">
+                  <div className="relative h-64 w-full md:h-auto md:aspect-[21/9]">
                     <Image
                       src="/destinasi.jpg"
                       alt="Situ Cileunca"
                       fill
-                      className="object-cover"
-                      sizes="100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, 100vw"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 md:p-8">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 md:p-8 transition-transform duration-300 group-hover:-translate-y-2">
                     <p className="mb-1 text-xs font-medium uppercase tracking-wider text-emerald-300/90">
                       Situ Cileunca, Pangalengan
                     </p>
@@ -525,11 +565,11 @@ export default function Home() {
                       Danau alami dikelilingi bukit dan kebun teh. Spot
                       bersantai, memancing, atau sekadar menikmati senja.
                     </p>
-                    <p className="text-xs text-zinc-400">
-                      Cocok untuk: Wisata Air, Memancing, Keluarga
+                    <p className="text-xs font-semibold text-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      Lihat Detail Destinasi ↗
                     </p>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </section>
@@ -658,8 +698,10 @@ export default function Home() {
                 hingga selesai.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
-              <div className="rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur">
+            {/* Kenapa Memilih Kami - Carousel Responsif */}
+            <div className="flex gap-4 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-6 md:overflow-visible md:px-0">
+              {/* Kartu 1 */}
+              <div className="w-[75vw] shrink-0 snap-center rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur md:w-full">
                 <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
                   📞
                 </div>
@@ -670,7 +712,8 @@ export default function Home() {
                   Customer service selalu siap.
                 </p>
               </div>
-              <div className="rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur">
+              {/* Kartu 2 */}
+              <div className="w-[75vw] shrink-0 snap-center rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur md:w-full">
                 <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
                   🛡️
                 </div>
@@ -681,7 +724,8 @@ export default function Home() {
                   Keamanan kegiatan terjamin.
                 </p>
               </div>
-              <div className="rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur">
+              {/* Kartu 3 */}
+              <div className="w-[75vw] shrink-0 snap-center rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur md:w-full">
                 <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
                   ✅
                 </div>
@@ -692,7 +736,8 @@ export default function Home() {
                   Tour guide bersertifikat resmi.
                 </p>
               </div>
-              <div className="rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur">
+              {/* Kartu 4 */}
+              <div className="w-[75vw] shrink-0 snap-center rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur md:w-full">
                 <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
                   📄
                 </div>
@@ -709,64 +754,43 @@ export default function Home() {
 
         <FadeIn>
           {/* Testimonial */}
-          <section
-            id="testimoni"
-            className="bg-white px-4 py-20 sm:px-6 lg:px-8"
-          >
-            <div className="mx-auto max-w-6xl space-y-12">
-              <div className="space-y-2">
-                <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
-                  Kata Mereka
-                </h2>
-                <p className="max-w-2xl text-sm text-zinc-600 sm:text-base">
-                  Ulasan singkat dari pelanggan yang sudah merasakan perjalanan
-                  bersama kami.
-                </p>
-              </div>
-              <div className="grid gap-6 md:grid-cols-3">
-                {[
-                  {
-                    id: "1",
-                    quote:
-                      "Rundown rapi, tim responsif, dan aktivitasnya seru. Rafting di Palayangan jadi highlight trip kami.",
-                    name: "Dinda K.",
-                  },
-                  {
-                    id: "2",
-                    quote:
-                      "ATV-nya asik banget! Jalur kebun teh Warnasari cantik, guide jelas, dan safety-nya diperhatikan.",
-                    name: "Rangga P.",
-                  },
-                  {
-                    id: "3",
-                    quote:
-                      "Offroad-nya menantang dan worth it. Land Rover-nya tangguh, rute hutan pinusnya dapet banget feel petualangannya.",
-                    name: "Sari W.",
-                  },
-                ].map((t) => (
-                  <article
-                    key={t.id}
-                    className="rounded-2xl border border-zinc-200/80 bg-white/90 p-6 shadow-sm backdrop-blur"
-                  >
-                    <p className="text-sm leading-relaxed text-zinc-700">
-                      &ldquo;{t.quote}&rdquo;
-                    </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      <p className="text-sm font-semibold text-zinc-900">
-                        {t.name}
-                      </p>
-                      <p
-                        className="text-amber-500"
-                        aria-label="rating 5 bintang"
-                      >
-                        ⭐⭐⭐⭐⭐
-                      </p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
+<section id="testimoni" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+  <div className="mx-auto max-w-6xl space-y-12">
+    <div className="flex items-end justify-between gap-4">
+      <div className="space-y-2">
+        <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
+          Kata Mereka
+        </h2>
+        <p className="max-w-2xl text-sm text-zinc-600 sm:text-base">
+          Ulasan singkat dari pelanggan yang sudah merasakan perjalanan bersama kami.
+        </p>
+      </div>
+      {/* Tombol Navigasi Testimoni */}
+      <div className="flex shrink-0 gap-2">
+        <button onClick={() => {document.getElementById('rel-testi').scrollBy({left: -320, behavior: 'smooth'})}} className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm hover:bg-zinc-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg></button>
+        <button onClick={() => {document.getElementById('rel-testi').scrollBy({left: 320, behavior: 'smooth'})}} className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm hover:bg-zinc-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></button>
+      </div>
+    </div>
+
+    {/* Jalur Rel Testimoni */}
+    <div id="rel-testi" className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+      {[
+        { id: "1", quote: "Rundown rapi, tim responsif, dan aktivitasnya seru. Rafting di Palayangan jadi highlight trip kami.", name: "Dinda K." },
+        { id: "2", quote: "ATV-nya asik banget! Jalur kebun teh Warnasari cantik, guide jelas, dan safety-nya diperhatikan.", name: "Rangga P." },
+        { id: "3", quote: "Offroad-nya menantang dan worth it. Land Rover-nya tangguh, rute hutan pinusnya dapet banget feel petualangannya.", name: "Sari W." },
+        { id: "4", quote: "Glampingnya bersih dan view-nya juara. Anak-anak betah banget main di pinggir danau.", name: "Budi H." }
+      ].map((t) => (
+        <article key={t.id} className="w-[85vw] sm:w-[350px] shrink-0 snap-start rounded-2xl border border-zinc-200/80 bg-white/90 p-6 shadow-sm backdrop-blur">
+          <p className="text-sm leading-relaxed text-zinc-700 italic">" {t.quote} "</p>
+          <div className="mt-4 flex items-center justify-between">
+            <p className="text-sm font-semibold text-zinc-900">{t.name}</p>
+            <p className="text-amber-500 text-xs">⭐⭐⭐⭐⭐</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
         </FadeIn>
 
         {/* Final CTA & Footer */}
