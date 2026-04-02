@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { generateWALink } from "@/config/contact";
 
 // --- DATA MOCKUP PENGINAPAN (Nanti bisa diedit sesuka hati) ---
 const dataPenginapan = [
@@ -191,12 +192,12 @@ export default function PenginapanPage() {
                       <p className="text-sm font-bold text-emerald-600">{item.harga}</p>
                     </div>
                     <a 
-                      href={`https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20${item.nama}%20di%20area%20${item.area}`}
-                      target="_blank" rel="noopener noreferrer"
-                      className="rounded-lg bg-zinc-900 px-4 py-2 text-xs font-bold text-white transition hover:bg-emerald-600"
-                    >
-                      Tanya WA
-                    </a>
+  href={generateWALink(`Halo Pangalengan Trip, saya berencana menginap di ${item.nama} (Area: ${item.area}). Boleh minta informasi lengkap terkait ketersediaan dan harganya?`)}
+  target="_blank" rel="noopener noreferrer"
+  className="rounded-lg bg-zinc-900 px-4 py-2 text-xs font-bold text-white transition hover:bg-emerald-600"
+>
+  Tanya WA
+</a>
                   </div>
                 </div>
               </div>

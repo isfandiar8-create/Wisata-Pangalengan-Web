@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, animate, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
+import { generateWALink } from "@/config/contact";
 
-// ─── Data: pemisahan data dan UI ─────────────────────────────────────────────
+// ─── Data & Komponen Helper ─────────────────────────────────────────────
 
 export type PaketItem = {
   id: string;
@@ -18,42 +18,33 @@ export type PaketItem = {
   label?: string;
   deskripsi: string;
   image: string;
+  link?: string;
 };
 
 function FadeIn({ children }: { children: ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {children}
     </motion.div>
   );
 }
 
-function AnimatedCounter({
-  from = 0,
-  to,
-  duration = 2,
-}: {
-  from?: number;
-  to: number;
-  duration?: number;
-}) {
+function AnimatedCounter({ from = 0, to, duration = 2 }: { from?: number; to: number; duration?: number; }) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [value, setValue] = useState(from);
 
   useEffect(() => {
     if (!isInView) return;
-
     const controls = animate(from, to, {
       duration,
       onUpdate: (latest) => setValue(Math.round(latest)),
     });
-
     return () => controls.stop();
   }, [from, to, duration, isInView]);
 
@@ -62,12 +53,8 @@ function AnimatedCounter({
 
 function LiveRollingCounter() {
   const [count, setCount] = useState(1351);
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prev) => prev + 1);
-    }, 5000);
-
+    const interval = setInterval(() => setCount((prev) => prev + 1), 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -89,486 +76,243 @@ function LiveRollingCounter() {
   );
 }
 
+// ─── DATA: 8 Petualangan ─────────────────────────────────────────
 const kategoriPetualangan: PaketItem[] = [
-  {
-    id: "rafting",
-    nama: "Rafting Pangalengan",
-    harga: "Rp 150.000 / Orang",
-    hargaAsli: "Rp 250.000",
-    hargaDiskon: "Rp 175.000",
-    fasilitas: [
-      "Perahu Karet & Safety Gear",
-      "Makan Siang & Snack",
-      "Dokumentasi Lengkap",
-    ],
-    label: "⚡ Terlaris",
-    image: "/paket1.jpg",
-    deskripsi:
-      "Taklukkan derasnya arus Palayangan. Perpaduan sempurna antara tawa lepas, adrenalin, dan kerja sama tim yang akan terus dibicarakan.",
-  },
-  {
-    id: "atv",
-    nama: "ATV Pangalengan",
-    harga: "Rp 175.000 / Unit",
-    hargaAsli: "Rp 240.000",
-    hargaDiskon: "Rp 185.000",
-    fasilitas: [
-      "Unit ATV & Helm Standar",
-      "Guide Jalur Perkebunan",
-      "Air Mineral",
-    ],
-    image: "/paket1.jpg",
-    deskripsi:
-      "Jelajahi kebun teh tanpa batas. Rasakan kebebasan saat mesin menggema dan angin segar menerpa—pelarian singkat yang mengembalikan semangat.",
-  },
-  {
-    id: "offroad",
-    nama: "Offroad Pangalengan",
-    harga: "Rp 1.500.000 / Unit",
-    hargaAsli: "Rp 1.900.000",
-    hargaDiskon: "Rp 1.500.000",
-    fasilitas: [
-      "Land Rover + Driver",
-      "Rute Hutan Pinus Premium",
-      "Dokumentasi Spot Ikonik",
-    ],
-    label: "Sisa 2 Slot",
-    image: "/paket1.jpg",
-    deskripsi:
-      "Menembus jalur liar dan hutan pinus yang sunyi. Perjalanan yang menantang jiwa dan mempertemukan Anda dengan keheningan alam.",
-  },
-  {
-    id: "flying-fox",
-    nama: "Flying Fox",
-    harga: "Rp 75.000 / Orang",
-    hargaAsli: "Rp 110.000",
-    hargaDiskon: "Rp 85.000",
-    fasilitas: [
-      "Harness & Safety Briefing",
-      "Pendampingan Instruktur",
-      "Akses Spot Foto",
-    ],
-    image: "/paket1.jpg",
-    deskripsi:
-      "Terbang melintasi lembah hijau. Momen singkat di udara saat segalanya melambat dan pemandangan Pangalengan terhampar di bawah kaki.",
-  },
-  {
-    id: "paintball",
-    nama: "Paintball",
-    harga: "Rp 125.000 / Orang",
-    hargaAsli: "Rp 175.000",
-    hargaDiskon: "Rp 135.000",
-    fasilitas: [
-      "Marker Gun + Peluru Standar",
-      "Rompi Pelindung",
-      "Wasit & Arena Game",
-    ],
-    image: "/paket1.jpg",
-    deskripsi:
-      "Arena bermain di tengah alam. Lepaskan penat sambil merasakan tawa bersama tim—pelarian yang seru dan penuh energi positif.",
-  },
+  { id: "rafting", nama: "Rafting Palayangan", harga: "Rp 150.000", hargaAsli: "", hargaDiskon: "Rp 150.000", fasilitas: [], label: "⚡ Terlaris", image: "/paket1.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
+  { id: "atv", nama: "ATV Adventure", harga: "Rp 175.000", hargaAsli: "", hargaDiskon: "Rp 175.000", fasilitas: [], image: "/paket1.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
+  { id: "offroad", nama: "Offroad Land Rover", harga: "Rp 220.000", hargaAsli: "", hargaDiskon: "Rp 220.000", fasilitas: [], label: "Seru!", image: "/paket1.jpg", deskripsi: "Eksplorasi menembus hutan pinus liar menggunakan mobil tangguh." },
+  { id: "paintball", nama: "Paintball Battle", harga: "Rp 85.000", hargaAsli: "", hargaDiskon: "Rp 85.000", fasilitas: [], image: "/paket1.jpg", deskripsi: "Simulasi tempur di tengah hutan. Strategi, ketegangan, dan keseruan tim." },
+  { id: "team-building", nama: "Team Building", harga: "Rp 99.000", hargaAsli: "", hargaDiskon: "Rp 99.000", fasilitas: [], image: "/paket3.jpg", deskripsi: "Rangkaian games seru untuk merekatkan kekompakan dan kehangatan tim." },
+  { id: "flying-fox", nama: "Flying Fox", harga: "Rp 35.000", hargaAsli: "", hargaDiskon: "Rp 35.000", fasilitas: [], image: "/paket1.jpg", deskripsi: "Meluncur bebas melintasi lembah dan danau. Singkat namun mendebarkan." },
+  { id: "tour-perahu", nama: "Tour Perahu", harga: "Rp 20.000", hargaAsli: "", hargaDiskon: "Rp 20.000", fasilitas: [], image: "/paket1.jpg", deskripsi: "Bersantai menikmati syahdunya pemandangan Situ Cileunca dari atas perahu." },
+  { id: "treking", nama: "Treking Alam", harga: "Rp 70.000", hargaAsli: "", hargaDiskon: "Rp 70.000", fasilitas: [], image: "/destinasi.jpg", deskripsi: "Menjelajahi sejuknya bukit dan hamparan kebun teh dengan panduan lokal." },
+];
+
+const paketCombo = [
+  { id: "keluarga-hemat", nama: "Keluarga Hemat", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-orange-700 bg-orange-100", image: "/paket1.jpg" },
+  { id: "keluarga-seru", nama: "Keluarga Seru", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-orange-700 bg-orange-100", image: "/paket1.jpg" },
+  { id: "keluarga-puas", nama: "Keluarga Puas", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", fasilitas: ["Rafting & Flying Fox", "Offroad Land Rover", "Makan & Air", "Dokumentasi"], color: "text-orange-700 bg-orange-100", image: "/paket1.jpg" },
+  { id: "corp-a1d", nama: "Corporate A1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 360.000", fasilitas: ["Rafting & Paintball", "ATV", "Makan Siang", "Dokumentasi"], color: "text-blue-700 bg-blue-100", image: "/paket3.jpg" },
+  { id: "corp-b1d", nama: "Corporate B1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-blue-700 bg-blue-100", image: "/paket3.jpg" },
+  { id: "corp-c1d", nama: "Corporate C1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 549.000", fasilitas: ["Rafting & Offroad", "Paintball & Ice Breaking", "Makan Siang", "Foto Rafting"], color: "text-blue-700 bg-blue-100", image: "/paket3.jpg" },
+  { id: "corp-a2d", nama: "Corporate A2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 239.000", fasilitas: ["Fresh Rafting", "Paintball", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
+  { id: "corp-b2d", nama: "Corporate B2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 650.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Kambing Guling"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
+  { id: "corp-c2d", nama: "Corporate C2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 450.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Tour Leader"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
+  { id: "corp-d2d", nama: "Corporate D2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 200.000", fasilitas: ["Rafting", "Fun Games", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
+  { id: "corp-vip", nama: "Corporate VIP E2D", tag: "VIP 2D1N", durasi: "Menginap", harga: "Rp 1.099.000", fasilitas: ["Villa VIP", "3x Makan", "Rafting & Team Building", "Offroad, Paintball"], color: "text-amber-700 bg-amber-100", image: "/paket2.jpg" },
+  { id: "camp-fca", nama: "Family Camp FCA", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 495.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & ATV", "Flying Fox"], color: "text-teal-700 bg-teal-100", image: "/paket2.jpg" },
+  { id: "camp-fcb", nama: "Family Camp FCB", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 620.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & Offroad", "Flying Fox"], color: "text-teal-700 bg-teal-100", image: "/paket2.jpg" },
+  { id: "camp-fcc", nama: "Family Camp FCC", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 395.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting", "Flying Fox"], color: "text-teal-700 bg-teal-100", image: "/paket2.jpg" },
 ];
 
 const kategoriPenginapan: PaketItem[] = [
-  {
-    id: "glamping",
-    nama: "Glamping",
-    harga: "Rp 350.000 / Malam",
-    hargaAsli: "Rp 500.000",
-    hargaDiskon: "Rp 375.000",
-    fasilitas: [
-      "Tenda Premium + Kasur Nyaman",
-      "Sarapan Hangat",
-      "Area Api Unggun",
-    ],
-    label: "⚡ Terlaris",
-    image: "/paket2.jpg",
-    deskripsi:
-      "Tidur di bawah taburan bintang dengan fasilitas premium. Bangun dengan pemandangan kabut pagi di atas danau, persis di depan pintu tenda Anda.",
-  },
-  {
-    id: "villa-besar",
-    nama: "Villa Kapasitas Besar",
-    harga: "Rp 5.000.000 / Malam",
-    hargaAsli: "Rp 6.200.000",
-    hargaDiskon: "Rp 5.200.000",
-    fasilitas: [
-      "8-12 Kamar + Aula Kumpul",
-      "Kitchen Set Lengkap",
-      "Private Garden View",
-    ],
-    image: "/paket2.jpg",
-    deskripsi:
-      "Ruang privat untuk seluruh tim. Taman hijau, udara sejuk, dan keheningan yang membantu setiap percakapan bermakna mengalir lebih dalam.",
-  },
-  {
-    id: "cottage",
-    nama: "Cottage",
-    harga: "Rp 450.000 / Malam",
-    hargaAsli: "Rp 620.000",
-    hargaDiskon: "Rp 475.000",
-    fasilitas: [
-      "Kamar Cozy + Air Panas",
-      "Sarapan 2 Pax",
-      "Dekat Spot Danau",
-    ],
-    label: "Sisa 2 Slot",
-    image: "/paket2.jpg",
-    deskripsi:
-      "Kamar cozy di tengah perkebunan. Bangun pagi dengan aroma teh dan pemandangan bukit—pelarian sederhana yang memulihkan jiwa.",
-  },
+  { id: "saung-cinta", nama: "Saung Cinta", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 20 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/paket2.jpg", deskripsi: "Cottage luas dengan kolam renang, pas untuk menghangatkan momen keluarga." },
+  { id: "saung-gadis", nama: "Saung Gadis", harga: "", hargaAsli: "", hargaDiskon: "Rp 850.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/paket2.jpg", deskripsi: "Fasilitas lengkap berkapasitas besar, sempurna untuk kumpul santai akhir pekan." },
+  { id: "saung-rungkun", nama: "Saung Rungkun", harga: "", hargaAsli: "", hargaDiskon: "Rp 1.500.000", fasilitas: ["Max 15 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/paket2.jpg", deskripsi: "Pilihan hemat nan nyaman dengan gazebo asri untuk bersantai bersama kerabat." },
+  { id: "saung-family", nama: "Saung Family", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 10 Orang", "Tradisional", "Kolam Renang"], label: "Budget", image: "/paket2.jpg", deskripsi: "Nuansa tradisional yang menenangkan, lengkap dengan kolam renang menyegarkan." },
+  { id: "villa-palayangan", nama: "Villa Palayangan", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.000.000", fasilitas: ["Kapasitas Besar", "View Danau", "Biliard"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Kemewahan berkapasitas besar dengan panorama eksklusif langsung ke danau." },
+  { id: "villa-wantea", nama: "Villa Wantea", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.000.000", fasilitas: ["20-30 Orang", "Gaya Belanda", "Halaman Luas"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Arsitektur klasik bergaya Belanda, sangat sejuk dan muat untuk rombongan besar." },
+  { id: "barak-ghc", nama: "Barak GHC", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "View Cileunca", "Cocok utk Kantor"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Solusi cerdas dan nyaman untuk menyukseskan acara keakraban kantor atau kampus." },
+  { id: "villa-bts", nama: "Villa BTS", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "Fasilitas Lengkap", "Nyaman"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Kenyamanan maksimal dengan fasilitas komplit untuk menampung seluruh rombongan." },
+  { id: "villa-palayangan-2", nama: "Vila Palayangan (30 Pax)", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.250.000", fasilitas: ["Max 30 Orang", "View Cileunca", "Luas"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Ruang ekstra luas dengan pemandangan danau Cileunca yang syahdu dari kejauhan." },
+  { id: "family-c", nama: "Family C", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.000.000", fasilitas: ["Max 30 Orang", "Homestay", "View Cileunca"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Homestay hangat yang siap menyambut dan memanjakan rombongan besar Anda." },
+  { id: "family-b", nama: "Family B", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 30 Orang", "View Danau", "Akses Mudah"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Akses super mudah dengan area santai yang menghadap ketenangan air danau." },
+  { id: "family-a", nama: "Family A", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "View Danau", "Nyaman"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Kenyamanan istirahat paripurna dengan view danau yang sungguh memanjakan mata." },
+  { id: "villa-palayangan-b", nama: "Villa Palayangan B", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.000.000", fasilitas: ["Premium", "Fasilitas Lengkap", "Eksklusif"], label: "VIP", image: "/paket2.jpg", deskripsi: "Eksklusivitas dan privasi tingkat tinggi yang dirancang khusus untuk tamu spesial." },
+  { id: "harmony-riverside", nama: "Harmony Riverside", harga: "", hargaAsli: "", hargaDiskon: "Rp 1.750.000", fasilitas: ["Cabin Premium", "View Sungai", "Hutan Rahong"], label: "VIP", image: "/paket2.jpg", deskripsi: "Kabin estetik di tengah hutan pinus dengan nyanyian aliran sungai yang damai." },
+  { id: "vila-imah", nama: "Vila Imah", harga: "", hargaAsli: "", hargaDiskon: "Rp 5.500.000", fasilitas: ["Max 30 Orang", "VIP Premium", "Eksklusif"], label: "VIP", image: "/paket2.jpg", deskripsi: "Standar kemewahan premium untuk menciptakan pengalaman menginap tak terlupakan." },
+  { id: "vila-putih", nama: "Vila Putih", harga: "", hargaAsli: "", hargaDiskon: "Rp 6.000.000", fasilitas: ["Max 45 Orang", "Gazebo", "Estetik"], label: "VIP", image: "/paket2.jpg", deskripsi: "Vila megah nan estetik dengan kapasitas masif, pilihan utama untuk acara prestisius." },
+  { id: "vila-putih-a", nama: "Vila Putih A", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.500.000", fasilitas: ["Max 25 Orang", "Ikonik", "Premium"], label: "VIP", image: "/paket2.jpg", deskripsi: "Perpaduan harmoni antara desain ikonik dan keindahan alam yang memukau." },
+  { id: "bumi-tilu", nama: "Bumi Tilu", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.500.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Premium Estetik"], label: "VIP", image: "/paket2.jpg", deskripsi: "Estetika modern di tengah tenangnya alam, lengkap dengan kolam renang eksklusif." },
+  { id: "glamping-sagaya", nama: "Glamping Sagaya", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 4 Orang", "View Kebun Teh", "Estetik"], label: "VIP", image: "/paket2.jpg", deskripsi: "Tenda estetik nan nyaman dengan hamparan permadani kebun teh tepat di depan pintu." },
 ];
 
-const kategoriCorporate: PaketItem[] = [
-  {
-    id: "outing-1hari",
-    nama: "Outing 1 Hari",
-    harga: "Rp 250.000 / Orang",
-    hargaAsli: "Rp 375.000",
-    hargaDiskon: "Rp 295.000",
-    fasilitas: [
-      "Aktivitas Pilihan 1 Hari",
-      "Lunch Box + Coffee Break",
-      "Facilitator Lapangan",
-    ],
-    label: "⚡ Favorit Tim HR",
-    image: "/paket3.jpg",
-    deskripsi:
-      "Tinggalkan sejenak rutinitas kantor. Bangun kembali solidaritas tim Anda melalui petualangan alam yang dirancang khusus untuk menyegarkan pikiran.",
-  },
-  {
-    id: "team-building",
-    nama: "Team Building",
-    harga: "Rp 400.000 / Orang",
-    hargaAsli: "Rp 550.000",
-    hargaDiskon: "Rp 450.000",
-    fasilitas: [
-      "Program Games Terstruktur",
-      "MC + Fasilitator Profesional",
-      "Dokumentasi Tim",
-    ],
-    image: "/paket3.jpg",
-    deskripsi:
-      "Rangkaian aktivitas yang menyatukan hati dan pikiran. Di tengah alam Pangalengan, setiap anggota tim menemukan ruang untuk saling mengenal dan berkembang.",
-  },
-  {
-    id: "corporate-2d1n",
-    nama: "Corporate 2D1N",
-    harga: "Rp 850.000 / Orang",
-    hargaAsli: "Rp 1.200.000",
-    hargaDiskon: "Rp 950.000",
-    fasilitas: [
-      "Penginapan 1 Malam",
-      "Program Team Session + Outbound",
-      "3x Makan + Coffee Break",
-    ],
-    label: "Sisa 2 Slot",
-    image: "/paket3.jpg",
-    deskripsi:
-      "Dua hari satu malam untuk reset dan reconnect. Penginapan nyaman, aktivitas terukur, dan waktu luang yang cukup untuk bernapas kembali.",
-  },
-];
+const sortedPenginapan = [...kategoriPenginapan].sort((a, b) => {
+  const hargaA = parseInt(a.hargaDiskon.replace(/[^0-9]/g, ''));
+  const hargaB = parseInt(b.hargaDiskon.replace(/[^0-9]/g, ''));
+  return hargaA - hargaB;
+});
 
-// ─── Komponen Kartu Paket (Sudah Menjadi Link) ────────────────────────────
-function PaketCard({ item }: { item: any }) {
-  return (
-    <Link 
-      href={`/paket/${item.id}`}
-      className="w-[80vw] sm:w-[350px] shrink-0 snap-start group flex flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/90 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-500/10 cursor-pointer"
-    >
-      <div className="relative h-48 w-full overflow-hidden bg-zinc-100">
-        <Image
-          src={item.image}
-          alt={item.nama}
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-          sizes="(max-width: 768px) 100vw, 33vw"
-        />
-        {item.label ? (
-          <span className="absolute right-0 top-0 z-10 rounded-bl-lg bg-red-500/90 px-3 py-1 text-xs font-bold text-white">
-            {item.label}
-          </span>
-        ) : null}
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="mb-2 text-base font-semibold tracking-tight text-zinc-900 group-hover:text-emerald-600 transition-colors">
-          {item.nama}
-        </h3>
-        <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-zinc-600">
-          {item.deskripsi}
-        </p>
-        
-        {/* Fasilitas Checkmark */}
-        <ul className="mb-5 space-y-2 text-sm text-zinc-600">
-          {item.fasilitas.map((fasilitasItem: string) => (
-            <li key={fasilitasItem} className="flex items-start gap-2">
-              <span className="mt-0.5 text-emerald-600">✓</span>
-              <span>{fasilitasItem}</span>
-            </li>
-          ))}
-        </ul>
-        
-        <div className="mt-auto">
-          <div className="flex items-end justify-between gap-3">
-            <p className="text-sm text-zinc-400 line-through">{item.hargaAsli}</p>
-            <p className="text-xl font-bold text-emerald-600">
-              {item.hargaDiskon}
-              <span className="ml-1 text-xs font-medium text-zinc-500">/pax</span>
-            </p>
-          </div>
-          
-          {/* Tombol yang Menyatu dengan Animasi Hover */}
-          <div className="mt-5 flex w-full items-center justify-center rounded-xl bg-zinc-50 px-4 py-2.5 text-sm font-semibold text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
-            Lihat Detail Paket &rarr;
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
-// ─── Section kategori paket (judul + grid .map()) ─────────────────────────────
-
-function SectionPaket({
-  id,
-  title,
-  subtitle,
-  items,
-  bgClass,
-}: {
-  id: string;
-  title: string;
-  subtitle: string;
-  items: PaketItem[];
-  bgClass: string;
-}) {
-  // Sihir JavaScript untuk menggeser rel
+// ─── KOMPONEN: Slider Otomatis untuk Combo ────────────────────
+function ComboSlider({ items }: { items: any[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const slide = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      // Geser sejauh 350px (seukuran 1 kartu)
-      const scrollAmount = direction === "left" ? -370 : 370;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+        }
+      }
+    }, 3500); 
+    return () => clearInterval(interval);
+  }, [isHovered]);
 
   return (
-    <section id={id} className={`${bgClass} px-4 py-20 sm:px-6 lg:px-8`}>
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div className="space-y-2">
-            <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
-              {title}
-            </h2>
-            <p className="max-w-2xl text-sm text-zinc-600 sm:text-base">
-              {subtitle}
-            </p>
-          </div>
-          
-          {/* Tombol Navigasi Kiri Kanan (Tampil Elegan) */}
-          <div className="flex shrink-0 items-center gap-2">
-            <button 
-              onClick={() => slide("left")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:bg-zinc-50 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-              aria-label="Geser ke kiri"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-            <button 
-              onClick={() => slide("right")}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm transition-all hover:bg-zinc-50 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-              aria-label="Geser ke kanan"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
-          </div>
-        </div>
+    <div 
+      className="relative mt-16 w-full pt-12 border-t border-emerald-200/60"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
+    >
+      <div className="text-center mb-8 space-y-1.5">
+         <h3 className="text-2xl font-bold text-stone-800 sm:text-3xl">Paket Combo Wisata</h3>
+         <p className="max-w-2xl text-sm text-stone-500 font-medium mx-auto">Solusi liburan praktis, hemat, dan paling lengkap.</p>
+      </div>
 
-        {/* Jalur Rel Carousel (Ditambahkan ref={scrollRef}) */}
-        <div 
-          ref={scrollRef}
-          className="flex gap-4 sm:gap-6 overflow-x-auto pb-8 pt-2 snap-x snap-mandatory scroll-smooth px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {items.map((item) => (
-            <PaketCard key={item.id} item={item} />
+      <div className="relative group">
+        <div ref={scrollRef} className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-1">
+          {items.map((pkt, idx) => (
+            <Link 
+              href={`/paket/${pkt.id}`} 
+              key={idx}
+              className="w-[85vw] sm:w-[320px] shrink-0 snap-start flex items-center gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5"
+            >
+              <div className="w-20 h-20 sm:w-24 sm:h-24 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
+                <Image src={pkt.image} alt={pkt.nama} fill className="object-cover" />
+                <span className={`absolute top-0 left-0 text-[8px] font-black uppercase px-2 py-0.5 rounded-br-lg text-white ${pkt.tag.includes('Corporate') ? 'bg-blue-600' : pkt.tag.includes('Camp') ? 'bg-teal-600' : 'bg-orange-500'}`}>
+                  {pkt.durasi}
+                </span>
+              </div>
+              <div className="flex-1 flex flex-col justify-center">
+                <div className="flex justify-between items-start mb-0.5">
+                   <span className={`text-[8px] font-black uppercase px-1.5 py-0.5 rounded ${pkt.color}`}>{pkt.tag}</span>
+                </div>
+                <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight mt-0.5">{pkt.nama}</h4>
+                <p className="text-[10px] sm:text-xs text-stone-500 line-clamp-2 mt-1 mb-2 leading-relaxed">
+                  {pkt.fasilitas.join(" • ")}
+                </p>
+                <div className="mt-auto flex justify-between items-center">
+                  <span className="font-black text-emerald-700 text-sm sm:text-base">{pkt.harga}</span>
+                  <span className="bg-stone-100 text-stone-600 hover:bg-emerald-100 hover:text-emerald-700 text-[10px] font-bold px-2.5 py-1.5 rounded-lg transition-colors">Lihat &rarr;</span>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
+// ─── HALAMAN UTAMA ───────────────────────────────────────────────────────
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
+    <div className="min-h-screen bg-stone-50 text-stone-800 font-sans">
       <main className="flex flex-col">
-      <section className="relative flex min-h-[85vh] w-full flex-col items-center justify-center bg-zinc-950 px-4 text-center sm:px-6 lg:px-8">
-  {/* Foto Background. Ganti /hero-pangalengan-trip.webp dengan nama file foto Anda yang ada di folder public */}
-  <div 
-    className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: 'url(/hero-pangalengan-trip.jpg)' }} 
-  ></div>
+        
+        {/* 1. HERO SECTION */}
+        <section className="relative flex min-h-[80vh] w-full flex-col items-center justify-center bg-stone-900 px-4 text-center sm:px-6 lg:px-8 overflow-hidden">
+          <Image src="/hero-pangalengan-trip.jpg" alt="Pangalengan Trip" fill className="object-cover opacity-60" priority />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-stone-900/90"></div>
+          
+          <div className="relative z-10 mx-auto max-w-4xl space-y-6 pt-10">
+            <div className="hidden sm:inline-flex flex-wrap justify-center items-center gap-3 md:gap-4 text-[10px] md:text-xs font-semibold text-stone-100 backdrop-blur-md bg-white/10 border border-white/20 px-5 py-2.5 rounded-full mb-4 tracking-wider uppercase">
+              <span className="flex items-center gap-1.5"><span className="text-emerald-400">★</span> Sejak 2019</span>
+              <span className="opacity-50">•</span>
+              <span className="flex items-center gap-1.5"><span className="text-emerald-400">✓</span> 10.000+ Klien Puas</span>
+              <span className="opacity-50">•</span>
+              <span className="flex items-center gap-1.5"><span className="text-emerald-400">🛡️</span> Asuransi BUMIDA</span>
+              <span className="opacity-50">•</span>
+              <span className="flex items-center gap-1.5"><span className="text-emerald-400">📄</span> Operator Legal</span>
+            </div>
 
-  {/* Lapisan Hitam Transparan agar teks mudah dibaca */}
-  <div className="absolute inset-0 bg-black/50"></div>
-
-  {/* Konten Teks Hero */}
-  <div className="relative z-10 mx-auto max-w-4xl space-y-6">
-    <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-      Pusat Info & Reservasi Wisata <br className="hidden sm:block" />
-      <span className="text-emerald-400">Pangalengan Terlengkap.</span>
-    </h1>
-    <p className="mx-auto max-w-2xl text-base leading-relaxed text-zinc-200 sm:text-lg md:text-xl">
-      Dapatkan transparansi harga, detail fasilitas, dan rekomendasi destinasi wisata terbaik. Masih bingung memilih? Hubungi layanan pelanggan kami untuk konsultasi perjalanan Anda, gratis.
-    </p>
-    <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-      <a
-        href="#petualangan"
-        className="inline-flex w-full items-center justify-center rounded-full bg-emerald-500 px-8 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 sm:w-auto sm:text-base"
-      >
-        Lihat Paket Wisata
-      </a>
-      <a
-        href="https://wa.me/6281234567890?text=Halo%20Pangalengan%20Trip%2C%20Saya%20berencana%20untuk%20berlibur%20ke%20Pangalengan.%20Tolong%20beri%20tahu%20paket%20wisata%20sekaligus%20paket%20custom%20trip"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/50 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 sm:w-auto sm:text-base"
-      >
-        <span>💬</span> Tanya Lewat WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl drop-shadow-lg">
+              Katalog Wisata Pangalengan <br className="hidden sm:block" />
+              <span className="text-emerald-400 font-light italic tracking-wide">Terlengkap & Terbaru.</span>
+            </h1>
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-stone-200 sm:text-base font-medium drop-shadow">
+              Temukan destinasi epik, paket petualangan seru, hingga koleksi vila estetik dalam satu platform. Transparan, aman, dan tanpa biaya tersembunyi.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a href="#petualangan" className="inline-flex w-full items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg transition hover:bg-emerald-500 sm:w-auto tracking-wide">
+                Eksplorasi Katalog
+              </a>
+              <a href={generateWALink("Halo Pangalengan Trip, saya butuh panduan untuk merencanakan liburan.")} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-300 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20 sm:w-auto tracking-wide">
+                Konsultasi Gratis
+              </a>
+            </div>
+            <div className="flex sm:hidden flex-wrap justify-center items-center gap-2 text-[9px] font-semibold text-stone-200 mt-8 opacity-80 uppercase tracking-widest">
+              <span>Sejak 2019</span> • <span>Legal & Berasuransi</span> • <span>10rb+ Klien</span>
+            </div>
+          </div>
+        </section>
 
         <FadeIn>
-          {/* Jelajahi Destinasi Ikonik */}
-          <section
-            className="bg-white px-4 py-20 sm:px-6 lg:px-8"
-            id="destinasi"
-          >
+          {/* 2. JELAJAHI DESTINASI */}
+          <section className="bg-white px-4 py-16 sm:py-24 sm:px-6 lg:px-8" id="destinasi">
             <div className="mx-auto max-w-6xl">
-              <div className="mb-12 space-y-2">
-                <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
-                  Jelajahi Destinasi Ikonik
-                </h2>
-                <p className="max-w-2xl text-sm text-zinc-600 sm:text-base">
-                  Tempat-tempat yang membuat perjalanan Anda di Pangalengan tak
-                  terlupakan.
-                </p>
+              <div className="mb-10 space-y-1.5 text-center">
+                <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Spot Ikonik Pangalengan</h2>
+                <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Temukan relaksasi di sudut-sudut paling fotogenik di Bandung Selatan.</p>
               </div>
-              <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:grid-rows-3">
-                {/* Nimo Highland - Tinggi 2 Baris di Laptop */}
-                <Link href="/destinasi/nimo-highland" className="group relative block overflow-hidden rounded-2xl bg-zinc-200 md:row-span-2">
-                  <div className="relative h-64 w-full md:h-full md:min-h-[420px]">
-                    <Image
-                      src="/destinasi.jpg"
-                      alt="Nimo Highland"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 md:p-6 transition-transform duration-300 group-hover:-translate-y-2">
-                    <p className="mb-1 text-xs font-medium uppercase tracking-wider text-emerald-300/90">
-                      Pangalengan
-                    </p>
-                    <h3 className="mb-2 text-lg font-semibold tracking-tight sm:text-xl">
-                      Nimo Highland
-                    </h3>
-                    <p className="mb-3 text-sm leading-relaxed text-zinc-200">
-                      Padang rumput hijau dan langit luas. Rasakan dinginnya pagi
-                      dan keheningan yang memulihkan.
-                    </p>
-                    <p className="text-xs font-semibold text-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      Lihat Detail Destinasi ↗
-                    </p>
-                  </div>
-                </Link>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+                {[
+                  { nama: "Nimo Highland", desc: "Hamparan kebun teh 360°", img: "/destinasi.jpg" },
+                  { nama: "Sunrise Cukul", desc: "Matahari terbit terbaik", img: "/destinasi.jpg" },
+                  { nama: "Situ Cileunca", desc: "Danau syahdu & Rafting", img: "/destinasi.jpg" },
+                  { nama: "Hutan Rahong", desc: "Ketenangan pinus rindang", img: "/destinasi.jpg" },
+                ].map((dest, idx) => (
+                  <Link href={`/destinasi/${dest.nama.toLowerCase().replace(/ /g, '-')}`} key={idx} className="group relative block overflow-hidden rounded-2xl bg-stone-100 aspect-square border border-stone-200 shadow-sm">
+                    <Image src={dest.img} alt={dest.nama} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 25vw" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
+                      <h3 className="text-sm font-bold text-white sm:text-base tracking-wide">{dest.nama}</h3>
+                      <p className="text-[10px] text-stone-300 sm:text-xs mt-0.5 line-clamp-1">{dest.desc}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        </FadeIn>
 
-                {/* Sunrise Point Cukul - Normal di Laptop */}
-                <Link href="/destinasi/sunrise-cukul" className="group relative block overflow-hidden rounded-2xl bg-zinc-200">
-                  <div className="relative h-64 w-full md:h-full md:min-h-[200px]">
-                    <Image
-                      src="/destinasi.jpg"
-                      alt="Sunrise Point Cukul"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 transition-transform duration-300 group-hover:-translate-y-2">
-                    <p className="mb-1 text-xs font-medium uppercase tracking-wider text-emerald-300/90">
-                      Cukul, Pangalengan
-                    </p>
-                    <h3 className="mb-2 text-lg font-semibold tracking-tight sm:text-xl">
-                      Sunrise Point Cukul
-                    </h3>
-                    <p className="text-xs font-semibold text-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100 mt-3">
-                      Lihat Detail Destinasi ↗
-                    </p>
-                  </div>
-                </Link>
+        <FadeIn>
+          {/* 3. KATALOG PETUALANGAN & COMBO */}
+          <section id="petualangan" className="bg-emerald-50/60 px-4 py-16 sm:py-24 sm:px-6 lg:px-8 border-y border-emerald-100/50">
+            <div className="mx-auto max-w-6xl">
+              <div className="mb-8 space-y-1.5 text-center">
+                <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Katalog Petualangan</h2>
+                <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Pilih keseruan Anda. Format ringkas dengan harga ter-update 2026.</p>
+              </div>
 
-                {/* Hutan Pinus Rahong - Normal di Laptop */}
-                <Link href="/destinasi/hutan-pinus-rahong" className="group relative block overflow-hidden rounded-2xl bg-zinc-200">
-                  <div className="relative h-64 w-full md:h-full md:min-h-[200px]">
-                    <Image
-                      src="/destinasi.jpg"
-                      alt="Hutan Pinus Rahong"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 transition-transform duration-300 group-hover:-translate-y-2">
-                    <p className="mb-1 text-xs font-medium uppercase tracking-wider text-emerald-300/90">
-                      Rahong, Pangalengan
-                    </p>
-                    <h3 className="mb-2 text-lg font-semibold tracking-tight sm:text-xl">
-                      Hutan Pinus Rahong
-                    </h3>
-                    <p className="text-xs font-semibold text-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100 mt-3">
-                      Lihat Detail Destinasi ↗
-                    </p>
-                  </div>
-                </Link>
+              <div className="relative group">
+                <div className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {kategoriPetualangan.map((item, idx) => (
+                    <Link 
+                      href={`/paket/${item.id}`} 
+                      key={idx}
+                      className="w-[85vw] sm:w-[320px] shrink-0 snap-start flex items-center gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5"
+                    >
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
+                        <Image src={item.image} alt={item.nama} fill className="object-cover" />
+                        {item.label && <span className="absolute top-0 left-0 bg-emerald-500 text-white text-[8px] font-black uppercase px-2 py-0.5 rounded-br-lg">{item.label}</span>}
+                      </div>
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight">{item.nama}</h4>
+                        <p className="text-[10px] sm:text-xs text-stone-500 line-clamp-2 mt-1 mb-2 leading-relaxed">{item.deskripsi}</p>
+                        <div className="mt-auto flex justify-between items-center">
+                          <span className="font-black text-emerald-700 text-sm sm:text-base">{item.hargaDiskon}</span>
+                          <span className="bg-stone-100 text-stone-600 hover:bg-emerald-100 hover:text-emerald-700 text-[10px] font-bold px-2.5 py-1.5 rounded-lg transition-colors">Lihat &rarr;</span>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
-                {/* Situ Cileunca - Lebar 2 Kolom di Laptop */}
-                <Link href="/destinasi/situ-cileunca" className="group relative block overflow-hidden rounded-2xl bg-zinc-200 md:col-span-2">
-                  <div className="relative h-64 w-full md:h-auto md:aspect-[21/9]">
-                    <Image
-                      src="/destinasi.jpg"
-                      alt="Situ Cileunca"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, 100vw"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6 md:p-8 transition-transform duration-300 group-hover:-translate-y-2">
-                    <p className="mb-1 text-xs font-medium uppercase tracking-wider text-emerald-300/90">
-                      Situ Cileunca, Pangalengan
-                    </p>
-                    <h3 className="mb-2 text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
-                      Situ Cileunca
-                    </h3>
-                    <p className="mb-3 max-w-2xl text-sm leading-relaxed text-zinc-200">
-                      Danau alami dikelilingi bukit dan kebun teh. Spot
-                      bersantai, memancing, atau sekadar menikmati senja.
-                    </p>
-                    <p className="text-xs font-semibold text-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      Lihat Detail Destinasi ↗
-                    </p>
-                  </div>
+              <ComboSlider items={paketCombo} />
+
+              <div className="mt-12 flex justify-center">
+                <Link href="/katalog-petualangan" className="group inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white shadow-sm">
+                  Lihat Seluruh Daftar Wisata 2026
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
               </div>
             </div>
@@ -576,381 +320,337 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* Trust & Metrics */}
-          <section className="bg-zinc-900 px-4 py-16 text-white sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-6xl space-y-10">
-              <div className="space-y-2">
-                <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                  Trust & Metrics
-                </h2>
-                <p className="max-w-2xl text-sm text-zinc-400 sm:text-base">
-                  Angka yang mencerminkan kepercayaan klien terhadap kualitas
-                  layanan Pangalengan Trip.
+          {/* 4. KATALOG PENGINAPAN */}
+          <section id="penginapan" className="bg-white px-4 py-16 sm:py-24 sm:px-6 lg:px-8 border-b border-stone-100">
+            <div className="mx-auto max-w-6xl">
+              
+              <div className="mb-10 text-center space-y-1.5">
+                <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Katalog Penginapan</h2>
+                <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">
+                  Dari cottage hangat untuk keluarga hingga vila eksklusif. Temukan tempat istirahat sempurna Anda yang telah kami urutkan berdasarkan harga terbaik.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5">
-                  <p className="text-4xl font-bold text-emerald-400 md:text-5xl">
-                    <LiveRollingCounter />+
-                  </p>
-                  <p className="mt-2 text-zinc-400">Klien Puas</p>
-                </div>
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5">
-                  <p className="text-4xl font-bold text-emerald-400 md:text-5xl">
-                    <AnimatedCounter to={120} />+
-                  </p>
-                  <p className="mt-2 text-zinc-400">Corporate Trip</p>
-                </div>
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5">
-                  <p className="text-4xl font-bold text-emerald-400 md:text-5xl">
-                    <AnimatedCounter to={4} />.<AnimatedCounter to={9} />
-                  </p>
-                  <p className="mt-2 text-zinc-400">Rating Bintang</p>
-                </div>
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5">
-                  <p className="text-4xl font-bold text-emerald-400 md:text-5xl">
-                    <AnimatedCounter to={24} />/7
-                  </p>
-                  <p className="mt-2 text-zinc-400">Layanan Concierge</p>
-                </div>
+              <div className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-1">
+                {sortedPenginapan.map((item) => (
+                  <Link 
+                    href={`/penginapan/${item.id}`} 
+                    key={item.id} 
+                    className="group relative flex flex-col w-[45vw] sm:w-[220px] aspect-[4/5] shrink-0 snap-start overflow-hidden rounded-2xl bg-stone-100 shadow-sm border border-stone-200"
+                  >
+                    <Image src={item.image} alt={item.nama} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 45vw, 220px" />
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                    
+                    {item.label && (
+                      <span className={`absolute top-2 left-2 text-white text-[8px] font-black uppercase px-2 py-1 rounded shadow-md tracking-wider ${item.label === 'Budget' ? 'bg-emerald-600' : item.label === 'Big Size' ? 'bg-blue-600' : 'bg-amber-500'}`}>
+                        {item.label}
+                      </span>
+                    )}
+                    
+                    <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 flex flex-col justify-end">
+                      <h3 className="font-bold text-white text-xs sm:text-sm leading-tight mb-1">{item.nama}</h3>
+                      <p className="text-[9px] sm:text-[10px] text-stone-300 line-clamp-2 mb-2 leading-relaxed">{item.deskripsi}</p>
+                      
+                      <p className="text-sm sm:text-base font-black text-emerald-400 tracking-tight">
+                        {item.hargaDiskon}<span className="text-[8px] font-medium text-stone-400 ml-1">/malam</span>
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="mt-6 flex justify-center">
+                  <Link href="/penginapan" className="group inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white">
+                    Lihat Pricelist Lengkap Penginapan 2026
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </Link>
               </div>
             </div>
           </section>
         </FadeIn>
 
         <FadeIn>
-          <SectionPaket
-            id="petualangan"
-            title="Kategori Petualangan"
-            subtitle="Aktivitas outdoor pilihan di Pangalengan: dari air, darat, hingga udara."
-            items={kategoriPetualangan}
-            bgClass="bg-white"
-          />
-        </FadeIn>
-
-        <FadeIn>
-          <SectionPaket
-            id="penginapan"
-            title="Kategori Penginapan"
-            subtitle="Menginap nyaman dengan pemandangan alam dan akses ke destinasi wisata."
-            items={kategoriPenginapan}
-            bgClass="bg-zinc-50"
-          />
-        </FadeIn>
-
-        <FadeIn>
-          <SectionPaket
-            id="corporate"
-            title="Kategori Corporate"
-            subtitle="Paket outing dan team building untuk perusahaan dengan rundown rapi."
-            items={kategoriCorporate}
-            bgClass="bg-white"
-          />
-        </FadeIn>
-
-        <FadeIn>
-          {/* Concierge & Delivery Service */}
-          <section
-            className="bg-emerald-900 px-4 py-20 sm:px-6 lg:px-8"
-            id="concierge"
-          >
-            <div className="mx-auto max-w-6xl">
-              <div className="flex flex-col items-start gap-8 rounded-3xl bg-emerald-950/50 px-6 py-12 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:px-10 sm:py-14">
-                <div className="space-y-3">
-                  <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                    Butuh Sesuatu yang Spesifik? Kami Antar ke Pintu Tenda Anda.
-                  </h2>
-                  <p className="max-w-2xl text-sm leading-relaxed text-emerald-100/90 sm:text-base">
-                    Dari camilan malam, minuman penghangat, hingga kebutuhan
-                    darurat. Layanan Concierge kami siap memenuhi permintaan
-                    khusus Anda selama di Pangalengan.
-                  </p>
-                </div>
-                <a
-                  href="https://wa.me/6281234567890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-emerald-900 shadow-lg transition hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900"
-                >
-                  <span aria-hidden className="text-lg">
-                    🛵
-                  </span>
-                  Chat Layanan Delivery
-                </a>
-              </div>
-            </div>
-          </section>
-        </FadeIn>
-
-        {/* Kenapa Memilih Kami */}
-        <section
-          id="kenapa-kami"
-          className="bg-zinc-50 px-4 py-20 sm:px-6 lg:px-8"
-        >
-          <div className="mx-auto max-w-6xl space-y-12">
-            <div className="space-y-2">
-              <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
-                Kenapa Memilih Kami?
-              </h2>
-              <p className="max-w-2xl text-sm text-zinc-600 sm:text-base">
-                Fokus pada pengalaman yang nyaman, aman, dan rapi dari awal
-                hingga selesai.
+          {/* 5. BANNER CUSTOM TRIP (Desain Parallax Estetik Overlay) */}
+          <section className="relative w-full px-4 py-20 sm:py-28 sm:px-6 lg:px-8 text-center text-white overflow-hidden border-y border-stone-800">
+            <Image src="/hero-pangalengan-trip.jpg" alt="Custom Trip Background" fill className="object-cover" />
+            <div className="absolute inset-0 bg-stone-900/85 backdrop-blur-[2px]"></div> 
+            
+            <div className="relative z-10 mx-auto max-w-3xl space-y-6">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 text-2xl mb-2">✨</div>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Tidak Menemukan Paket yang Pas?</h2>
+              <p className="text-stone-300 text-sm sm:text-base leading-relaxed mx-auto max-w-2xl">
+                Setiap orang punya gaya liburan yang berbeda. Gunakan <strong>Kalkulator Custom Trip</strong> kami untuk mengatur jumlah peserta, memilih fasilitas, dan menghitung estimasi biaya perjalanan impian Anda secara langsung.
               </p>
+              <div className="pt-4">
+                <Link href="/custom-trip" className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-sm font-bold text-white shadow-lg transition hover:bg-emerald-500 hover:-translate-y-1">
+                  Buka Kalkulator Custom Trip
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </Link>
+              </div>
             </div>
-            {/* Kenapa Memilih Kami - Carousel Responsif */}
-            <div className="flex gap-4 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-6 md:overflow-visible md:px-0">
-              {/* Kartu 1 */}
-              <div className="w-[75vw] shrink-0 snap-center rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur md:w-full">
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
-                  📞
+          </section>
+        </FadeIn>
+
+        <FadeIn>
+          {/* 6. JASA LAYANAN ANTAR (Desain Split Card Estetik) */}
+          <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-5xl">
+              <div className="flex flex-col overflow-hidden rounded-[2rem] bg-emerald-50 border border-emerald-100 sm:flex-row shadow-sm hover:shadow-md transition-shadow">
+                
+                <div className="relative h-56 w-full sm:h-auto sm:w-2/5 md:w-1/3 shrink-0">
+                  <Image src="/paket3.jpg" alt="Layanan Antar" fill className="object-cover" />
+                  <div className="absolute inset-0 bg-emerald-900/10"></div> 
                 </div>
-                <h3 className="text-sm font-semibold tracking-tight text-zinc-900">
-                  Pelayanan 24 Jam
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-zinc-600 sm:text-sm">
-                  Customer service selalu siap.
-                </p>
-              </div>
-              {/* Kartu 2 */}
-              <div className="w-[75vw] shrink-0 snap-center rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur md:w-full">
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
-                  🛡️
+                
+                <div className="flex flex-1 flex-col items-center justify-center p-8 sm:items-start sm:p-12 text-center sm:text-left space-y-6">
+                  <div className="space-y-3">
+                    <h2 className="text-2xl font-bold tracking-tight text-emerald-950 sm:text-3xl">Butuh Sesuatu Spesial Atau Mendadak?</h2>
+                    <p className="text-sm text-emerald-800/80 font-medium leading-relaxed">
+                      Layanan jasa antar kami siap sedia 24 jam. Mulai dari logistik tambahan, set BBQ malam hari, fotografer dadakan, hingga kejutan barang spesial lainnya. Hubungi kami, biar kami yang urus!
+                    </p>
+                  </div>
+                  <a href={generateWALink("Halo Tim Layanan Antar, saya butuh bantuan untuk...")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-bold text-white shadow-md transition hover:bg-emerald-700 hover:-translate-y-1">
+                    <span>🛵</span> Chat Jasa Antar
+                  </a>
                 </div>
-                <h3 className="text-sm font-semibold tracking-tight text-zinc-900">
-                  Dilindungi Asuransi
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-zinc-600 sm:text-sm">
-                  Keamanan kegiatan terjamin.
-                </p>
+
               </div>
-              {/* Kartu 3 */}
-              <div className="w-[75vw] shrink-0 snap-center rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur md:w-full">
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
-                  ✅
+            </div>
+          </section>
+        </FadeIn>
+
+        {/* 7. Kenapa Memilih Kami */}
+        <section id="kenapa-kami" className="bg-stone-100 px-4 py-20 sm:px-6 lg:px-8 border-t border-stone-200">
+          <div className="mx-auto max-w-6xl space-y-16">
+            <div className="text-center space-y-3">
+              <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Mengapa Memilih Kami?</h2>
+              <p className="max-w-2xl text-sm text-stone-500 font-medium mx-auto">Kami mengutamakan ketenangan pikiran Anda dari mulai tahap reservasi hingga perjalanan pulang.</p>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+              {[
+                { icon: "📞", title: "Layanan 24 Jam", desc: "Responsif kapanpun dibutuhkan." },
+                { icon: "🛡️", title: "Asuransi Penuh", desc: "Mitra resmi asuransi BUMIDA." },
+                { icon: "✅", title: "Tim Tersertifikasi", desc: "Pemandu ahli dan profesional." },
+                { icon: "📄", title: "Legalitas Resmi", desc: "Badan usaha wisata berizin." }
+              ].map((k, i) => (
+                <div key={i} className="rounded-2xl border border-stone-200 bg-white p-5 text-center shadow-sm transition hover:-translate-y-1">
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-xl">{k.icon}</div>
+                  <h3 className="text-sm font-bold text-stone-800">{k.title}</h3>
+                  <p className="mt-1.5 text-xs text-stone-500">{k.desc}</p>
                 </div>
-                <h3 className="text-sm font-semibold tracking-tight text-zinc-900">
-                  Tim Profesional
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-zinc-600 sm:text-sm">
-                  Tour guide bersertifikat resmi.
-                </p>
-              </div>
-              {/* Kartu 4 */}
-              <div className="w-[75vw] shrink-0 snap-center rounded-2xl border border-zinc-200/80 bg-white/90 p-5 shadow-sm backdrop-blur md:w-full">
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
-                  📄
-                </div>
-                <h3 className="text-sm font-semibold tracking-tight text-zinc-900">
-                  Kredibilitas Legal
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-zinc-600 sm:text-sm">
-                  Perusahaan wisata berbadan hukum.
-                </p>
-              </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center">
+              <Link href="/tentang-kami" className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 hover:text-emerald-600 transition underline underline-offset-4">
+                Baca Profil Agensi Kami Selengkapnya &rarr;
+              </Link>
             </div>
           </div>
         </section>
 
         <FadeIn>
-          {/* Testimonial */}
-<section id="testimoni" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
-  <div className="mx-auto max-w-6xl space-y-12">
-    <div className="flex items-end justify-between gap-4">
-      <div className="space-y-2">
-        <h2 className="text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
-          Kata Mereka
-        </h2>
-        <p className="max-w-2xl text-sm text-zinc-600 sm:text-base">
-          Ulasan singkat dari pelanggan yang sudah merasakan perjalanan bersama kami.
-        </p>
-      </div>
-      {/* Tombol Navigasi Testimoni */}
-      <div className="flex shrink-0 gap-2">
-        <button onClick={() => {document.getElementById('rel-testi')?.scrollBy({left: -320, behavior: 'smooth'})}} className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm hover:bg-zinc-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg></button>
-        <button onClick={() => {document.getElementById('rel-testi')?.scrollBy({left: 320, behavior: 'smooth'})}} className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-600 shadow-sm hover:bg-zinc-50"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></button>
-      </div>
-    </div>
-
-    {/* Jalur Rel Testimoni */}
-    <div id="rel-testi" className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-      {[
-        { id: "1", quote: "Rundown rapi, tim responsif, dan aktivitasnya seru. Rafting di Palayangan jadi highlight trip kami.", name: "Dinda K." },
-        { id: "2", quote: "ATV-nya asik banget! Jalur kebun teh Warnasari cantik, guide jelas, dan safety-nya diperhatikan.", name: "Rangga P." },
-        { id: "3", quote: "Offroad-nya menantang dan worth it. Land Rover-nya tangguh, rute hutan pinusnya dapet banget feel petualangannya.", name: "Sari W." },
-        { id: "4", quote: "Glampingnya bersih dan view-nya juara. Anak-anak betah banget main di pinggir danau.", name: "Budi H." }
-      ].map((t) => (
-        <article key={t.id} className="w-[85vw] sm:w-[350px] shrink-0 snap-start rounded-2xl border border-zinc-200/80 bg-white/90 p-6 shadow-sm backdrop-blur">
-          <p className="text-sm leading-relaxed text-zinc-700 italic">" {t.quote} "</p>
-          <div className="mt-4 flex items-center justify-between">
-            <p className="text-sm font-semibold text-zinc-900">{t.name}</p>
-            <p className="text-amber-500 text-xs">⭐⭐⭐⭐⭐</p>
-          </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
+          {/* 8. Trust Metrics */}
+          <section className="bg-white px-4 py-16 sm:px-6 lg:px-8 border-y border-stone-100">
+            <div className="mx-auto max-w-6xl">
+              <div className="grid grid-cols-2 gap-6 md:grid-cols-4 divide-x divide-stone-100">
+                <div className="text-center px-4">
+                  <p className="text-4xl font-black text-emerald-700"><LiveRollingCounter />+</p>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-wider text-stone-400">Klien Puas</p>
+                </div>
+                <div className="text-center px-4">
+                  <p className="text-4xl font-black text-emerald-700"><AnimatedCounter to={120} />+</p>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-wider text-stone-400">Corporate Trip</p>
+                </div>
+                <div className="text-center px-4">
+                  <p className="text-4xl font-black text-emerald-700"><AnimatedCounter to={4} />.<AnimatedCounter to={9} /></p>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-wider text-stone-400">Rating Bintang</p>
+                </div>
+                <div className="text-center px-4">
+                  <p className="text-4xl font-black text-emerald-700"><AnimatedCounter to={5} /> Th</p>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-wider text-stone-400">Pengalaman Lintas</p>
+                </div>
+              </div>
+            </div>
+          </section>
         </FadeIn>
 
-        {/* Final CTA & Footer */}
-        <section id="kontak" className="bg-zinc-50 px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-6xl">
-            <div className="rounded-3xl bg-emerald-900 px-6 py-12 text-white shadow-lg sm:px-10 sm:py-14">
-              <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-                <div className="space-y-3">
-                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                    Rencanakan Liburan Anda, Tanya Saja Dulu, Gratis!
-                  </h2>
-                  <p className="max-w-2xl text-sm text-emerald-50/90 sm:text-base">
-                    Ceritakan kebutuhan Anda (tanggal, jumlah orang, aktivitas
-                    favorit). Kami bantu rekomendasikan itinerary terbaik.
-                  </p>
+        <FadeIn>
+          {/* 9. GABUNGAN: MITRA KLIEN & VIDEO SHORTS */}
+          <section className="bg-stone-50 px-4 py-20 sm:px-6 lg:px-8 border-b border-stone-200">
+            <div className="mx-auto max-w-6xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+                
+                {/* KIRI: Video Shorts */}
+                <div className="space-y-6 flex flex-col items-center lg:items-start w-full">
+                  <div className="space-y-1.5 text-center lg:text-left">
+                    <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Intip Keseruannya</h2>
+                    <p className="text-sm text-stone-500 font-medium">Satu menit yang akan meyakinkan Anda.</p>
+                  </div>
+                  
+                  <div className="flex gap-4 w-full justify-center lg:justify-start">
+                    {/* Video 1 (Muncul di semua layar) */}
+                    <div className="w-[60vw] sm:w-[220px] rounded-2xl bg-white p-2 shadow-md border border-stone-200 shrink-0">
+                      <div className="relative w-full overflow-hidden rounded-xl bg-stone-100 aspect-[9/16]">
+                        <iframe className="absolute inset-0 h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&rel=0&modestbranding=1" title="Shorts 1" allowFullScreen></iframe>
+                      </div>
+                    </div>
+                    {/* Video 2 (Disembunyikan di HP agar tidak sempit, muncul di layar menengah ke atas) */}
+                    <div className="hidden sm:block w-[220px] rounded-2xl bg-white p-2 shadow-md border border-stone-200 shrink-0">
+                      <div className="relative w-full overflow-hidden rounded-xl bg-stone-100 aspect-[9/16]">
+                        <iframe className="absolute inset-0 h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&rel=0&modestbranding=1" title="Shorts 2" allowFullScreen></iframe>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <a
-                  href="https://wa.me/6281234567890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-emerald-400 px-7 py-3 text-sm font-semibold text-emerald-950 shadow-md transition hover:bg-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 sm:w-auto sm:text-base"
-                >
-                  Chat WhatsApp Sekarang
+
+                {/* KANAN: Marquee Logo / Tulisan Klien */}
+                <div className="space-y-8 overflow-hidden w-full">
+                  <div className="space-y-1.5 text-center lg:text-left">
+                    <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Telah Dipercaya Oleh</h2>
+                    <p className="text-sm text-stone-500 font-medium">Ratusan perusahaan, instansi, dan keluarga besar.</p>
+                  </div>
+                  
+                  {/* Rel berjalan multi-baris */}
+                  <div className="relative flex flex-col gap-6 w-full overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
+                    
+                    {/* Baris 1: Kanan ke Kiri */}
+                    <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 25, repeat: Infinity }} className="flex w-max items-center gap-12 sm:gap-20 px-6 opacity-30 grayscale">
+                      {[1, 2].map((set) => (
+                        <div key={set} className="flex items-center gap-12 sm:gap-20">
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Bank BJB</span>
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Telkomsel</span>
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Pertamina</span>
+                        </div>
+                      ))}
+                    </motion.div>
+
+                    {/* Baris 2: Kiri ke Kanan (Reverse) */}
+                    <motion.div animate={{ x: ["-50%", "0%"] }} transition={{ ease: "linear", duration: 30, repeat: Infinity }} className="flex w-max items-center gap-12 sm:gap-20 px-6 opacity-30 grayscale">
+                      {[1, 2].map((set) => (
+                        <div key={set} className="flex items-center gap-12 sm:gap-20">
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Pemprov Jabar</span>
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">UNPAD</span>
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">PLN</span>
+                        </div>
+                      ))}
+                    </motion.div>
+
+                    {/* Baris 3: Kanan ke Kiri */}
+                    <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 20, repeat: Infinity }} className="flex w-max items-center gap-12 sm:gap-20 px-6 opacity-30 grayscale">
+                      {[1, 2].map((set) => (
+                        <div key={set} className="flex items-center gap-12 sm:gap-20">
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Kemenkeu</span>
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Astra</span>
+                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Bio Farma</span>
+                        </div>
+                      ))}
+                    </motion.div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </FadeIn>
+
+        <FadeIn>
+          {/* 10. TESTIMONIAL (Manusiawi & Mengalir) */}
+          <section id="testimoni" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-6xl space-y-12">
+              <div className="flex items-end justify-between gap-4">
+                <div className="space-y-1.5 text-center sm:text-left w-full sm:w-auto">
+                  <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Kata Mereka</h2>
+                  <p className="max-w-2xl text-sm text-stone-500 font-medium">Pengalaman jujur dari mereka yang telah berlibur bersama kami.</p>
+                </div>
+                {/* Tombol Navigasi Desktop */}
+                <div className="hidden sm:flex shrink-0 gap-2">
+                  <button onClick={() => {document.getElementById('rel-testi')?.scrollBy({left: -320, behavior: 'smooth'})}} className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-500 shadow-sm hover:bg-stone-50 hover:text-emerald-700 transition"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg></button>
+                  <button onClick={() => {document.getElementById('rel-testi')?.scrollBy({left: 320, behavior: 'smooth'})}} className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-500 shadow-sm hover:bg-stone-50 hover:text-emerald-700 transition"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></button>
+                </div>
+              </div>
+
+              {/* Rel Testimoni */}
+              <div id="rel-testi" className="flex gap-4 sm:gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {[
+                  { id: "1", role: "Liburan Keluarga", quote: "Awalnya ragu bawa orang tua dan anak kecil, tapi ternyata guide-nya sangat telaten bantuin kita. Glamping-nya bersih banget dan udaranya seger. Bakal balik lagi sih ini!", name: "Ibu Dinda" },
+                  { id: "2", role: "Corporate Outing", quote: "Acara kantor paling pecah sejauh ini! Rundown rapi, gak ada waktu ngaret. Makan siang dan kambing gulingnya juara, semua staf di kantor puas banget.", name: "Siska (Tim HRD)" },
+                  { id: "3", role: "Trip Teman Kampus", quote: "Offroad Land Rover-nya bener-bener mantap menantang adrenalin. Mang Ade driver-nya asik diajak ngobrol. Pemandangan kebun tehnya ga ada obat.", name: "Reza Pratama" },
+                  { id: "4", role: "Custom Trip", quote: "Gampang banget request ini itu. Kita minta tambahan BBQ dadakan malem-malam langsung disiapin dong sama tim layanannya. Pelayanan bintang 5!", name: "Dina Mariana" }
+                ].map((t) => (
+                  <article key={t.id} className="w-[85vw] sm:w-[350px] shrink-0 snap-start rounded-3xl border border-stone-200 bg-white p-6 sm:p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:border-emerald-200 transition-colors">
+                    <div className="flex gap-1 mb-4 text-emerald-500 text-sm">★★★★★</div>
+                    <p className="text-sm leading-relaxed text-stone-600 font-medium italic">"{t.quote}"</p>
+                    <div className="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
+                      <div>
+                        <p className="text-sm font-bold text-stone-800">{t.name}</p>
+                        <p className="text-[10px] font-semibold text-emerald-600 uppercase tracking-wider mt-0.5">{t.role}</p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        </FadeIn>
+
+        {/* 11. Final CTA & Footer */}
+        <section id="kontak" className="bg-white px-4 py-20 sm:px-6 lg:px-8 border-t border-stone-100">
+          <div className="mx-auto max-w-6xl">
+            <div className="rounded-[2.5rem] bg-stone-900 px-6 py-12 text-white shadow-2xl sm:px-12 sm:py-16 text-center sm:text-left overflow-hidden relative">
+              <div className="absolute right-0 top-0 opacity-10 pointer-events-none text-9xl transform translate-x-20 -translate-y-10">🌿</div>
+              <div className="relative z-10 flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
+                <div className="space-y-3 max-w-xl">
+                  <h2 className="text-2xl font-bold tracking-tight sm:text-4xl leading-tight">Mulai Rencanakan Perjalanan Tanpa Beban.</h2>
+                  <p className="text-sm text-stone-300 sm:text-base font-medium">Tim kami siap merancang itinerary, mengurus logistik, dan memastikan keamanan Anda. Konsultasikan gratis sekarang.</p>
+                </div>
+                <a href={generateWALink("Halo Pangalengan Trip, saya butuh info paket wisata.")} target="_blank" rel="noopener noreferrer" className="shrink-0 inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-4 text-sm font-bold text-white transition hover:bg-emerald-500 w-full sm:w-auto tracking-wide shadow-lg">
+                  Hubungi via WhatsApp
                 </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Fat Footer */}
-        <footer className="bg-zinc-900 text-zinc-200">
+        <footer className="bg-stone-950 text-stone-300">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
-              {/* Kolom 1: Brand & About */}
               <div className="space-y-4">
-                <p className="text-lg font-bold tracking-tight text-white">
-                  Pangalengan Trip
-                </p>
-                <p className="text-sm leading-relaxed text-zinc-400">
-                  Partner perjalanan terpercaya Anda untuk menjelajahi keindahan
-                  alam, petualangan, dan ketenangan di Pangalengan, Bandung
-                  Selatan.
-                </p>
+                <p className="text-xl font-bold tracking-tight text-white">Pangalengan Trip</p>
+                <p className="text-sm leading-relaxed text-stone-400">Partner perjalanan terpercaya Anda untuk menjelajahi keindahan alam, petualangan, dan ketenangan di Pangalengan, Bandung Selatan.</p>
               </div>
-
-              {/* Kolom 2: Kontak & Lokasi */}
               <div className="space-y-4">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-                  Hubungi Kami
-                </h3>
-                <ul className="space-y-3 text-sm text-zinc-400">
-                  <li>
-                    <span className="font-medium text-zinc-300">Alamat:</span>{" "}
-                    Jl. Raya Situ Cileunca, Pangalengan, Bandung.
-                  </li>
-                  <li>
-                    <span className="font-medium text-zinc-300">Email:</span>{" "}
-                    hello@pangalengantrip.com
-                  </li>
-                  <li>
-                    <span className="font-medium text-zinc-300">WhatsApp:</span>{" "}
-                    +62 8XX-XXXX-XXXX
-                  </li>
-                  <li>
-                    <span className="font-medium text-zinc-300">
-                      Jam Operasional:
-                    </span>{" "}
-                    Setiap Hari (07.00 - 20.00 WIB)
-                  </li>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Hubungi Kami</h3>
+                <ul className="space-y-3 text-sm text-stone-400 font-medium">
+                  <li><span className="text-stone-200">Alamat:</span> Jl. Raya Situ Cileunca, Pangalengan.</li>
+                  <li><span className="text-stone-200">Email:</span> hello@pangalengantrip.com</li>
+                  <li><span className="text-stone-200">WhatsApp:</span> +62 857-1707-5116</li>
+                  <li><span className="text-stone-200">Jam Operasional:</span> Setiap Hari (07.00 - 20.00)</li>
                 </ul>
               </div>
-
-              {/* Kolom 3: Layanan Utama */}
               <div className="space-y-4">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-                  Layanan Utama
-                </h3>
-                <ul className="space-y-2.5 text-sm">
-                  <li>
-                    <a
-                      href="#"
-                      className="text-zinc-400 transition hover:text-emerald-400"
-                    >
-                      Rafting & Petualangan
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-zinc-400 transition hover:text-emerald-400"
-                    >
-                      Sewa Villa & Glamping
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-zinc-400 transition hover:text-emerald-400"
-                    >
-                      Corporate Outing
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="text-zinc-400 transition hover:text-emerald-400"
-                    >
-                      Custom Trip
-                    </a>
-                  </li>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Layanan Utama</h3>
+                <ul className="space-y-2.5 text-sm font-medium">
+                  <li><Link href="#petualangan" className="text-stone-400 transition hover:text-white">Katalog Petualangan</Link></li>
+                  <li><Link href="#penginapan" className="text-stone-400 transition hover:text-white">Katalog Penginapan</Link></li>
+                  <li><Link href="/custom-trip" className="text-stone-400 transition hover:text-white">Custom Trip</Link></li>
                 </ul>
               </div>
-
-              {/* Kolom 4: Media Sosial */}
               <div className="space-y-4">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-                  Ikuti Keseruannya
-                </h3>
-                <p className="text-sm text-zinc-400">
-                  Lihat keseruan trip klien kami di sosial media!
-                </p>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Ikuti Keseruannya</h3>
                 <div className="flex flex-wrap gap-3">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-300 transition hover:bg-zinc-700 hover:text-white"
-                    aria-label="Instagram"
-                  >
-                    <span aria-hidden>📷</span>
-                    <span>Instagram</span>
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-300 transition hover:bg-zinc-700 hover:text-white"
-                    aria-label="TikTok"
-                  >
-                    <span aria-hidden>🎵</span>
-                    <span>TikTok</span>
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 rounded-lg bg-zinc-800 px-3 py-2 text-sm text-zinc-300 transition hover:bg-zinc-700 hover:text-white"
-                    aria-label="YouTube"
-                  >
-                    <span aria-hidden>▶️</span>
-                    <span>YouTube</span>
-                  </a>
+                  <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-stone-900 border border-stone-800 px-3 py-2 text-sm text-stone-300 transition hover:bg-stone-800 hover:text-white"><span aria-hidden>📷</span><span>Instagram</span></a>
+                  <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-stone-900 border border-stone-800 px-3 py-2 text-sm text-stone-300 transition hover:bg-stone-800 hover:text-white"><span aria-hidden>🎵</span><span>TikTok</span></a>
+                  <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-stone-900 border border-stone-800 px-3 py-2 text-sm text-stone-300 transition hover:bg-stone-800 hover:text-white"><span aria-hidden>▶️</span><span>YouTube</span></a>
                 </div>
-                <p className="text-xs text-zinc-500">@pangalengantrip</p>
+                <p className="text-xs text-stone-500">@pangalengantrip</p>
               </div>
             </div>
-
-            <div className="mt-16 border-t border-zinc-800 py-10">
-              <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-between sm:text-left">
-                <p className="text-sm text-zinc-500">
-                  © 2026 Pangalengan Trip. All rights reserved.
-                </p>
-                <p className="text-xs text-zinc-600">
-                  Designed for the ultimate experience.
-                </p>
-              </div>
+            <div className="mt-16 border-t border-stone-800/50 py-10 text-center sm:flex sm:justify-between sm:text-left">
+              <p className="text-sm text-stone-500 font-medium">© 2026 Pangalengan Trip. All rights reserved.</p>
+              <p className="text-xs text-stone-600 mt-2 sm:mt-0 font-medium">Designed for the ultimate experience.</p>
             </div>
           </div>
         </footer>
