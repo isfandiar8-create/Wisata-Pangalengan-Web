@@ -244,6 +244,8 @@ const masterKatalog = [
     image: "/combo-keluarga.jpg", 
     deskripsi: "Berikan senyuman dan liburan terbaik untuk keluarga tanpa harus merogoh kocek dalam. Paket All-In One Day Trip ini dirancang khusus untuk menciptakan quality time yang bebas ribet. Anda sekeluarga tinggal datang, bermain aman, makan siang dengan nikmat, dan pulang membawa puluhan foto kenangan manis." 
   },
+
+  // KELUARGA SERU
   { 
     id: "keluarga-seru", 
     nama: "Keluarga Seru (1 Hari)", 
@@ -271,10 +273,324 @@ const masterKatalog = [
     image: "/combo-keluarga.jpg", 
     deskripsi: "Tingkatkan level petualangan akhir pekan keluarga Anda! Rasakan sensasi 'Triple Action': membelah angin di atas danau (Flying Fox), memacu adrenalin di jalur berlumpur (ATV), dan menantang arus sungai (Rafting). Paket komplit yang dijamin akan membuat anak-anak lepas dari layar gadget mereka seharian penuh." 
   },
-  
+
+  // KELUARGA PUAS
+  { 
+    id: "keluarga-puas", 
+    nama: "Keluarga Puas (1 Hari)", 
+    kategori: "Combo Keluarga", 
+    durasi: "1 Hari", 
+    harga: "Rp 410.000", 
+    hargaAsli: "Rp 480.000", 
+    fasilitas: [
+      "Eksplorasi Hutan Pinus via Mobil Offroad Land Rover",
+      "Rafting Palayangan 4.5 KM (Dipandu instruktur ahli)",
+      "Zipline Flying Fox Lintas Danau Situ Cileunca",
+      "1x Makan Siang Khas Sunda (Nikmat & Mengenyangkan)",
+      "Driver Land Rover, Instruktur Rafting & Tim Rescue Khusus",
+      "Seluruh Tiket Masuk Kawasan & Retribusi",
+      "Perlengkapan Keamanan Standar Internasional",
+      "Akses Kamar Mandi & Toilet Bilas",
+      "P3K & Asuransi Kegiatan Resmi",
+      "FREE Dokumentasi Foto Premium Keluarga"
+    ], 
+    persiapan: [
+      "Jaket tebal pelindung angin (untuk di atas mobil Offroad)",
+      "Baju ganti cadangan untuk sekeluarga (karena diakhiri dengan Rafting)", 
+      "Sandal gunung atau sepatu air yang tidak licin", 
+      "Kacamata hitam, Topi, dan Sunblock untuk kenyamanan maksimal",
+      "Kantong plastik tebal untuk menyimpan pakaian basah"
+    ],
+    label: "Rekomendasi", 
+    image: "/combo-keluarga.jpg", 
+    deskripsi: "Paket 'Sultan' untuk keluarga bahagia! Jelajahi eksotisme hutan pinus tanpa lelah menggunakan mobil legendaris Land Rover, meluncur bebas di atas danau, lalu ditutup dengan serunya bermain air di sungai Palayangan. Pengalaman premium satu hari penuh dengan letih yang sepadan dengan tawa lepas seluruh anggota keluarga." 
+  },
   // COMBO CORPORATE
-  { id: "corp-a1d", nama: "Corporate A1D (1 Hari)", kategori: "Combo Corporate", durasi: "1 Hari", harga: "Rp 360.000", hargaAsli: "Rp 430.000", fasilitas: ["Rafting Palayangan", "Paintball Battle", "ATV Adventure", "Makan Siang", "Asuransi & Dokumentasi"], image: "/combo-corp-1d.jpg", deskripsi: "Pacu adrenalin tim kantor Anda dalam satu hari penuh aksi. Perpaduan sempurna antara air, lumpur, dan strategi." },
-  { id: "corp-b2d", nama: "Corporate B2D (Menginap)", kategori: "Combo Corporate", durasi: "Menginap", harga: "Rp 650.000", hargaAsli: "Rp 750.000", fasilitas: ["Penginapan Villa 2D1N", "Rafting, Paintball, Flying Fox", "Kambing Guling & Malam Keakraban", "3x Makan & 1x Coffee Break", "Dokumentasi & Tour Leader"], label: "Bestseller", image: "/combo-corp-2d.jpg", deskripsi: "Standar emas outing perusahaan. Pesta malam keakraban dengan kambing guling, ditambah aktivitas ekstrem di siang hari." },
+  // ─── COMBO CORPORATE (1 HARI / ONE DAY TRIP) ───
+  { 
+    id: "corp-a1d", 
+    nama: "Corporate A1D (1 Hari)", 
+    kategori: "Combo Corporate", 
+    durasi: "1 Hari", 
+    harga: "Rp 360.000", 
+    hargaAsli: "Rp 430.000", 
+    fasilitas: [
+      "Rafting Palayangan 4.5 KM",
+      "Paintball Battle (Termasuk 40 Peluru & Seragam Tempur)",
+      "ATV Adventure Kebun Teh",
+      "1x Makan Siang Khas Sunda (Prasmanan)",
+      "Master Game, Instruktur, & Tim Rescue Profesional",
+      "Akses Kamar Mandi, Toilet Bilas & Area Istirahat",
+      "P3K & Asuransi Kegiatan Resmi",
+      "FREE Dokumentasi Foto & Spanduk Kegiatan (S&K Berlaku)"
+    ], 
+    persiapan: [
+      "Baju ganti cadangan (karena akan basah di sungai & berlumpur di ATV)", 
+      "Sepatu olahraga/kets yang nyaman dan tidak licin", 
+      "Kantong plastik tebal untuk memisahkan pakaian kotor",
+      "Flashdisk/Hardisk dari panitia untuk mengamankan file dokumentasi mentah"
+    ],
+    image: "/combo-corp-1d.jpg", 
+    deskripsi: "Satu hari penuh aksi untuk melepaskan penat dari rutinitas kantor! Kombinasi sempurna antara petualangan air, lumpur (ATV), dan strategi tempur (Paintball) yang akan memompa semangat dan energi baru bagi tim Anda." 
+  },
+  { 
+    id: "corp-b1d", 
+    nama: "Corporate B1D (1 Hari)", 
+    kategori: "Combo Corporate", 
+    durasi: "1 Hari", 
+    harga: "Rp 350.000", 
+    hargaAsli: "Rp 410.000", 
+    fasilitas: [
+      "Team Building & Ice Breaking (Dipandu Master Game ahli)",
+      "Paintball Battle (Adu Strategi Antar Divisi)",
+      "Rafting Palayangan 4.5 KM",
+      "1x Makan Siang Khas Sunda (Prasmanan)",
+      "Peralatan Games, Sewa Area Lapangan & Sound System",
+      "P3K & Asuransi Kegiatan Resmi",
+      "FREE Dokumentasi Foto, Video Pendek & Cetak Spanduk Acara"
+    ], 
+    persiapan: [
+      "Pakaian olahraga/seragam kantor (jika ada untuk foto bersama)", 
+      "Sepatu olahraga yang nyaman untuk berlarian di lapangan rumput", 
+      "Baju ganti cadangan untuk sesi akhir (Rafting)", 
+      "Topi & Sunblock pelindung dari terik matahari"
+    ],
+    label: "⚡ Favorit HRD", 
+    image: "/combo-corp-1d.jpg", 
+    deskripsi: "Senjata rahasia para HRD! Paket ini dirancang khusus untuk meruntuhkan sekat senioritas, mencairkan kekakuan antar divisi (Ice Breaking), melatih komunikasi tim di bawah tekanan (Paintball), dan diakhiri dengan tawa lepas bersama di derasnya sungai (Rafting)." 
+  },
+  { 
+    id: "corp-c1d", 
+    nama: "Corporate C1D (1 Hari)", 
+    kategori: "Combo Corporate", 
+    durasi: "1 Hari", 
+    harga: "Rp 549.000", 
+    hargaAsli: "Rp 630.000", 
+    fasilitas: [
+      "Team Building & Ice Breaking",
+      "Offroad Land Rover Eksplorasi Hutan Pinus",
+      "Paintball Battle (Di Area Hutan Pinus)",
+      "Rafting Palayangan 4.5 KM",
+      "1x Makan Siang Prasmanan & 1x Coffee Break/Snack",
+      "Tim Fasilitator, Instruktur, & Driver Profesional",
+      "P3K & Asuransi Kegiatan Resmi",
+      "FREE Dokumentasi VIP & Spanduk Eksklusif Perusahaan"
+    ], 
+    persiapan: [
+      "Pakaian kasual/olahraga yang nyaman dan menyerap keringat", 
+      "Jaket pelindung angin untuk perjalanan Offroad di pagi hari", 
+      "Baju ganti ekstra karena intensitas kegiatan sangat tinggi", 
+      "Sepatu kets tertutup untuk keamanan Paintball & Offroad"
+    ],
+    image: "/combo-corp-1d.jpg", 
+    deskripsi: "Pengalaman outing 1 hari yang super padat dan premium. Anda sebagai panitia cukup duduk tenang, kami yang mengeksekusi seluruh jadwalnya. Biarkan karyawan Anda dimanjakan dengan fasilitas berkelas dan rentetan petualangan ekstrem yang akan menjadi perbincangan hangat di kantor berbulan-bulan lamanya." 
+  },
+
+  // COMBO CORPORATE 2 HARI
+// ─── COMBO CORPORATE MENGINAP (2 HARI 1 MALAM) ───
+  { 
+    id: "corp-a2d", 
+    nama: "Corporate A2D (Menginap Ekonomis)", 
+    kategori: "Combo Corporate", 
+    durasi: "Menginap", 
+    harga: "Rp 239.000", 
+    hargaAsli: "Rp 300.000", 
+    fasilitas: [
+      "Penginapan Standar (Barak / Tenda / Villa Basic 2D1N)",
+      "Rafting Palayangan 4.5 KM",
+      "Paintball Battle (Seragam, Goggle, Senjata, Peluru)",
+      "1x Makan Utama (Siang/Malam)",
+      "Fasilitas Api Unggun (Kehangatan Malam Hari)",
+      "P3K & Asuransi Kegiatan Resmi",
+      "FREE Dokumentasi Foto Kegiatan"
+    ], 
+    persiapan: [
+      "Pakaian ganti untuk 2 hari 1 malam, termasuk baju tebal/jaket",
+      "Perlengkapan mandi pribadi (handuk, sabun, sikat gigi)",
+      "Cemilan ekstra atau bahan makanan (jika ingin masak/bakar-bakar sendiri malam hari)",
+      "Obat-obatan pribadi yang spesifik"
+    ],
+    image: "/combo-corp-2d.jpg", 
+    deskripsi: "Solusi cerdas untuk rombongan mahasiswa, komunitas, atau perusahaan dengan budget ketat. Paket ekonomis ini memastikan Anda tetap mendapatkan pengalaman petualangan maksimal (Rafting & Paintball) serta kehangatan berkumpul mengelilingi api unggun di malam hari." 
+  },
+  { 
+    id: "corp-b2d", 
+    nama: "Corporate B2D (Bestseller Makrab)", 
+    kategori: "Combo Corporate", 
+    durasi: "Menginap", 
+    harga: "Rp 650.000", 
+    hargaAsli: "Rp 750.000", 
+    fasilitas: [
+      "Penginapan Villa Nyaman (Kapasitas menyesuaikan rombongan 2D1N)",
+      "Rafting Palayangan, Paintball Battle & Flying Fox",
+      "Pesta Malam Keakraban: Barbeque",
+      "Live Music / Electone (Menyanyi & menari bersama)",
+      "Konsumsi Penuh: 3x Makan Besar & 1x Coffee Break",
+      "Tour Leader & Master Game Dedikasi Penuh",
+      "P3K & Asuransi Kegiatan Resmi",
+      "FREE Cetak Spanduk, Dokumentasi Foto & Video Cinematic"
+    ], 
+    persiapan: [
+      "Dresscode / Seragam khusus perusahaan untuk foto bersama",
+      "Jaket tebal & pakaian tidur yang hangat",
+      "Sepatu olahraga yang nyaman untuk aktivitas siang hari",
+      "Flashdisk berkapasitas besar (dari panitia) untuk file dokumentasi"
+    ],
+    label: "Bestseller", 
+    image: "/combo-corp-2d.jpg", 
+    deskripsi: "Standar Emas (Gold Standard) untuk Outing Perusahaan! Bebaskan panitia dari rasa pusing. Kami urus jadwal dari Anda datang hingga pulang. Siang hari dipacu adrenalinnya, malam hari dimanjakan dengan lezatnya Kambing Guling sambil bernyanyi bersama iringan Live Music. Sempurna!" 
+  },
+  { 
+    id: "corp-c2d", 
+    nama: "Corporate C2D (Standar Lengkap)", 
+    kategori: "Combo Corporate", 
+    durasi: "Menginap", 
+    harga: "Rp 450.000", 
+    hargaAsli: "Rp 520.000", 
+    fasilitas: [
+      "Penginapan Villa / Homestay Bersih 2D1N",
+      "Rafting Palayangan, Paintball Battle & Flying Fox",
+      "Konsumsi Penuh: 3x Makan Besar (Siang, Malam, Sarapan)",
+      "Fasilitas Api Unggun & Area Kumpul Malam",
+      "Tour Leader Pendamping Rombongan",
+      "P3K & Asuransi Kegiatan Resmi",
+      "FREE Cetak Spanduk Perusahaan & Dokumentasi Foto"
+    ], 
+    persiapan: [
+      "Baju ganti lengkap untuk 2 Hari 1 Malam",
+      "Obat-obatan pribadi dan perlengkapan mandi",
+      "Sepatu kets untuk Paintball & Sandal gunung untuk Rafting",
+      "Jaket pelindung hawa dingin Pangalengan"
+    ],
+    image: "/combo-corp-2d.jpg", 
+    deskripsi: "Paket efisien yang mencakup semua kebutuhan dasar outing kantor tanpa embel-embel berlebihan. Tidur nyenyak di villa, perut kenyang dengan 3x makan, dan adrenalin terpompa dengan 3 aktivitas ekstrem. Sangat pas untuk menjaga keseimbangan antara budget dan kepuasan karyawan." 
+  },
+  { 
+    id: "corp-d2d", 
+    nama: "Corporate D2D (Fun & Relax)", 
+    kategori: "Combo Corporate", 
+    durasi: "Menginap", 
+    harga: "Rp 200.000", 
+    hargaAsli: "Rp 250.000", 
+    fasilitas: [
+      "Akses Penginapan Standar (Barak/Tenda 2D1N)",
+      "Rafting Palayangan 4.5 KM",
+      "Sesi Fun Games Ringan di Lapangan",
+      "1x Makan Siang Khas Sunda",
+      "Instruktur Rafting & Master Game",
+      "P3K & Asuransi Kegiatan Resmi"
+    ], 
+    persiapan: [
+      "Pakaian santai dan baju ganti untuk basah-basahan",
+      "Uang saku ekstra untuk makan malam dan sarapan (Mandiri)",
+      "Perlengkapan mandi & jaket hangat"
+    ],
+    image: "/combo-corp-2d.jpg", 
+    deskripsi: "Fokus murni pada tawa dan keseruan air dengan harga yang sangat terjangkau. Paket menginap semi-mandiri ini cocok untuk tim kerja kecil yang mengedepankan suasana santai (relax), tidak suka aktivitas yang terlalu berat, dan ingin lebih fleksibel mengatur makan malam sendiri di luar." 
+  },
+  { 
+    id: "corp-vip", 
+    nama: "Corp VIP E2D (Premium Sultan)", 
+    kategori: "Combo Corporate", 
+    durasi: "Menginap", 
+    harga: "Rp 1.099.000", 
+    hargaAsli: "Rp 1.300.000", 
+    fasilitas: [
+      "Villa VIP Premium Eksklusif 2D1N (Fasilitas Bintang/Water Heater)",
+      "Offroad Land Rover, Rafting Palayangan & Paintball",
+      "Konsumsi VIP: 3x Makan Prasmanan Premium & Barbeque Malam",
+      "Sesi Motivasi / Team Building Profesional",
+      "Private Tour Leader & Asisten Lapangan 24 Jam",
+      "Api Unggun & Malam Keakraban Eksklusif",
+      "P3K & Asuransi Kegiatan VIP",
+      "FREE Dokumentasi Premium: Drone Aerial, Kamera DSLR & Video Cinematic"
+    ], 
+    persiapan: [
+      "Koper berisi pakaian lengkap dan kasual/olahraga",
+      "Kacamata hitam, jaket estetik, dan sepatu kets favorit",
+      "Flashdisk berkapasitas besar untuk menerima ratusan file foto & video resolusi tinggi"
+    ],
+    label: "⭐ VIP", 
+    image: "/combo-vip.jpg", 
+    deskripsi: "Layanan karpet merah khusus untuk Jajaran Direksi (BOD), Manajer, atau tim dengan pencapaian target tertinggi. Nikmati kemewahan penginapan VIP, menu makan berkelas, hingga dokumentasi megah dari udara menggunakan Drone. Kami melayani Anda layaknya keluarga kerajaan selama di Pangalengan." 
+  },
+  // ─── FAMILY CAMP / GLAMPING MENGINAP (2 HARI 1 MALAM) ───
+  { 
+    id: "camp-fca", 
+    nama: "Family Camp FCA", 
+    kategori: "Family Camp", 
+    durasi: "Menginap", 
+    harga: "Rp 495.000", 
+    hargaAsli: "Rp 580.000", 
+    fasilitas: [
+      "Tenda Glamping Premium 2D1N (Kasur empuk, bantal, selimut hangat)",
+      "Rafting Palayangan, ATV Adventure & Flying Fox",
+      "Makan: 1x Sarapan Pagi & 1x Makan Siang",
+      "Peminjaman Kompor Portable & Alat Masak",
+      "Kayu Bakar untuk Api Unggun Malam Hari",
+      "Akses Toilet Bersih & Kamar Mandi Bilas",
+      "P3K, Asuransi Kegiatan & Tim Keamanan Lapangan"
+    ], 
+    persiapan: [
+      "Bahan makanan instan / BBQ (Sosis, daging, jagung) untuk dimasak malam hari",
+      "Jaket tebal, kaos kaki, dan kupluk (Udara malam kebun teh sangat dingin)",
+      "Baju ganti cadangan untuk aktivitas Rafting & ATV keesokan harinya",
+      "Powerbank (Meskipun ada aliran listrik, powerbank berguna saat di luar tenda)"
+    ],
+    image: "/combo-camp.jpg", 
+    deskripsi: "Camping tanpa ribet! Nikmati suasana malam bertabur bintang dan syahdunya api unggun di depan tenda estetik yang sudah kami siapkan lengkap dengan kasur empuk. Pagi harinya, Anda langsung disambut dengan rentetan petualangan seru melintasi air, udara, dan lumpur daratan." 
+  },
+  { 
+    id: "camp-fcb", 
+    nama: "Family Camp FCB (Eksplorasi Hutan)", 
+    kategori: "Family Camp", 
+    durasi: "Menginap", 
+    harga: "Rp 620.000", 
+    hargaAsli: "Rp 700.000", 
+    fasilitas: [
+      "Tenda Glamping VIP Premium 2D1N (Fasilitas lengkap & nyaman)",
+      "Offroad Land Rover Eksplorasi Hutan Pinus",
+      "Rafting Palayangan 4.5 KM & Flying Fox",
+      "Makan: 1x Sarapan Pagi & 1x Makan Siang Khas Sunda",
+      "Fasilitas Api Unggun Privat & Area Bersantai",
+      "FREE Dokumentasi Foto Kegiatan Lapangan",
+      "P3K, Asuransi Kegiatan & Guide Berpengalaman"
+    ], 
+    persiapan: [
+      "Pakaian tidur yang sangat hangat dan jaket tebal pelindung angin",
+      "Bahan cemilan/BBQ ekstra untuk dinikmati bersama keluarga di depan api unggun",
+      "Sepatu kets tertutup untuk perjalanan Offroad dan sandal gunung untuk Rafting",
+      "Obat-obatan pribadi keluarga"
+    ],
+    label: "Rekomendasi", 
+    image: "/combo-camp.jpg", 
+    deskripsi: "Kasta tertinggi dari paket Family Camp kami. Ganti ATV dengan sensasi menembus rimbunnya hutan pinus menggunakan mobil tangguh Offroad Land Rover. Pilihan paling sempurna dan estetik bagi keluarga yang mencari harmoni antara ketenangan tidur di alam dan adrenalin tinggi di siang hari." 
+  },
+  { 
+    id: "camp-fcc", 
+    nama: "Family Camp FCC (Basic Nature)", 
+    kategori: "Family Camp", 
+    durasi: "Menginap", 
+    harga: "Rp 395.000", 
+    hargaAsli: "Rp 450.000", 
+    fasilitas: [
+      "Tenda Glamping / Dome Standar 2D1N (Termasuk Sleeping Bag/Matras)",
+      "Rafting Palayangan 4.5 KM",
+      "Zipline Flying Fox Lintas Danau",
+      "1x Sarapan Pagi Hangat",
+      "Akses Area Api Unggun Bersama",
+      "Instruktur Rafting & Tim Rescue",
+      "P3K & Asuransi Kegiatan"
+    ], 
+    persiapan: [
+      "Pakaian tebal berlapis (Jaket, sarung tangan, kupluk panjang)",
+      "Uang saku ekstra untuk membeli makan malam dan makan siang (Bisa pesan di area camp)",
+      "Senter kecil atau headlamp untuk mobilitas malam hari di area camping",
+      "Pakaian ganti untuk aktivitas basah-basahan"
+    ],
+    image: "/combo-camp.jpg", 
+    deskripsi: "Pilihan paling bersahabat di kantong untuk merasakan kabut pagi khas Pangalengan dari pintu tenda Anda. Paket basic ini menyertakan sarapan pagi dan dua aktivitas petualangan utama (Rafting & Flying Fox) tanpa mengurangi standar keselamatan dan keseruan sedikit pun." 
+  }
 ];
 
 // FUNGSI HELPER: Bikin Itinerary Otomatis
@@ -296,6 +612,7 @@ function getItinerary(kategori: string, durasi?: string) {
     { waktu: "1.5 - 2 Jam", kegiatan: "Pelaksanaan Aktivitas Inti di lapangan penuh keseruan." },
     { waktu: "30 Menit", kegiatan: "Kembali ke basecamp, istirahat, bersih-bersih (mandi), dan selesai." },
   ];
+  
 }
 
 // ─── KOMPONEN UTAMA HALAMAN DETAIL ────────────────────────────────────────
