@@ -63,7 +63,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href="/tentang-kami" className="hover:text-emerald-500 transition">Profil Agensi</Link>
+          <Link href="/tentang-kami" className="hover:text-emerald-500 transition">Tentang Kami</Link>
         </div>
 
         {/* Tombol Concierge Desktop */}
@@ -75,7 +75,7 @@ export default function Navbar() {
               isScrolled ? "bg-stone-900 text-white hover:bg-emerald-600" : "bg-white text-stone-900 hover:bg-emerald-50"
             }`}
           >
-            <span>🛵</span> Concierge 24/7
+            <span>🛵</span> Layanan antar
           </a>
         </div>
 

@@ -78,14 +78,14 @@ function LiveRollingCounter() {
 
 // ─── DATA: 8 Petualangan ─────────────────────────────────────────
 const kategoriPetualangan: PaketItem[] = [
-  { id: "rafting", nama: "Rafting Palayangan", harga: "Rp 150.000", hargaAsli: "", hargaDiskon: "Rp 150.000", fasilitas: [], label: "⚡ Terlaris", image: "/paket1.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
-  { id: "atv", nama: "ATV Adventure", harga: "Rp 175.000", hargaAsli: "", hargaDiskon: "Rp 175.000", fasilitas: [], image: "/paket1.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
-  { id: "offroad", nama: "Offroad Land Rover", harga: "Rp 220.000", hargaAsli: "", hargaDiskon: "Rp 220.000", fasilitas: [], label: "Seru!", image: "/paket1.jpg", deskripsi: "Eksplorasi menembus hutan pinus liar menggunakan mobil tangguh." },
-  { id: "paintball", nama: "Paintball Battle", harga: "Rp 85.000", hargaAsli: "", hargaDiskon: "Rp 85.000", fasilitas: [], image: "/paket1.jpg", deskripsi: "Simulasi tempur di tengah hutan. Strategi, ketegangan, dan keseruan tim." },
+  { id: "rafting", nama: "Rafting Palayangan", harga: "Rp 150.000", hargaAsli: "", hargaDiskon: "Rp 150.000", fasilitas: [], label: "⚡ Terlaris", image: "/rafting.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
+  { id: "atv", nama: "ATV Adventure", harga: "Rp 175.000", hargaAsli: "", hargaDiskon: "Rp 175.000", fasilitas: [], image: "/atv.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
+  { id: "offroad", nama: "Offroad Land Rover", harga: "Rp 220.000", hargaAsli: "", hargaDiskon: "Rp 220.000", fasilitas: [], label: "Seru!", image: "/offroad.jpg", deskripsi: "Eksplorasi menembus hutan pinus liar menggunakan mobil tangguh." },
+  { id: "paintball", nama: "Paintball Battle", harga: "Rp 85.000", hargaAsli: "", hargaDiskon: "Rp 85.000", fasilitas: [], image: "/paintball.jpg", deskripsi: "Simulasi tempur di tengah hutan. Strategi, ketegangan, dan keseruan tim." },
   { id: "team-building", nama: "Team Building", harga: "Rp 99.000", hargaAsli: "", hargaDiskon: "Rp 99.000", fasilitas: [], image: "/paket3.jpg", deskripsi: "Rangkaian games seru untuk merekatkan kekompakan dan kehangatan tim." },
-  { id: "flying-fox", nama: "Flying Fox", harga: "Rp 35.000", hargaAsli: "", hargaDiskon: "Rp 35.000", fasilitas: [], image: "/paket1.jpg", deskripsi: "Meluncur bebas melintasi lembah dan danau. Singkat namun mendebarkan." },
-  { id: "tour-perahu", nama: "Tour Perahu", harga: "Rp 20.000", hargaAsli: "", hargaDiskon: "Rp 20.000", fasilitas: [], image: "/paket1.jpg", deskripsi: "Bersantai menikmati syahdunya pemandangan Situ Cileunca dari atas perahu." },
-  { id: "treking", nama: "Treking Alam", harga: "Rp 70.000", hargaAsli: "", hargaDiskon: "Rp 70.000", fasilitas: [], image: "/destinasi.jpg", deskripsi: "Menjelajahi sejuknya bukit dan hamparan kebun teh dengan panduan lokal." },
+  { id: "flying-fox", nama: "Flying Fox", harga: "Rp 35.000", hargaAsli: "", hargaDiskon: "Rp 35.000", fasilitas: [], image: "/flyingfox.jpg", deskripsi: "Meluncur bebas melintasi lembah dan danau. Singkat namun mendebarkan." },
+  { id: "tour-perahu", nama: "Tour Perahu", harga: "Rp 20.000", hargaAsli: "", hargaDiskon: "Rp 20.000", fasilitas: [], image: "/perahu.jpg", deskripsi: "Bersantai menikmati syahdunya pemandangan Situ Cileunca dari atas perahu." },
+  { id: "treking", nama: "Treking Alam", harga: "Rp 70.000", hargaAsli: "", hargaDiskon: "Rp 70.000", fasilitas: [], image: "/treking.jpg", deskripsi: "Menjelajahi sejuknya bukit dan hamparan kebun teh dengan panduan lokal." },
 ];
 
 const paketCombo = [
@@ -105,26 +105,38 @@ const paketCombo = [
   { id: "camp-fcc", nama: "Family Camp FCC", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 395.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting", "Flying Fox"], color: "text-teal-700 bg-teal-100", image: "/paket2.jpg" },
 ];
 
+// ─── DATA BARU 2026: PENGINAPAN (Gambar Diperbarui) ─────────────────
 const kategoriPenginapan: PaketItem[] = [
-  { id: "saung-cinta", nama: "Saung Cinta", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 20 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/paket2.jpg", deskripsi: "Cottage luas dengan kolam renang, pas untuk menghangatkan momen keluarga." },
-  { id: "saung-gadis", nama: "Saung Gadis", harga: "", hargaAsli: "", hargaDiskon: "Rp 850.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/paket2.jpg", deskripsi: "Fasilitas lengkap berkapasitas besar, sempurna untuk kumpul santai akhir pekan." },
-  { id: "saung-rungkun", nama: "Saung Rungkun", harga: "", hargaAsli: "", hargaDiskon: "Rp 1.500.000", fasilitas: ["Max 15 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/paket2.jpg", deskripsi: "Pilihan hemat nan nyaman dengan gazebo asri untuk bersantai bersama kerabat." },
-  { id: "saung-family", nama: "Saung Family", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 10 Orang", "Tradisional", "Kolam Renang"], label: "Budget", image: "/paket2.jpg", deskripsi: "Nuansa tradisional yang menenangkan, lengkap dengan kolam renang menyegarkan." },
-  { id: "villa-palayangan", nama: "Villa Palayangan", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.000.000", fasilitas: ["Kapasitas Besar", "View Danau", "Biliard"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Kemewahan berkapasitas besar dengan panorama eksklusif langsung ke danau." },
-  { id: "villa-wantea", nama: "Villa Wantea", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.000.000", fasilitas: ["20-30 Orang", "Gaya Belanda", "Halaman Luas"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Arsitektur klasik bergaya Belanda, sangat sejuk dan muat untuk rombongan besar." },
-  { id: "barak-ghc", nama: "Barak GHC", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "View Cileunca", "Cocok utk Kantor"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Solusi cerdas dan nyaman untuk menyukseskan acara keakraban kantor atau kampus." },
-  { id: "villa-bts", nama: "Villa BTS", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "Fasilitas Lengkap", "Nyaman"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Kenyamanan maksimal dengan fasilitas komplit untuk menampung seluruh rombongan." },
+  // BUDGET
+  { id: "saung-cinta", nama: "Saung Cinta", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 20 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-cinta.jpg", deskripsi: "Cottage luas dengan kolam renang, pas untuk menghangatkan momen keluarga." },
+  { id: "saung-gadis", nama: "Saung Gadis", harga: "", hargaAsli: "", hargaDiskon: "Rp 850.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-gadis.jpg", deskripsi: "Fasilitas lengkap berkapasitas besar, sempurna untuk kumpul santai akhir pekan." },
+  { id: "saung-rungkun", nama: "Saung Rungkun", harga: "", hargaAsli: "", hargaDiskon: "Rp 1.500.000", fasilitas: ["Max 15 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-rungkun.jpg", deskripsi: "Pilihan hemat nan nyaman dengan gazebo asri untuk bersantai bersama kerabat." },
+  { id: "saung-family", nama: "Saung Family", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 10 Orang", "Tradisional", "Kolam Renang"], label: "Budget", image: "/saung-family.jpg", deskripsi: "Nuansa tradisional yang menenangkan, lengkap dengan kolam renang menyegarkan." },
+
+  // BIG SIZE
+  { id: "villa-palayangan", nama: "Villa Palayangan", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.000.000", fasilitas: ["Kapasitas Besar", "View Danau", "Biliard"], label: "Big Size", image: "/villa-palayangan.jpg", deskripsi: "Kemewahan berkapasitas besar dengan panorama eksklusif langsung ke danau." },
+  { id: "villa-wantea", nama: "Villa Wantea", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.000.000", fasilitas: ["20-30 Orang", "Gaya Belanda", "Halaman Luas"], label: "Big Size", image: "/villa-wantea.jpg", deskripsi: "Arsitektur klasik bergaya Belanda, sangat sejuk dan muat untuk rombongan besar." },
+  { id: "barak-ghc", nama: "Barak GHC", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "View Cileunca", "Cocok utk Kantor"], label: "Big Size", image: "/barak-ghc.jpg", deskripsi: "Solusi cerdas dan nyaman untuk menyukseskan acara keakraban kantor atau kampus." },
+  { id: "villa-bts", nama: "Villa BTS", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "Fasilitas Lengkap", "Nyaman"], label: "Big Size", image: "/villa-bts.jpg", deskripsi: "Kenyamanan maksimal dengan fasilitas komplit untuk menampung seluruh rombongan." },
+  
+  // Belum ada foto: Tetap pakai /paket2.jpg
   { id: "villa-palayangan-2", nama: "Vila Palayangan (30 Pax)", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.250.000", fasilitas: ["Max 30 Orang", "View Cileunca", "Luas"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Ruang ekstra luas dengan pemandangan danau Cileunca yang syahdu dari kejauhan." },
-  { id: "family-c", nama: "Family C", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.000.000", fasilitas: ["Max 30 Orang", "Homestay", "View Cileunca"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Homestay hangat yang siap menyambut dan memanjakan rombongan besar Anda." },
-  { id: "family-b", nama: "Family B", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 30 Orang", "View Danau", "Akses Mudah"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Akses super mudah dengan area santai yang menghadap ketenangan air danau." },
-  { id: "family-a", nama: "Family A", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "View Danau", "Nyaman"], label: "Big Size", image: "/paket2.jpg", deskripsi: "Kenyamanan istirahat paripurna dengan view danau yang sungguh memanjakan mata." },
-  { id: "villa-palayangan-b", nama: "Villa Palayangan B", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.000.000", fasilitas: ["Premium", "Fasilitas Lengkap", "Eksklusif"], label: "VIP", image: "/paket2.jpg", deskripsi: "Eksklusivitas dan privasi tingkat tinggi yang dirancang khusus untuk tamu spesial." },
+  
+  { id: "family-c", nama: "Family C", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.000.000", fasilitas: ["Max 30 Orang", "Homestay", "View Cileunca"], label: "Big Size", image: "/family-c.jpg", deskripsi: "Homestay hangat yang siap menyambut dan memanjakan rombongan besar Anda." },
+  { id: "family-b", nama: "Family B", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 30 Orang", "View Danau", "Akses Mudah"], label: "Big Size", image: "/family-b.jpg", deskripsi: "Akses super mudah dengan area santai yang menghadap ketenangan air danau." },
+  { id: "family-a", nama: "Family A", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "View Danau", "Nyaman"], label: "Big Size", image: "/family-a.jpg", deskripsi: "Kenyamanan istirahat paripurna dengan view danau yang sungguh memanjakan mata." },
+
+  // VIP
+  { id: "villa-palayangan-b", nama: "Villa Palayangan B", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.000.000", fasilitas: ["Premium", "Fasilitas Lengkap", "Eksklusif"], label: "VIP", image: "/villa-palayangan-b.jpg", deskripsi: "Eksklusivitas dan privasi tingkat tinggi yang dirancang khusus untuk tamu spesial." },
+  
+  // Belum ada foto: Tetap pakai /paket2.jpg
   { id: "harmony-riverside", nama: "Harmony Riverside", harga: "", hargaAsli: "", hargaDiskon: "Rp 1.750.000", fasilitas: ["Cabin Premium", "View Sungai", "Hutan Rahong"], label: "VIP", image: "/paket2.jpg", deskripsi: "Kabin estetik di tengah hutan pinus dengan nyanyian aliran sungai yang damai." },
-  { id: "vila-imah", nama: "Vila Imah", harga: "", hargaAsli: "", hargaDiskon: "Rp 5.500.000", fasilitas: ["Max 30 Orang", "VIP Premium", "Eksklusif"], label: "VIP", image: "/paket2.jpg", deskripsi: "Standar kemewahan premium untuk menciptakan pengalaman menginap tak terlupakan." },
-  { id: "vila-putih", nama: "Vila Putih", harga: "", hargaAsli: "", hargaDiskon: "Rp 6.000.000", fasilitas: ["Max 45 Orang", "Gazebo", "Estetik"], label: "VIP", image: "/paket2.jpg", deskripsi: "Vila megah nan estetik dengan kapasitas masif, pilihan utama untuk acara prestisius." },
-  { id: "vila-putih-a", nama: "Vila Putih A", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.500.000", fasilitas: ["Max 25 Orang", "Ikonik", "Premium"], label: "VIP", image: "/paket2.jpg", deskripsi: "Perpaduan harmoni antara desain ikonik dan keindahan alam yang memukau." },
-  { id: "bumi-tilu", nama: "Bumi Tilu", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.500.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Premium Estetik"], label: "VIP", image: "/paket2.jpg", deskripsi: "Estetika modern di tengah tenangnya alam, lengkap dengan kolam renang eksklusif." },
-  { id: "glamping-sagaya", nama: "Glamping Sagaya", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 4 Orang", "View Kebun Teh", "Estetik"], label: "VIP", image: "/paket2.jpg", deskripsi: "Tenda estetik nan nyaman dengan hamparan permadani kebun teh tepat di depan pintu." },
+  
+  { id: "vila-imah", nama: "Vila Imah", harga: "", hargaAsli: "", hargaDiskon: "Rp 5.500.000", fasilitas: ["Max 30 Orang", "VIP Premium", "Eksklusif"], label: "VIP", image: "/villa-imah.jpg", deskripsi: "Standar kemewahan premium untuk menciptakan pengalaman menginap tak terlupakan." },
+  { id: "vila-putih", nama: "Vila Putih", harga: "", hargaAsli: "", hargaDiskon: "Rp 6.000.000", fasilitas: ["Max 45 Orang", "Gazebo", "Estetik"], label: "VIP", image: "/villa-putih.jpg", deskripsi: "Vila megah nan estetik dengan kapasitas masif, pilihan utama untuk acara prestisius." },
+  { id: "vila-putih-a", nama: "Vila Putih A", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.500.000", fasilitas: ["Max 25 Orang", "Ikonik", "Premium"], label: "VIP", image: "/villa-putih-a.jpg", deskripsi: "Perpaduan harmoni antara desain ikonik dan keindahan alam yang memukau." },
+  { id: "bumi-tilu", nama: "Bumi Tilu", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.500.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Premium Estetik"], label: "VIP", image: "/bumi-tilu.jpg", deskripsi: "Estetika modern di tengah tenangnya alam, lengkap dengan kolam renang eksklusif." },
+  { id: "glamping-sagaya", nama: "Glamping Sagaya", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 4 Orang", "View Kebun Teh", "Estetik"], label: "VIP", image: "/glamping-sagaya.jpg", deskripsi: "Tenda estetik nan nyaman dengan hamparan permadani kebun teh tepat di depan pintu." },
 ];
 
 const sortedPenginapan = [...kategoriPenginapan].sort((a, b) => {
@@ -209,7 +221,7 @@ export default function Home() {
         
         {/* 1. HERO SECTION */}
         <section className="relative flex min-h-[80vh] w-full flex-col items-center justify-center bg-stone-900 px-4 text-center sm:px-6 lg:px-8 overflow-hidden">
-          <Image src="/hero-pangalengan-trip.jpg" alt="Pangalengan Trip" fill className="object-cover opacity-60" priority />
+          <Image src="/hero1.jpg" alt="Pangalengan Trip" fill className="object-cover opacity-60" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-stone-900/90"></div>
           
           <div className="relative z-10 mx-auto max-w-4xl space-y-6 pt-10">
@@ -254,10 +266,10 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
                 {[
-                  { nama: "Nimo Highland", desc: "Hamparan kebun teh 360°", img: "/destinasi.jpg" },
-                  { nama: "Sunrise Cukul", desc: "Matahari terbit terbaik", img: "/destinasi.jpg" },
-                  { nama: "Situ Cileunca", desc: "Danau syahdu & Rafting", img: "/destinasi.jpg" },
-                  { nama: "Hutan Rahong", desc: "Ketenangan pinus rindang", img: "/destinasi.jpg" },
+                  { nama: "Nimo Highland", desc: "Hamparan kebun teh 360°", img: "/nimo.jpg" },
+                  { nama: "Sunrise Cukul", desc: "Matahari terbit terbaik", img: "/cukul.jpg" },
+                  { nama: "Situ Cileunca", desc: "Danau syahdu & Rafting", img: "/cileunca.jpg" },
+                  { nama: "Hutan Rahong", desc: "Ketenangan pinus rindang", img: "/rahong.jpg" },
                 ].map((dest, idx) => (
                   <Link href={`/destinasi/${dest.nama.toLowerCase().replace(/ /g, '-')}`} key={idx} className="group relative block overflow-hidden rounded-2xl bg-stone-100 aspect-square border border-stone-200 shadow-sm">
                     <Image src={dest.img} alt={dest.nama} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 25vw" />
