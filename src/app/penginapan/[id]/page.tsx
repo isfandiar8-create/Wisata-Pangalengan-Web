@@ -369,7 +369,7 @@ export default function DetailPenginapan() {
   }
 
   // Generate WA Link
-  const waLink = generateWALink(`Halo Pangalengan Trip, saya tertarik untuk reservasi penginapan *${item.nama}*. Boleh minta info availability tanggal kosong?`);
+  const waLink = generateWALink(`Halo Go Pangalengan, saya tertarik untuk reservasi penginapan *${item.nama}*. Boleh minta info availability tanggal kosong?`);
 
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 pb-28 sm:pb-32 font-sans relative">

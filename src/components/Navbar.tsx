@@ -28,7 +28,7 @@ export default function Navbar() {
             <span className="text-sm font-black">PT</span>
           </div>
           <span className={`font-bold tracking-tight transition-colors ${isScrolled ? "text-stone-900" : "text-white"}`}>
-            Pangalengan Trip
+            Go Pangalengan
           </span>
         </Link>
 
@@ -69,7 +69,7 @@ export default function Navbar() {
         {/* Tombol Concierge Desktop */}
         <div className="hidden md:block">
           <a
-            href={generateWALink("Halo Concierge Pangalengan Trip, saya ingin bertanya seputar layanan pendampingan liburan.")}
+            href={generateWALink("Halo Concierge Go Pangalengan, saya ingin bertanya seputar layanan pendampingan liburan.")}
             target="_blank" rel="noopener noreferrer"
             className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold transition-all shadow-md hover:-translate-y-0.5 ${
               isScrolled ? "bg-stone-900 text-white hover:bg-emerald-600" : "bg-white text-stone-900 hover:bg-emerald-50"
@@ -103,7 +103,7 @@ export default function Navbar() {
           <Link href="/paket/corporate" onClick={() => setIsMobileMenuOpen(false)} className="font-bold text-emerald-700">Paket Corporate B2B</Link>
           <Link href="/custom-trip" onClick={() => setIsMobileMenuOpen(false)} className="font-bold text-emerald-700">Custom Trip</Link>
 
-          <a href={generateWALink("Halo Tim Pangalengan Trip!")} target="_blank" className="mt-6 bg-stone-900 text-white rounded-xl py-3 text-center font-bold">
+          <a href={generateWALink("Halo Tim Go Pangalengan!")} target="_blank" className="mt-6 bg-stone-900 text-white rounded-xl py-3 text-center font-bold">
             Chat WhatsApp 24/7
           </a>
         </div>

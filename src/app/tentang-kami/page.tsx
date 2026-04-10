@@ -11,7 +11,7 @@ export default function AboutUsPage() {
       <section className="relative h-[60vh] min-h-[500px] w-full bg-zinc-900">
         <Image 
           src="/hero-pangalengan-trip.jpg" 
-          alt="Tentang Pangalengan Trip" 
+          alt="Tentang Go Pangalengan" 
           fill 
           className="object-cover opacity-40" 
           priority 
@@ -41,7 +41,7 @@ export default function AboutUsPage() {
             {/* Silakan ganti dengan foto tim Anda atau foto aktivitas seru */}
             <Image 
               src="/paket3.jpg" 
-              alt="Tim Pangalengan Trip" 
+              alt="Tim Go Pangalengan" 
               fill 
               className="object-cover" 
             />
@@ -55,7 +55,7 @@ export default function AboutUsPage() {
               Jejak langkah kami di Pangalengan tidak dimulai kemarin. <strong className="text-zinc-900">Sejak tahun 2019</strong>, tim kami telah menjadi motor penggerak (*outsource*) di lapangan yang mengeksekusi dan mengawal keselamatan ribuan klien dari berbagai agensi wisata luar kota.
             </p>
             <p className="text-base leading-relaxed">
-              Bekerja di garis depan selama bertahun-tahun membuat kami memahami betul setiap jengkal destinasi, celah keamanan, hingga ekspektasi tertinggi wisatawan. Dengan modal jam terbang tersebut, kami mendirikan <strong className="text-zinc-900">Pangalengan Trip</strong> untuk memotong birokrasi dan memberikan layanan *first-hand* (tangan pertama) langsung kepada Anda, tanpa perantara.
+              Bekerja di garis depan selama bertahun-tahun membuat kami memahami betul setiap jengkal destinasi, celah keamanan, hingga ekspektasi tertinggi wisatawan. Dengan modal jam terbang tersebut, kami mendirikan <strong className="text-zinc-900">Go Pangalengan</strong> untuk memotong birokrasi dan memberikan layanan *first-hand* (tangan pertama) langsung kepada Anda, tanpa perantara.
             </p>
             
             {/* Metrik Jujur berdasarkan pengalaman lapangan */}
@@ -150,7 +150,7 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-4">
               <p className="text-lg font-bold tracking-tight text-white">
-                Pangalengan Trip
+                Go Pangalengan
               </p>
               <p className="text-sm leading-relaxed text-zinc-400">
                 Partner perjalanan terpercaya Anda untuk menjelajahi keindahan
@@ -170,7 +170,7 @@ export default function AboutUsPage() {
                 </li>
                 <li>
                   <span className="font-medium text-zinc-300">Email:</span>{" "}
-                  hello@pangalengantrip.com
+                  hello@gopangalengan.com
                 </li>
                 <li>
                   <span className="font-medium text-zinc-300">WhatsApp:</span>{" "}
@@ -243,14 +243,14 @@ export default function AboutUsPage() {
                   <span>YouTube</span>
                 </a>
               </div>
-              <p className="text-xs text-zinc-500">@pangalengantrip</p>
+              <p className="text-xs text-zinc-500">@gopangalengan</p>
             </div>
           </div>
 
           <div className="mt-16 border-t border-zinc-800 py-10">
             <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-between sm:text-left">
               <p className="text-sm text-zinc-500">
-                © 2026 Pangalengan Trip. All rights reserved.
+                © 2026 Go Pangalengan. All rights reserved.
               </p>
               <p className="text-xs text-zinc-600">
                 Designed for the ultimate experience.

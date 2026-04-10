@@ -89,20 +89,20 @@ const kategoriPetualangan: PaketItem[] = [
 ];
 
 const paketCombo = [
-  { id: "keluarga-hemat", nama: "Keluarga Hemat", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-orange-700 bg-orange-100", image: "/paket1.jpg" },
-  { id: "keluarga-seru", nama: "Keluarga Seru", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-orange-700 bg-orange-100", image: "/paket1.jpg" },
-  { id: "keluarga-puas", nama: "Keluarga Puas", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", fasilitas: ["Rafting & Flying Fox", "Offroad Land Rover", "Makan & Air", "Dokumentasi"], color: "text-orange-700 bg-orange-100", image: "/paket1.jpg" },
-  { id: "corp-a1d", nama: "Corporate A1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 360.000", fasilitas: ["Rafting & Paintball", "ATV", "Makan Siang", "Dokumentasi"], color: "text-blue-700 bg-blue-100", image: "/paket3.jpg" },
-  { id: "corp-b1d", nama: "Corporate B1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-blue-700 bg-blue-100", image: "/paket3.jpg" },
-  { id: "corp-c1d", nama: "Corporate C1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 549.000", fasilitas: ["Rafting & Offroad", "Paintball & Ice Breaking", "Makan Siang", "Foto Rafting"], color: "text-blue-700 bg-blue-100", image: "/paket3.jpg" },
+  { id: "keluarga-hemat", nama: "Keluarga Hemat", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/paket1.jpg" },
+  { id: "keluarga-seru", nama: "Keluarga Seru", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/paket1.jpg" },
+  { id: "keluarga-puas", nama: "Keluarga Puas", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", fasilitas: ["Rafting & Flying Fox", "Offroad Land Rover", "Makan & Air", "Dokumentasi"], color: "text-sky-700 bg-sky-100", image: "/paket1.jpg" },
+  { id: "corp-a1d", nama: "Corporate A1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 360.000", fasilitas: ["Rafting & Paintball", "ATV", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/paket3.jpg" },
+  { id: "corp-b1d", nama: "Corporate B1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/paket3.jpg" },
+  { id: "corp-c1d", nama: "Corporate C1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 549.000", fasilitas: ["Rafting & Offroad", "Paintball & Ice Breaking", "Makan Siang", "Foto Rafting"], color: "text-slate-700 bg-slate-100", image: "/paket3.jpg" },
   { id: "corp-a2d", nama: "Corporate A2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 239.000", fasilitas: ["Fresh Rafting", "Paintball", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
   { id: "corp-b2d", nama: "Corporate B2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 650.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Kambing Guling"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
   { id: "corp-c2d", nama: "Corporate C2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 450.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Tour Leader"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
   { id: "corp-d2d", nama: "Corporate D2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 200.000", fasilitas: ["Rafting", "Fun Games", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
-  { id: "corp-vip", nama: "Corporate VIP E2D", tag: "VIP 2D1N", durasi: "Menginap", harga: "Rp 1.099.000", fasilitas: ["Villa VIP", "3x Makan", "Rafting & Team Building", "Offroad, Paintball"], color: "text-amber-700 bg-amber-100", image: "/paket2.jpg" },
-  { id: "camp-fca", nama: "Family Camp FCA", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 495.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & ATV", "Flying Fox"], color: "text-teal-700 bg-teal-100", image: "/paket2.jpg" },
-  { id: "camp-fcb", nama: "Family Camp FCB", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 620.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & Offroad", "Flying Fox"], color: "text-teal-700 bg-teal-100", image: "/paket2.jpg" },
-  { id: "camp-fcc", nama: "Family Camp FCC", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 395.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting", "Flying Fox"], color: "text-teal-700 bg-teal-100", image: "/paket2.jpg" },
+  { id: "corp-vip", nama: "Corporate VIP E2D", tag: "VIP 2D1N", durasi: "Menginap", harga: "Rp 1.099.000", fasilitas: ["Villa VIP", "3x Makan", "Rafting & Team Building", "Offroad, Paintball"], color: "text-yellow-700 bg-yellow-50 border border-yellow-200", image: "/combo-vip.jpg" },
+  { id: "camp-fca", nama: "Family Camp FCA", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 495.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & ATV", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/combo-camp.jpg" },
+  { id: "camp-fcb", nama: "Family Camp FCB", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 620.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & Offroad", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/combo-camp.jpg" },
+  { id: "camp-fcc", nama: "Family Camp FCC", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 395.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/combo-camp.jpg" },
 ];
 
 // ─── DATA BARU 2026: PENGINAPAN (Gambar Diperbarui) ─────────────────
@@ -188,12 +188,14 @@ function ComboSlider({ items }: { items: any[] }) {
             >
               <div className="w-20 h-20 sm:w-24 sm:h-24 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
                 <Image src={pkt.image} alt={pkt.nama} fill className="object-cover" />
-                <span className={`absolute top-0 left-0 text-[8px] font-black uppercase px-2 py-0.5 rounded-br-lg text-white ${pkt.tag.includes('Corporate') ? 'bg-blue-600' : pkt.tag.includes('Camp') ? 'bg-teal-600' : 'bg-orange-500'}`}>
+                {/* INI YANG DIGANTI: Badge menjadi elegan gelap-hijau */}
+                <span className="absolute top-0 left-0 text-[8px] font-black uppercase px-2.5 py-1 rounded-br-xl bg-stone-900/80 backdrop-blur-sm text-emerald-400 shadow-sm">
                   {pkt.durasi}
                 </span>
               </div>
               <div className="flex-1 flex flex-col justify-center">
                 <div className="flex justify-between items-start mb-0.5">
+                   {/* INI MEMANGGIL WARNA BARU DARI ARRAY */}
                    <span className={`text-[8px] font-black uppercase px-1.5 py-0.5 rounded ${pkt.color}`}>{pkt.tag}</span>
                 </div>
                 <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight mt-0.5">{pkt.nama}</h4>
@@ -221,7 +223,7 @@ export default function Home() {
         
         {/* 1. HERO SECTION */}
         <section className="relative flex min-h-[80vh] w-full flex-col items-center justify-center bg-stone-900 px-4 text-center sm:px-6 lg:px-8 overflow-hidden">
-          <Image src="/hero1.jpg" alt="Pangalengan Trip" fill className="object-cover opacity-60" priority />
+          <Image src="/hero1.jpg" alt="Go Pangalengan" fill className="object-cover opacity-60" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-stone-900/90"></div>
           
           <div className="relative z-10 mx-auto max-w-4xl space-y-6 pt-10">
@@ -246,7 +248,7 @@ export default function Home() {
               <a href="#petualangan" className="inline-flex w-full items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg transition hover:bg-emerald-500 sm:w-auto tracking-wide">
                 Eksplorasi Katalog
               </a>
-              <a href={generateWALink("Halo Pangalengan Trip, saya butuh panduan untuk merencanakan liburan.")} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-300 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20 sm:w-auto tracking-wide">
+              <a href={generateWALink("Halo Go Pangalengan, saya butuh panduan untuk merencanakan liburan.")} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stone-300 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20 sm:w-auto tracking-wide">
                 Konsultasi Gratis
               </a>
             </div>
@@ -355,7 +357,11 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
                     
                     {item.label && (
-                      <span className={`absolute top-2 left-2 text-white text-[8px] font-black uppercase px-2 py-1 rounded shadow-md tracking-wider ${item.label === 'Budget' ? 'bg-emerald-600' : item.label === 'Big Size' ? 'bg-blue-600' : 'bg-amber-500'}`}>
+                      <span className={`absolute top-2 left-2 text-[8px] font-black uppercase px-2.5 py-1 rounded shadow-lg tracking-wider ${
+                        item.label === 'Budget' ? 'bg-emerald-600 text-white' : 
+                        item.label === 'Big Size' ? 'bg-slate-700 text-white' : 
+                        'bg-stone-900/90 text-amber-400 border border-amber-900/30 backdrop-blur-sm' // Untuk label VIP
+                      }`}>
                         {item.label}
                       </span>
                     )}
@@ -618,7 +624,7 @@ export default function Home() {
                   <h2 className="text-2xl font-bold tracking-tight sm:text-4xl leading-tight">Mulai Rencanakan Perjalanan Tanpa Beban.</h2>
                   <p className="text-sm text-stone-300 sm:text-base font-medium">Tim kami siap merancang itinerary, mengurus logistik, dan memastikan keamanan Anda. Konsultasikan gratis sekarang.</p>
                 </div>
-                <a href={generateWALink("Halo Pangalengan Trip, saya butuh info paket wisata.")} target="_blank" rel="noopener noreferrer" className="shrink-0 inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-4 text-sm font-bold text-white transition hover:bg-emerald-500 w-full sm:w-auto tracking-wide shadow-lg">
+                <a href={generateWALink("Halo Go Pangalengan, saya butuh info paket wisata.")} target="_blank" rel="noopener noreferrer" className="shrink-0 inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-4 text-sm font-bold text-white transition hover:bg-emerald-500 w-full sm:w-auto tracking-wide shadow-lg">
                   Hubungi via WhatsApp
                 </a>
               </div>
@@ -630,14 +636,14 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
               <div className="space-y-4">
-                <p className="text-xl font-bold tracking-tight text-white">Pangalengan Trip</p>
+                <p className="text-xl font-bold tracking-tight text-white">Go Pangalengan</p>
                 <p className="text-sm leading-relaxed text-stone-400">Partner perjalanan terpercaya Anda untuk menjelajahi keindahan alam, petualangan, dan ketenangan di Pangalengan, Bandung Selatan.</p>
               </div>
               <div className="space-y-4">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Hubungi Kami</h3>
                 <ul className="space-y-3 text-sm text-stone-400 font-medium">
                   <li><span className="text-stone-200">Alamat:</span> Jl. Raya Situ Cileunca, Pangalengan.</li>
-                  <li><span className="text-stone-200">Email:</span> hello@pangalengantrip.com</li>
+                  <li><span className="text-stone-200">Email:</span> hello@gopangalengan.com</li>
                   <li><span className="text-stone-200">WhatsApp:</span> +62 857-1707-5116</li>
                   <li><span className="text-stone-200">Jam Operasional:</span> Setiap Hari (07.00 - 20.00)</li>
                 </ul>
@@ -657,11 +663,11 @@ export default function Home() {
                   <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-stone-900 border border-stone-800 px-3 py-2 text-sm text-stone-300 transition hover:bg-stone-800 hover:text-white"><span aria-hidden>🎵</span><span>TikTok</span></a>
                   <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-stone-900 border border-stone-800 px-3 py-2 text-sm text-stone-300 transition hover:bg-stone-800 hover:text-white"><span aria-hidden>▶️</span><span>YouTube</span></a>
                 </div>
-                <p className="text-xs text-stone-500">@pangalengantrip</p>
+                <p className="text-xs text-stone-500">@gopangalengan</p>
               </div>
             </div>
             <div className="mt-16 border-t border-stone-800/50 py-10 text-center sm:flex sm:justify-between sm:text-left">
-              <p className="text-sm text-stone-500 font-medium">© 2026 Pangalengan Trip. All rights reserved.</p>
+              <p className="text-sm text-stone-500 font-medium">© 2026 Go Pangalengan. All rights reserved.</p>
               <p className="text-xs text-stone-600 mt-2 sm:mt-0 font-medium">Designed for the ultimate experience.</p>
             </div>
           </div>

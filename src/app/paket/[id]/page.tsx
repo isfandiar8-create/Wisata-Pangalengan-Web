@@ -638,7 +638,7 @@ export default function DetailPaket() {
   }
 
   const itinerary = getItinerary(paket.kategori, paket.durasi);
-  const waLink = generateWALink(`Halo Pangalengan Trip, saya tertarik dengan paket *${paket.nama}* (${paket.harga}). Boleh minta info tanggal yang kosong?`);
+  const waLink = generateWALink(`Halo Go Pangalengan, saya tertarik dengan paket *${paket.nama}* (${paket.harga}). Boleh minta info tanggal yang kosong?`);
 
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 pb-28 sm:pb-32 font-sans relative">

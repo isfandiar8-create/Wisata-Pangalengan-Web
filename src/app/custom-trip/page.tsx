@@ -75,7 +75,7 @@ export default function CustomTripPage() {
     return fasilitas;
   }, [vibe]);
 
-  const pesanWA = `Halo Tim Pangalengan Trip! 👋\nSaya ingin dibuatkan *Custom Trip* dengan detail:\n\n👥 *Peserta:* ${peserta ? peserta + ' Orang' : '-'}\n⏱️ *Durasi:* ${durasi || '-'}\n💰 *Budget:* ${budget || '-'}\n🎯 *Vibe:* ${vibe.length > 0 ? vibe.join(', ') : '-'}\n\nMohon buatkan penawaran spesialnya ya!`;
+  const pesanWA = `Halo Tim Go Pangalengan! 👋\nSaya ingin dibuatkan *Custom Trip* dengan detail:\n\n👥 *Peserta:* ${peserta ? peserta + ' Orang' : '-'}\n⏱️ *Durasi:* ${durasi || '-'}\n💰 *Budget:* ${budget || '-'}\n🎯 *Vibe:* ${vibe.length > 0 ? vibe.join(', ') : '-'}\n\nMohon buatkan penawaran spesialnya ya!`;
   const linkWA = generateWALink(pesanWA);
 
   return (

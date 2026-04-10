@@ -24,7 +24,7 @@ export default function Hero() {
     >
       <Image
         src="/hero.jpg"
-        alt="Pangalengan Trip"
+        alt="Go Pangalengan"
         fill
         className="object-cover z-0"
         priority
@@ -38,7 +38,7 @@ export default function Hero() {
             id="hero-heading"
             className="break-words text-balance text-4xl font-bold tracking-widest text-white sm:text-5xl md:text-7xl"
           >
-            PANGALENGAN TRIP
+            Go Pangalengan
           </h1>
           <p className="mt-4 text-balance text-lg text-emerald-400 sm:text-xl md:text-2xl">
             Glamping, Rafting, Outing, dan Custom Trip

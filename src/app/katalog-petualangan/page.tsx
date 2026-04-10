@@ -310,7 +310,7 @@ export default function KatalogPetualangan() {
 
       {/* 6. FLOATING ACTION BUTTON (WA) */}
       <a 
-        href={generateWALink("Halo Pangalengan Trip, saya mau tanya detail harga dan ketersediaan paket di Katalog Wisata nih.")} 
+        href={generateWALink("Halo Go Pangalengan, saya mau tanya detail harga dan ketersediaan paket di Katalog Wisata nih.")} 
         target="_blank" 
         rel="noopener noreferrer" 
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl hover:bg-emerald-600 hover:scale-110 transition-all duration-300"
@@ -326,14 +326,14 @@ export default function KatalogPetualangan() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-4">
-              <p className="text-xl font-bold tracking-tight text-white">Pangalengan Trip</p>
+              <p className="text-xl font-bold tracking-tight text-white">Go Pangalengan</p>
               <p className="text-sm leading-relaxed text-stone-400">Partner perjalanan terpercaya Anda untuk menjelajahi keindahan alam, petualangan, dan ketenangan di Pangalengan, Bandung Selatan.</p>
             </div>
             <div className="space-y-4">
               <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Hubungi Kami</h3>
               <ul className="space-y-3 text-sm text-stone-400 font-medium">
                 <li><span className="text-stone-200">Alamat:</span> Jl. Raya Situ Cileunca, Pangalengan.</li>
-                <li><span className="text-stone-200">Email:</span> hello@pangalengantrip.com</li>
+                <li><span className="text-stone-200">Email:</span> hello@gopangalengan.com</li>
                 <li><span className="text-stone-200">WhatsApp:</span> +62 857-1707-5116</li>
               </ul>
             </div>
@@ -347,7 +347,7 @@ export default function KatalogPetualangan() {
             </div>
           </div>
           <div className="mt-16 border-t border-stone-800/50 py-10 text-center sm:flex sm:justify-between sm:text-left">
-            <p className="text-sm text-stone-500 font-medium">© 2026 Pangalengan Trip. All rights reserved.</p>
+            <p className="text-sm text-stone-500 font-medium">© 2026 Go Pangalengan. All rights reserved.</p>
           </div>
         </div>
       </footer>
