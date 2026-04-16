@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image"; 
 import { generateWALink } from "@/config/contact";
 
 export default function Navbar() {
@@ -22,17 +23,36 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
+        
+        {/* BAGIAN LOGO (Dua Tone Warna) */}
         <Link href="/" className="group flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-lg transition-transform group-hover:scale-105">
-            <span className="text-sm font-black">PT</span>
+          <div className="relative h-8 w-32 sm:h-10 sm:w-40 transition-transform duration-300 group-hover:scale-105">
+            <Image 
+              // SAKLAR OTOMATIS: Jika di-scroll pakai logo gelap, jika tidak pakai logo putih
+              src={isScrolled ? "/logo-gelap.png" : "/logo-putih.png"} 
+              alt="Logo Go Pangalengan"
+              fill
+              className="object-contain object-left transition-opacity duration-300" 
+              priority
+            />
           </div>
-          <span className={`font-bold tracking-tight transition-colors ${isScrolled ? "text-stone-900" : "text-white"}`}>
-            Go Pangalengan
-          </span>
         </Link>
 
-        {/* Menu Desktop */}
+{/* ─── FITUR BARU: TOMBOL TENGAH MOBILE (Sticky CTA) ─── */}
+<div className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden transition-all duration-300 ${
+          isScrolled ? "opacity-100 visible" : "opacity-0 invisible translate-y-2"
+        }`}>
+          <a
+            href={generateWALink("Halo Tim Go Pangalengan, saya butuh rekomendasi paket liburan yang pas untuk saya.")}
+            target="_blank" rel="noopener noreferrer"
+            className="flex items-center gap-1.5 bg-emerald-600 text-white px-3 py-1.5 rounded-full text-[10px] font-black tracking-wide shadow-md hover:bg-emerald-700 active:scale-95 transition-all"
+          >
+            <span>💬</span> Tanya Admin
+          </a>
+        </div>
+        {/* ──────────────────────────────────────────────────────── */}
+        
+        {/* ─── MENU DESKTOP ─── */}
         <div className={`hidden md:flex items-center gap-8 text-sm font-bold ${isScrolled ? "text-stone-600" : "text-white/90"}`}>
           <Link href="/" className="hover:text-emerald-500 transition">Beranda</Link>
           
@@ -64,6 +84,9 @@ export default function Navbar() {
           </div>
 
           <Link href="/tentang-kami" className="hover:text-emerald-500 transition">Tentang Kami</Link>
+          
+          {/* MENU ARTIKEL BARU (DESKTOP) */}
+          <Link href="/artikel" className="hover:text-emerald-500 transition text-emerald-400">Jurnal</Link>
         </div>
 
         {/* Tombol Concierge Desktop */}
@@ -90,12 +113,15 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Menu Mobile Dropdown (Terbuka) */}
+      {/* ─── MENU MOBILE (Terbuka) ─── */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-stone-100 shadow-2xl px-4 py-6 flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
           <p className="text-[10px] font-bold text-stone-400 uppercase tracking-widest border-b pb-2">Menu Utama</p>
           <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="font-bold text-stone-800 text-lg">Beranda</Link>
           <Link href="/tentang-kami" onClick={() => setIsMobileMenuOpen(false)} className="font-bold text-stone-800 text-lg">Profil Agensi</Link>
+          
+          {/* MENU ARTIKEL BARU (MOBILE) */}
+          <Link href="/artikel" onClick={() => setIsMobileMenuOpen(false)} className="font-bold text-stone-800 text-lg">Jurnal Perjalanan</Link>
           
           <p className="text-[10px] font-bold text-stone-400 uppercase tracking-widest border-b pb-2 mt-4">Katalog & Layanan</p>
           <Link href="/#petualangan" onClick={() => setIsMobileMenuOpen(false)} className="font-bold text-emerald-700">Ragam Petualangan</Link>

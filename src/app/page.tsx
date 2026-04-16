@@ -642,10 +642,10 @@ export default function Home() {
               <div className="space-y-4">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Hubungi Kami</h3>
                 <ul className="space-y-3 text-sm text-stone-400 font-medium">
-                  <li><span className="text-stone-200">Alamat:</span> Jl. Raya Situ Cileunca, Pangalengan.</li>
-                  <li><span className="text-stone-200">Email:</span> hello@gopangalengan.com</li>
+                  <li><span className="text-stone-200">Alamat:</span> Jl. Situ Cileunca, Warnasari, Kec. Pangalengan, Kabupaten Bandung, Jawa Barat 40378</li>
+                  <li><span className="text-stone-200">Email:</span> gopangalengan@gmail.com</li>
                   <li><span className="text-stone-200">WhatsApp:</span> +62 857-1707-5116</li>
-                  <li><span className="text-stone-200">Jam Operasional:</span> Setiap Hari (07.00 - 20.00)</li>
+                  <li><span className="text-stone-200">Jam Operasional:</span> Setiap Hari (07.00 - 22.00)</li>
                 </ul>
               </div>
               <div className="space-y-4">
