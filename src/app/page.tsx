@@ -5,6 +5,7 @@ import { AnimatePresence, animate, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { generateWALink } from "@/config/contact";
+import GoogleMaps from "@/components/GoogleMaps";
 
 // ─── Data & Komponen Helper ─────────────────────────────────────────────
 
@@ -615,63 +616,50 @@ export default function Home() {
         </FadeIn>
 
         {/* 11. Final CTA & Footer */}
-        <section id="kontak" className="bg-white px-4 py-20 sm:px-6 lg:px-8 border-t border-stone-100">
-          <div className="mx-auto max-w-6xl">
-            <div className="rounded-[2.5rem] bg-stone-900 px-6 py-12 text-white shadow-2xl sm:px-12 sm:py-16 text-center sm:text-left overflow-hidden relative">
-              <div className="absolute right-0 top-0 opacity-10 pointer-events-none text-9xl transform translate-x-20 -translate-y-10">🌿</div>
-              <div className="relative z-10 flex flex-col items-center gap-8 sm:flex-row sm:justify-between">
-                <div className="space-y-3 max-w-xl">
-                  <h2 className="text-2xl font-bold tracking-tight sm:text-4xl leading-tight">Mulai Rencanakan Perjalanan Tanpa Beban.</h2>
-                  <p className="text-sm text-stone-300 sm:text-base font-medium">Tim kami siap merancang itinerary, mengurus logistik, dan memastikan keamanan Anda. Konsultasikan gratis sekarang.</p>
-                </div>
-                <a href={generateWALink("Halo Go Pangalengan, saya butuh info paket wisata.")} target="_blank" rel="noopener noreferrer" className="shrink-0 inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-4 text-sm font-bold text-white transition hover:bg-emerald-500 w-full sm:w-auto tracking-wide shadow-lg">
-                  Hubungi via WhatsApp
+        <section className="py-20 bg-stone-50 overflow-hidden">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            
+            {/* KOLOM KIRI: TEKS AJAKAN (40%) */}
+            <div className="w-full md:w-[40%] space-y-6 text-center md:text-left">
+              <span className="text-emerald-600 font-bold uppercase tracking-widest text-xs bg-emerald-50 px-3 py-1 rounded-full">
+                Konsultasi Gratis
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-stone-900 leading-tight">
+                Mulai Rencanakan Perjalanan <span className="text-emerald-600">Tanpa Beban.</span>
+              </h2>
+              <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
+                Tim kami siap merancang itinerary, mengurus logistik, dan memastikan keamanan Anda. Hubungi kami untuk penawaran terbaik.
+              </p>
+              <div className="pt-4">
+                <a 
+                  href={generateWALink("Halo Tim Go Pangalengan, saya ingin konsultasi untuk rencana liburan/outing saya.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-emerald-600 text-white px-8 py-4 rounded-full font-black text-sm shadow-xl hover:bg-emerald-700 transition-all hover:-translate-y-1"
+                >
+                  Konsultasi
                 </a>
               </div>
             </div>
-          </div>
-        </section>
 
-        <footer className="bg-stone-950 text-stone-300">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
-              <div className="space-y-4">
-                <p className="text-xl font-bold tracking-tight text-white">Go Pangalengan</p>
-                <p className="text-sm leading-relaxed text-stone-400">Partner perjalanan terpercaya Anda untuk menjelajahi keindahan alam, petualangan, dan ketenangan di Pangalengan, Bandung Selatan.</p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Hubungi Kami</h3>
-                <ul className="space-y-3 text-sm text-stone-400 font-medium">
-                  <li><span className="text-stone-200">Alamat:</span> Jl. Situ Cileunca, Warnasari, Kec. Pangalengan, Kabupaten Bandung, Jawa Barat 40378</li>
-                  <li><span className="text-stone-200">Email:</span> gopangalengan@gmail.com</li>
-                  <li><span className="text-stone-200">WhatsApp:</span> +62 857-1707-5116</li>
-                  <li><span className="text-stone-200">Jam Operasional:</span> Setiap Hari (07.00 - 22.00)</li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Layanan Utama</h3>
-                <ul className="space-y-2.5 text-sm font-medium">
-                  <li><Link href="#petualangan" className="text-stone-400 transition hover:text-white">Katalog Petualangan</Link></li>
-                  <li><Link href="#penginapan" className="text-stone-400 transition hover:text-white">Katalog Penginapan</Link></li>
-                  <li><Link href="/custom-trip" className="text-stone-400 transition hover:text-white">Custom Trip</Link></li>
-                </ul>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Ikuti Keseruannya</h3>
-                <div className="flex flex-wrap gap-3">
-                  <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-stone-900 border border-stone-800 px-3 py-2 text-sm text-stone-300 transition hover:bg-stone-800 hover:text-white"><span aria-hidden>📷</span><span>Instagram</span></a>
-                  <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-stone-900 border border-stone-800 px-3 py-2 text-sm text-stone-300 transition hover:bg-stone-800 hover:text-white"><span aria-hidden>🎵</span><span>TikTok</span></a>
-                  <a href="#" className="inline-flex items-center gap-2 rounded-lg bg-stone-900 border border-stone-800 px-3 py-2 text-sm text-stone-300 transition hover:bg-stone-800 hover:text-white"><span aria-hidden>▶️</span><span>YouTube</span></a>
-                </div>
-                <p className="text-xs text-stone-500">@gopangalengan</p>
-              </div>
+            {/* KOLOM KANAN: PETA INTERAKTIF (60%) */}
+            <div className="w-full md:w-[60%] h-[300px] sm:h-[450px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d494.8078186487863!2d107.5546903!3d-7.1879434!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e689143386830cf%3A0xb2daa8146a071f96!2sGo%20Pangalengan%20-%20Paket%20Wisata%20%26%20Rafting%20Situ%20Cileunca!5e0!3m2!1sid!2sid!4v1777244658863!5m2!1sid!2sid" // Gmaps
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale-[0.1] hover:grayscale-0 transition-all duration-500"
+              ></iframe>
             </div>
-            <div className="mt-16 border-t border-stone-800/50 py-10 text-center sm:flex sm:justify-between sm:text-left">
-              <p className="text-sm text-stone-500 font-medium">© 2026 Go Pangalengan. All rights reserved.</p>
-              <p className="text-xs text-stone-600 mt-2 sm:mt-0 font-medium">Designed for the ultimate experience.</p>
-            </div>
+
           </div>
-        </footer>
+        </div>
+      </section>
       </main>
     </div>
   );

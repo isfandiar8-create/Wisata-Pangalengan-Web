@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// IMPORT NAVBAR ANDA DI SINI
+// IMPORT NAVBAR & FOOTER ANDA DI SINI
 import Navbar from "@/components/Navbar"; 
+import Footer from "@/components/Footer"; // 1. INI TAMBAHAN IMPORT FOOTER
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,6 +53,9 @@ export default function RootLayout({
         
         {/* KONTEN HALAMAN (Home, Paket, Artikel, dll) */}
         {children}
+
+        {/* 2. FOOTER MUNCUL DI PALING BAWAH SETELAH KONTEN */}
+        <Footer />
 
         {/* ─── KODE SCHEMA MARKUP (KTP DIGITAL) UNTUK SEO & GMAPS ─── */}
         <script
