@@ -320,7 +320,7 @@ const masterPenginapan = [
       "Tersedia Total 6 Unit (Bisa untuk 120+ Orang)"
     ],
     label: "Ideal untuk Panitia/HRD",
-    image: "/barak.jpg",
+    image: "/barak-ghc.jpg",
     deskripsi: "Dirancang secara spesifik untuk memfasilitasi rombongan LDKS, Mahasiswa, atau Outing Divisi Perusahaan. Konsep barak komunal memupuk kebersamaan. Ditambah akses lapangan luas dan aula serbaguna, semua rundown acara Anda akan berjalan lancar di sini."
   },
   {

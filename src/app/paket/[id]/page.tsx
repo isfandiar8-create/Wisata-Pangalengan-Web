@@ -138,7 +138,7 @@ const masterKatalog = [
       "Uang saku ekstra (Paket belum termasuk makan siang & tiket parkir)"
     ],
     label: "Favorit HRD", 
-    image: "/teambuilding.jpg", 
+    image: "/team-building.jpg", 
     deskripsi: "Rangkaian permainan interaktif yang dirancang khusus untuk memecah ketegangan (ice breaking), membangun solidaritas, dan menumbuhkan kerja sama tim. Sangat direkomendasikan untuk rombongan keluarga besar maupun divisi perusahaan yang ingin me-refresh kekompakan." 
   },
   { 
