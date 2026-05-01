@@ -581,51 +581,77 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* KANAN: Marquee Logo / Tulisan Klien */}
-                <div className="space-y-8 overflow-hidden w-full">
+                {/* KANAN: Marquee Logo Klien */}
+                <div className="space-y-6 overflow-hidden w-full">
                   <div className="space-y-1.5 text-center lg:text-left">
                     <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Telah Dipercaya Oleh</h2>
-                    <p className="text-sm text-stone-500 font-medium">Ratusan perusahaan, instansi, dan keluarga besar.</p>
+                    <p className="text-sm text-stone-500 font-medium">Korporasi besar, institusi pendidikan, dan mitra desa.</p>
                   </div>
                   
-                  {/* Rel berjalan multi-baris */}
-                  <div className="relative flex flex-col gap-6 w-full overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
+                  {/* Rel berjalan multi-baris (Jarak Vertikal Diperkecil menjadi gap-4 sm:gap-5) */}
+                  <div className="relative flex flex-col gap-4 sm:gap-5 w-full overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
                     
-                    {/* Baris 1: Kanan ke Kiri */}
-                    <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 25, repeat: Infinity }} className="flex w-max items-center gap-12 sm:gap-20 px-6 opacity-30 grayscale">
+                    {/* Baris 1: Kanan ke Kiri (Jarak Horizontal Diperkecil menjadi gap-8 sm:gap-10) */}
+                    <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 25, repeat: Infinity }} className="flex w-max items-center gap-8 sm:gap-10 px-4">
                       {[1, 2].map((set) => (
-                        <div key={set} className="flex items-center gap-12 sm:gap-20">
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Bank BJB</span>
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Telkomsel</span>
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Pertamina</span>
+                        <div key={set} className="flex items-center gap-8 sm:gap-10">
+                          <div className="relative h-10 w-24 sm:h-12 sm:w-28 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/bca.png" alt="BCA" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-10 w-24 sm:h-12 sm:w-28 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/mandiri.png" alt="Mandiri" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-10 w-24 sm:h-12 sm:w-28 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/bni.png" alt="BNI" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-10 w-24 sm:h-12 sm:w-28 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/bri.png" alt="BRI" fill className="object-contain" />
+                          </div>
                         </div>
                       ))}
                     </motion.div>
 
-                    {/* Baris 2: Kiri ke Kanan (Reverse) */}
-                    <motion.div animate={{ x: ["-50%", "0%"] }} transition={{ ease: "linear", duration: 30, repeat: Infinity }} className="flex w-max items-center gap-12 sm:gap-20 px-6 opacity-30 grayscale">
+                    {/* Baris 2: Kiri ke Kanan */}
+                    <motion.div animate={{ x: ["-50%", "0%"] }} transition={{ ease: "linear", duration: 30, repeat: Infinity }} className="flex w-max items-center gap-8 sm:gap-10 px-4">
                       {[1, 2].map((set) => (
-                        <div key={set} className="flex items-center gap-12 sm:gap-20">
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Pemprov Jabar</span>
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">UNPAD</span>
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">PLN</span>
+                        <div key={set} className="flex items-center gap-8 sm:gap-10">
+                          <div className="relative h-12 w-28 sm:h-14 sm:w-32 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/unpad.png" alt="UNPAD" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-12 w-28 sm:h-14 sm:w-32 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/unpar.png" alt="UNPAR" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-14 w-32 sm:h-16 sm:w-36 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/koperasi.png" alt="Koperasi Desa" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-12 w-28 sm:h-14 sm:w-32 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/pemkab.png" alt="Pemkab Bandung" fill className="object-contain" />
+                          </div>
                         </div>
                       ))}
                     </motion.div>
 
                     {/* Baris 3: Kanan ke Kiri */}
-                    <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 20, repeat: Infinity }} className="flex w-max items-center gap-12 sm:gap-20 px-6 opacity-30 grayscale">
+                    <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 22, repeat: Infinity }} className="flex w-max items-center gap-8 sm:gap-10 px-4">
                       {[1, 2].map((set) => (
-                        <div key={set} className="flex items-center gap-12 sm:gap-20">
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Kemenkeu</span>
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Astra</span>
-                          <span className="text-2xl sm:text-3xl font-black text-stone-800 uppercase tracking-widest">Bio Farma</span>
+                        <div key={set} className="flex items-center gap-8 sm:gap-10">
+                          <div className="relative h-10 w-24 sm:h-12 sm:w-28 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/astra.png" alt="Astra" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-10 w-24 sm:h-12 sm:w-28 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/telkomsel.png" alt="Telkomsel" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-12 w-28 sm:h-14 sm:w-32 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/pemprov.png" alt="Pemprov Jabar" fill className="object-contain" />
+                          </div>
+                          <div className="relative h-10 w-24 sm:h-12 sm:w-28 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                            <Image src="/logos/bjb.png" alt="Bank BJB" fill className="object-contain" />
+                          </div>
                         </div>
                       ))}
                     </motion.div>
                   </div>
                 </div>
-
               </div>
             </div>
           </section>
