@@ -48,17 +48,19 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Kontak & Lokasi</h4>
             <ul className="space-y-4 text-sm">
-              <li className="flex gap-3">
+            <li className="flex gap-3">
                 <span className="text-emerald-500">📍</span>
                 <a 
-                    href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d494.8078186487863!2d107.5546903!3d-7.1879434!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e689143386830cf%3A0xb2daa8146a071f96!2sGo%20Pangalengan%20-%20Paket%20Wisata%20%26%20Rafting%20Situ%20Cileunca!5e0!3m2!1sid!2sid!4v1777244658863!5m2!1sid!2sid" // link share Gmaps
+                    // Menggunakan link pencarian/lokasi standar agar mudah dipakai rute (Direction)
+                    href="https://www.google.com/maps/search/?api=1&query=Go+Pangalengan+-+Paket+Wisata+%26+Rafting+Situ+Cileunca" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="hover:text-emerald-500 transition underline decoration-stone-700 underline-offset-4"
-  >
-    Pangalengan, Bandung Selatan,<br />Jawa Barat, Indonesia
-  </a>
-</li>
+                >
+                  Pangalengan, Bandung Selatan,<br />Jawa Barat, Indonesia
+                </a>
+              </li>
+  
               <li className="flex gap-3">
                 <span className="text-emerald-500">📞</span>
                 <span>+62 857-1707-5116</span>
@@ -73,12 +75,31 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM FOOTER */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:row items-center justify-between gap-4 text-[10px] font-bold uppercase tracking-tighter text-stone-500">
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] font-bold uppercase tracking-tighter text-stone-500">
           <p>© 2026 Go Pangalengan. All Rights Reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition">Instagram</a>
-            <a href="#" className="hover:text-white transition">TikTok</a>
-            <a href="#" className="hover:text-white transition">Facebook</a>
+            {/* Link Instagram Aktif */}
+            <a 
+              href="https://www.instagram.com/gopangalengan/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-emerald-400 transition"
+            >
+              Instagram
+            </a>
+            
+            {/* Link TikTok Aktif */}
+            <a 
+              href="https://www.tiktok.com/@go.pangalengan" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-emerald-400 transition"
+            >
+              TikTok
+            </a>
+            
+            {/* Link Facebook (Saya jadikan komentar/disembunyikan sementara. Hapus tanda komentarnya jika Anda sudah punya link Facebooknya) */}
+            {/* <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Facebook</a> */}
           </div>
         </div>
       </div>
