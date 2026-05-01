@@ -90,19 +90,19 @@ const kategoriPetualangan: PaketItem[] = [
 ];
 
 const paketCombo = [
-  { id: "keluarga-hemat", nama: "Keluarga Hemat", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-hemat.jpg" },
+  { id: "keluarga-hemat", nama: "Keluarga Hemat", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-hemat.JPG" },
   { id: "keluarga-seru", nama: "Keluarga Seru", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-seru.jpg" },
   { id: "keluarga-puas", nama: "Keluarga Puas", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", fasilitas: ["Rafting & Flying Fox", "Offroad Land Rover", "Makan & Air", "Dokumentasi"], color: "text-sky-700 bg-sky-100", image: "/keluarga-puas.jpg" },
   { id: "corp-a1d", nama: "Corporate A1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 360.000", fasilitas: ["Rafting & Paintball", "ATV", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-a.jpeg" },
-  { id: "corp-b1d", nama: "Corporate B1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-b.jpg" },
+  { id: "corp-b1d", nama: "Corporate B1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-b.JPG" },
   { id: "corp-c1d", nama: "Corporate C1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 549.000", fasilitas: ["Rafting & Offroad", "Paintball & Ice Breaking", "Makan Siang", "Foto Rafting"], color: "text-slate-700 bg-slate-100", image: "/corporate-1n-c.jpg" },
-  { id: "corp-a2d", nama: "Corporate A2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 239.000", fasilitas: ["Fresh Rafting", "Paintball", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-a.jpg" },
-  { id: "corp-b2d", nama: "Corporate B2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 650.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Kambing Guling"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-b.jpg" },
+  { id: "corp-a2d", nama: "Corporate A2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 239.000", fasilitas: ["Fresh Rafting", "Paintball", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-a.JPG" },
+  { id: "corp-b2d", nama: "Corporate B2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 650.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Kambing Guling"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-b.JPG" },
   { id: "corp-c2d", nama: "Corporate C2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 450.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Tour Leader"], color: "text-indigo-700 bg-indigo-100", image: "/rafting.jpg" },
   { id: "corp-d2d", nama: "Corporate D2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 200.000", fasilitas: ["Rafting", "Fun Games", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
-  { id: "corp-vip", nama: "Corporate VIP E2D", tag: "VIP 2D1N", durasi: "Menginap", harga: "Rp 1.099.000", fasilitas: ["Villa VIP", "3x Makan", "Rafting & Team Building", "Offroad, Paintball"], color: "text-yellow-700 bg-yellow-50 border border-yellow-200", image: "/corporate-vip.jpg" },
-  { id: "camp-fca", nama: "Family Camp FCA", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 495.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & ATV", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-a.jpg" },
-  { id: "camp-fcb", nama: "Family Camp FCB", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 620.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & Offroad", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-b.jpg" },
+  { id: "corp-vip", nama: "Corporate VIP E2D", tag: "VIP 2D1N", durasi: "Menginap", harga: "Rp 1.099.000", fasilitas: ["Villa VIP", "3x Makan", "Rafting & Team Building", "Offroad, Paintball"], color: "text-yellow-700 bg-yellow-50 border border-yellow-200", image: "/corporate-vip.JPG" },
+  { id: "camp-fca", nama: "Family Camp FCA", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 495.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & ATV", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-a.JPG" },
+  { id: "camp-fcb", nama: "Family Camp FCB", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 620.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & Offroad", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-b.JPG" },
   { id: "camp-fcc", nama: "Family Camp FCC", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 395.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/flyingfox.jpg" },
 ];
 
@@ -110,7 +110,7 @@ const paketCombo = [
 const kategoriPenginapan: PaketItem[] = [
   // BUDGET
   { id: "saung-cinta", nama: "Saung Cinta", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 20 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-cinta.jpg", deskripsi: "Cottage luas dengan kolam renang, pas untuk menghangatkan momen keluarga." },
-  { id: "saung-gadis", nama: "Saung Gadis", harga: "", hargaAsli: "", hargaDiskon: "Rp 850.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-gadis.jpg", deskripsi: "Fasilitas lengkap berkapasitas besar, sempurna untuk kumpul santai akhir pekan." },
+  { id: "saung-gadis", nama: "Saung Gadis", harga: "", hargaAsli: "", hargaDiskon: "Rp 850.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-gadis.JPG", deskripsi: "Fasilitas lengkap berkapasitas besar, sempurna untuk kumpul santai akhir pekan." },
   { id: "saung-rungkun", nama: "Saung Rungkun", harga: "", hargaAsli: "", hargaDiskon: "Rp 1.500.000", fasilitas: ["Max 15 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-rungkun.jpg", deskripsi: "Pilihan hemat nan nyaman dengan gazebo asri untuk bersantai bersama kerabat." },
   { id: "saung-family", nama: "Saung Family", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 10 Orang", "Tradisional", "Kolam Renang"], label: "Budget", image: "/saung-family.jpg", deskripsi: "Nuansa tradisional yang menenangkan, lengkap dengan kolam renang menyegarkan." },
 

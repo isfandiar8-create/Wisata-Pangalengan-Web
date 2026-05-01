@@ -4,12 +4,15 @@ import "./globals.css";
 
 // IMPORT NAVBAR & FOOTER ANDA DI SINI
 import Navbar from "@/components/Navbar"; 
-import Footer from "@/components/Footer"; // 1. INI TAMBAHAN IMPORT FOOTER
+import Footer from "@/components/Footer"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
 // ─── OPTIMASI SEO & METADATA ─────────────────────────────────────────────
 export const metadata: Metadata = {
+  // 1. INI TAMBAHAN WAJIB UNTUK MENGHILANGKAN ERROR LOG
+  metadataBase: new URL("https://www.gopangalengan.id"),
+  
   title: "Go Pangalengan | Paket Wisata, Outing & Penginapan Terbaik",
   description: "Platform reservasi wisata Go Pangalengan. Dapatkan promo paket Rafting, ATV, Offroad, Outing Corporate, dan Glamping estetik dengan harga transparan.",
   keywords: [
@@ -25,11 +28,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Go Pangalengan - Liburan Tanpa Ribet",
     description: "Temukan paket petualangan dan penginapan estetik di Pangalengan untuk keluarga maupun gathering perusahaan Anda.",
-    url: "https://gopangalengan.com", 
+    url: "https://www.gopangalengan.id", 
     siteName: "Go Pangalengan",
     images: [
       {
-        url: "/hero1.jpg", 
+        url: "/hero1.jpg", // Sekarang sistem tahu ini berarti https://www.gopangalengan.id/hero1.jpg
         width: 1200,
         height: 630,
         alt: "Go Pangalengan Hero Image",
@@ -54,7 +57,7 @@ export default function RootLayout({
         {/* KONTEN HALAMAN (Home, Paket, Artikel, dll) */}
         {children}
 
-        {/* 2. FOOTER MUNCUL DI PALING BAWAH SETELAH KONTEN */}
+        {/* FOOTER MUNCUL DI PALING BAWAH SETELAH KONTEN */}
         <Footer />
 
         {/* ─── KODE SCHEMA MARKUP (KTP DIGITAL) UNTUK SEO & GMAPS ─── */}
@@ -65,7 +68,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "TravelAgency",
               "name": "Go Pangalengan",
-              "image": "https://gopangalengan.com/logo-go-pangalengan.png",
+              "image": "https://www.gopangalengan.id/logo-go-pangalengan.png",
               "description": "Agen perjalanan wisata dan event organizer terpercaya di Pangalengan. Menyediakan paket Rafting, Sewa Villa, Glamping, dan Corporate Outing.",
               "address": {
                 "@type": "PostalAddress",
@@ -74,7 +77,7 @@ export default function RootLayout({
                 "addressCountry": "ID"
               },
               "telephone": "+6285717075116",
-              "url": "https://gopangalengan.com"
+              "url": "https://www.gopangalengan.id"
             })
           }}
         />
