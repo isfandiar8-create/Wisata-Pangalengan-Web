@@ -502,26 +502,82 @@ export default function Home() {
             <div className="mx-auto max-w-6xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-center">
                 
-                {/* KIRI: Video Shorts */}
+                {/* KIRI: Video Shorts (Native HTML5 Loop) */}
                 <div className="space-y-6 flex flex-col items-center lg:items-start w-full">
                   <div className="space-y-1.5 text-center lg:text-left">
                     <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Intip Keseruannya</h2>
-                    <p className="text-sm text-stone-500 font-medium">Satu menit yang akan meyakinkan Anda.</p>
+                    <p className="text-sm text-stone-500 font-medium">Visual nyata dari petualangan tak terlupakan.</p>
                   </div>
                   
                   <div className="flex gap-4 w-full justify-center lg:justify-start">
-                    {/* Video 1 (Muncul di semua layar) */}
+                    
+                    {/* Video 1: Cinematic Loop 1 */}
                     <div className="w-[60vw] sm:w-[220px] rounded-2xl bg-white p-2 shadow-md border border-stone-200 shrink-0">
                       <div className="relative w-full overflow-hidden rounded-xl bg-stone-100 aspect-[9/16]">
-                        <iframe className="absolute inset-0 h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&rel=0&modestbranding=1" title="Shorts 1" allowFullScreen></iframe>
+                        <video 
+                          className="absolute inset-0 h-full w-full object-cover"
+                          autoPlay 
+                          loop 
+                          muted 
+                          playsInline
+                        >
+                          {/* Pastikan nama file ini sesuai dengan yang Anda taruh di folder public */}
+                          <source src="/promo-ig.mp4" type="video/mp4" />
+                          Browser Anda tidak mendukung tag video.
+                        </video>
                       </div>
                     </div>
-                    {/* Video 2 (Disembunyikan di HP agar tidak sempit, muncul di layar menengah ke atas) */}
+
+                    {/* Video 2: Cinematic Loop 2 (Muncul di layar menengah-besar) */}
                     <div className="hidden sm:block w-[220px] rounded-2xl bg-white p-2 shadow-md border border-stone-200 shrink-0">
                       <div className="relative w-full overflow-hidden rounded-xl bg-stone-100 aspect-[9/16]">
-                        <iframe className="absolute inset-0 h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&rel=0&modestbranding=1" title="Shorts 2" allowFullScreen></iframe>
+                        <video 
+                          className="absolute inset-0 h-full w-full object-cover"
+                          autoPlay 
+                          loop 
+                          muted 
+                          playsInline
+                        >
+                          {/* Pastikan nama file ini sesuai dengan yang Anda taruh di folder public */}
+                          <source src="/promo-tiktok.mp4" type="video/mp4" />
+                          Browser Anda tidak mendukung tag video.
+                        </video>
                       </div>
                     </div>
+
+                  </div>
+                  
+                  {/* Tombol Call to Action mengarah ke Sosmed */}
+                  <div className="pt-4 flex flex-wrap gap-3 justify-center lg:justify-start w-full">
+                    
+                    {/* BUTTON INSTAGRAM */}
+                    <a 
+                      href="https://www.instagram.com/gopangalengan/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="group flex items-center gap-2 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    >
+                      {/* Icon SVG Instagram */}
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 transition-transform group-hover:scale-110">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z"/>
+                      </svg>
+                      Instagram Kami
+                    </a>
+
+                    {/* BUTTON TIKTOK */}
+                    <a 
+                      href="https://www.tiktok.com/@go.pangalengan" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="group flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-stone-800"
+                    >
+                      {/* Icon SVG TikTok */}
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 transition-transform group-hover:scale-110">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                      </svg>
+                      TikTok Kami
+                    </a>
+
                   </div>
                 </div>
 
