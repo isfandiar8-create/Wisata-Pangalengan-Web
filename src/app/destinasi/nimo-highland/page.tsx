@@ -37,19 +37,20 @@ export default function NimoHighlandPage() {
       </section>
 
       {/* 2. Quick Info & Deskripsi (Dilengkapi Fitur Read More) */}
+      {/* 2. Quick Info, Deskripsi & Video Reels */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 md:grid-cols-3">
+            
+            {/* KIRI: Deskripsi Teks */}
             <div className="md:col-span-2 space-y-4">
               <h2 className="text-2xl font-bold text-zinc-900 mb-2">Tentang Destinasi</h2>
               
               <div className="space-y-4 leading-relaxed text-zinc-600 text-justify">
-                {/* Paragraf 1: Selalu Tampil */}
                 <p>
                   Berada di ketinggian Gunung Nini, Nimo Highland menawarkan lanskap 360 derajat yang menggabungkan luasnya hamparan kebun teh Malabar dan tenangnya Situ Cileunca dari kejauhan. Udara sejuk pegunungan yang menusuk lembut menjadi teman setia Anda saat berjalan di jembatan kaca ikonik yang mengitari area puncak.
                 </p>
 
-                {/* Paragraf Tambahan: Sembunyi di HP, Tampil di Laptop */}
                 <div className={`${isExpanded ? 'block' : 'hidden md:block'} space-y-4 animate-in fade-in duration-500`}>
                   <p>
                     Resmi dibuka untuk publik pada <strong>Mei 2022</strong>, destinasi ini dengan cepat menjelma menjadi primadona pariwisata Jawa Barat. Tercatat lebih dari ratusan ribu wisatawan telah menjejakkan kaki di sini, terpesona oleh keberanian memadukan arsitektur megah bergaya Santorini dengan kearifan alam tanah Pasundan.
@@ -60,7 +61,6 @@ export default function NimoHighlandPage() {
                 </div>
               </div>
 
-              {/* Tombol Baca Selengkapnya - HANYA MUNCUL DI HP (md:hidden) */}
               <button 
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="mt-2 font-semibold text-emerald-600 md:hidden hover:text-emerald-700 focus:outline-none transition-colors"
@@ -69,32 +69,45 @@ export default function NimoHighlandPage() {
               </button>
             </div>
             
-            {/* Quick Info Box */}
-            <div className="rounded-2xl border border-zinc-100 bg-zinc-50 p-6 shadow-sm h-fit">
-              <h3 className="font-semibold text-zinc-900 mb-4">Info Singkat</h3>
-              <ul className="space-y-4 text-sm text-zinc-600">
-                <li className="flex items-start gap-3">
-                  <span className="text-xl">🌡️</span>
-                  <div>
-                    <span className="block font-medium text-zinc-900">Cuaca</span>
-                    15°C - 20°C (Sangat Sejuk)
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-xl">👨‍👩‍👧‍👦</span>
-                  <div>
-                    <span className="block font-medium text-zinc-900">Cocok Untuk</span>
-                    Keluarga, Pasangan, Fotografi
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-xl">⏰</span>
-                  <div>
-                    <span className="block font-medium text-zinc-900">Waktu Terbaik</span>
-                    05:00 WIB (Sunrise) & 15:00 WIB
-                  </div>
-                </li>
-              </ul>
+            {/* KANAN: Video Vertikal & Info Singkat */}
+            <div className="md:col-span-1 flex flex-col gap-6 items-center md:items-end">
+              
+              {/* Bingkai Video Reels Estetik (Phone-style) */}
+              <div className="relative w-full max-w-[260px] md:max-w-full aspect-[9/16] overflow-hidden rounded-2xl bg-zinc-100 shadow-xl border-[6px] border-white">
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="absolute inset-0 h-full w-full object-cover"
+                >
+                  {/* Pastikan file ini ada di folder public Anda */}
+                  <source src="/nimo-reels.mp4" type="video/mp4" />
+                </video>
+                {/* Efek Shadow dalam agar menyatu natural */}
+                <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] pointer-events-none"></div>
+              </div>
+
+              {/* Info Singkat (Lebih Padat & Ramping) */}
+              <div className="w-full max-w-[320px] md:max-w-full rounded-2xl border border-zinc-100 bg-zinc-50 p-4 shadow-sm">
+                <ul className="space-y-3 text-sm text-zinc-600">
+                  <li className="flex items-center gap-3">
+                    <span className="text-lg">🌡️</span>
+                    <div>
+                      <span className="font-semibold text-zinc-900 block leading-none mb-1">15°C - 20°C</span>
+                      <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Udara Sejuk</span>
+                    </div>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-lg">⏰</span>
+                    <div>
+                      <span className="font-semibold text-zinc-900 block leading-none mb-1">05:00 & 15:00</span>
+                      <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Waktu Terbaik</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </div>
@@ -160,13 +173,15 @@ export default function NimoHighlandPage() {
       <section className="px-4 py-16 sm:px-6 lg:px-8 bg-emerald-50">
         <div className="mx-auto max-w-4xl text-center space-y-6">
           <h2 className="text-2xl font-bold text-emerald-950 sm:text-3xl">Ingin Liburan Tanpa Ribet ke Sini?</h2>
-          <p className="text-emerald-800/80 max-w-2xl mx-auto">
-            Jangan pusing memikirkan rute, tiket masuk, atau transportasi. Kami telah merangkum pengalaman terbaik Nimo Highland ke dalam paket wisata eksklusif kami.
+          <p className="text-emerald-800/80 max-w-2xl mx-auto text-sm sm:text-base">
+            Jangan pusing memikirkan rute, tiket masuk, atau transportasi. Kami telah merangkum pengalaman terbaik Nimo Highland ke dalam paket wisata eksklusif kami di Katalog 2026.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link href="/#petualangan" className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-700">
-              Lihat Paket Wisata
+            {/* TAUTAN DIPERBAIKI: Mengarah ke Halaman Khusus Katalog Wisata */}
+            <Link href="/katalog-wisata" className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-700 shadow-lg shadow-emerald-600/20">
+              Buka Katalog Wisata 2026
             </Link>
+            
             <Link href="/#penginapan" className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border-2 border-emerald-600 bg-transparent px-8 py-3.5 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100">
               Cari Penginapan Terdekat
             </Link>

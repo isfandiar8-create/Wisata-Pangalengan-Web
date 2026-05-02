@@ -293,7 +293,7 @@ export default function Home() {
           <section id="petualangan" className="bg-emerald-50/60 px-4 py-16 sm:py-24 sm:px-6 lg:px-8 border-y border-emerald-100/50">
             <div className="mx-auto max-w-6xl">
               <div className="mb-8 space-y-1.5 text-center">
-                <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Katalog Petualangan</h2>
+                <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Katalog Wisata</h2>
                 <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Pilih keseruan Anda. Format ringkas dengan harga ter-update 2026.</p>
               </div>
 
@@ -325,7 +325,7 @@ export default function Home() {
               <ComboSlider items={paketCombo} />
 
               <div className="mt-12 flex justify-center">
-                <Link href="/katalog-petualangan" className="group inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white shadow-sm">
+                <Link href="/katalog-wisata" className="group inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white shadow-sm">
                   Lihat Seluruh Daftar Wisata 2026
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
