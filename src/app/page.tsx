@@ -79,7 +79,7 @@ function LiveRollingCounter() {
 
 // ─── DATA: 8 Petualangan ─────────────────────────────────────────
 const kategoriPetualangan: PaketItem[] = [
-  { id: "rafting", nama: "Rafting Palayangan", harga: "Rp 150.000", hargaAsli: "", hargaDiskon: "Rp 150.000", fasilitas: [], label: "⚡ Terlaris", image: "/rafting.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
+  { id: "rafting", nama: "Rafting Palayangan", harga: "Rp 190.000", hargaAsli: "", hargaDiskon: "Rp 165.000", fasilitas: [], label: "⚡ Terlaris", image: "/rafting.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
   { id: "atv", nama: "ATV Adventure", harga: "Rp 175.000", hargaAsli: "", hargaDiskon: "Rp 175.000", fasilitas: [], image: "/atv.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
   { id: "offroad", nama: "Offroad Land Rover", harga: "Rp 220.000", hargaAsli: "", hargaDiskon: "Rp 220.000", fasilitas: [], label: "Seru!", image: "/offroad.jpg", deskripsi: "Eksplorasi menembus hutan pinus liar menggunakan mobil tangguh." },
   { id: "paintball", nama: "Paintball Battle", harga: "Rp 85.000", hargaAsli: "", hargaDiskon: "Rp 85.000", fasilitas: [], image: "/paintball.jpg", deskripsi: "Simulasi tempur di tengah hutan. Strategi, ketegangan, dan keseruan tim." },

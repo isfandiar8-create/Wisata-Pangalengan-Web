@@ -13,8 +13,9 @@ export default function NimoHighlandPage() {
       {/* 1. Hero Banner (Immersive First Impression) */}
       <section className="relative h-[60vh] min-h-[500px] w-full">
         <Image
-          src="/destinasi.jpg" // Ganti dengan foto asli Nimo Highland nanti
-          alt="Nimo Highland Pangalengan"
+          // GANTI NAMA FILE INI SESUAI FOTO UTAMA ANDA DI FOLDER PUBLIC
+          src="/nimo-hero.jpg" 
+          alt="Panorama Nimo Highland Pangalengan"
           fill
           className="object-cover"
           priority
@@ -22,13 +23,13 @@ export default function NimoHighlandPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/40 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end px-4 pb-12 sm:px-6 lg:px-8">
           <div className="mx-auto w-full max-w-6xl">
-            <span className="mb-3 inline-flex items-center rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-medium text-emerald-300 backdrop-blur-md">
+            <span className="mb-3 inline-flex items-center rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-medium text-emerald-300 backdrop-blur-md border border-emerald-500/30">
               📍 Banjarsari, Pangalengan
             </span>
-            <h1 className="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl drop-shadow-lg">
               Nimo Highland
             </h1>
-            <p className="max-w-2xl text-lg text-zinc-200 sm:text-xl">
+            <p className="max-w-2xl text-lg text-zinc-200 sm:text-xl drop-shadow-md">
               Menyatu dengan hamparan kebun teh, awan, dan arsitektur ikonik bergaya Santorini di puncak Pangalengan.
             </p>
           </div>
@@ -99,35 +100,56 @@ export default function NimoHighlandPage() {
         </div>
       </section>
 
-      {/* 3. Galeri Visual (Carousel) */}
+      {/* 3. Galeri Visual (Carousel Dinamis) */}
       <section className="py-12 bg-zinc-950">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-8">
-          <h2 className="text-2xl font-bold text-white">Galeri Nimo Highland</h2>
+          <h2 className="text-2xl font-bold text-white">Sudut Estetik Nimo Highland</h2>
           <p className="text-zinc-400 mt-2 text-sm">Geser untuk melihat keindahan sudut lainnya.</p>
         </div>
         <div className="flex gap-4 overflow-x-auto pb-8 snap-x snap-mandatory px-4 sm:px-6 lg:px-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-          {[1, 2, 3, 4].map((item) => (
-            <div key={item} className="relative h-64 w-[85vw] sm:w-[400px] shrink-0 snap-center overflow-hidden rounded-2xl">
-              <Image src="/destinasi.jpg" alt={`Galeri ${item}`} fill className="object-cover" />
+          
+          {/* ARRAY GAMBAR: Ganti nama-nama file di bawah ini sesuai dengan foto galeri Anda */}
+          {[
+            "/nimo.jpg", 
+            "/nimo3.jpg", 
+            "/nimo-hero.jpg",
+            "/nimo-resort-tea-1.jpg"
+          ].map((imgSrc, index) => (
+            <div key={index} className="relative h-64 w-[85vw] sm:w-[400px] shrink-0 snap-center overflow-hidden rounded-2xl border border-zinc-800 shadow-lg">
+              <Image 
+                src={imgSrc} 
+                alt={`Momen di Nimo Highland ${index + 1}`} 
+                fill 
+                className="object-cover transition-transform duration-500 hover:scale-105" 
+                sizes="(max-width: 768px) 85vw, 400px"
+              />
             </div>
           ))}
+
         </div>
       </section>
 
       {/* 4. Daya Tarik & Aktivitas */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-zinc-900 mb-8">Apa yang Bisa Dinikmati?</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-6">Apa yang Bisa Dinikmati?</h2>
+          
+          {/* Perubahan pada Grid: Lebih rapat di HP (gap-4) dan kolom disesuaikan */}
+          <div className="grid gap-4 sm:gap-6 grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: "🌉", title: "Jembatan Kaca Ikonik", desc: "Berjalan di atas jembatan kaca terpanjang dengan view 360 derajat kebun teh." },
-              { icon: "☕", title: "Kafe Estetik", desc: "Menikmati camilan dan kopi hangat dengan arsitektur ala Santorini." },
-              { icon: "🌅", title: "Sunrise Point", desc: "Spot terbaik untuk melihat matahari terbit menembus kabut tebal Pangalengan." }
+              { icon: "🌉", title: "Jembatan Kaca", desc: "View 360° hamparan kebun teh." },
+              { icon: "☕", title: "Kafe Santorini", desc: "Kopi hangat & arsitektur estetik." },
+              { icon: "🌅", title: "Sunrise Point", desc: "Titik magis melihat matahari terbit." },
+              { icon: "🏎️", title: "ATV Adventure", desc: "Pacu adrenalin di jalur berlumpur." },
+              { icon: "🚙", title: "Offroad Trip", desc: "Jelajahi pelosok Nimo via Land Rover." },
+              { icon: "🦅", title: "Flying Fox", desc: "Meluncur cepat melintasi kesejukan." }
             ].map((fasilitas, i) => (
-              <div key={i} className="rounded-2xl border border-zinc-200 p-6 hover:border-emerald-500 transition-colors">
-                <div className="text-3xl mb-4">{fasilitas.icon}</div>
-                <h3 className="font-semibold text-zinc-900 mb-2">{fasilitas.title}</h3>
-                <p className="text-sm text-zinc-600">{fasilitas.desc}</p>
+              // Perubahan pada Card: Padding diperkecil (p-4), border lebih halus
+              <div key={i} className="rounded-xl border border-zinc-100 bg-white p-4 shadow-sm hover:border-emerald-400 hover:shadow-md transition-all duration-300">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{fasilitas.icon}</div>
+                {/* Judul dan Deskripsi dibuat lebih ringkas untuk HP */}
+                <h3 className="font-bold text-zinc-800 text-sm sm:text-base leading-tight mb-1">{fasilitas.title}</h3>
+                <p className="text-[10px] sm:text-xs text-zinc-500 leading-relaxed">{fasilitas.desc}</p>
               </div>
             ))}
           </div>
@@ -161,7 +183,7 @@ export default function NimoHighlandPage() {
             Ingin menggabungkan kunjungan Nimo Highland dengan Rafting atau ATV? Tim kami siap menyusun itinerary khusus yang sesuai dengan ritme liburan Anda. Masih bingung? Konsultasikan dengan kami, gratis.
           </p>
           <a
-            href="https://wa.me/6281234567890?text=Halo%20Pangalengan%20Trip,%20saya%20tertarik%20dengan%20Nimo%20Highland%20dan%20ingin%20konsultasi%20custom%20trip."
+            href="https://wa.me/6285717075116?text=Halo%20Go%20Pangalengan,%20saya%20tertarik%20dengan%20Nimo%20Highland%20dan%20ingin%20konsultasi%20custom%20trip."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-8 py-4 text-sm font-bold text-white transition hover:bg-emerald-400 shadow-lg shadow-emerald-500/30"

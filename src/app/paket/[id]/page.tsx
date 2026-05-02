@@ -23,9 +23,9 @@ const masterKatalog = [
       "FREE Dokumentasi Foto (Khusus harga normal & pax penuh)"
     ], 
     opsiHarga: [
-      { nama: "Rafting Only", harga: "Rp 150.000" },
-      { nama: "Rafting + Dokumentasi", harga: "Rp 160.000" },
-      { nama: "Rafting + Dok + Makan", harga: "Rp 175.000 (Rekomendasi)" },
+      { nama: "Rafting Only", harga: "Rp 165.000" },
+      { nama: "Rafting + Dokumentasi", harga: "Rp 175.000" },
+      { nama: "Rafting + Dok + Makan", harga: "Rp 190.000 (Rekomendasi)" },
     ],
     persiapan: [
       "Baju ganti setelah rafting", 
