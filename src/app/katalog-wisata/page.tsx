@@ -7,11 +7,11 @@ import { generateWALink } from "@/config/contact";
 
 // ─── DATA: AKTIVITAS SATUAN ───────────────────────────────────────────────
 const aktivitasSatuan = [
-  { id: "rafting", nama: "Rafting Palayangan", kategori: "Air", harga: "Rp 150.000", hargaAsli: "Rp 250.000", label: "⚡ Terlaris", image: "/rafting.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
-  { id: "atv", nama: "ATV Adventure", kategori: "Darat", harga: "Rp 175.000", hargaAsli: "Rp 240.000", image: "/atv.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
+  { id: "rafting", nama: "Rafting Palayangan", kategori: "Air", harga: "Rp 165.000", hargaAsli: "Rp 200.000", label: "⚡ Terlaris", image: "/rafting.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
+  { id: "atv", nama: "ATV Adventure", kategori: "Darat", harga: "Rp 175.000", hargaAsli: "Rp 240.000", image: "/keluarga-seru.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
   { id: "offroad", nama: "Offroad Land Rover", kategori: "Darat", harga: "Rp 220.000", hargaAsli: "Rp 300.000", label: "Seru!", image: "/offroad.jpg", deskripsi: "Eksplorasi menembus hutan pinus liar menggunakan mobil tangguh." },
   { id: "paintball", nama: "Paintball Battle", kategori: "Grup & Game", harga: "Rp 85.000", hargaAsli: "Rp 125.000", image: "/paintball.jpg", deskripsi: "Simulasi tempur di tengah hutan. Strategi, ketegangan, dan keseruan tim." },
-  { id: "team-building", nama: "Team Building", kategori: "Grup & Game", harga: "Rp 99.000", hargaAsli: "Rp 150.000", image: "/teambuilding.jpg", deskripsi: "Rangkaian games seru untuk merekatkan kekompakan dan kehangatan tim." },
+  { id: "team-building", nama: "Team Building", kategori: "Grup & Game", harga: "Rp 99.000", hargaAsli: "Rp 150.000", image: "/teambuilding1.jpeg", deskripsi: "Rangkaian games seru untuk merekatkan kekompakan dan kehangatan tim." },
   { id: "flying-fox", nama: "Flying Fox", kategori: "Udara", harga: "Rp 35.000", hargaAsli: "Rp 50.000", image: "/flyingfox.jpg", deskripsi: "Meluncur bebas melintasi lembah dan danau. Singkat namun mendebarkan." },
   { id: "tour-perahu", nama: "Tour Perahu", kategori: "Air", harga: "Rp 20.000", hargaAsli: "Rp 35.000", image: "/perahu.jpg", deskripsi: "Bersantai menikmati syahdunya pemandangan Situ Cileunca dari atas perahu." },
   { id: "treking", nama: "Treking Alam", kategori: "Darat", harga: "Rp 70.000", hargaAsli: "Rp 100.000", image: "/treking.jpg", deskripsi: "Menjelajahi sejuknya bukit dan hamparan kebun teh dengan panduan lokal." },
@@ -20,24 +20,24 @@ const aktivitasSatuan = [
 // ─── DATA: PAKET COMBO WISATA ─────────────────────────────────────────────
 const paketCombo = [
   // KELUARGA
-  { id: "keluarga-hemat", nama: "Keluarga Hemat", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", hargaAsli: "Rp 250.000", label: "Lebih Hemat", image: "/combo-keluarga.jpg", deskripsi: "Rafting, Flying Fox, Makan & Dokumentasi. Paket dasar terlengkap." },
-  { id: "keluarga-seru", nama: "Keluarga Seru", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", hargaAsli: "Rp 380.000", image: "/combo-keluarga.jpg", deskripsi: "Ekstra petualangan dengan ATV! Pilihan pas untuk keluarga petualang." },
-  { id: "keluarga-puas", nama: "Keluarga Puas", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", hargaAsli: "Rp 480.000", label: "Rekomendasi", image: "/combo-keluarga.jpg", deskripsi: "Rafting, Flying Fox & Offroad Land Rover. Paket premium tanpa lelah." },
+  { id: "keluarga-hemat", nama: "Keluarga Hemat", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", hargaAsli: "Rp 250.000", label: "Lebih Hemat", image: "/keluarga-hemat.JPG", deskripsi: "Rafting, Flying Fox, Makan & Dokumentasi. Paket dasar terlengkap." },
+  { id: "keluarga-seru", nama: "Keluarga Seru", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", hargaAsli: "Rp 380.000", image: "/keluarga-seru.jpg", deskripsi: "Ekstra petualangan dengan ATV! Pilihan pas untuk keluarga petualang." },
+  { id: "keluarga-puas", nama: "Keluarga Puas", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", hargaAsli: "Rp 480.000", label: "Rekomendasi", image: "/keluarga-puas.jpg", deskripsi: "Rafting, Flying Fox & Offroad Land Rover. Paket premium tanpa lelah." },
 
   // CORPORATE
-  { id: "corp-a1d", nama: "Corporate A1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 360.000", hargaAsli: "Rp 430.000", image: "/combo-corp-1d.jpg", deskripsi: "Rafting, Paintball, ATV & Makan Siang. Satu hari penuh aksi." },
-  { id: "corp-b1d", nama: "Corporate B1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 350.000", hargaAsli: "Rp 410.000", label: "⚡ Favorit HRD", image: "/combo-corp-1d.jpg", deskripsi: "Rafting, Paintball & Team Building. Sempurna untuk kekompakan tim." },
-  { id: "corp-c1d", nama: "Corporate C1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 549.000", hargaAsli: "Rp 630.000", image: "/combo-corp-1d.jpg", deskripsi: "Rafting, Offroad, Paintball & Ice Breaking. Mewah dan padat." },
-  { id: "corp-a2d", nama: "Corporate A2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 239.000", hargaAsli: "Rp 300.000", image: "/combo-corp-2d.jpg", deskripsi: "Fresh Rafting, Paintball & Makan. Paket ekonomis menginap." },
-  { id: "corp-b2d", nama: "Corporate B2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 650.000", hargaAsli: "Rp 750.000", label: "Bestseller", image: "/combo-corp-2d.jpg", deskripsi: "Rafting, Paintball, Kambing Guling & Live Music. Standar emas outing." },
-  { id: "corp-c2d", nama: "Corporate C2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 450.000", hargaAsli: "Rp 520.000", image: "/combo-corp-2d.jpg", deskripsi: "Fasilitas lengkap 2D1N dikawal penuh oleh tour leader kami." },
-  { id: "corp-d2d", nama: "Corporate D2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 200.000", hargaAsli: "Rp 250.000", image: "/combo-corp-2d.jpg", deskripsi: "Rafting & Fun Games. Fokus pada tawa dan keseruan santai." },
-  { id: "corp-vip", nama: "Corp VIP E2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 1.099.000", hargaAsli: "Rp 1.300.000", label: "⭐ VIP", image: "/combo-vip.jpg", deskripsi: "Layanan karpet merah. Villa Mewah, Offroad, Rafting & Makan Premium." },
+  { id: "corp-a1d", nama: "Corporate A1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 360.000", hargaAsli: "Rp 430.000", image: "/corporate-1d-a.jpeg", deskripsi: "Rafting, Paintball, ATV & Makan Siang. Satu hari penuh aksi." },
+  { id: "corp-b1d", nama: "Corporate B1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 350.000", hargaAsli: "Rp 410.000", label: "⚡ Favorit HRD", image: "/corporate-1d-b.JPG", deskripsi: "Rafting, Paintball & Team Building. Sempurna untuk kekompakan tim." },
+  { id: "corp-c1d", nama: "Corporate C1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 549.000", hargaAsli: "Rp 630.000", image: "/corporate-1n-c.jpg", deskripsi: "Rafting, Offroad, Paintball & Ice Breaking. Mewah dan padat." },
+  { id: "corp-a2d", nama: "Corporate A2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 239.000", hargaAsli: "Rp 300.000", image: "/corporate-1n-a.JPG", deskripsi: "Fresh Rafting, Paintball & Makan. Paket ekonomis menginap." },
+  { id: "corp-b2d", nama: "Corporate B2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 650.000", hargaAsli: "Rp 750.000", label: "Bestseller", image: "/corporate-1n-b.JPG", deskripsi: "Rafting, Paintball, Kambing Guling & Live Music. Standar emas outing." },
+  { id: "corp-c2d", nama: "Corporate C2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 450.000", hargaAsli: "Rp 520.000", image: "/rafting.jpg", deskripsi: "Fasilitas lengkap 2D1N dikawal penuh oleh tour leader kami." },
+  { id: "corp-d2d", nama: "Corporate D2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 200.000", hargaAsli: "Rp 250.000", image: "/teambuilding1.jpeg", deskripsi: "Rafting & Fun Games. Fokus pada tawa dan keseruan santai." },
+  { id: "corp-vip", nama: "Corp VIP E2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 1.099.000", hargaAsli: "Rp 1.300.000", label: "⭐ VIP", image: "/corporate-vip.JPG", deskripsi: "Layanan karpet merah. Villa Mewah, Offroad, Rafting & Makan Premium." },
 
   // FAMILY CAMP
-  { id: "camp-fca", nama: "Family Camp FCA", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 495.000", hargaAsli: "Rp 580.000", image: "/combo-camp.jpg", deskripsi: "Glamping, Rafting, ATV & Flying Fox. Petualangan lengkap di alam." },
-  { id: "camp-fcb", nama: "Family Camp FCB", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 620.000", hargaAsli: "Rp 700.000", label: "Rekomendasi", image: "/combo-camp.jpg", deskripsi: "Glamping, Rafting, Offroad & Flying Fox. Eksplorasi pinus yang sunyi." },
-  { id: "camp-fcc", nama: "Family Camp FCC", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 395.000", hargaAsli: "Rp 450.000", image: "/combo-camp.jpg", deskripsi: "Glamping, Rafting & Flying Fox. Menikmati kabut dan keseruan air." },
+  { id: "camp-fca", nama: "Family Camp FCA", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 495.000", hargaAsli: "Rp 580.000", image: "/family-camp-a.JPG", deskripsi: "Glamping, Rafting, ATV & Flying Fox. Petualangan lengkap di alam." },
+  { id: "camp-fcb", nama: "Family Camp FCB", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 620.000", hargaAsli: "Rp 700.000", label: "Rekomendasi", image: "/family-camp-b.JPG", deskripsi: "Glamping, Rafting, Offroad & Flying Fox. Eksplorasi pinus yang sunyi." },
+  { id: "camp-fcc", nama: "Family Camp FCC", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 395.000", hargaAsli: "Rp 450.000", image: "/flyingfox.jpg", deskripsi: "Glamping, Rafting & Flying Fox. Menikmati kabut dan keseruan air." },
 ];
 
 const comboFilters = ["Semua Combo", "Keluarga", "Corporate", "Family Camp"];

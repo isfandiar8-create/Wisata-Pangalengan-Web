@@ -80,7 +80,7 @@ export default function SituCileuncaPage() {
                   className="absolute inset-0 h-full w-full object-cover"
                 >
                   {/* Pastikan file ini ada di folder public Anda */}
-                  <source src="/cileunca-reels.mp4" type="video/mp4" />
+                  <source src="/promo-tiktok.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] pointer-events-none"></div>
               </div>
@@ -120,10 +120,10 @@ export default function SituCileuncaPage() {
           
           {/* ARRAY GAMBAR: Ganti nama-nama file di bawah ini sesuai dengan foto galeri Cileunca Anda */}
           {[
-            "/cileunca-1.jpg", 
-            "/cileunca-2.jpg", 
+            "/cileunca.jpg", 
+            "/rafting.jpg", 
             "/cileunca-3.jpg",
-            "/cileunca-4.jpg"
+            "/offroad.jpg"
           ].map((imgSrc, index) => (
             <div key={index} className="relative h-64 w-[85vw] sm:w-[400px] shrink-0 snap-center overflow-hidden rounded-2xl border border-zinc-800 shadow-lg">
               <Image 

@@ -132,7 +132,7 @@ export default function HutanPinusRahongPage() {
                 src={imgSrc} 
                 alt={`Momen di Hutan Pinus Rahong ${index + 1}`} 
                 fill 
-                className="object-cover transition-transform duration-500 hover:scale-105" 
+                className="object-cover object-[center_75%] transition-transform duration-500 hover:scale-105" 
                 sizes="(max-width: 768px) 85vw, 400px"
               />
             </div>

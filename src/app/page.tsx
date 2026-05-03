@@ -80,10 +80,10 @@ function LiveRollingCounter() {
 // ─── DATA: 8 Petualangan ─────────────────────────────────────────
 const kategoriPetualangan: PaketItem[] = [
   { id: "rafting", nama: "Rafting Palayangan", harga: "Rp 190.000", hargaAsli: "", hargaDiskon: "Rp 165.000", fasilitas: [], label: "⚡ Terlaris", image: "/rafting.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
-  { id: "atv", nama: "ATV Adventure", harga: "Rp 175.000", hargaAsli: "", hargaDiskon: "Rp 175.000", fasilitas: [], image: "/atv.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
+  { id: "atv", nama: "ATV Adventure", harga: "Rp 175.000", hargaAsli: "", hargaDiskon: "Rp 175.000", fasilitas: [], image: "/keluarga-seru.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
   { id: "offroad", nama: "Offroad Land Rover", harga: "Rp 220.000", hargaAsli: "", hargaDiskon: "Rp 220.000", fasilitas: [], label: "Seru!", image: "/offroad.jpg", deskripsi: "Eksplorasi menembus hutan pinus liar menggunakan mobil tangguh." },
   { id: "paintball", nama: "Paintball Battle", harga: "Rp 85.000", hargaAsli: "", hargaDiskon: "Rp 85.000", fasilitas: [], image: "/paintball.jpg", deskripsi: "Simulasi tempur di tengah hutan. Strategi, ketegangan, dan keseruan tim." },
-  { id: "team-building", nama: "Team Building", harga: "Rp 99.000", hargaAsli: "", hargaDiskon: "Rp 99.000", fasilitas: [], image: "/team-building.jpg", deskripsi: "Rangkaian games seru untuk merekatkan kekompakan dan kehangatan tim." },
+  { id: "team-building", nama: "Team Building", harga: "Rp 99.000", hargaAsli: "", hargaDiskon: "Rp 99.000", fasilitas: [], image: "/teambuilding1.jpeg", deskripsi: "Rangkaian games seru untuk merekatkan kekompakan dan kehangatan tim." },
   { id: "flying-fox", nama: "Flying Fox", harga: "Rp 35.000", hargaAsli: "", hargaDiskon: "Rp 35.000", fasilitas: [], image: "/flyingfox.jpg", deskripsi: "Meluncur bebas melintasi lembah dan danau. Singkat namun mendebarkan." },
   { id: "tour-perahu", nama: "Tour Perahu", harga: "Rp 20.000", hargaAsli: "", hargaDiskon: "Rp 20.000", fasilitas: [], image: "/perahu.jpg", deskripsi: "Bersantai menikmati syahdunya pemandangan Situ Cileunca dari atas perahu." },
   { id: "treking", nama: "Treking Alam", harga: "Rp 70.000", hargaAsli: "", hargaDiskon: "Rp 70.000", fasilitas: [], image: "/treking.jpg", deskripsi: "Menjelajahi sejuknya bukit dan hamparan kebun teh dengan panduan lokal." },
@@ -263,29 +263,36 @@ export default function Home() {
           {/* 2. JELAJAHI DESTINASI */}
           <section className="bg-white px-4 py-16 sm:py-24 sm:px-6 lg:px-8" id="destinasi">
             <div className="mx-auto max-w-6xl">
-              <div className="mb-10 space-y-1.5 text-center">
-                <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Spot Ikonik Pangalengan</h2>
-                <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Temukan relaksasi di sudut-sudut paling fotogenik di Bandung Selatan.</p>
-              </div>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-                {[
-                  { nama: "Nimo Highland", desc: "Hamparan kebun teh 360°", img: "/nimo.jpg" },
-                  { nama: "Sunrise Cukul", desc: "Matahari terbit terbaik", img: "/cukul.jpg" },
-                  { nama: "Situ Cileunca", desc: "Danau syahdu & Rafting", img: "/cileunca.jpg" },
-                  { nama: "Hutan Rahong", desc: "Ketenangan pinus rindang", img: "/rahong.jpg" },
-                ].map((dest, idx) => (
-                  <Link href={`/destinasi/${dest.nama.toLowerCase().replace(/ /g, '-')}`} key={idx} className="group relative block overflow-hidden rounded-2xl bg-stone-100 aspect-square border border-stone-200 shadow-sm">
-                    <Image src={dest.img} alt={dest.nama} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 25vw" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
-                      <h3 className="text-sm font-bold text-white sm:text-base tracking-wide">{dest.nama}</h3>
-                      <p className="text-[10px] text-stone-300 sm:text-xs mt-0.5 line-clamp-1">{dest.desc}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+            <div className="mb-10 space-y-1.5 text-center">
+              <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Spot Ikonik Pangalengan</h2>
+                <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Temukan relaksasi di sudut-sudut paling fotogenik di Pangalengan.</p>
             </div>
-          </section>
+    
+    {/* Perubahan Grid: md:grid-cols-4 diubah menjadi md:grid-cols-3 */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
+            {[
+        { nama: "Nimo Highland", desc: "Hamparan kebun teh 360°", img: "/nimo.jpg" },
+        { nama: "Sunrise Cukul", desc: "Matahari terbit terbaik", img: "/cukul.jpg" },
+        { nama: "Situ Cileunca", desc: "Danau syahdu & Rafting", img: "/cileunca.jpg" },
+        { nama: "Hutan Rahong", desc: "Ketenangan pinus rindang", img: "/rahong.jpg" },
+        // Tambahan 2 destinasi baru
+        { nama: "Wayang Windu", desc: "Romantisme senja & kabut", img: "/wayang.jpg" },
+        { nama: "Bosscha Malabar", desc: "Jejak sejarah raja teh", img: "/makam-bosscha.jpg" },
+      ].map((dest, idx) => (
+        // Rumus dinamis Anda tetap dipertahankan
+        <Link href={`/destinasi/${dest.nama.toLowerCase().replace(/ /g, '-')}`} key={idx} className="group relative block overflow-hidden rounded-2xl bg-stone-100 aspect-square border border-stone-200 shadow-sm">
+          {/* Atribut sizes disesuaikan menjadi 33vw untuk desktop */}
+          <Image src={dest.img} alt={dest.nama} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 33vw" />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
+            <h3 className="text-sm font-bold text-white sm:text-base tracking-wide">{dest.nama}</h3>
+            <p className="text-[10px] text-stone-300 sm:text-xs mt-0.5 line-clamp-1">{dest.desc}</p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
         </FadeIn>
 
         <FadeIn>

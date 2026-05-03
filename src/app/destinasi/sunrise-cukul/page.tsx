@@ -80,7 +80,7 @@ export default function SunriseCukulPage() {
                   className="absolute inset-0 h-full w-full object-cover"
                 >
                   {/* Pastikan file ini ada di folder public Anda */}
-                  <source src="/cukul-reels.mp4" type="video/mp4" />
+                  <source src="/sunrise-cukul-reels.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] pointer-events-none"></div>
               </div>
@@ -120,17 +120,17 @@ export default function SunriseCukulPage() {
           
           {/* ARRAY GAMBAR: Ganti nama-nama file di bawah ini sesuai dengan foto galeri Cukul Anda */}
           {[
-            "/cukul-1.jpg", 
-            "/cukul-2.jpg", 
-            "/cukul-3.jpg",
-            "/cukul-4.jpg"
+            "/sunrise-cukul-1.jpg", 
+            "/sunrise-cukul-2.jpg", 
+            "/sunrise-cukul-3.jpg",
+            "/sunrise-cukul-5.jpg"
           ].map((imgSrc, index) => (
             <div key={index} className="relative h-64 w-[85vw] sm:w-[400px] shrink-0 snap-center overflow-hidden rounded-2xl border border-zinc-800 shadow-lg">
               <Image 
                 src={imgSrc} 
                 alt={`Momen di Sunrise Cukul ${index + 1}`} 
                 fill 
-                className="object-cover transition-transform duration-500 hover:scale-105" 
+                className="object-cover object-[center_75%] transition-transform duration-500 hover:scale-105"
                 sizes="(max-width: 768px) 85vw, 400px"
               />
             </div>

@@ -12,7 +12,7 @@ export default function BosschaMalabarPage() {
       {/* 1. Hero Banner (Immersive First Impression) */}
       <section className="relative h-[60vh] min-h-[500px] w-full">
         <Image
-          src="/bosscha-hero.jpg" 
+          src="/makam-bosscha.jpg" 
           alt="Rumah Bersejarah K.A.R Bosscha di Malabar Pangalengan"
           fill
           className="object-cover"
@@ -116,9 +116,9 @@ export default function BosschaMalabarPage() {
         <div className="flex gap-4 overflow-x-auto pb-8 snap-x snap-mandatory px-4 sm:px-6 lg:px-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           
           {[
-            "/bosscha-1.jpg", 
+            "/makam-bosscha.jpg", 
             "/bosscha-2.jpg", 
-            "/bosscha-3.jpg",
+            "/bosscha-1.jpg",
             "/bosscha-4.jpg"
           ].map((imgSrc, index) => (
             <div key={index} className="relative h-64 w-[85vw] sm:w-[400px] shrink-0 snap-center overflow-hidden rounded-2xl border border-zinc-800 shadow-lg">
@@ -126,7 +126,7 @@ export default function BosschaMalabarPage() {
                 src={imgSrc} 
                 alt={`Heritage Bosscha Malabar ${index + 1}`} 
                 fill 
-                className="object-cover transition-transform duration-500 hover:scale-105" 
+                className="object-cover object-[center_75%] transition-transform duration-500 hover:scale-105" 
                 sizes="(max-width: 768px) 85vw, 400px"
               />
             </div>

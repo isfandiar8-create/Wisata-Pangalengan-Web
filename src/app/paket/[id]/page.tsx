@@ -10,7 +10,7 @@ const masterKatalog = [
     id: "rafting", 
     nama: "Rafting Palayangan", 
     kategori: "Aktivitas Satuan", 
-    harga: "Rp 150.000", 
+    harga: "Rp 165.000", 
     hargaAsli: "Rp 250.000", 
     fasilitas: [
       "Arung Jeram 4.5 KM (Sungai Palayangan)",
@@ -35,6 +35,7 @@ const masterKatalog = [
     ],
     label: "⚡ Terlaris", 
     image: "/rafting.jpg", 
+    video: "/promo-ig.mp4",
     deskripsi: "Olahraga mengarungi segarnya air di sungai Palayangan sepanjang 4.5km. Paket sudah lengkap, tinggal bawa badan aja! Dapatkan promo spesial untuk rombongan di atas 15 orang." 
   },
   { 
@@ -563,7 +564,7 @@ const masterKatalog = [
       "Obat-obatan pribadi keluarga"
     ],
     label: "Rekomendasi", 
-    image: "/combo-camp.jpg", 
+    image: "/combo-camp.jpg",  
     deskripsi: "Kasta tertinggi dari paket Family Camp kami. Ganti ATV dengan sensasi menembus rimbunnya hutan pinus menggunakan mobil tangguh Offroad Land Rover. Pilihan paling sempurna dan estetik bagi keluarga yang mencari harmoni antara ketenangan tidur di alam dan adrenalin tinggi di siang hari." 
   },
   { 
@@ -588,7 +589,7 @@ const masterKatalog = [
       "Senter kecil atau headlamp untuk mobilitas malam hari di area camping",
       "Pakaian ganti untuk aktivitas basah-basahan"
     ],
-    image: "/combo-camp.jpg", 
+    image: "/combo-camp.jpg",  
     deskripsi: "Pilihan paling bersahabat di kantong untuk merasakan kabut pagi khas Pangalengan dari pintu tenda Anda. Paket basic ini menyertakan sarapan pagi dan dua aktivitas petualangan utama (Rafting & Flying Fox) tanpa mengurangi standar keselamatan dan keseruan sedikit pun." 
   }
 ];
@@ -739,22 +740,27 @@ export default function DetailPaket() {
             </div>
           )}
 
-          {/* SESI BARU: VIDEO SHORT */}
-          <div className="mt-12 pt-8 border-t border-stone-100 text-center">
-            <h2 className="text-lg font-bold text-stone-800 mb-2 flex items-center justify-center gap-2">
-              <span className="text-emerald-500">🎬</span> Cuplikan Keseruan
-            </h2>
-            <p className="text-xs text-stone-500 mb-6">Lihat aksi nyatanya sebelum Anda merasakannya langsung!</p>
-            <div className="relative aspect-[9/16] w-full max-w-[280px] mx-auto rounded-3xl overflow-hidden shadow-2xl bg-stone-200 border-4 border-white">
-              {/* Masukkan Link YouTube Shorts / TikTok Anda di bagian src di bawah ini */}
-              <iframe 
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/g20t_K9dlhU?controls=0&autoplay=0&mute=0&loop=1" 
-                title="Short Video"
-                allowFullScreen
-              ></iframe>
+          {/* SESI BARU: VIDEO SHORT LOCAL (Dari folder public) */}
+          {paket.video && (
+            <div className="mt-12 pt-8 border-t border-stone-100 text-center">
+              <h2 className="text-lg font-bold text-stone-800 mb-2 flex items-center justify-center gap-2">
+                <span className="text-emerald-500">🎬</span> Cuplikan Keseruan
+              </h2>
+              <p className="text-xs text-stone-500 mb-6">Lihat aksi nyatanya sebelum Anda merasakannya langsung!</p>
+              
+              <div className="relative aspect-[9/16] w-full max-w-[280px] mx-auto rounded-3xl overflow-hidden shadow-2xl bg-stone-100 border-4 border-white group">
+                <video 
+                  className="w-full h-full object-cover"
+                  controls // Menampilkan tombol play/pause bawaan browser
+                  preload="metadata" // Agar tidak berat saat loading halaman pertama kali
+                  playsInline
+                >
+                  <source src={paket.video} type="video/mp4" />
+                  Browser Anda tidak mendukung pemutar video ini.
+                </video>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* SESI BARU: REKOMENDASI PAKET LAIN */}
           <div className="mt-16 pt-8 border-t border-stone-100">

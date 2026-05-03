@@ -12,7 +12,7 @@ export default function WayangWinduPage() {
       {/* 1. Hero Banner (Immersive First Impression) */}
       <section className="relative h-[60vh] min-h-[500px] w-full">
         <Image
-          src="/wayang-hero.jpg" 
+          src="/wayang.jpg" 
           alt="Panorama Wayang Windu Panenjoan Pangalengan"
           fill
           className="object-cover"
@@ -127,7 +127,7 @@ export default function WayangWinduPage() {
                 src={imgSrc} 
                 alt={`Momen di Wayang Windu ${index + 1}`} 
                 fill 
-                className="object-cover transition-transform duration-500 hover:scale-105" 
+                className="object-cover object-[center_75%] transition-transform duration-500 hover:scale-105" 
                 sizes="(max-width: 768px) 85vw, 400px"
               />
             </div>
