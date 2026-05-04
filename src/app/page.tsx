@@ -204,6 +204,7 @@ function ComboSlider({ items }: { items: any[] }) {
 
 // ─── HALAMAN UTAMA (Diurutkan Sesuai Psikologi Marketing) ────────────────
 export default function Home() {
+  const [showAllDestinasi, setShowAllDestinasi] = useState(false);
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 font-sans">
       <main className="flex flex-col">
@@ -246,15 +247,17 @@ export default function Home() {
         </section>
 
         <FadeIn>
-          {/* 2. SPOT IKONIK DESTINASI (Interest) */}
+          {/* 2. SPOT IKONIK DESTINASI (Interest - Format Grid 2x2 Mobile / 3x2 Desktop) */}
           <section className="bg-white px-4 py-16 sm:py-24 sm:px-6 lg:px-8" id="destinasi">
             <div className="mx-auto max-w-6xl">
+              
               <div className="mb-10 space-y-1.5 text-center">
                 <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Spot Ikonik Pangalengan</h2>
                 <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Temukan relaksasi di sudut-sudut paling fotogenik di Pangalengan.</p>
               </div>
 
-              <div className="flex overflow-x-auto gap-3 sm:gap-4 pb-6 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-4 md:pb-0 md:overflow-visible [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              {/* Grid Layout: 2 Kolom di HP, 3 Kolom di Desktop */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
                 {[
                   { nama: "Nimo Highland", desc: "Hamparan kebun teh 360°", img: "/nimo.jpg" },
                   { nama: "Sunrise Cukul", desc: "Matahari terbit terbaik", img: "/cukul.jpg" },
@@ -263,8 +266,21 @@ export default function Home() {
                   { nama: "Wayang Windu", desc: "Romantisme senja & kabut", img: "/wayang.jpg" },
                   { nama: "Bosscha Malabar", desc: "Jejak sejarah raja teh", img: "/makam-bosscha.jpg" },
                 ].map((dest, idx) => (
-                  <Link href={`/destinasi/${dest.nama.toLowerCase().replace(/ /g, '-')}`} key={idx} className="group relative block overflow-hidden rounded-2xl bg-stone-100 aspect-[4/5] md:aspect-square border border-stone-200 shadow-sm shrink-0 snap-center w-[55vw] sm:w-[240px] md:w-auto">
-                    <Image src={dest.img} alt={dest.nama} fill className="object-cover object-[center_75%] transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 55vw, 33vw" />
+                  <Link 
+                    href={`/destinasi/${dest.nama.toLowerCase().replace(/ /g, '-')}`} 
+                    key={idx} 
+                    // Trik Magis: Item ke-5 & ke-6 (idx >= 4) disembunyikan di HP jika tombol belum diklik, tapi selalu muncul di Desktop (md:block)
+                    className={`group relative overflow-hidden rounded-2xl bg-stone-100 aspect-square border border-stone-200 shadow-sm ${
+                      idx >= 4 && !showAllDestinasi ? 'hidden md:block' : 'block'
+                    }`}
+                  >
+                    <Image 
+                      src={dest.img} 
+                      alt={dest.nama} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      sizes="(max-width: 768px) 50vw, 33vw" 
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                     <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
                       <h3 className="text-sm font-bold text-white sm:text-base tracking-wide">{dest.nama}</h3>
@@ -273,6 +289,21 @@ export default function Home() {
                   </Link>
                 ))}
               </div>
+
+              {/* Tombol Dropdown Khusus Mobile (Disembunyikan di Layar Desktop) */}
+              <div className="mt-8 flex justify-center md:hidden">
+                <button
+                  onClick={() => setShowAllDestinasi(!showAllDestinasi)}
+                  className="flex items-center gap-2 text-sm font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-6 py-2.5 rounded-full hover:bg-emerald-100 transition-all active:scale-95"
+                >
+                  {showAllDestinasi ? (
+                    <>Sembunyikan <span className="text-lg leading-none">▴</span></>
+                  ) : (
+                    <>Spot Lainnya <span className="text-lg leading-none">▾</span></>
+                  )}
+                </button>
+              </div>
+
             </div>
           </section>
         </FadeIn>
