@@ -204,7 +204,50 @@ function ComboSlider({ items }: { items: any[] }) {
 
 // ─── HALAMAN UTAMA (Diurutkan Sesuai Psikologi Marketing) ────────────────
 export default function Home() {
-  const [showAllDestinasi, setShowAllDestinasi] = useState(false);
+  const [showAllDestinasi, setShowAllDestinasi] = useState(false); 
+  const [showAllPenginapan, setShowAllPenginapan] = useState(false);
+  const penginapanRef = useRef<HTMLDivElement>(null);
+  const [activePenginapan, setActivePenginapan] = useState(0);
+  // Karena datanya dibagi 2 baris, jumlah titiknya adalah (Total Data dibagi 2)
+  const totalPenginapanCols = Math.ceil(sortedPenginapan.length / 2);
+  const handlePenginapanScroll = () => {
+    if (!penginapanRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = penginapanRef.current;
+    // Hitung jarak maksimal yang bisa digeser
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return; // Abaikan jika layar sudah cukup lebar (tidak bisa digeser)
+    // Hitung persentase geseran lalu ubah menjadi urutan titik (index)
+    const scrollPercentage = scrollLeft / maxScroll;
+    const currentIndex = Math.round(scrollPercentage * (totalPenginapanCols - 1));
+    setActivePenginapan(currentIndex);
+  };
+  // --- 2. SENSOR PETUALANGAN SATUAN (DIREVISI MENJADI 2 BARIS) ---
+  const petualanganRef = useRef<HTMLDivElement>(null);
+  const [activePetualangan, setActivePetualangan] = useState(0);
+  
+  // PERUBAHAN: Karena sekarang 2 baris, total titik adalah jumlah data dibagi 2
+  const totalPetualanganCols = Math.ceil(kategoriPetualangan.length / 2);
+  
+  const handlePetualanganScroll = () => {
+    if (!petualanganRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = petualanganRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return;
+    setActivePetualangan(Math.round((scrollLeft / maxScroll) * (totalPetualanganCols - 1)));
+  };
+  // --- 3. SENSOR PAKET COMBO (BARU) ---
+  const comboRef = useRef<HTMLDivElement>(null);
+  const [activeCombo, setActiveCombo] = useState(0);
+  // Combo formatnya 2 baris, jadi jumlah titiknya = total data dibagi 2
+  const totalComboCols = Math.ceil(paketCombo.length / 2);
+  const handleComboScroll = () => {
+    if (!comboRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = comboRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return;
+    setActiveCombo(Math.round((scrollLeft / maxScroll) * (totalComboCols - 1)));
+  };
+  // ---------------------------------------
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 font-sans">
       <main className="flex flex-col">
@@ -309,16 +352,23 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* 3. KATALOG PETUALANGAN & COMBO (Action - Transisi Warna Hijau Lembut) */}
+          {/* 4. KATALOG PETUALANGAN & COMBO (Kini Semuanya Geser Manual yang Stabil) */}
           <section id="petualangan" className="bg-emerald-50/60 px-4 py-16 sm:py-24 sm:px-6 lg:px-8 border-b border-emerald-100/50">
             <div className="mx-auto max-w-6xl">
+              
+              {/* --- KATALOG PETUALANGAN SATUAN (2 Baris) --- */}
               <div className="mb-8 space-y-1.5 text-center">
                 <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Katalog Wisata</h2>
                 <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Pilih keseruan Anda. Format ringkas dengan harga ter-update 2026.</p>
               </div>
 
               <div className="relative group">
-                <div className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div 
+                  ref={petualanganRef}
+                  onScroll={handlePetualanganScroll}
+                  // PERUBAHAN DI SINI: grid-rows-1 diubah menjadi grid-rows-2
+                  className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-1"
+                >
                   {kategoriPetualangan.map((item, idx) => (
                     <Link href={`/paket/${item.id}`} key={idx} className="w-[85vw] sm:w-[320px] shrink-0 snap-start flex items-center gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5">
                       <div className="w-20 h-20 sm:w-24 sm:h-24 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
@@ -336,61 +386,157 @@ export default function Home() {
                     </Link>
                   ))}
                 </div>
+
+                {/* INDIKATOR TITIK: Petualangan Satuan */}
+                <div className="mt-4 flex justify-center items-center gap-1.5">
+                  {Array.from({ length: totalPetualanganCols }).map((_, i) => (
+                    <div
+                      key={i}
+                      className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
+                        activePetualangan === i ? "w-5 bg-emerald-600" : "w-1.5 bg-emerald-200 hover:bg-emerald-300"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
 
-              <ComboSlider items={paketCombo} />
+              {/* --- PAKET COMBO (2 Baris) --- */}
+              <div className="mt-16 pt-12 border-t border-emerald-200/60">
+                <div className="text-center mb-8 space-y-1.5">
+                   <h3 className="text-2xl font-bold text-stone-800 sm:text-3xl">Paket Combo Wisata</h3>
+                   <p className="max-w-2xl text-sm text-stone-500 font-medium mx-auto">Solusi liburan praktis, hemat, dan paling lengkap.</p>
+                </div>
 
-              <div className="mt-12 flex justify-center">
+                <div className="relative group">
+                  <div 
+                    ref={comboRef}
+                    onScroll={handleComboScroll}
+                    className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-1"
+                  >
+                    {paketCombo.map((pkt, idx) => (
+                      <Link href={`/paket/${pkt.id}`} key={idx} className="w-[85vw] sm:w-[320px] shrink-0 snap-start flex items-center gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5">
+                        <div className="w-20 h-20 sm:w-24 sm:h-24 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
+                          <Image src={pkt.image} alt={pkt.nama} fill className="object-cover" />
+                          <span className="absolute top-0 left-0 text-[8px] font-black uppercase px-2.5 py-1 rounded-br-xl bg-stone-900/80 backdrop-blur-sm text-emerald-400 shadow-sm">{pkt.durasi}</span>
+                        </div>
+                        <div className="flex-1 flex flex-col justify-center">
+                          <div className="flex justify-between items-start mb-0.5">
+                             <span className={`text-[8px] font-black uppercase px-1.5 py-0.5 rounded ${pkt.color}`}>{pkt.tag}</span>
+                          </div>
+                          <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight mt-0.5">{pkt.nama}</h4>
+                          <p className="text-[10px] sm:text-xs text-stone-500 line-clamp-2 mt-1 mb-2 leading-relaxed">{pkt.fasilitas.join(" • ")}</p>
+                          <div className="mt-auto flex justify-between items-center">
+                            <span className="font-black text-emerald-700 text-sm sm:text-base">{pkt.harga}</span>
+                            <span className="bg-stone-100 text-stone-600 hover:bg-emerald-100 hover:text-emerald-700 text-[10px] font-bold px-2.5 py-1.5 rounded-lg transition-colors">Lihat &rarr;</span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* INDIKATOR TITIK: Paket Combo */}
+                  <div className="mt-4 flex justify-center items-center gap-1.5">
+                    {Array.from({ length: totalComboCols }).map((_, i) => (
+                      <div
+                        key={i}
+                        className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
+                          activeCombo === i ? "w-5 bg-emerald-600" : "w-1.5 bg-emerald-200 hover:bg-emerald-300"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Tombol ke Halaman Katalog Full */}
+              <div className="mt-14 flex justify-center">
                 <Link href="/katalog-wisata" className="group inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white shadow-sm">
                   Lihat Seluruh Daftar Wisata 2026
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
               </div>
+
             </div>
           </section>
         </FadeIn>
 
         <FadeIn>
-          {/* 4. KATALOG PENGINAPAN (Action) */}
+          {/* 5. KATALOG PENGINAPAN (Dengan Indikator Titik Estetik) */}
           <section id="penginapan" className="bg-white px-4 py-16 sm:py-24 sm:px-6 lg:px-8 border-b border-stone-100">
             <div className="mx-auto max-w-6xl">
+              
               <div className="mb-10 text-center space-y-1.5">
                 <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Katalog Penginapan</h2>
                 <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Dari cottage hangat hingga vila eksklusif. Temukan tempat istirahat sempurna Anda.</p>
               </div>
 
-              <div className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-1">
+              {/* PASANG SENSOR: ref dan onScroll ditambahkan di sini */}
+              <div 
+                ref={penginapanRef}
+                onScroll={handlePenginapanScroll}
+                className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 pb-4 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden px-1"
+              >
                 {sortedPenginapan.map((item) => (
-                  <Link href={`/penginapan/${item.id}`} key={item.id} className="group relative flex flex-col w-[45vw] sm:w-[220px] aspect-[4/5] shrink-0 snap-start overflow-hidden rounded-2xl bg-stone-100 shadow-sm border border-stone-200">
-                    <Image src={item.image} alt={item.nama} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 45vw, 220px" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/40 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                  <Link 
+                    href={`/penginapan/${item.id}`} 
+                    key={item.id} 
+                    className="group relative flex flex-col aspect-square w-[45vw] sm:w-[200px] shrink-0 snap-start overflow-hidden rounded-2xl bg-stone-100 shadow-sm border border-stone-200"
+                  >
+                    <Image 
+                      src={item.image} 
+                      alt={item.nama} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      sizes="(max-width: 768px) 45vw, 200px" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/95 via-stone-900/30 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                    
                     {item.label && (
-                      <span className={`absolute top-2 left-2 text-[8px] font-black uppercase px-2.5 py-1 rounded shadow-lg tracking-wider ${
+                      <span className={`absolute top-2 left-2 text-[8px] font-black uppercase px-2 py-0.5 rounded shadow-lg tracking-wider ${
                         item.label === 'Budget' ? 'bg-emerald-600 text-white' : 
                         item.label === 'Big Size' ? 'bg-slate-700 text-white' : 
                         'bg-stone-900/90 text-amber-400 border border-amber-900/30 backdrop-blur-sm'
-                      }`}>{item.label}</span>
+                      }`}>
+                        {item.label}
+                      </span>
                     )}
-                    <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 flex flex-col justify-end">
+                    
+                    <div className="absolute inset-x-0 bottom-0 p-3 flex flex-col justify-end">
                       <h3 className="font-bold text-white text-xs sm:text-sm leading-tight mb-1">{item.nama}</h3>
-                      <p className="text-[9px] sm:text-[10px] text-stone-300 line-clamp-2 mb-2 leading-relaxed">{item.deskripsi}</p>
-                      <p className="text-sm sm:text-base font-black text-emerald-400 tracking-tight">{item.hargaDiskon}<span className="text-[8px] font-medium text-stone-400 ml-1">/malam</span></p>
+                      <p className="text-[9px] text-stone-300 line-clamp-1 mb-1.5">{item.deskripsi}</p>
+                      <p className="text-xs sm:text-sm font-black text-emerald-400 tracking-tight">{item.hargaDiskon}</p>
                     </div>
                   </Link>
                 ))}
               </div>
-              <div className="mt-6 flex justify-center">
-                  <Link href="/penginapan" className="group inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white">
-                    Lihat Pricelist Lengkap Penginapan 2026
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                  </Link>
+
+              {/* INDIKATOR TITIK (DOTS) */}
+              {/* Desain pil memanjang (w-5) untuk yang aktif, dan titik kecil (w-1.5) untuk yang belum disentuh */}
+              <div className="mt-4 mb-8 flex justify-center items-center gap-1.5">
+                {Array.from({ length: totalPenginapanCols }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
+                      activePenginapan === i ? "w-5 bg-emerald-600" : "w-1.5 bg-stone-200 hover:bg-stone-300"
+                    }`}
+                  />
+                ))}
               </div>
+
+              {/* Tombol ke Halaman Pricelist */}
+              <div className="mt-8 flex justify-center">
+                <Link href="/penginapan" className="group flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white">
+                  Lihat Pricelist Lengkap Penginapan 2026
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
+              </div>
+
             </div>
           </section>
         </FadeIn>
 
         <FadeIn>
-          {/* SESI: VIDEO SHORTS (Intip Keseruannya) */}
+          {/* 5. SESI: VIDEO SHORTS (Intip Keseruannya) */}
           <section className="bg-stone-50 px-4 py-20 sm:px-6 lg:px-8 border-y border-stone-200">
             <div className="mx-auto max-w-4xl text-center">
               
