@@ -20,28 +20,28 @@ const aktivitasSatuan = [
 // ─── DATA: PAKET COMBO WISATA ─────────────────────────────────────────────
 const paketCombo = [
   // KELUARGA
-  { id: "keluarga-hemat", nama: "Keluarga Hemat", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", hargaAsli: "Rp 250.000", label: "Lebih Hemat", image: "/keluarga-hemat.JPG", deskripsi: "Rafting, Flying Fox, Makan & Dokumentasi. Paket dasar terlengkap." },
-  { id: "keluarga-seru", nama: "Keluarga Seru", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", hargaAsli: "Rp 380.000", image: "/keluarga-seru.jpg", deskripsi: "Ekstra petualangan dengan ATV! Pilihan pas untuk keluarga petualang." },
-  { id: "keluarga-puas", nama: "Keluarga Puas", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", hargaAsli: "Rp 480.000", label: "Rekomendasi", image: "/keluarga-puas.jpg", deskripsi: "Rafting, Flying Fox & Offroad Land Rover. Paket premium tanpa lelah." },
+  { id: "keluarga-hemat", nama: "Hemat & Praktis", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", hargaAsli: "Rp 250.000", label: "Lebih Hemat", image: "/keluarga-hemat.JPG", deskripsi: "Rafting, Flying Fox, Makan & Dokumentasi. Paket dasar terlengkap." },
+  { id: "keluarga-seru", nama: "Seru Maksimal", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", hargaAsli: "Rp 380.000", image: "/keluarga-seru.jpg", deskripsi: "Ekstra petualangan dengan ATV! Pilihan pas untuk keluarga petualang." },
+  { id: "keluarga-puas", nama: "Puas Eksplorasi", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", hargaAsli: "Rp 480.000", label: "Rekomendasi", image: "/keluarga-puas.jpg", deskripsi: "Rafting, Flying Fox & Offroad Land Rover. Paket premium tanpa lelah." },
 
   // CORPORATE
-  { id: "corp-a1d", nama: "Corporate A1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 360.000", hargaAsli: "Rp 430.000", image: "/corporate-1d-a.jpeg", deskripsi: "Rafting, Paintball, ATV & Makan Siang. Satu hari penuh aksi." },
-  { id: "corp-b1d", nama: "Corporate B1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 350.000", hargaAsli: "Rp 410.000", label: "⚡ Favorit HRD", image: "/corporate-1d-b.JPG", deskripsi: "Rafting, Paintball & Team Building. Sempurna untuk kekompakan tim." },
-  { id: "corp-c1d", nama: "Corporate C1D", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 549.000", hargaAsli: "Rp 630.000", image: "/corporate-1n-c.jpg", deskripsi: "Rafting, Offroad, Paintball & Ice Breaking. Mewah dan padat." },
-  { id: "corp-a2d", nama: "Corporate A2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 239.000", hargaAsli: "Rp 300.000", image: "/corporate-1n-a.JPG", deskripsi: "Fresh Rafting, Paintball & Makan. Paket ekonomis menginap." },
-  { id: "corp-b2d", nama: "Corporate B2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 650.000", hargaAsli: "Rp 750.000", label: "Bestseller", image: "/corporate-1n-b.JPG", deskripsi: "Rafting, Paintball, Kambing Guling & Live Music. Standar emas outing." },
-  { id: "corp-c2d", nama: "Corporate C2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 450.000", hargaAsli: "Rp 520.000", image: "/rafting.jpg", deskripsi: "Fasilitas lengkap 2D1N dikawal penuh oleh tour leader kami." },
-  { id: "corp-d2d", nama: "Corporate D2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 200.000", hargaAsli: "Rp 250.000", image: "/teambuilding1.jpeg", deskripsi: "Rafting & Fun Games. Fokus pada tawa dan keseruan santai." },
-  { id: "corp-vip", nama: "Corp VIP E2D", kategori: "Corporate", durasi: "Menginap", harga: "Rp 1.099.000", hargaAsli: "Rp 1.300.000", label: "⭐ VIP", image: "/corporate-vip.JPG", deskripsi: "Layanan karpet merah. Villa Mewah, Offroad, Rafting & Makan Premium." },
+  { id: "corp-a1d", nama: "Adventure Plus", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 360.000", hargaAsli: "Rp 430.000", image: "/corporate-1d-a.jpeg", deskripsi: "Rafting, Paintball, ATV & Makan Siang. Satu hari penuh aksi." },
+  { id: "corp-b1d", nama: "Synergy Build", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 350.000", hargaAsli: "Rp 410.000", label: "⚡ Favorit HRD", image: "/corporate-1d-b.JPG", deskripsi: "Rafting, Paintball & Team Building. Sempurna untuk kekompakan tim." },
+  { id: "corp-c1d", nama: "Xtreme Offroad", kategori: "Corporate", durasi: "1 Hari", harga: "Rp 549.000", hargaAsli: "Rp 630.000", image: "/corporate-1n-c.jpg", deskripsi: "Rafting, Offroad, Paintball & Ice Breaking. Mewah dan padat." },
+  { id: "corp-a2d", nama: "Essential Trip", kategori: "Corporate", durasi: "2 Hari", harga: "Rp 239.000", hargaAsli: "Rp 300.000", image: "/corporate-1n-a.JPG", deskripsi: "Fresh Rafting, Paintball & Makan. Paket ekonomis 2 Hari." },
+  { id: "corp-b2d", nama: "Feast & Fun", kategori: "Corporate", durasi: "2 Hari", harga: "Rp 650.000", hargaAsli: "Rp 750.000", label: "Bestseller", image: "/corporate-1n-b.JPG", deskripsi: "Rafting, Paintball, Kambing Guling & Live Music. Standar emas outing." },
+  { id: "corp-c2d", nama: "All-Inclusive", kategori: "Corporate", durasi: "2 Hari", harga: "Rp 450.000", hargaAsli: "Rp 520.000", image: "/rafting.jpg", deskripsi: "Fasilitas lengkap 2D1N dikawal penuh oleh tour leader kami." },
+  { id: "corp-d2d", nama: "Relax & Retreat", kategori: "Corporate", durasi: "2 Hari", harga: "Rp 200.000", hargaAsli: "Rp 250.000", image: "/teambuilding1.jpeg", deskripsi: "Rafting & Fun Games. Fokus pada tawa dan keseruan santai." },
+  { id: "corp-vip", nama: "VIP Executive", kategori: "Corporate", durasi: "2 Hari", harga: "Rp 1.099.000", hargaAsli: "Rp 1.300.000", label: "⭐ VIP", image: "/corporate-vip.JPG", deskripsi: "Layanan karpet merah. Villa Mewah, Offroad, Rafting & Makan Premium." },
 
   // FAMILY CAMP
-  { id: "camp-fca", nama: "Family Camp FCA", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 495.000", hargaAsli: "Rp 580.000", image: "/family-camp-a.JPG", deskripsi: "Glamping, Rafting, ATV & Flying Fox. Petualangan lengkap di alam." },
-  { id: "camp-fcb", nama: "Family Camp FCB", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 620.000", hargaAsli: "Rp 700.000", label: "Rekomendasi", image: "/family-camp-b.JPG", deskripsi: "Glamping, Rafting, Offroad & Flying Fox. Eksplorasi pinus yang sunyi." },
-  { id: "camp-fcc", nama: "Family Camp FCC", kategori: "Family Camp", durasi: "Menginap", harga: "Rp 395.000", hargaAsli: "Rp 450.000", image: "/flyingfox.jpg", deskripsi: "Glamping, Rafting & Flying Fox. Menikmati kabut dan keseruan air." },
+  { id: "camp-fca", nama: "Glamping & ATV", kategori: "Family Camp", durasi: "2 Hari", harga: "Rp 495.000", hargaAsli: "Rp 580.000", image: "/family-camp-a.JPG", deskripsi: "Glamping, Rafting, ATV & Flying Fox. Petualangan lengkap di alam." },
+  { id: "camp-fcb", nama: "Glamping & Offroad", kategori: "Family Camp", durasi: "2 Hari", harga: "Rp 620.000", hargaAsli: "Rp 700.000", label: "Rekomendasi", image: "/family-camp-b.JPG", deskripsi: "Glamping, Rafting, Offroad & Flying Fox. Eksplorasi pinus yang sunyi." },
+  { id: "camp-fcc", nama: "Classic Glamping", kategori: "Family Camp", durasi: "2 Hari", harga: "Rp 395.000", hargaAsli: "Rp 450.000", image: "/flyingfox.jpg", deskripsi: "Glamping, Rafting & Flying Fox. Menikmati kabut dan keseruan air." },
 ];
 
-const comboFilters = ["Semua Combo", "Keluarga", "Corporate", "Family Camp"];
-const durasiFilters = ["Semua Waktu", "1 Hari", "Menginap"];
+const comboFilters = ["Semua", "Keluarga", "Corporate", "Family Camp"];
+const durasiFilters = ["Semua Waktu", "1 Hari", "2 Hari"];
 
 // ─── KOMPONEN KARTU BENTO RINGKAS ─────────────────────────────────────────
 function CompactCard({ item }: { item: any }) {
@@ -107,11 +107,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 // ─── HALAMAN UTAMA KATALOG ────────────────────────────────────────────────
 export default function KatalogPetualangan() {
-  const [activeComboFilter, setActiveComboFilter] = useState("Semua Combo");
+  const [activeComboFilter, setActiveComboFilter] = useState("Semua");
   const [activeDurasiFilter, setActiveDurasiFilter] = useState("Semua Waktu");
 
   const filteredCombo = paketCombo.filter(item => {
-    const matchKategori = activeComboFilter === "Semua Combo" || item.kategori === activeComboFilter;
+    const matchKategori = activeComboFilter === "Semua" || item.kategori === activeComboFilter;
     const matchDurasi = activeDurasiFilter === "Semua Waktu" || item.durasi === activeDurasiFilter;
     return matchKategori && matchDurasi;
   });
@@ -121,7 +121,7 @@ export default function KatalogPetualangan() {
       
       {/* 1. HERO HEADER */}
       <section className="relative w-full pt-28 pb-16 sm:pt-32 sm:pb-20 px-4 text-center sm:px-6 lg:px-8 overflow-hidden bg-stone-900">
-        <Image src="/hero-pangalengan-trip.jpg" alt="Katalog Wisata Pangalengan" fill className="object-cover opacity-40" priority />
+        <Image src="/rafting.jpg" alt="Katalog Wisata Pangalengan" fill className="object-cover opacity-40" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-stone-900/80 via-stone-900/60 to-stone-50"></div>
         <div className="relative z-10 mx-auto max-w-3xl space-y-4">
           <Link href="/" className="inline-flex items-center gap-2 text-stone-300 hover:text-white transition text-xs font-bold uppercase tracking-widest mb-2">
@@ -154,95 +154,163 @@ export default function KatalogPetualangan() {
         </div>
       </section>
 
-      {/* 3. SESI: PAKET COMBO WISATA */}
-      <section className="px-4 py-12 sm:py-16 sm:px-6 lg:px-8 bg-emerald-50/50 border-y border-emerald-100">
+      {/* 3. SESI: PAKET COMBO WISATA (Desain Silo dengan Data Master Baru) */}
+      <section className="px-4 py-16 sm:py-24 sm:px-6 lg:px-8 bg-emerald-50/50 border-y border-emerald-100">
         <div className="mx-auto max-w-6xl">
-          {/* Judul Di-Center */}
-          <div className="mb-8 text-center space-y-1.5">
-            <h2 className="text-2xl font-bold text-stone-800 sm:text-3xl">Paket Combo Wisata</h2>
-            <p className="text-sm text-stone-500 font-medium">Lebih hemat dan lengkap. Temukan yang paling pas untuk Anda.</p>
+          
+          <div className="mb-10 text-center space-y-1.5">
+            <h2 className="text-2xl font-bold text-stone-800 sm:text-3xl">Katalog Paket Combo</h2>
+            <p className="text-sm text-stone-500 font-medium max-w-2xl mx-auto">Dirancang khusus untuk rombongan. Pilih paket yang paling sesuai dengan kebutuhan Anda.</p>
           </div>
 
-          {/* Wrapper Filter Berlapis Di-Center */}
-          <div className="mb-10 space-y-3 flex flex-col items-center">
-            
-            {/* Baris 1: Filter Kategori */}
-            <div className="flex justify-center gap-2 overflow-x-auto w-full max-w-full px-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {comboFilters.map((kat) => (
-                <button
-                  key={kat}
-                  onClick={() => setActiveComboFilter(kat)}
-                  className={`shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border ${
-                    activeComboFilter === kat 
-                      ? "bg-emerald-600 text-white border-emerald-600 shadow-md" 
-                      : "bg-white text-stone-500 border-stone-200 hover:bg-stone-100 hover:text-stone-800"
-                  }`}
-                >
-                  {kat}
-                </button>
-              ))}
-            </div>
-
-            {/* Baris 2: Filter Durasi Waktu */}
-            <div className="flex justify-center gap-2 overflow-x-auto w-full max-w-full px-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {/* FILTER DURASI ELEGAN */}
+          <div className="mb-16 flex justify-center">
+            <div className="inline-flex bg-white/60 p-1.5 rounded-2xl sm:rounded-full border border-emerald-200/60 shadow-[0_4px_20px_-10px_rgba(5,150,105,0.15)] backdrop-blur-sm overflow-x-auto max-w-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {durasiFilters.map((durasi) => (
                 <button
                   key={durasi}
                   onClick={() => setActiveDurasiFilter(durasi)}
-                  className={`shrink-0 px-4 py-1.5 rounded-md text-[11px] font-bold transition-all duration-300 border flex items-center gap-1.5 ${
+                  className={`relative shrink-0 px-6 py-3 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
                     activeDurasiFilter === durasi 
-                      ? "bg-stone-800 text-white border-stone-800" 
-                      : "bg-transparent text-stone-500 border-stone-300 hover:bg-stone-200"
+                      ? "bg-emerald-600 text-white shadow-md transform scale-[1.02]" 
+                      : "bg-transparent text-emerald-800/70 hover:text-emerald-900 hover:bg-emerald-50/80"
                   }`}
                 >
-                  <span className="opacity-70">
-                    {durasi === "Semua Waktu" ? "⏳" : durasi === "1 Hari" ? "☀️" : "🌙"}
+                  <span className={`text-base leading-none ${activeDurasiFilter === durasi ? 'opacity-100' : 'opacity-60 grayscale'}`}>
+                    {durasi === "Semua Waktu" ? "✨" : durasi === "1 Hari" ? "☀️" : "⛺"}
                   </span>
                   {durasi}
                 </button>
               ))}
             </div>
-
           </div>
 
-          {/* Grid Combo Dinamis */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <AnimatePresence mode="popLayout">
-              {filteredCombo.map((item) => (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  key={item.id}
-                >
-                  <CompactCard item={item} />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-            
-            {/* Pesan Jika Kombinasi Filter Kosong */}
-            {filteredCombo.length === 0 && (
-               <div className="col-span-full text-center py-10 bg-white rounded-2xl border border-stone-200">
-                 <span className="text-3xl">🕵️‍♂️</span>
-                 <h3 className="text-base font-bold text-stone-800 mt-3">Tidak Ada Paket yang Sesuai</h3>
-                 <p className="text-sm text-stone-500 mt-1">Coba ubah kombinasi filter kategori dan durasi Anda.</p>
-                 <button 
-                   onClick={() => { setActiveComboFilter("Semua Combo"); setActiveDurasiFilter("Semua Waktu"); }}
-                   className="mt-4 text-xs font-bold text-emerald-600 bg-emerald-50 px-4 py-2 rounded-lg hover:bg-emerald-100 transition"
-                 >
-                   Reset Filter
-                 </button>
-               </div>
-            )}
+          {/* MAPPING SETIAP KATEGORI (SILO RINGKAS) */}
+          <div className="space-y-16 sm:space-y-20">
+            {[
+              { 
+                id: "keluarga", 
+                nama: "👨‍👩‍👧‍👦 Liburan Keluarga", 
+                desc: "Hangat, aman, dan penuh tawa untuk segala usia.", 
+                targetKat: ["Keluarga"] 
+              },
+              { 
+                id: "corporate", 
+                nama: "🏢 Corporate & Outing", 
+                desc: "Dari kegiatan satu hari yang padat hingga malam keakraban.", 
+                targetKat: ["Corporate"] 
+              },
+              { 
+                id: "camp", 
+                nama: "⛺ Glamping & Camp", 
+                desc: "Sensasi tidur di alam bebas dengan fasilitas eksklusif.", 
+                targetKat: ["Family Camp"] 
+              }
+            ].map((kategoriSesi) => {
+              
+              // 1. Filter Berdasarkan Kategori Saja (Durasi diabaikan di sini)
+              let paketDiSesiIni = paketCombo.filter(p => kategoriSesi.targetKat.includes(p.kategori));
+
+              // 2. Terapkan Filter Durasi Waktu (dari tombol klik pengguna di atas)
+              if (activeDurasiFilter !== "Semua Waktu") {
+                paketDiSesiIni = paketDiSesiIni.filter(p => p.durasi === activeDurasiFilter);
+              }
+
+              // 3. Sembunyikan Sesi jika kosong
+              if (paketDiSesiIni.length === 0) return null;
+
+              return (
+                <div key={kategoriSesi.id} className="space-y-5 sm:space-y-6">
+                  {/* Judul Sesi */}
+                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 border-b border-emerald-100 pb-3">
+                    <div>
+                      <h3 className="text-xl font-bold text-emerald-900">{kategoriSesi.nama}</h3>
+                      <p className="text-xs text-emerald-700/70 mt-1 font-medium">{kategoriSesi.desc}</p>
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-500 bg-emerald-50 px-3 py-1 rounded-full w-fit shrink-0">
+                      {paketDiSesiIni.length} Paket
+                    </span>
+                  </div>
+
+                  {/* GRID KARTU PAKET (Format COMPACT HORIZONTAL) */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                    {paketDiSesiIni.map((pkt) => (
+                      <Link 
+                        href={`/paket/${pkt.id}`} 
+                        key={pkt.id} 
+                        className="group flex items-center gap-3 sm:gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-sm transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5 relative"
+                      >
+                        {/* Gambar Thumbnail */}
+                        <div className="w-24 h-28 sm:w-28 sm:h-32 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
+                          <Image 
+                            src={pkt.image} 
+                            alt={pkt.nama} 
+                            fill 
+                            className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                            sizes="(max-width: 768px) 100px, 120px"
+                          />
+                          <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors"></div>
+                          
+                          {/* Badge Durasi */}
+                          <span className="absolute top-0 left-0 bg-stone-900/80 backdrop-blur-sm text-white text-[8px] font-black uppercase px-2 py-1 rounded-br-xl shadow-sm">
+                            {pkt.durasi}
+                          </span>
+                        </div>
+
+                        {/* Konten Teks di Sebelah Kanan */}
+                        <div className="flex-1 flex flex-col py-1 h-full justify-between overflow-hidden">
+                          <div>
+                            {/* Label Promo */}
+                            {pkt.label && (
+                              <div className="mb-1">
+                                <span className="inline-block bg-amber-50 text-amber-700 border border-amber-200/60 text-[8px] font-black uppercase px-2 py-0.5 rounded-md shadow-sm">
+                                  {pkt.label}
+                                </span>
+                              </div>
+                            )}
+
+                            {/* Judul & Deskripsi */}
+                            <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight mt-0.5 group-hover:text-emerald-700 transition-colors truncate">
+                              {pkt.nama}
+                            </h4>
+                            <p className="text-[10px] sm:text-xs text-stone-500 line-clamp-2 mt-1 mb-2 leading-relaxed">
+                              {pkt.deskripsi}
+                            </p>
+                          </div>
+
+                          {/* Harga & Tombol */}
+                          <div className="mt-auto flex justify-between items-end">
+                            <div className="flex flex-col">
+                              {/* Harga Coret */}
+                              {pkt.hargaAsli && (
+                                <span className="text-[9px] sm:text-[10px] text-rose-400/90 font-bold line-through decoration-rose-400/50 mb-0.5">
+                                  {pkt.hargaAsli}
+                                </span>
+                              )}
+                              <span className="font-black text-emerald-700 text-sm sm:text-base leading-none">
+                                {pkt.harga}
+                              </span>
+                            </div>
+                            
+                            <span className="bg-emerald-50 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-lg transition-colors shrink-0 ml-2">
+                              Detail &rarr;
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
+
         </div>
       </section>
       
       {/* 3.5 BANNER CUSTOM TRIP (JARING PENGAMAN) */}
       <section className="relative w-full px-4 py-16 sm:py-20 sm:px-6 lg:px-8 text-center text-white overflow-hidden bg-stone-900 border-y border-stone-800">
-        <Image src="/hero-pangalengan-trip.jpg" alt="Custom Trip Background" fill className="object-cover opacity-30" />
+        <Image src="/rafting.jpg" alt="Custom Trip Background" fill className="object-cover opacity-30" />
         <div className="absolute inset-0 bg-stone-900/85 backdrop-blur-[2px]"></div> 
         
         <div className="relative z-10 mx-auto max-w-3xl space-y-5">

@@ -89,20 +89,27 @@ const kategoriPetualangan: PaketItem[] = [
 ];
 
 const paketCombo = [
-  { id: "keluarga-hemat", nama: "Keluarga Hemat", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-hemat.JPG" },
-  { id: "keluarga-seru", nama: "Keluarga Seru", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-seru.jpg" },
-  { id: "keluarga-puas", nama: "Keluarga Puas", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", fasilitas: ["Rafting & Flying Fox", "Offroad Land Rover", "Makan & Air", "Dokumentasi"], color: "text-sky-700 bg-sky-100", image: "/keluarga-puas.jpg" },
-  { id: "corp-a1d", nama: "Corporate A1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 360.000", fasilitas: ["Rafting & Paintball", "ATV", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-a.jpeg" },
-  { id: "corp-b1d", nama: "Corporate B1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-b.JPG" },
-  { id: "corp-c1d", nama: "Corporate C1D", tag: "Corporate 1D", durasi: "1 Hari", harga: "Rp 549.000", fasilitas: ["Rafting & Offroad", "Paintball & Ice Breaking", "Makan Siang", "Foto Rafting"], color: "text-slate-700 bg-slate-100", image: "/corporate-1n-c.jpg" },
-  { id: "corp-a2d", nama: "Corporate A2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 239.000", fasilitas: ["Fresh Rafting", "Paintball", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-a.JPG" },
-  { id: "corp-b2d", nama: "Corporate B2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 650.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Kambing Guling"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-b.JPG" },
-  { id: "corp-c2d", nama: "Corporate C2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 450.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Tour Leader"], color: "text-indigo-700 bg-indigo-100", image: "/rafting.jpg" },
-  { id: "corp-d2d", nama: "Corporate D2D", tag: "Corp 2D1N", durasi: "Menginap", harga: "Rp 200.000", fasilitas: ["Rafting", "Fun Games", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
-  { id: "corp-vip", nama: "Corporate VIP E2D", tag: "VIP 2D1N", durasi: "Menginap", harga: "Rp 1.099.000", fasilitas: ["Villa VIP", "3x Makan", "Rafting & Team Building", "Offroad, Paintball"], color: "text-yellow-700 bg-yellow-50 border border-yellow-200", image: "/corporate-vip.JPG" },
-  { id: "camp-fca", nama: "Family Camp FCA", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 495.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & ATV", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-a.JPG" },
-  { id: "camp-fcb", nama: "Family Camp FCB", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 620.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & Offroad", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-b.JPG" },
-  { id: "camp-fcc", nama: "Family Camp FCC", tag: "Camp Menginap", durasi: "Menginap", harga: "Rp 395.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/flyingfox.jpg" },
+  // --- KELUARGA 1 HARI ---
+  { id: "keluarga-hemat", nama: "Hemat & Praktis", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-hemat.JPG" },
+  { id: "keluarga-seru", nama: "Seru Maksimal", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV Adventure", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-seru.jpg" },
+  { id: "keluarga-puas", nama: "Puas Eksplorasi", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", fasilitas: ["Rafting & Flying Fox", "Offroad Land Rover", "Makan & Air", "Dokumentasi"], color: "text-sky-700 bg-sky-100", image: "/keluarga-puas.jpg" },
+  
+  // --- CORPORATE 1 HARI ---
+  { id: "corp-a1d", nama: "Adventure Plus", tag: "Corporate", durasi: "1 Hari", harga: "Rp 360.000", fasilitas: ["Rafting & Paintball", "ATV", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-a.jpeg" },
+  { id: "corp-b1d", nama: "Synergy Build", tag: "Corporate", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-b.JPG" },
+  { id: "corp-c1d", nama: "Xtreme Offroad", tag: "Corporate", durasi: "1 Hari", harga: "Rp 549.000", fasilitas: ["Rafting & Offroad", "Paintball & Ice Breaking", "Makan Siang", "Foto Rafting"], color: "text-slate-700 bg-slate-100", image: "/corporate-1n-c.jpg" },
+  
+  // --- CORPORATE 2 Hari ---
+  { id: "corp-a2d", nama: "Essential Trip", tag: "Corporate", durasi: "2 Hari", harga: "Rp 239.000", fasilitas: ["Fresh Rafting", "Paintball", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-a.JPG" },
+  { id: "corp-b2d", nama: "Feast & Fun", tag: "Corporate", durasi: "2 Hari", harga: "Rp 650.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Kambing Guling"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-b.JPG" },
+  { id: "corp-c2d", nama: "All-Inclusive", tag: "Corporate", durasi: "2 Hari", harga: "Rp 450.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Tour Leader"], color: "text-indigo-700 bg-indigo-100", image: "/rafting.jpg" },
+  { id: "corp-d2d", nama: "Relax & Retreat", tag: "Corporate", durasi: "2 Hari", harga: "Rp 200.000", fasilitas: ["Rafting", "Fun Games", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
+  { id: "corp-vip", nama: "VIP Executive", tag: "Corporate", durasi: "2 Hari", harga: "Rp 1.099.000", fasilitas: ["Villa VIP", "3x Makan", "Rafting & Team Building", "Offroad, Paintball"], color: "text-yellow-700 bg-yellow-50 border border-yellow-200", image: "/corporate-vip.JPG" },
+  
+  // --- FAMILY CAMP ---
+  { id: "camp-fca", nama: "Glamping & ATV", tag: "Keluarga", durasi: "2 Hari", harga: "Rp 495.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & ATV", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-a.JPG" },
+  { id: "camp-fcb", nama: "Glamping & Offroad", tag: "Keluarga", durasi: "2 Hari", harga: "Rp 620.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & Offroad", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-b.JPG" },
+  { id: "camp-fcc", nama: "Classic Glamping", tag: "Keluarga", durasi: "2 Hari", harga: "Rp 395.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/flyingfox.jpg" },
 ];
 
 // ─── DATA BARU 2026: PENGINAPAN ─────────────────
@@ -121,7 +128,7 @@ const kategoriPenginapan: PaketItem[] = [
   { id: "family-a", nama: "Family A", harga: "", hargaAsli: "", hargaDiskon: "Rp 2.000.000", fasilitas: ["Max 20 Orang", "View Danau", "Nyaman"], label: "Big Size", image: "/family-a.jpg", deskripsi: "Kenyamanan istirahat paripurna dengan view danau yang sungguh memanjakan mata." },
   { id: "villa-palayangan-b", nama: "Villa Palayangan B", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.000.000", fasilitas: ["Premium", "Fasilitas Lengkap", "Eksklusif"], label: "VIP", image: "/villa-palayangan-b.jpg", deskripsi: "Eksklusivitas dan privasi tingkat tinggi yang dirancang khusus untuk tamu spesial." },
   { id: "harmony-riverside", nama: "Harmony Riverside", harga: "", hargaAsli: "", hargaDiskon: "Rp 1.750.000", fasilitas: ["Cabin Premium", "View Sungai", "Hutan Rahong"], label: "VIP", image: "/paket2.jpg", deskripsi: "Kabin estetik di tengah hutan pinus dengan nyanyian aliran sungai yang damai." },
-  { id: "vila-imah", nama: "Vila Imah", harga: "", hargaAsli: "", hargaDiskon: "Rp 5.500.000", fasilitas: ["Max 30 Orang", "VIP Premium", "Eksklusif"], label: "VIP", image: "/villa-imah.jpg", deskripsi: "Standar kemewahan premium untuk menciptakan pengalaman menginap tak terlupakan." },
+  { id: "vila-imah", nama: "Vila Imah", harga: "", hargaAsli: "", hargaDiskon: "Rp 5.500.000", fasilitas: ["Max 30 Orang", "VIP Premium", "Eksklusif"], label: "VIP", image: "/villa-imah.jpg", deskripsi: "Standar kemewahan premium untuk menciptakan pengalaman 2 Hari tak terlupakan." },
   { id: "vila-putih", nama: "Vila Putih", harga: "", hargaAsli: "", hargaDiskon: "Rp 6.000.000", fasilitas: ["Max 45 Orang", "Gazebo", "Estetik"], label: "VIP", image: "/villa-putih.jpg", deskripsi: "Vila megah nan estetik dengan kapasitas masif, pilihan utama untuk acara prestisius." },
   { id: "vila-putih-a", nama: "Vila Putih A", harga: "", hargaAsli: "", hargaDiskon: "Rp 3.500.000", fasilitas: ["Max 25 Orang", "Ikonik", "Premium"], label: "VIP", image: "/villa-putih-a.jpg", deskripsi: "Perpaduan harmoni antara desain ikonik dan keindahan alam yang memukau." },
   { id: "bumi-tilu", nama: "Bumi Tilu", harga: "", hargaAsli: "", hargaDiskon: "Rp 4.500.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Premium Estetik"], label: "VIP", image: "/bumi-tilu.jpg", deskripsi: "Estetika modern di tengah tenangnya alam, lengkap dengan kolam renang eksklusif." },

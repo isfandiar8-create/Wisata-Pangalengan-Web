@@ -64,7 +64,7 @@ const masterKatalog = [
       "Handuk dan perlengkapan mandi pribadi"
     ],
     label: "Super Seru", 
-    image: "/atv.jpg", 
+    image: "/keluarga-seru.jpg", 
     deskripsi: "Wisata adventure memacu adrenalin menjelajahi hamparan perkebunan teh dan pegunungan dengan lintasan sepanjang 4 KM. Ditemani udara sejuk Pangalengan dan tour guide profesional." 
   },
   { 
@@ -139,7 +139,7 @@ const masterKatalog = [
       "Uang saku ekstra (Paket belum termasuk makan siang & tiket parkir)"
     ],
     label: "Favorit HRD", 
-    image: "/team-building.jpg", 
+    image: "/teambuilding1.jpeg", 
     deskripsi: "Rangkaian permainan interaktif yang dirancang khusus untuk memecah ketegangan (ice breaking), membangun solidaritas, dan menumbuhkan kerja sama tim. Sangat direkomendasikan untuk rombongan keluarga besar maupun divisi perusahaan yang ingin me-refresh kekompakan." 
   },
   { 
@@ -219,7 +219,7 @@ const masterKatalog = [
   // COMBO KELUARGA
   { 
     id: "keluarga-hemat", 
-    nama: "Keluarga Hemat (1 Hari)", 
+    nama: "Hemat & Praktis", 
     kategori: "Combo Keluarga", 
     durasi: "1 Hari", 
     harga: "Rp 199.000", 
@@ -242,14 +242,14 @@ const masterKatalog = [
       "Sunblock, minyak telon/kayu putih, dan obat-obatan pribadi keluarga"
     ],
     label: "Lebih Hemat", 
-    image: "/combo-keluarga.jpg", 
+    image: "/keluarga-hemat.JPG", 
     deskripsi: "Berikan senyuman dan liburan terbaik untuk keluarga tanpa harus merogoh kocek dalam. Paket All-In One Day Trip ini dirancang khusus untuk menciptakan quality time yang bebas ribet. Anda sekeluarga tinggal datang, bermain aman, makan siang dengan nikmat, dan pulang membawa puluhan foto kenangan manis." 
   },
 
   // KELUARGA SERU
   { 
     id: "keluarga-seru", 
-    nama: "Keluarga Seru (1 Hari)", 
+    nama: "Seru Maksimal", 
     kategori: "Combo Keluarga", 
     durasi: "1 Hari", 
     harga: "Rp 299.000", 
@@ -271,14 +271,14 @@ const masterKatalog = [
       "Sepatu tertutup yang siap kotor (untuk ATV) & sandal gunung (untuk Rafting)", 
       "Kantong plastik tebal untuk memisahkan pakaian basah dan pakaian berlumpur"
     ],
-    image: "/combo-keluarga.jpg", 
+    image: "/keluarga-seru.jpg", 
     deskripsi: "Tingkatkan level petualangan akhir pekan keluarga Anda! Rasakan sensasi 'Triple Action': membelah angin di atas danau (Flying Fox), memacu adrenalin di jalur berlumpur (ATV), dan menantang arus sungai (Rafting). Paket komplit yang dijamin akan membuat anak-anak lepas dari layar gadget mereka seharian penuh." 
   },
 
   // KELUARGA PUAS
   { 
     id: "keluarga-puas", 
-    nama: "Keluarga Puas (1 Hari)", 
+    nama: "Puas Eksplorasi", 
     kategori: "Combo Keluarga", 
     durasi: "1 Hari", 
     harga: "Rp 410.000", 
@@ -303,14 +303,14 @@ const masterKatalog = [
       "Kantong plastik tebal untuk menyimpan pakaian basah"
     ],
     label: "Rekomendasi", 
-    image: "/combo-keluarga.jpg", 
+    image: "/keluarga-puas.jpg", 
     deskripsi: "Paket 'Sultan' untuk keluarga bahagia! Jelajahi eksotisme hutan pinus tanpa lelah menggunakan mobil legendaris Land Rover, meluncur bebas di atas danau, lalu ditutup dengan serunya bermain air di sungai Palayangan. Pengalaman premium satu hari penuh dengan letih yang sepadan dengan tawa lepas seluruh anggota keluarga." 
   },
   // COMBO CORPORATE
   // ─── COMBO CORPORATE (1 HARI / ONE DAY TRIP) ───
   { 
     id: "corp-a1d", 
-    nama: "Corporate A1D (1 Hari)", 
+    nama: "Adventure Plus", 
     kategori: "Combo Corporate", 
     durasi: "1 Hari", 
     harga: "Rp 360.000", 
@@ -331,12 +331,12 @@ const masterKatalog = [
       "Kantong plastik tebal untuk memisahkan pakaian kotor",
       "Flashdisk/Hardisk dari panitia untuk mengamankan file dokumentasi mentah"
     ],
-    image: "/combo-corp-1d.jpg", 
+    image: "/corporate-1d-a.jpeg", 
     deskripsi: "Satu hari penuh aksi untuk melepaskan penat dari rutinitas kantor! Kombinasi sempurna antara petualangan air, lumpur (ATV), dan strategi tempur (Paintball) yang akan memompa semangat dan energi baru bagi tim Anda." 
   },
   { 
     id: "corp-b1d", 
-    nama: "Corporate B1D (1 Hari)", 
+    nama: "Synergy Build", 
     kategori: "Combo Corporate", 
     durasi: "1 Hari", 
     harga: "Rp 350.000", 
@@ -357,12 +357,12 @@ const masterKatalog = [
       "Topi & Sunblock pelindung dari terik matahari"
     ],
     label: "⚡ Favorit HRD", 
-    image: "/combo-corp-1d.jpg", 
+    image: "/corporate-1d-b.JPG", 
     deskripsi: "Senjata rahasia para HRD! Paket ini dirancang khusus untuk meruntuhkan sekat senioritas, mencairkan kekakuan antar divisi (Ice Breaking), melatih komunikasi tim di bawah tekanan (Paintball), dan diakhiri dengan tawa lepas bersama di derasnya sungai (Rafting)." 
   },
   { 
     id: "corp-c1d", 
-    nama: "Corporate C1D (1 Hari)", 
+    nama: "Xtreme Offroad", 
     kategori: "Combo Corporate", 
     durasi: "1 Hari", 
     harga: "Rp 549.000", 
@@ -383,7 +383,7 @@ const masterKatalog = [
       "Baju ganti ekstra karena intensitas kegiatan sangat tinggi", 
       "Sepatu kets tertutup untuk keamanan Paintball & Offroad"
     ],
-    image: "/combo-corp-1d.jpg", 
+    image: "/corporate-1n-c.jpg", 
     deskripsi: "Pengalaman outing 1 hari yang super padat dan premium. Anda sebagai panitia cukup duduk tenang, kami yang mengeksekusi seluruh jadwalnya. Biarkan karyawan Anda dimanjakan dengan fasilitas berkelas dan rentetan petualangan ekstrem yang akan menjadi perbincangan hangat di kantor berbulan-bulan lamanya." 
   },
 
@@ -391,7 +391,7 @@ const masterKatalog = [
 // ─── COMBO CORPORATE MENGINAP (2 HARI 1 MALAM) ───
   { 
     id: "corp-a2d", 
-    nama: "Corporate A2D (Menginap Ekonomis)", 
+    nama: "Essential Trip", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
     harga: "Rp 239.000", 
@@ -411,12 +411,12 @@ const masterKatalog = [
       "Cemilan ekstra atau bahan makanan (jika ingin masak/bakar-bakar sendiri malam hari)",
       "Obat-obatan pribadi yang spesifik"
     ],
-    image: "/combo-corp-2d.jpg", 
+    image: "/corporate-1n-a.JPG", 
     deskripsi: "Solusi cerdas untuk rombongan mahasiswa, komunitas, atau perusahaan dengan budget ketat. Paket ekonomis ini memastikan Anda tetap mendapatkan pengalaman petualangan maksimal (Rafting & Paintball) serta kehangatan berkumpul mengelilingi api unggun di malam hari." 
   },
   { 
     id: "corp-b2d", 
-    nama: "Corporate B2D (Bestseller Makrab)", 
+    nama: "Feast & Fun", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
     harga: "Rp 650.000", 
@@ -438,12 +438,12 @@ const masterKatalog = [
       "Flashdisk berkapasitas besar (dari panitia) untuk file dokumentasi"
     ],
     label: "Bestseller", 
-    image: "/combo-corp-2d.jpg", 
+    image: "/corporate-1n-b.JPG", 
     deskripsi: "Standar Emas (Gold Standard) untuk Outing Perusahaan! Bebaskan panitia dari rasa pusing. Kami urus jadwal dari Anda datang hingga pulang. Siang hari dipacu adrenalinnya, malam hari dimanjakan dengan lezatnya Kambing Guling sambil bernyanyi bersama iringan Live Music. Sempurna!" 
   },
   { 
     id: "corp-c2d", 
-    nama: "Corporate C2D (Standar Lengkap)", 
+    nama: "All-Inclusive", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
     harga: "Rp 450.000", 
@@ -463,12 +463,12 @@ const masterKatalog = [
       "Sepatu kets untuk Paintball & Sandal gunung untuk Rafting",
       "Jaket pelindung hawa dingin Pangalengan"
     ],
-    image: "/combo-corp-2d.jpg", 
+    image: "/rafting.jpg", 
     deskripsi: "Paket efisien yang mencakup semua kebutuhan dasar outing kantor tanpa embel-embel berlebihan. Tidur nyenyak di villa, perut kenyang dengan 3x makan, dan adrenalin terpompa dengan 3 aktivitas ekstrem. Sangat pas untuk menjaga keseimbangan antara budget dan kepuasan karyawan." 
   },
   { 
     id: "corp-d2d", 
-    nama: "Corporate D2D (Fun & Relax)", 
+    nama: "Relax & Retreat", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
     harga: "Rp 200.000", 
@@ -486,12 +486,12 @@ const masterKatalog = [
       "Uang saku ekstra untuk makan malam dan sarapan (Mandiri)",
       "Perlengkapan mandi & jaket hangat"
     ],
-    image: "/combo-corp-2d.jpg", 
+    image: "/paket3.jpg", 
     deskripsi: "Fokus murni pada tawa dan keseruan air dengan harga yang sangat terjangkau. Paket menginap semi-mandiri ini cocok untuk tim kerja kecil yang mengedepankan suasana santai (relax), tidak suka aktivitas yang terlalu berat, dan ingin lebih fleksibel mengatur makan malam sendiri di luar." 
   },
   { 
     id: "corp-vip", 
-    nama: "Corp VIP E2D (Premium Sultan)", 
+    nama: "VIP Executive", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
     harga: "Rp 1.099.000", 
@@ -512,13 +512,13 @@ const masterKatalog = [
       "Flashdisk berkapasitas besar untuk menerima ratusan file foto & video resolusi tinggi"
     ],
     label: "⭐ VIP", 
-    image: "/combo-vip.jpg", 
+    image: "/corporate-vip.JPG", 
     deskripsi: "Layanan karpet merah khusus untuk Jajaran Direksi (BOD), Manajer, atau tim dengan pencapaian target tertinggi. Nikmati kemewahan penginapan VIP, menu makan berkelas, hingga dokumentasi megah dari udara menggunakan Drone. Kami melayani Anda layaknya keluarga kerajaan selama di Pangalengan." 
   },
   // ─── FAMILY CAMP / GLAMPING MENGINAP (2 HARI 1 MALAM) ───
   { 
     id: "camp-fca", 
-    nama: "Family Camp FCA", 
+    nama: "Glamping & ATV", 
     kategori: "Family Camp", 
     durasi: "Menginap", 
     harga: "Rp 495.000", 
@@ -538,12 +538,12 @@ const masterKatalog = [
       "Baju ganti cadangan untuk aktivitas Rafting & ATV keesokan harinya",
       "Powerbank (Meskipun ada aliran listrik, powerbank berguna saat di luar tenda)"
     ],
-    image: "/combo-camp.jpg", 
+    image: "/family-camp-a.JPG", 
     deskripsi: "Camping tanpa ribet! Nikmati suasana malam bertabur bintang dan syahdunya api unggun di depan tenda estetik yang sudah kami siapkan lengkap dengan kasur empuk. Pagi harinya, Anda langsung disambut dengan rentetan petualangan seru melintasi air, udara, dan lumpur daratan." 
   },
   { 
     id: "camp-fcb", 
-    nama: "Family Camp FCB (Eksplorasi Hutan)", 
+    nama: "Glamping & Offroad", 
     kategori: "Family Camp", 
     durasi: "Menginap", 
     harga: "Rp 620.000", 
@@ -564,12 +564,12 @@ const masterKatalog = [
       "Obat-obatan pribadi keluarga"
     ],
     label: "Rekomendasi", 
-    image: "/combo-camp.jpg",  
+    image: "/family-camp-b.JPG",  
     deskripsi: "Kasta tertinggi dari paket Family Camp kami. Ganti ATV dengan sensasi menembus rimbunnya hutan pinus menggunakan mobil tangguh Offroad Land Rover. Pilihan paling sempurna dan estetik bagi keluarga yang mencari harmoni antara ketenangan tidur di alam dan adrenalin tinggi di siang hari." 
   },
   { 
     id: "camp-fcc", 
-    nama: "Family Camp FCC (Basic Nature)", 
+    nama: "Classic Glamping", 
     kategori: "Family Camp", 
     durasi: "Menginap", 
     harga: "Rp 395.000", 
@@ -589,7 +589,7 @@ const masterKatalog = [
       "Senter kecil atau headlamp untuk mobilitas malam hari di area camping",
       "Pakaian ganti untuk aktivitas basah-basahan"
     ],
-    image: "/combo-camp.jpg",  
+    image: "/flyingfox.jpg",  
     deskripsi: "Pilihan paling bersahabat di kantong untuk merasakan kabut pagi khas Pangalengan dari pintu tenda Anda. Paket basic ini menyertakan sarapan pagi dan dua aktivitas petualangan utama (Rafting & Flying Fox) tanpa mengurangi standar keselamatan dan keseruan sedikit pun." 
   }
 ];
