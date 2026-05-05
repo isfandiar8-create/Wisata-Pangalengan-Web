@@ -644,20 +644,10 @@ export default function DetailPaket() {
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 pb-28 sm:pb-32 font-sans relative">
       
-      {/* 1. HERO IMAGE & TOMBOL KEMBALI */}
+      {/* 1. HERO IMAGE (Bersih, Tanpa Elemen Mengambang) */}
       <div className="relative w-full h-[40vh] sm:h-[50vh] bg-stone-900">
         <Image src={paket.image} alt={paket.nama} fill className="object-cover opacity-70" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent opacity-80"></div>
-        
-        <Link href="/katalog-petualangan" className="absolute top-6 left-4 sm:top-8 sm:left-8 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-white hover:bg-black/50 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
-        </Link>
-
-        {paket.label && (
-           <span className={`absolute top-6 right-4 sm:top-8 sm:right-8 z-10 text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-full shadow-lg tracking-wider bg-emerald-500`}>
-             {paket.label}
-           </span>
-        )}
       </div>
 
       {/* 2. KONTEN UTAMA (Body) */}
@@ -666,11 +656,25 @@ export default function DetailPaket() {
           
           {/* Header Info */}
           <div className="border-b border-stone-100 pb-6 mb-6">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-[10px] font-black uppercase px-2.5 py-1 rounded bg-stone-100 text-stone-500">{paket.kategori}</span>
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <span className="text-[10px] font-black uppercase px-2.5 py-1 rounded bg-stone-100 text-stone-500">
+                {paket.kategori}
+              </span>
+              
+              {/* BADGE DENGAN TEMA EMERALD */}
+              {paket.label && (
+                <span className="text-[10px] font-black uppercase px-3 py-1 rounded-md bg-emerald-500 text-white shadow-sm animate-pulse tracking-wider">
+                  {paket.label}
+                </span>
+              )}
             </div>
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-stone-800 tracking-tight leading-tight mb-4">{paket.nama}</h1>
-            <p className="text-sm sm:text-base text-stone-500 leading-relaxed font-medium">{paket.deskripsi}</p>
+            
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-stone-800 tracking-tight leading-tight mb-4">
+              {paket.nama}
+            </h1>
+            <p className="text-sm sm:text-base text-stone-500 leading-relaxed font-medium">
+              {paket.deskripsi}
+            </p>
           </div>
 
           {/* Bagian Grid: Fasilitas & Itinerary */}
