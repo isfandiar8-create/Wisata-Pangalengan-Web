@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   
   // Persiapan untuk verifikasi Google Search Console nanti
   verification: {
-    google: "ISI_KODE_VERIFIKASI_GSC_DI_SINI_NANTI", 
+    google: "dufDtxlBLTJBGAbqXoxhXZd65FYIZhtOIqOAq3K3s2M", 
   },
 
   openGraph: {
