@@ -40,8 +40,10 @@ const paketCombo = [
   { id: "camp-fcc", nama: "Classic Glamping", kategori: "Family Camp", durasi: "2 Hari", harga: "Rp 395.000", hargaAsli: "Rp 450.000", image: "/flyingfox.jpg", deskripsi: "Glamping, Rafting & Flying Fox. Menikmati kabut dan keseruan air." },
 ];
 
-const comboFilters = ["Semua", "Keluarga", "Corporate", "Family Camp"];
 const durasiFilters = ["Semua Waktu", "1 Hari", "2 Hari"];
+
+// DAFTAR KATEGORI FILTER BARU UNTUK AKTIVITAS SATUAN
+const aktivitasFilters = ["Semua", "Air", "Darat", "Udara", "Grup & Game"];
 
 // ─── KOMPONEN KARTU BENTO RINGKAS ─────────────────────────────────────────
 function CompactCard({ item }: { item: any }) {
@@ -107,50 +109,91 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 // ─── HALAMAN UTAMA KATALOG ────────────────────────────────────────────────
 export default function KatalogPetualangan() {
-  const [activeComboFilter, setActiveComboFilter] = useState("Semua");
   const [activeDurasiFilter, setActiveDurasiFilter] = useState("Semua Waktu");
+  
+  // STATE BARU: Untuk mengontrol filter Aktivitas Satuan
+  const [activeAktivitasFilter, setActiveAktivitasFilter] = useState("Semua");
 
-  const filteredCombo = paketCombo.filter(item => {
-    const matchKategori = activeComboFilter === "Semua" || item.kategori === activeComboFilter;
-    const matchDurasi = activeDurasiFilter === "Semua Waktu" || item.durasi === activeDurasiFilter;
-    return matchKategori && matchDurasi;
+  // LOGIKA BARU: Menyaring data Aktivitas Satuan
+  const filteredAktivitas = aktivitasSatuan.filter(item => {
+    if (activeAktivitasFilter === "Semua") return true;
+    return item.kategori === activeAktivitasFilter;
   });
 
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 font-sans pb-20">
       
-      {/* 1. HERO HEADER */}
+      {/* 1. HERO HEADER (Lebih Bersih Tanpa Back Arrow) */}
       <section className="relative w-full pt-28 pb-16 sm:pt-32 sm:pb-20 px-4 text-center sm:px-6 lg:px-8 overflow-hidden bg-stone-900">
-        <Image src="/rafting.jpg" alt="Katalog Wisata Pangalengan" fill className="object-cover opacity-40" priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/80 via-stone-900/60 to-stone-50"></div>
-        <div className="relative z-10 mx-auto max-w-3xl space-y-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-stone-300 hover:text-white transition text-xs font-bold uppercase tracking-widest mb-2">
-            &larr; Kembali ke Beranda
-          </Link>
-          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl drop-shadow-md">
-            Katalog <br className="hidden sm:block" /> Wisata <br className="hidden sm:block" />
-            <span className="text-emerald-400 font-light italic tracking-wide">Terbaru 2026</span>
-            </h1>
-          <p className="text-sm text-stone-300 sm:text-base font-medium max-w-xl mx-auto leading-relaxed">
+        <Image src="/rafting.jpg" alt="Katalog Wisata Pangalengan" fill className="object-cover opacity-50" priority />
+        <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[2px]"></div>
+        
+        <div className="relative z-10 mx-auto max-w-3xl space-y-5">
+          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl drop-shadow-sm">
+            Katalog Wisata <br className="hidden sm:block" />
+            <span className="text-emerald-400 font-light italic tracking-wide mt-2 inline-block">Terbaru 2026</span>
+          </h1>
+          
+          <p className="text-sm text-stone-200 sm:text-base font-medium max-w-xl mx-auto leading-relaxed drop-shadow-sm">
             Pilih aktivitas satuan sesuka hati, atau hemat budget Anda dengan memilih Paket Combo. Transparan, aman, dan tanpa biaya tersembunyi.
           </p>
         </div>
       </section>
 
-      {/* 2. SESI: AKTIVITAS SATUAN */}
+      {/* 2. SESI: AKTIVITAS SATUAN (Dilengkapi Filter UI Penginapan) */}
       <section className="px-4 py-12 sm:py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          {/* Judul Di-Center */}
-          <div className="mb-10 text-center space-y-1.5">
+          
+          <div className="mb-8 text-center space-y-1.5">
             <h2 className="text-2xl font-bold text-stone-800 sm:text-3xl">Aktivitas Satuan</h2>
             <p className="text-sm text-stone-500 font-medium">Bebas pilih petualangan tunggal sesuai keinginan Anda.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {aktivitasSatuan.map((item) => (
-              <CompactCard key={item.id} item={item} />
-            ))}
+          {/* FILTER UI KATEGORI (Estetika Bulatan Panjang / Kapsul) */}
+          <div className="flex flex-col items-center mb-10 w-full">
+            
+            {/* Garis Solid Pembatas Estetik */}
+            <div className="flex items-center gap-3 mb-5 w-full max-w-xs sm:max-w-sm">
+              <div className="h-[1px] bg-stone-200 flex-1 rounded-full"></div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-stone-400 shrink-0">
+                Pilihan Kategori Aktivitas
+              </span>
+              <div className="h-[1px] bg-stone-200 flex-1 rounded-full"></div>
+            </div>
+            
+            {/* Pembungkus Bulatan Panjang (Pill) */}
+            
+            {/* Pembungkus Bulatan Panjang (Pill) */}
+            <div className="inline-flex bg-white p-1.5 rounded-2xl sm:rounded-full border border-stone-200 shadow-sm overflow-x-auto max-w-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {aktivitasFilters.map((kat) => (
+                <button
+                  key={kat}
+                  onClick={() => setActiveAktivitasFilter(kat)}
+                  className={`relative shrink-0 px-5 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+                    activeAktivitasFilter === kat
+                      ? "bg-emerald-600 text-white shadow-md transform scale-[1.02]"
+                      : "bg-transparent text-stone-500 hover:text-emerald-600 hover:bg-stone-50"
+                  }`}
+                >
+                  {kat}
+                </button>
+              ))}
+            </div>
           </div>
+
+          {/* Hasil Filter Aktivitas */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filteredAktivitas.length > 0 ? (
+              filteredAktivitas.map((item) => (
+                <CompactCard key={item.id} item={item} />
+              ))
+            ) : (
+              <div className="col-span-full py-10 text-center text-stone-500 font-medium">
+                Belum ada aktivitas di kategori ini.
+              </div>
+            )}
+          </div>
+
         </div>
       </section>
 
@@ -163,8 +206,19 @@ export default function KatalogPetualangan() {
             <p className="text-sm text-stone-500 font-medium max-w-2xl mx-auto">Dirancang khusus untuk rombongan. Pilih paket yang paling sesuai dengan kebutuhan Anda.</p>
           </div>
 
-          {/* FILTER DURASI ELEGAN */}
-          <div className="mb-16 flex justify-center">
+          {/* FILTER DURASI ELEGAN (Dilengkapi Garis Pembatas Solid) */}
+          <div className="flex flex-col items-center mb-16 w-full">
+            
+            {/* Garis Solid Pembatas Estetik (Nuansa Emerald) */}
+            <div className="flex items-center gap-3 mb-5 w-full max-w-[16rem] sm:max-w-md">
+              <div className="h-[1px] bg-emerald-200/80 flex-1 rounded-full"></div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600/80 shrink-0">
+                Filter Waktu dan Rombongan
+              </span>
+              <div className="h-[1px] bg-emerald-200/80 flex-1 rounded-full"></div>
+            </div>
+
+            {/* Pembungkus Bulatan Panjang (Pill) */}
             <div className="inline-flex bg-white/60 p-1.5 rounded-2xl sm:rounded-full border border-emerald-200/60 shadow-[0_4px_20px_-10px_rgba(5,150,105,0.15)] backdrop-blur-sm overflow-x-auto max-w-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {durasiFilters.map((durasi) => (
                 <button
@@ -208,20 +262,20 @@ export default function KatalogPetualangan() {
               }
             ].map((kategoriSesi) => {
               
-              // 1. Filter Berdasarkan Kategori Saja (Durasi diabaikan di sini)
               let paketDiSesiIni = paketCombo.filter(p => kategoriSesi.targetKat.includes(p.kategori));
 
-              // 2. Terapkan Filter Durasi Waktu (dari tombol klik pengguna di atas)
               if (activeDurasiFilter !== "Semua Waktu") {
                 paketDiSesiIni = paketDiSesiIni.filter(p => p.durasi === activeDurasiFilter);
               }
 
-              // 3. Sembunyikan Sesi jika kosong
               if (paketDiSesiIni.length === 0) return null;
 
               return (
-                <div key={kategoriSesi.id} className="space-y-5 sm:space-y-6">
-                  {/* Judul Sesi */}
+                <div 
+                  key={kategoriSesi.id} 
+                  id={kategoriSesi.id} 
+                  className="space-y-5 sm:space-y-6 scroll-mt-28" 
+                >
                   <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 border-b border-emerald-100 pb-3">
                     <div>
                       <h3 className="text-xl font-bold text-emerald-900">{kategoriSesi.nama}</h3>
@@ -232,7 +286,6 @@ export default function KatalogPetualangan() {
                     </span>
                   </div>
 
-                  {/* GRID KARTU PAKET (Format COMPACT HORIZONTAL) */}
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     {paketDiSesiIni.map((pkt) => (
                       <Link 
@@ -240,7 +293,6 @@ export default function KatalogPetualangan() {
                         key={pkt.id} 
                         className="group flex items-center gap-3 sm:gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-sm transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5 relative"
                       >
-                        {/* Gambar Thumbnail */}
                         <div className="w-24 h-28 sm:w-28 sm:h-32 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
                           <Image 
                             src={pkt.image} 
@@ -250,17 +302,13 @@ export default function KatalogPetualangan() {
                             sizes="(max-width: 768px) 100px, 120px"
                           />
                           <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors"></div>
-                          
-                          {/* Badge Durasi */}
                           <span className="absolute top-0 left-0 bg-stone-900/80 backdrop-blur-sm text-white text-[8px] font-black uppercase px-2 py-1 rounded-br-xl shadow-sm">
                             {pkt.durasi}
                           </span>
                         </div>
 
-                        {/* Konten Teks di Sebelah Kanan */}
                         <div className="flex-1 flex flex-col py-1 h-full justify-between overflow-hidden">
                           <div>
-                            {/* Label Promo */}
                             {pkt.label && (
                               <div className="mb-1">
                                 <span className="inline-block bg-amber-50 text-amber-700 border border-amber-200/60 text-[8px] font-black uppercase px-2 py-0.5 rounded-md shadow-sm">
@@ -268,8 +316,6 @@ export default function KatalogPetualangan() {
                                 </span>
                               </div>
                             )}
-
-                            {/* Judul & Deskripsi */}
                             <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight mt-0.5 group-hover:text-emerald-700 transition-colors truncate">
                               {pkt.nama}
                             </h4>
@@ -277,11 +323,8 @@ export default function KatalogPetualangan() {
                               {pkt.deskripsi}
                             </p>
                           </div>
-
-                          {/* Harga & Tombol */}
                           <div className="mt-auto flex justify-between items-end">
                             <div className="flex flex-col">
-                              {/* Harga Coret */}
                               {pkt.hargaAsli && (
                                 <span className="text-[9px] sm:text-[10px] text-rose-400/90 font-bold line-through decoration-rose-400/50 mb-0.5">
                                   {pkt.hargaAsli}
@@ -291,7 +334,6 @@ export default function KatalogPetualangan() {
                                 {pkt.harga}
                               </span>
                             </div>
-                            
                             <span className="bg-emerald-50 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-lg transition-colors shrink-0 ml-2">
                               Detail &rarr;
                             </span>
@@ -388,37 +430,6 @@ export default function KatalogPetualangan() {
           <path d="M12.013 2.015c-5.506 0-9.988 4.473-9.99 9.98a9.964 9.964 0 001.332 5.01L2 22l5.148-1.352a9.97 9.97 0 004.865 1.26h.004c5.503 0 9.985-4.475 9.987-9.983 0-2.668-1.04-5.176-2.926-7.065A9.916 9.916 0 0012.013 2.015zM12.018 20c-1.545 0-3.056-.416-4.382-1.202l-.314-.187-3.256.853.867-3.174-.205-.327a8.318 8.318 0 01-1.274-4.444c.002-4.606 3.75-8.354 8.358-8.356 2.235.001 4.335.872 5.914 2.454a8.336 8.336 0 012.449 5.912c-.002 4.607-3.748 8.354-8.354 8.354zm4.584-6.262c-.251-.126-1.488-.736-1.718-.82-.23-.085-.398-.126-.565.126-.168.252-.647.82-.793.988-.146.168-.293.189-.544.063-.251-.126-1.06-.39-2.018-1.196-.745-.626-1.25-1.4-1.396-1.652-.146-.252-.016-.388.11-.514.113-.112.251-.293.377-.44.126-.146.168-.252.251-.419.084-.168.042-.315-.021-.44-.063-.126-.565-1.363-.774-1.867-.203-.491-.41-.424-.565-.432-.146-.008-.314-.01-.482-.01s-.44.063-.67.315c-.23.252-.88 8.61 10.364 8.61 10.364zm0 0c-1.11 1.05-2.908 1.408-4.08 1.408-1.504 0-3.41-.532-4.836-1.567l-3.21-.634z" />
         </svg>
       </a>
-
-      {/* 7. FAT FOOTER */}
-      <footer className="bg-stone-950 text-stone-300 mt-auto">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
-            <div className="space-y-4">
-              <p className="text-xl font-bold tracking-tight text-white">Go Pangalengan</p>
-              <p className="text-sm leading-relaxed text-stone-400">Partner perjalanan terpercaya Anda untuk menjelajahi keindahan alam, petualangan, dan ketenangan di Pangalengan, Bandung Selatan.</p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Hubungi Kami</h3>
-              <ul className="space-y-3 text-sm text-stone-400 font-medium">
-                <li><span className="text-stone-200">Alamat:</span> Jl. Raya Situ Cileunca, Pangalengan.</li>
-                <li><span className="text-stone-200">Email:</span> hello@gopangalengan.com</li>
-                <li><span className="text-stone-200">WhatsApp:</span> +62 857-1707-5116</li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Layanan Utama</h3>
-              <ul className="space-y-2.5 text-sm font-medium">
-                <li><Link href="/katalog-petualangan" className="text-stone-400 transition hover:text-white">Katalog Petualangan</Link></li>
-                <li><Link href="/penginapan" className="text-stone-400 transition hover:text-white">Katalog Penginapan</Link></li>
-                <li><Link href="/custom-trip" className="text-stone-400 transition hover:text-white">Custom Trip</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-16 border-t border-stone-800/50 py-10 text-center sm:flex sm:justify-between sm:text-left">
-            <p className="text-sm text-stone-500 font-medium">© 2026 Go Pangalengan. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

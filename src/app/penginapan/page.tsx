@@ -235,36 +235,6 @@ export default function KatalogPenginapan() {
           <path d="M12.013 2.015c-5.506 0-9.988 4.473-9.99 9.98a9.964 9.964 0 001.332 5.01L2 22l5.148-1.352a9.97 9.97 0 004.865 1.26h.004c5.503 0 9.985-4.475 9.987-9.983 0-2.668-1.04-5.176-2.926-7.065A9.916 9.916 0 0012.013 2.015z" />
         </svg>
       </a>
-
-      <footer className="bg-stone-950 text-stone-300 mt-auto">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
-            <div className="space-y-4">
-              <p className="text-xl font-bold tracking-tight text-white">Go Pangalengan</p>
-              <p className="text-sm leading-relaxed text-stone-400">Partner perjalanan terpercaya Anda untuk menjelajahi keindahan alam, petualangan, dan ketenangan di Pangalengan, Bandung Selatan.</p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Hubungi Kami</h3>
-              <ul className="space-y-3 text-sm text-stone-400 font-medium">
-                <li><span className="text-stone-200">Alamat:</span> Jl. Raya Situ Cileunca, Pangalengan.</li>
-                <li><span className="text-stone-200">Email:</span> hello@gopangalengan.com</li>
-                <li><span className="text-stone-200">WhatsApp:</span> +62 857-1707-5116</li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-emerald-500">Layanan Utama</h3>
-              <ul className="space-y-2.5 text-sm font-medium">
-                <li><Link href="/katalog-petualangan" className="text-stone-400 transition hover:text-white">Katalog Petualangan</Link></li>
-                <li><Link href="/penginapan" className="text-stone-400 transition hover:text-white">Katalog Penginapan</Link></li>
-                <li><Link href="/custom-trip" className="text-stone-400 transition hover:text-white">Custom Trip</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-16 border-t border-stone-800/50 py-10 text-center sm:flex sm:justify-between sm:text-left">
-            <p className="text-sm text-stone-500 font-medium">© 2026 Go Pangalengan. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

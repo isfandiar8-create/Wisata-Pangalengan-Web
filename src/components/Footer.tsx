@@ -9,14 +9,26 @@ export default function Footer() {
           
           {/* KOLOM 1: BRANDING & DESKRIPSI */}
           <div className="col-span-1 md:col-span-1">
-            <div className="relative h-10 w-40 mb-6">
-              <Image 
-                src="/logo-putih.png" 
-                alt="Logo Go Pangalengan" 
-                fill 
-                className="object-contain object-left" 
-              />
+            
+            {/* Pembungkus Flexbox dengan gap yang diperkecil (gap-1.5) */}
+            <div className="flex items-center gap-1.5 mb-6">
+              
+              {/* Bingkai logo dibatasi ketat agar teks langsung nempel */}
+              <div className="relative h-9 w-9 shrink-0">
+                <Image 
+                  src="/logo-putih.png" 
+                  alt="Logo Icon" 
+                  fill 
+                  className="object-contain" 
+                />
+              </div>
+              
+              {/* Teks Sub Judul */}
+              <span className="text-[1.35rem] font-extrabold text-white tracking-tight leading-none mt-0.5">
+                Go Pangalengan
+              </span>
             </div>
+
             <p className="text-sm leading-relaxed text-stone-400">
               Agen perjalanan wisata dan event organizer spesialis Pangalengan, Bandung Selatan. Kami merancang pengalaman petualangan yang tak terlupakan dengan layanan profesional dan transparan.
             </p>

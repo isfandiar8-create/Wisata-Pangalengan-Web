@@ -20,7 +20,7 @@ export default function DetailPenginapan() {
         <span className="text-6xl mb-4">🏠</span>
         <h1 className="text-2xl font-bold text-stone-800 sm:text-4xl mb-2">Penginapan Tidak Ditemukan</h1>
         <p className="text-stone-500 mb-8 max-w-md">Mohon maaf, penginapan yang Anda cari tidak tersedia di katalog kami.</p>
-        <Link href="/katalog-penginapan" className="bg-emerald-600 text-white font-bold px-8 py-3 rounded-full hover:bg-emerald-700 transition">
+        <Link href="/penginapan" className="bg-emerald-600 text-white font-bold px-8 py-3 rounded-full hover:bg-emerald-700 transition">
           Kembali ke Katalog
         </Link>
       </div>
@@ -29,6 +29,9 @@ export default function DetailPenginapan() {
 
   // Generate WA Link
   const waLink = generateWALink(`Halo Go Pangalengan, saya tertarik untuk reservasi penginapan *${item.nama}*. Boleh minta info availability tanggal kosong?`);
+
+  // Fallback array gambar jika data 'galeri' belum ditambahkan di masterPenginapan
+  const galeriFoto = (item as any).galeri || [item.image, item.image, item.image];
 
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 pb-28 sm:pb-32 font-sans relative">
@@ -51,9 +54,8 @@ export default function DetailPenginapan() {
                   {item.kategori}
                 </span>
                 
-                {/* BADGE DIPINDAHKAN KE SINI (Selaras dengan Paket Wisata) */}
                 {item.label && (
-                  <span className="text-[10px] font-black uppercase px-3 py-1 rounded-md bg-emerald-500 text-white shadow-sm animate-pulse tracking-wider">
+                  <span className="text-[10px] font-black uppercase px-3 py-1 rounded-md bg-emerald-500 text-white shadow-sm tracking-wider">
                     {item.label}
                   </span>
                 )}
@@ -66,6 +68,29 @@ export default function DetailPenginapan() {
               <h1 className="text-3xl sm:text-4xl font-extrabold text-stone-800 tracking-tight leading-tight mb-4">{item.nama}</h1>
               <p className="text-sm sm:text-base text-stone-500 leading-relaxed font-medium max-w-2xl">{item.deskripsi}</p>
             </div>
+          </div>
+
+          {/* GALERI VISUAL OTA (BARU DITAMBAHKAN) */}
+          <div className="mb-10">
+            <h3 className="text-base sm:text-lg font-bold text-stone-800 mb-4 flex items-center gap-2">
+              <span className="text-emerald-500">📸</span> Sudut Estetik {item.nama}
+            </h3>
+            <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              {galeriFoto.map((imgSrc: string, index: number) => (
+                <div key={index} className="relative h-48 sm:h-64 w-[75vw] sm:w-[320px] shrink-0 snap-center overflow-hidden rounded-xl border border-stone-200 shadow-sm">
+                  <Image 
+                    src={imgSrc} 
+                    alt={`Suasana di ${item.nama} ${index + 1}`} 
+                    fill 
+                    className="object-cover transition-transform duration-500 hover:scale-105" 
+                    sizes="(max-width: 768px) 75vw, 320px" 
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="text-[11px] text-stone-400 font-medium text-center mt-1 sm:hidden">
+              Geser untuk melihat foto lainnya &rarr;
+            </p>
           </div>
 
           {/* Kotak Harga */}
@@ -155,15 +180,14 @@ export default function DetailPenginapan() {
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-stone-200 p-4 sm:px-8 sm:py-5 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
         <div className="mx-auto max-w-4xl flex items-center justify-between gap-4">
           <div className="flex flex-col">
-            <span className="text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest mb-0.5">Amankan Tanggalnya</span>
+            <span className="text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest mb-0.5">Siap diskusikan tanggal?</span>
             <div className="flex items-baseline gap-2">
-              <span className="text-sm sm:text-base font-medium text-stone-600">Hubungi CS Kami</span>
+              <span className="text-sm sm:text-base font-medium text-stone-600">Konsultasikan dengan Kami</span>
             </div>
           </div>
           
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-6 sm:px-10 py-3 sm:py-3.5 rounded-full transition-all shadow-md hover:shadow-lg shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.864-1.048l-3.281-.525a1.125 1.125 0 00-1.22.59l-1.92 3.84a16.03 16.03 0 01-8.25-8.25l3.84-1.92c.28-.14.5-.38.59-1.22l-.525-3.28a1.125 1.125 0 00-1.048-.865H3.75A2.25 2.25 0 002.25 6.75z" /></svg>
-            Tanya Ketersediaan
           </a>
         </div>
       </div>
