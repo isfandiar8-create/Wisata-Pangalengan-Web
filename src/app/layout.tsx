@@ -1,16 +1,22 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next"; // <-- Tambahkan Viewport
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// IMPORT NAVBAR & FOOTER ANDA DI SINI
 import Navbar from "@/components/Navbar"; 
 import Footer from "@/components/Footer"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
-// ─── OPTIMASI SEO & METADATA ─────────────────────────────────────────────
+// ─── OPTIMASI UX MOBILE (STANDAR BARU NEXT.JS) ───
+export const viewport: Viewport = {
+  themeColor: "#059669", // Warna emerald-600, membuat top bar browser HP Android jadi hijau elegan
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1, // Mencegah zoom otomatis yang mengganggu saat mengisi form
+};
+
+// ─── OPTIMASI SEO & METADATA (TINGKAT MASTER) ───
 export const metadata: Metadata = {
-  // 1. INI TAMBAHAN WAJIB UNTUK MENGHILANGKAN ERROR LOG
   metadataBase: new URL("https://www.gopangalengan.id"),
   
   title: "Go Pangalengan | Paket Wisata, Outing & Penginapan Terbaik",
@@ -24,7 +30,18 @@ export const metadata: Metadata = {
     "glamping pangalengan",
     "paket wisata bandung selatan"
   ],
-  authors: [{ name: "Go Pangalengan" }],
+  authors: [{ name: "Go Pangalengan", url: "https://www.gopangalengan.id" }],
+  
+  // Mencegah isu duplicate content di mata Google
+  alternates: {
+    canonical: "/", 
+  },
+  
+  // Persiapan untuk verifikasi Google Search Console nanti
+  verification: {
+    google: "ISI_KODE_VERIFIKASI_GSC_DI_SINI_NANTI", 
+  },
+
   openGraph: {
     title: "Go Pangalengan - Liburan Tanpa Ribet",
     description: "Temukan paket petualangan dan penginapan estetik di Pangalengan untuk keluarga maupun gathering perusahaan Anda.",
@@ -32,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Go Pangalengan",
     images: [
       {
-        url: "/hero1.jpg", // Sekarang sistem tahu ini berarti https://www.gopangalengan.id/hero1.jpg
+        url: "/hero1.jpg", 
         width: 1200,
         height: 630,
         alt: "Go Pangalengan Hero Image",
@@ -40,6 +57,14 @@ export const metadata: Metadata = {
     ],
     locale: "id_ID",
     type: "website",
+  },
+  
+  // Optimasi untuk sharing di Twitter / X
+  twitter: {
+    card: "summary_large_image",
+    title: "Go Pangalengan | Paket Wisata, Outing & Penginapan",
+    description: "Dapatkan promo paket Rafting, ATV, Offroad, Outing Corporate, dan Glamping estetik.",
+    images: ["/hero1.jpg"],
   },
 };
 
@@ -51,13 +76,8 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <body className={inter.className}>
-        {/* NAVBAR MUNCUL DI SEMUA HALAMAN */}
         <Navbar />
-        
-        {/* KONTEN HALAMAN (Home, Paket, Artikel, dll) */}
         {children}
-
-        {/* FOOTER MUNCUL DI PALING BAWAH SETELAH KONTEN */}
         <Footer />
 
         {/* ─── KODE SCHEMA MARKUP (KTP DIGITAL) UNTUK SEO & GMAPS ─── */}
@@ -77,7 +97,8 @@ export default function RootLayout({
                 "addressCountry": "ID"
               },
               "telephone": "+6285717075116",
-              "url": "https://www.gopangalengan.id"
+              "url": "https://www.gopangalengan.id",
+              "priceRange": "Rp 150.000 - Rp 1.500.000" // Menambah sinyal harga komersial untuk Google
             })
           }}
         />
