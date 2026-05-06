@@ -52,7 +52,7 @@ export default function Footer() {
               <li><Link href="/#petualangan" className="hover:text-emerald-500 transition">Rafting Situ Cileunca</Link></li>
               <li><Link href="/#penginapan" className="hover:text-emerald-500 transition">Sewa Villa Rombongan</Link></li>
               <li><Link href="/#penginapan" className="hover:text-emerald-500 transition">Glamping Estetik</Link></li>
-              <li><Link href="/paket/corporate" className="hover:text-emerald-500 transition">Corporate B2B Outing</Link></li>
+              <li><Link href="/katalog-wisata#corporate" className="hover:text-emerald-500 transition">Corporate B2B Outing</Link></li>
             </ul>
           </div>
 

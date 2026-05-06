@@ -1,6 +1,6 @@
 export const masterPenginapan = [
     {
-      id: "wantea",
+      id: "villa-wantea-pangalengan",
       nama: "Villa Wantea",
       kategori: "Villa Klasik",
       kapasitas: "20 - 30 Orang",
@@ -21,7 +21,7 @@ export const masterPenginapan = [
       deskripsi: "Berarsitektur klasik Belanda yang megah dan nyaman. Dengan kapasitas raksasa hingga 30 orang, Villa Wantea adalah pilihan paling sempurna untuk memboyong seluruh keluarga besar atau divisi kantor Anda. Tersedia hiburan Billiard dan Karaoke!"
     },
     {
-      id: "saung-rungkun",
+      id: "penginapan-saung-rungkun",
       nama: "Saung Rungkun",
       kategori: "Cottage & Pool",
       kapasitas: "10 - 15 Orang",
@@ -40,7 +40,7 @@ export const masterPenginapan = [
       deskripsi: "Cottage lengkap yang memadukan kenyamanan dan suasana alam yang sangat asri. Dilengkapi dengan kolam renang, tempat ini sangat pas untuk liburan akhir pekan keluarga yang mencari ketenangan dan udara segar."
     },
     {
-      id: "saung-gadis",
+      id: "penginapan-saung-gadis",
       nama: "Saung Gadis",
       kategori: "Premium Cottage",
       kapasitas: "10 - 15 Orang",
@@ -60,7 +60,7 @@ export const masterPenginapan = [
       deskripsi: "Cottage premium berkapasitas besar dengan harga yang sangat bersahabat. Punya area khusus untuk BBQ di malam hari dan akses kolam renang. Tersedia 2 unit yang bisa disewa bersamaan untuk rombongan lebih besar!"
     },
     {
-      id: "saung-family",
+      id: "villa-saung-family-pangalengan",
       nama: "Saung Family",
       kategori: "Tradisional Cottage",
       kapasitas: "5 - 10 Orang",
@@ -78,7 +78,7 @@ export const masterPenginapan = [
       deskripsi: "Cottage ikonik bergaya tradisional Sunda yang langsung menghadap ke indahnya danau Situ Cileunca. Memberikan pengalaman menginap unik dan menyatu dengan alam Pangalengan untuk keluarga kecil Anda."
     },
     {
-      id: "palayangan-b",
+      id: "villa-palayangan-b",
       nama: "Villa Palayangan B",
       kategori: "Villa Premium",
       kapasitas: "25 - 35 Orang",
@@ -99,7 +99,7 @@ export const masterPenginapan = [
       deskripsi: "Definisi kemewahan di tepi danau! Villa raksasa berlantai dua ini dirancang untuk memanjakan rombongan hingga 35 orang. Dengan pemandangan langsung ke Situ Cileunca dan fasilitas hiburan sekelas hotel bintang, ini adalah pilihan paling elit di Pangalengan."
     },
     {
-      id: "palayangan-a",
+      id: "villa-palayangan-a",
       nama: "Glamping Palayangan A",
       kategori: "Premium Cabin",
       kapasitas: "4 - 8 Orang / Unit",
@@ -120,7 +120,7 @@ export const masterPenginapan = [
       deskripsi: "Primadona baru di Pangalengan (Harmony Riverside). Glamping dan cabin berkelas premium untuk Anda yang ingin rehat sejenak dari hiruk-pikuk kota namun tetap menginginkan layanan ala hotel mewah. Dapatkan juga fasilitas antar-jemput gratis ke tempat wisata!"
     },
     {
-      id: "bts",
+      id: "villa-bts-pangalengan",
       nama: "Villa BTS",
       kategori: "Villa Modern",
       kapasitas: "15 - 20 Orang",
@@ -139,7 +139,7 @@ export const masterPenginapan = [
       deskripsi: "Villa super nyaman yang dirancang khusus untuk memecah kebosanan! Dilengkapi dengan fasilitas Billiard dan Meja Foosball (Soccer Board), menjadikan malam keakraban bersama keluarga atau teman terasa semakin hangat dan seru."
     },
     {
-      id: "family-c",
+      id: "villa-family-c-pangalengan",
       nama: "Homestay Family C",
       kategori: "Homestay Premium",
       kapasitas: "20 - 30 Orang",
@@ -160,7 +160,7 @@ export const masterPenginapan = [
       deskripsi: "Rasakan syahdunya malam di Pangalengan dengan duduk mengelilingi perapian klasik di dalam rumah. Homestay berkapasitas besar ini menawarkan perpaduan suasana asri pegunungan dan tata letak rumah yang menghangatkan."
     },
     {
-      id: "family-a",
+      id: "villa-family-a-pangalengan",
       nama: "Homestay Family A",
       kategori: "Homestay Premium",
       kapasitas: "20 - 25 Orang",
@@ -179,7 +179,7 @@ export const masterPenginapan = [
       deskripsi: "Homestay luas dengan fasilitas perapian di dalam ruangan. Menyuguhkan pemandangan menawan ke arah danau Situ Cileunca, menjadikannya pelarian sempurna untuk rombongan yang mencari keintiman."
     },
     {
-      id: "family-b",
+      id: "villa-family-b-pangalengan",
       nama: "Homestay Family B",
       kategori: "Homestay Premium",
       kapasitas: "25 - 30 Orang",
@@ -198,7 +198,7 @@ export const masterPenginapan = [
       deskripsi: "Serupa dengan seri Family lainnya namun dengan optimalisasi kapasitas ruang tengah yang lebih lega. Solusi cerdas untuk rombongan 30 orang yang ingin menekan budget menginap namun tetap mendapat fasilitas bintang."
     },
     {
-      id: "saung-cinta",
+      id: "penginapan-saung-cinta",
       nama: "Saung Cinta",
       kategori: "Cottage & Pool",
       kapasitas: "10 - 20 Orang",
@@ -217,7 +217,7 @@ export const masterPenginapan = [
       deskripsi: "Cottage berkonsep 'cozy' yang sangat bersahabat di kantong. Menyediakan fasilitas melimpah mulai dari alat BBQ hingga akses kolam renang, tempat ini dirancang untuk menciptakan memori penuh tawa bersama orang-orang tercinta."
     },
     {
-      id: "glamping-sagaya",
+      id: "glamping-sagaya-pangalengan",
       nama: "Glamping Sagaya",
       kategori: "Glamour Camping",
       kapasitas: "4 - 8 Orang",
@@ -237,7 +237,7 @@ export const masterPenginapan = [
       deskripsi: "Rasakan magisnya tidur beralaskan alam tanpa mengorbankan kenyamanan. Buka pintu tenda Anda di pagi hari dan saksikan lukisan nyata hamparan kebun teh yang berselimut kabut tebal."
     },
     {
-      id: "bumi-tilu",
+      id: "villa-bumi-tilu-pangalengan",
       nama: "Villa Bumi Tilu",
       kategori: "Super Premium",
       kapasitas: "4 - 10 Orang",
@@ -258,7 +258,7 @@ export const masterPenginapan = [
       deskripsi: "Dirancang khusus untuk 'Sultan' yang mendambakan privasi tingkat tinggi. Villa dengan arsitektur modern minimalis yang berpadu dengan kolam renang pribadi dan pemandangan alam Pangalengan. Sebuah karya seni tempat Anda beristirahat."
     },
     {
-      id: "vila-putih",
+      id: "villa-putih-pangalengan",
       nama: "Vila Putih",
       kategori: "Premium Villa",
       kapasitas: "35 - 45 Orang",
@@ -277,7 +277,7 @@ export const masterPenginapan = [
       deskripsi: "Villa berdesain arsitektur putih yang sangat nyentrik dan mencolok. Sangat 'Instagramable' di setiap sudutnya. Memiliki daya tampung ekstrem hingga 45 orang, ini adalah primadona untuk acara gathering perusahaan berskala besar."
     },
     {
-      id: "vila-putih-a",
+      id: "villa-putih-a-pangalengan",
       nama: "Vila Putih A",
       kategori: "Premium Villa",
       kapasitas: "20 - 25 Orang",
@@ -296,7 +296,7 @@ export const masterPenginapan = [
       deskripsi: "Versi lebih compact dari Vila Putih utama. Tetap mempertahankan garis arsitektur fotogenik yang elegan. Sangat pas untuk rombongan keluarga menengah yang mencari estetika dan kenyamanan premium."
     },
     {
-      id: "barak-ghc",
+      id: "penginapan-barak-ghc-pangalengan",
       nama: "Barak GHC",
       kategori: "Barak Outing",
       kapasitas: "20 Orang / Unit",
@@ -317,7 +317,7 @@ export const masterPenginapan = [
       deskripsi: "Dirancang secara spesifik untuk memfasilitasi rombongan LDKS, Mahasiswa, atau Outing Divisi Perusahaan. Konsep barak komunal memupuk kebersamaan. Ditambah akses lapangan luas dan aula serbaguna, semua rundown acara Anda akan berjalan lancar di sini."
     },
     {
-      id: "imah",
+      id: "villa-imah-pangalengan",
       nama: "Villa Imah",
       kategori: "Villa Modern",
       kapasitas: "20 - 30 Orang",

@@ -7,7 +7,7 @@ import { generateWALink } from "@/config/contact";
 // ─── DATA MASTER KATALOG (Dengan Data Real Rafting) ──────────────────────
 const masterKatalog = [
   { 
-    id: "rafting", 
+    id: "paket-rafting-pangalengan", 
     nama: "Rafting Palayangan", 
     kategori: "Aktivitas Satuan", 
     harga: "Rp 165.000", 
@@ -39,7 +39,7 @@ const masterKatalog = [
     deskripsi: "Olahraga mengarungi segarnya air di sungai Palayangan sepanjang 4.5km. Paket sudah lengkap, tinggal bawa badan aja! Dapatkan promo spesial untuk rombongan di atas 15 orang." 
   },
   { 
-    id: "atv", 
+    id: "sewa-atv-pangalengan", 
     nama: "ATV Adventure", 
     kategori: "Aktivitas Satuan", 
     harga: "Rp 175.000", 
@@ -68,7 +68,7 @@ const masterKatalog = [
     deskripsi: "Wisata adventure memacu adrenalin menjelajahi hamparan perkebunan teh dan pegunungan dengan lintasan sepanjang 4 KM. Ditemani udara sejuk Pangalengan dan tour guide profesional." 
   },
   { 
-    id: "offroad", 
+    id: "offroad-land-rover-pangalengan", 
     nama: "Offroad Land Rover", 
     kategori: "Aktivitas Satuan", 
     harga: "Rp 220.000", 
@@ -93,7 +93,7 @@ const masterKatalog = [
     deskripsi: "Wisata eksplorasi menjelajahi alam pegunungan Pangalengan dengan rintangan berlumpur dan bebatuan yang menegangkan. Rasakan sensasi memacu adrenalin menggunakan mobil Land Rover legendaris bersama driver profesional kami." 
   },
   { 
-    id: "paintball", 
+    id: "paket-paintball-pangalengan", 
     nama: "Paintball Battle", 
     kategori: "Aktivitas Satuan", 
     harga: "Rp 85.000", 
@@ -117,7 +117,7 @@ const masterKatalog = [
     deskripsi: "Permainan olahraga outbound tembak-menembak menggunakan pistol gas dengan peluru cat. Sangat cocok untuk Anda yang ingin berkompetisi antar tim sambil merasakan ketegangan adrenalin. Susun strategi, hindari tembakan, dan raih objektif bersama tim!" 
   },
   { 
-    id: "team-building", 
+    id: "paket-team-building-fun-games", 
     nama: "Team Building (Fun Games)", 
     kategori: "Aktivitas Satuan", 
     harga: "Rp 99.000", 
@@ -143,7 +143,7 @@ const masterKatalog = [
     deskripsi: "Rangkaian permainan interaktif yang dirancang khusus untuk memecah ketegangan (ice breaking), membangun solidaritas, dan menumbuhkan kerja sama tim. Sangat direkomendasikan untuk rombongan keluarga besar maupun divisi perusahaan yang ingin me-refresh kekompakan." 
   },
   { 
-    id: "flying-fox", 
+    id: "tiket-flying-fox-situ-cileunca", 
     nama: "Flying Fox", 
     kategori: "Aktivitas Satuan", 
     harga: "Rp 35.000", 
@@ -168,7 +168,7 @@ const masterKatalog = [
     deskripsi: "Pacu adrenalin Anda dengan meluncur bebas menggunakan zipline sepanjang 300 meter. Nikmati sensasi layaknya terbang melintasi hamparan kebun teh yang hijau atau sejuknya permukaan air danau Situ Cileunca yang ikonik di Pangalengan." 
   },
   { 
-    id: "treking", 
+    id: "paket-trekking-kebun-teh-pangalengan", 
     nama: "Treking Alam", 
     kategori: "Aktivitas Satuan", 
     harga: "Rp 70.000", 
@@ -191,7 +191,7 @@ const masterKatalog = [
     deskripsi: "Lepaskan penat dengan berjalan kaki menjelajahi sejuknya perbukitan dan hamparan kebun teh Pangalengan yang hijau memanjakan mata. Menempuh jarak sekitar 5 KM yang menyehatkan, Anda akan dipandu oleh tour guide lokal kami yang ramah dan berpengalaman menyusuri jalur-jalur estetik tersembunyi." 
   },
   { 
-    id: "tour-perahu", 
+    id: "tour-perahu-situ-cileunca", 
     nama: "Tour Perahu Danau", 
     kategori: "Aktivitas Satuan", 
     harga: "Rp 20.000", 
@@ -218,7 +218,7 @@ const masterKatalog = [
 
   // COMBO KELUARGA
   { 
-    id: "keluarga-hemat", 
+    id: "paket-wisata-keluarga-hemat", 
     nama: "Hemat & Praktis", 
     kategori: "Combo Keluarga", 
     durasi: "1 Hari", 
@@ -248,7 +248,7 @@ const masterKatalog = [
 
   // KELUARGA SERU
   { 
-    id: "keluarga-seru", 
+    id: "paket-wisata-keluarga-seru", 
     nama: "Seru Maksimal", 
     kategori: "Combo Keluarga", 
     durasi: "1 Hari", 
@@ -277,7 +277,7 @@ const masterKatalog = [
 
   // KELUARGA PUAS
   { 
-    id: "keluarga-puas", 
+    id: "paket-wisata-keluarga-premium", 
     nama: "Puas Eksplorasi", 
     kategori: "Combo Keluarga", 
     durasi: "1 Hari", 
@@ -309,7 +309,7 @@ const masterKatalog = [
   // COMBO CORPORATE
   // ─── COMBO CORPORATE (1 HARI / ONE DAY TRIP) ───
   { 
-    id: "corp-a1d", 
+    id: "paket-outing-kantor-1-hari-adventure", 
     nama: "Adventure Plus", 
     kategori: "Combo Corporate", 
     durasi: "1 Hari", 
@@ -335,7 +335,7 @@ const masterKatalog = [
     deskripsi: "Satu hari penuh aksi untuk melepaskan penat dari rutinitas kantor! Kombinasi sempurna antara petualangan air, lumpur (ATV), dan strategi tempur (Paintball) yang akan memompa semangat dan energi baru bagi tim Anda." 
   },
   { 
-    id: "corp-b1d", 
+    id: "paket-gathering-perusahaan-1-hari", 
     nama: "Synergy Build", 
     kategori: "Combo Corporate", 
     durasi: "1 Hari", 
@@ -361,7 +361,7 @@ const masterKatalog = [
     deskripsi: "Senjata rahasia para HRD! Paket ini dirancang khusus untuk meruntuhkan sekat senioritas, mencairkan kekakuan antar divisi (Ice Breaking), melatih komunikasi tim di bawah tekanan (Paintball), dan diakhiri dengan tawa lepas bersama di derasnya sungai (Rafting)." 
   },
   { 
-    id: "corp-c1d", 
+    id: "paket-outing-corporate-offroad-1-hari", 
     nama: "Xtreme Offroad", 
     kategori: "Combo Corporate", 
     durasi: "1 Hari", 
@@ -390,7 +390,7 @@ const masterKatalog = [
   // COMBO CORPORATE 2 HARI
 // ─── COMBO CORPORATE MENGINAP (2 HARI 1 MALAM) ───
   { 
-    id: "corp-a2d", 
+    id: "paket-gathering-kantor-2-hari-1-malam-hemat", 
     nama: "Essential Trip", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
@@ -415,7 +415,7 @@ const masterKatalog = [
     deskripsi: "Solusi cerdas untuk rombongan mahasiswa, komunitas, atau perusahaan dengan budget ketat. Paket ekonomis ini memastikan Anda tetap mendapatkan pengalaman petualangan maksimal (Rafting & Paintball) serta kehangatan berkumpul mengelilingi api unggun di malam hari." 
   },
   { 
-    id: "corp-b2d", 
+    id: "paket-outing-perusahaan-2-hari-1-malam-bestseller", 
     nama: "Feast & Fun", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
@@ -442,7 +442,7 @@ const masterKatalog = [
     deskripsi: "Standar Emas (Gold Standard) untuk Outing Perusahaan! Bebaskan panitia dari rasa pusing. Kami urus jadwal dari Anda datang hingga pulang. Siang hari dipacu adrenalinnya, malam hari dimanjakan dengan lezatnya Kambing Guling sambil bernyanyi bersama iringan Live Music. Sempurna!" 
   },
   { 
-    id: "corp-c2d", 
+    id: "paket-gathering-corporate-2-hari-1-malam-all-in", 
     nama: "All-Inclusive", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
@@ -467,7 +467,7 @@ const masterKatalog = [
     deskripsi: "Paket efisien yang mencakup semua kebutuhan dasar outing kantor tanpa embel-embel berlebihan. Tidur nyenyak di villa, perut kenyang dengan 3x makan, dan adrenalin terpompa dengan 3 aktivitas ekstrem. Sangat pas untuk menjaga keseimbangan antara budget dan kepuasan karyawan." 
   },
   { 
-    id: "corp-d2d", 
+    id: "paket-outing-kantor-2-hari-1-malam-relax", 
     nama: "Relax & Retreat", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
@@ -490,7 +490,7 @@ const masterKatalog = [
     deskripsi: "Fokus murni pada tawa dan keseruan air dengan harga yang sangat terjangkau. Paket menginap semi-mandiri ini cocok untuk tim kerja kecil yang mengedepankan suasana santai (relax), tidak suka aktivitas yang terlalu berat, dan ingin lebih fleksibel mengatur makan malam sendiri di luar." 
   },
   { 
-    id: "corp-vip", 
+    id: "paket-gathering-perusahaan-vip-premium", 
     nama: "VIP Executive", 
     kategori: "Combo Corporate", 
     durasi: "Menginap", 
@@ -517,7 +517,7 @@ const masterKatalog = [
   },
   // ─── FAMILY CAMP / GLAMPING MENGINAP (2 HARI 1 MALAM) ───
   { 
-    id: "camp-fca", 
+    id: "paket-glamping-atv-pangalengan", 
     nama: "Glamping & ATV", 
     kategori: "Family Camp", 
     durasi: "Menginap", 
@@ -542,7 +542,7 @@ const masterKatalog = [
     deskripsi: "Camping tanpa ribet! Nikmati suasana malam bertabur bintang dan syahdunya api unggun di depan tenda estetik yang sudah kami siapkan lengkap dengan kasur empuk. Pagi harinya, Anda langsung disambut dengan rentetan petualangan seru melintasi air, udara, dan lumpur daratan." 
   },
   { 
-    id: "camp-fcb", 
+    id: "paket-glamping-offroad-pangalengan", 
     nama: "Glamping & Offroad", 
     kategori: "Family Camp", 
     durasi: "Menginap", 
@@ -568,7 +568,7 @@ const masterKatalog = [
     deskripsi: "Kasta tertinggi dari paket Family Camp kami. Ganti ATV dengan sensasi menembus rimbunnya hutan pinus menggunakan mobil tangguh Offroad Land Rover. Pilihan paling sempurna dan estetik bagi keluarga yang mencari harmoni antara ketenangan tidur di alam dan adrenalin tinggi di siang hari." 
   },
   { 
-    id: "camp-fcc", 
+    id: "paket-camping-keluarga-pangalengan", 
     nama: "Classic Glamping", 
     kategori: "Family Camp", 
     durasi: "Menginap", 
