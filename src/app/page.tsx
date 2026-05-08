@@ -591,7 +591,7 @@ export default function Home() {
         <FadeIn>
           {/* 6. BANNER CUSTOM TRIP (Penawaran Alternatif) */}
           <section className="relative w-full px-4 py-20 sm:py-28 sm:px-6 lg:px-8 text-center text-white overflow-hidden border-b border-stone-800">
-            <Image src="/hero-pangalengan-trip.jpg" alt="Custom Trip Background" fill className="object-cover" />
+            <Image src="/rafting.jpg" alt="Custom Trip Background" fill className="object-cover" />
             <div className="absolute inset-0 bg-stone-900/85 backdrop-blur-[2px]"></div> 
             
             <div className="relative z-10 mx-auto max-w-3xl space-y-6">

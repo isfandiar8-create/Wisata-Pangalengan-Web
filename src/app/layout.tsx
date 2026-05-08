@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next"; // <-- Tambahkan Viewport
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -7,44 +7,66 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// ─── OPTIMASI UX MOBILE (STANDAR BARU NEXT.JS) ───
+// ─── OPTIMASI UX MOBILE ───
 export const viewport: Viewport = {
-  themeColor: "#059669", // Warna emerald-600, membuat top bar browser HP Android jadi hijau elegan
+  themeColor: "#059669", 
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1, // Mencegah zoom otomatis yang mengganggu saat mengisi form
+  maximumScale: 1, 
 };
 
-// ─── OPTIMASI SEO & METADATA (TINGKAT MASTER) ───
+// ─── OPTIMASI SEO & METADATA (LEVEL DEWA) ───
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gopangalengan.id"),
   
-  title: "Go Pangalengan | Paket Wisata, Outing & Penginapan Terbaik",
-  description: "Platform reservasi wisata Go Pangalengan. Dapatkan promo paket Rafting, ATV, Offroad, Outing Corporate, dan Glamping estetik dengan harga transparan.",
+  // FITUR SUPER: Template Judul Otomatis
+  title: {
+    default: "Go Pangalengan | Paket Wisata Outing & Penginapan Terbaik",
+    template: "%s | Go Pangalengan", // %s akan otomatis diganti dengan judul tiap halaman
+  },
+  
+  description: "Platform reservasi wisata resmi Go Pangalengan. Dapatkan promo paket Rafting, ATV, Offroad, Outing Corporate, dan sewa Villa estetik dengan harga transparan.",
   keywords: [
     "wisata pangalengan", 
     "rafting pangalengan", 
+    "situ cileunca",
     "villa pangalengan", 
-    "outing kantor bandung", 
-    "go pangalengan", 
+    "penginapan pangalengan",
+    "outing kantor bandung",
+    "gathering perusahaan",
     "glamping pangalengan",
+    "go pangalengan",
     "paket wisata bandung selatan"
   ],
   authors: [{ name: "Go Pangalengan", url: "https://www.gopangalengan.id" }],
   
-  // Mencegah isu duplicate content di mata Google
+  // Mengizinkan Google merayapi seluruh isi web
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  
   alternates: {
     canonical: "/", 
   },
   
-  // Persiapan untuk verifikasi Google Search Console nanti
   verification: {
     google: "dufDtxlBLTJBGAbqXoxhXZd65FYIZhtOIqOAq3K3s2M", 
   },
 
   openGraph: {
-    title: "Go Pangalengan - Liburan Tanpa Ribet",
-    description: "Temukan paket petualangan dan penginapan estetik di Pangalengan untuk keluarga maupun gathering perusahaan Anda.",
+    title: {
+      default: "Go Pangalengan - Liburan Tanpa Ribet",
+      template: "%s | Go Pangalengan",
+    },
+    description: "Temukan paket petualangan dan penginapan estetik di Pangalengan untuk liburan keluarga maupun gathering perusahaan Anda.",
     url: "https://www.gopangalengan.id", 
     siteName: "Go Pangalengan",
     images: [
@@ -59,10 +81,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   
-  // Optimasi untuk sharing di Twitter / X
   twitter: {
     card: "summary_large_image",
-    title: "Go Pangalengan | Paket Wisata, Outing & Penginapan",
+    title: "Go Pangalengan | Paket Wisata Outing & Penginapan",
     description: "Dapatkan promo paket Rafting, ATV, Offroad, Outing Corporate, dan Glamping estetik.",
     images: ["/hero1.jpg"],
   },
@@ -88,7 +109,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "TravelAgency",
               "name": "Go Pangalengan",
-              "image": "https://www.gopangalengan.id/logo-go-pangalengan.png",
+              "image": "https://www.gopangalengan.id/logo-go-pangalengan.png", // Pastikan file logo ini ada di folder public Anda
               "description": "Agen perjalanan wisata dan event organizer terpercaya di Pangalengan. Menyediakan paket Rafting, Sewa Villa, Glamping, dan Corporate Outing.",
               "address": {
                 "@type": "PostalAddress",
@@ -98,7 +119,7 @@ export default function RootLayout({
               },
               "telephone": "+6285717075116",
               "url": "https://www.gopangalengan.id",
-              "priceRange": "Rp 150.000 - Rp 1.500.000" // Menambah sinyal harga komersial untuk Google
+              "priceRange": "Rp 150.000 - Rp 1.500.000" 
             })
           }}
         />

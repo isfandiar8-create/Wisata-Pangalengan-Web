@@ -10,7 +10,7 @@ export default function AboutUsPage() {
       {/* 1. Hero Section - Elegan & Profesional */}
       <section className="relative h-[60vh] min-h-[500px] w-full bg-zinc-900">
         <Image 
-          src="/hero-pangalengan-trip.jpg" 
+          src="/rafting.jpg" 
           alt="Tentang Go Pangalengan" 
           fill 
           className="object-cover opacity-40" 

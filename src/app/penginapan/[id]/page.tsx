@@ -155,7 +155,7 @@ export default function DetailPenginapan() {
           <div className="mt-16 pt-8 border-t border-stone-100">
             <h2 className="text-lg font-bold text-stone-800 mb-6 text-center">Jelajahi Pilihan Lainnya</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {masterPenginapan.filter(p => p.id !== id).sort(() => 0.5 - Math.random()).slice(0, 2).map((other) => (
+            {masterPenginapan.filter(p => p.id !== id).slice(0, 2).map((other) => (
                 <Link 
                   key={other.id}
                   href={`/penginapan/${other.id}`}
