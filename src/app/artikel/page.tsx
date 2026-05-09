@@ -1,54 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { masterArtikel } from "@/data/artikel"; //import dari master artikel
 
 // ─── DATA ARTIKEL SEO GO PANGALENGAN ─────────────────────────────────────────────
-const daftarArtikel = [
-  {
-    slug: "estimasi-biaya-liburan-pangalengan",
-    judul: "Estimasi Biaya Liburan ke Pangalengan 2026: Pilih Gaya Hemat atau Eksklusif?",
-    kategori: "Panduan Budget",
-    tanggal: "16 April 2026",
-    waktuBaca: "4 Menit Baca",
-    image: "/cileunca.jpg", // Pastikan gambar ini ada di folder public
-    excerpt: "Berapa budget yang harus disiapkan untuk ke Pangalengan? Temukan rincian biaya lengkap untuk gaya liburan ala backpacker hingga layanan VIP korporat.",
-  },
-  {
-    slug: "rekomendasi-villa-kapasitas-besar-pangalengan",
-    judul: "5 Villa Kapasitas Besar di Pangalengan untuk Makrab & Gathering Kantor",
-    kategori: "Info Penginapan",
-    tanggal: "14 April 2026",
-    waktuBaca: "5 Menit Baca",
-    image: "/villa-wantea.jpg", // Ganti dengan aset gambar Anda jika ada
-    excerpt: "Mencari penginapan untuk 30 hingga 50 orang memang gampang-gampang susah. Ini daftar villa terbaik dengan fasilitas aula dan area BBQ.",
-  },
-  {
-    slug: "panduan-aman-rafting-situ-cileunca",
-    judul: "Rafting Situ Cileunca: Panduan Keamanan, Usia Minimal, dan Tips Pemula",
-    kategori: "Tips Petualangan",
-    tanggal: "10 April 2026",
-    waktuBaca: "4 Menit Baca",
-    image: "/rafting.jpg", // Ganti dengan aset gambar Anda jika ada
-    excerpt: "Ingin mencoba arung jeram tapi belum punya pengalaman? Ketahui prosedur keamanan standar dan persiapan wajib sebelum menantang arus Palayangan.",
-  },
-  {
-    slug: "spot-foto-sunrise-pangalengan",
-    judul: "Sunrise Point Cukul vs Wayang Windu: Mana Spot Foto Estetik Terbaik?",
-    kategori: "Destinasi Ikonik",
-    tanggal: "05 April 2026",
-    waktuBaca: "3 Menit Baca",
-    image: "/hero1.jpg", // Ganti dengan aset gambar Anda jika ada
-    excerpt: "Dua primadona bagi para pemburu matahari terbit di Bandung Selatan. Mari bandingkan akses jalan, harga tiket masuk, dan lanskap pemandangannya.",
-  },
-  {
-    slug: "perbedaan-glamping-dan-camping-pangalengan",
-    judul: "Perbedaan Glamping dan Camping Biasa di Pangalengan: Mana yang Cocok?",
-    kategori: "Panduan Liburan",
-    tanggal: "02 April 2026",
-    waktuBaca: "4 Menit Baca",
-    image: "/glamping-sagaya.jpg", // Ganti dengan aset gambar Anda jika ada
-    excerpt: "Bingung memilih antara tidur organik di tenda biasa atau mencoba kenyamanan glamour camping? Kami bedah tuntas perbedaan fasilitasnya untuk Anda.",
-  }
-];
+export const metadata = {
+  title: "Blog & Jurnal Wisata",
+  description: "Kumpulan panduan lokal, tips liburan hemat, dan inspirasi destinasi terbaik di Pangalengan.",
+};
 
 export default function ArtikelPage() {
   return (
@@ -72,7 +30,7 @@ export default function ArtikelPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-12 relative z-20">
         <div className="flex flex-col gap-4 sm:gap-6">
           
-          {daftarArtikel.map((artikel) => (
+          {masterArtikel.map((artikel) => (
             <Link 
               href={`/artikel/${artikel.slug}`} 
               key={artikel.slug}

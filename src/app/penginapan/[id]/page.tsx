@@ -1,19 +1,63 @@
-"use client";
-import { useParams } from "next/navigation";
+import { Metadata } from "next"; // Wajib untuk SEO
 import Image from "next/image";
 import Link from "next/link";
 import { generateWALink } from "@/config/contact"; 
 import { masterPenginapan } from "@/data/penginapan"; 
 
-// ─── KOMPONEN UTAMA HALAMAN DETAIL PENGINAPAN ───────────────────────────
-export default function DetailPenginapan() {
-  const params = useParams();
-  const id = params?.id as string;
+// ─── TIPE DATA PARAMS (Standar Next.js Terbaru) ───
+type Props = {
+  params: Promise<{ id: string }>;
+};
 
+// ─── FITUR DEWA: GENERATE METADATA DINAMIS PENGINAPAN ───
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = await params;
+  const id = resolvedParams.id;
+  
   // Cari data
   const item = masterPenginapan.find((p) => p.id === id);
 
   // Jika penginapan tidak ada
+  if (!item) {
+    return {
+      title: "Penginapan Tidak Ditemukan",
+      description: "Mohon maaf, penginapan yang Anda cari tidak tersedia di Go Pangalengan.",
+    };
+  }
+
+  // Potong deskripsi maksimal 150 karakter untuk preview WA/Google
+  const metaDescription = item.deskripsi
+    ? `${item.deskripsi.substring(0, 150)}...`
+    : `Sewa ${item.nama} di Pangalengan dengan harga ${item.hargaWeekday}/malam. Kapasitas ${item.kapasitas}.`;
+
+  return {
+    title: item.nama, // Akan otomatis jadi "Villa Wantea | Go Pangalengan"
+    description: metaDescription,
+    openGraph: {
+      title: `${item.nama} | Go Pangalengan`,
+      description: metaDescription,
+      images: [
+        {
+          url: item.image,
+          width: 800,
+          height: 600,
+          alt: `Sewa ${item.nama} di Pangalengan`,
+        },
+      ],
+    },
+  };
+}
+
+// ─── KOMPONEN UTAMA HALAMAN DETAIL PENGINAPAN (Server Component) ───
+export default async function DetailPenginapan({ params }: Props) {
+  // Ambil ID dari URL (Tanpa perlu useParams hook)
+  const resolvedParams = await params;
+  const id = resolvedParams.id;
+
+  // Cari data
+  const item = masterPenginapan.find((p) => p.id === id);
+
+  // Jika penginapan tidak ada (Tetap menggunakan UI Custom Anda yang keren)
   if (!item) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-stone-50 px-4 text-center">
