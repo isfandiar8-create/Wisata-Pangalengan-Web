@@ -297,6 +297,509 @@ export const masterArtikel = [
     )
   },
   {
+    slug: "itinerary-wisata-pangalengan-2-hari-1-malam-dari-jakarta", 
+    judul: "Panduan Itinerary Liburan ke Pangalengan 2 Hari 1 Malam (Start Jakarta & Bekasi)",
+    kategori: "Itinerary & Rute",
+    tanggal: "10 Mei 2026",
+    waktuBaca: "6 Menit Baca",
+    image: "/corporate-1n-b.JPG", // Gambar rombongan Feast & Fun atau Land Rover
+    excerpt: "Bingung menyusun jadwal liburan dari Jakarta? Contek itinerary 2D1N paling seimbang ini. Bebas macet, anti-ribet, dan langsung bisa terima beres!",
+    content: (
+      <>
+        <p className="text-stone-600 leading-relaxed mb-6 text-lg">
+          Biar saya tebak: kamu dan teman-teman kantor di Jakarta atau Bekasi sudah sangat butuh <i>healing</i>. Grup WhatsApp sudah ramai membahas rencana kabur dari polusi dan kemacetan ibukota. Tapi, begitu sampai pada pertanyaan, <strong>"Siapa yang mau susun jadwalnya?"</strong> tiba-tiba semua orang langsung <i>silent reader</i>.
+        </p>
+        <p className="text-stone-600 leading-relaxed mb-6 text-lg">
+          Merancang <i>itinerary</i> memang pusing. Kalau terlalu padat, jatuhnya malah lelah seperti ikut pelatihan militer. Kalau terlalu santai, rasanya rugi sudah jauh-jauh menyetir.
+        </p>
+        <p className="text-stone-600 leading-relaxed mb-10 text-lg">
+          Sebagai teman lokalmu, saya sudah menyiapkan formula jadwal 2 Hari 1 Malam (2D1N) yang paling seimbang. Kombinasi sempurna antara bersantai merilekskan otot di hari pertama, dan memompa adrenalin di hari kedua. Mari kita bedah jadwalnya!
+        </p>
+
+        {/* TIPS PERJALANAN */}
+        <div className="bg-amber-50 rounded-2xl p-6 border border-amber-100 mb-10">
+          <h2 className="text-xl font-bold text-amber-900 mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375v-1.5a3 3 0 016 0v1.5h3.375a3 3 0 016 0v1.5h.75c1.035 0 1.875-.84 1.875-1.875V11.625a2.625 2.625 0 00-2.625-2.625H15V15z" /><path d="M8.25 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0zM20.25 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" /></svg>
+            Tips Perjalanan Jarak Jauh (Jakarta & Bekasi)
+          </h2>
+          <p className="text-amber-800 leading-relaxed mb-4 text-sm">
+            Kunci dari liburan yang sukses adalah <i>mood</i> yang bagus di perjalanan. Agar kamu tidak tua di jalan akibat kemacetan, kuncinya hanya satu: <strong>berangkatlah lebih awal</strong>.
+          </p>
+          <ul className="space-y-3 text-amber-800 text-sm list-none pl-0">
+            <li className="flex gap-3">
+              <span className="font-black">⏰</span>
+              <span><strong>Pukul 06.00 - 07.00 WIB:</strong> Pastikan ban mobilmu sudah mulai berputar meninggalkan Jakarta/Bekasi di jam ini.</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="font-black">🛣️</span>
+              <span><strong>Rute Terbaik:</strong> Langsung masuk Tol Cipularang, dan pastikan kamu menyambung ke <strong>Tol Soroja (Soreang-Pasir Koja)</strong>. Jangan keluar di gerbang tol dalam Kota Bandung agar tidak terjebak macet akhir pekan.</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="font-black">📍</span>
+              <span>Keluar di Gerbang Tol Soreang, ikuti jalur menanjak menuju Pangalengan. Dengan ritme santai, kamu akan tiba sekitar pukul 11.00 atau 12.00, waktu yang pas untuk kuliner lokal sebelum menuju penginapan.</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* ITINERARY HARI PERTAMA */}
+        <h2 className="text-2xl font-bold text-stone-900 mt-12 mb-2">Detail Itinerary 2 Hari 1 Malam di Pangalengan</h2>
+        <p className="text-stone-600 leading-relaxed mb-8">
+          Lupakan <i>spreadsheet</i> Excel-mu yang rumit. Ini adalah <i>rundown</i> aktual yang selalu terbukti berhasil membuat tamu-tamu kami pulang dengan senyum lebar.
+        </p>
+
+        <div className="mb-10">
+          <div className="inline-block bg-emerald-600 text-white font-black px-4 py-2 rounded-lg text-sm uppercase tracking-widest mb-6 shadow-md">
+            Hari Pertama: Santai & Keakraban
+          </div>
+          <p className="text-stone-600 text-sm mb-6 italic">
+            Fase transisi. Tubuhmu butuh adaptasi dari udara panas ibukota ke suhu dingin Pangalengan.
+          </p>
+          
+          <div className="relative border-l-2 border-emerald-200 ml-3 md:ml-4 space-y-8 pb-4">
+            <div className="relative pl-6 md:pl-8">
+              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1 border-4 border-white shadow-sm"></div>
+              <strong className="text-emerald-700 block text-lg mb-1">14:00 - Tiba & Check-in</strong>
+              <p className="text-stone-600 text-sm leading-relaxed m-0">Setibanya di lokasi, langsung turunkan koper dan <i>check-in</i> ke penginapan atau tenda <i>glamping</i> pilihanmu. Luruskan punggung sejenak di kasur yang empuk.</p>
+            </div>
+            <div className="relative pl-6 md:pl-8">
+              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1 border-4 border-white shadow-sm"></div>
+              <strong className="text-emerald-700 block text-lg mb-1">15:30 - Free Time & Sunset</strong>
+              <p className="text-stone-600 text-sm leading-relaxed m-0">Waktu bebas yang magis. Kamu bisa jalan santai membelah kebun teh, berburu foto estetik, atau sekadar menyeduh teh hangat sambil menunggu matahari terbenam. Udaranya mulai turun, siapkan jaketmu.</p>
+            </div>
+            <div className="relative pl-6 md:pl-8">
+              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1 border-4 border-white shadow-sm"></div>
+              <strong className="text-emerald-700 block text-lg mb-1">19:00 - Pesta Malam Hari</strong>
+              <p className="text-stone-600 text-sm leading-relaxed m-0">Malam di Pangalengan terlalu sayang jika hanya untuk tidur. Nyalakan api unggun, bakar daging untuk BBQ, dan bernyanyilah diiringi <i>live music</i>. Dinginnya malam akan kalah dengan hangatnya obrolan.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ITINERARY HARI KEDUA */}
+        <div className="mb-12">
+          <div className="inline-block bg-emerald-600 text-white font-black px-4 py-2 rounded-lg text-sm uppercase tracking-widest mb-6 shadow-md">
+            Hari Kedua: Puncak Petualangan
+          </div>
+          <p className="text-stone-600 text-sm mb-6 italic">
+            Tubuh sudah segar? Bagus. Hari ini kita akan sedikit memacu detak jantung.
+          </p>
+          
+          <div className="relative border-l-2 border-emerald-200 ml-3 md:ml-4 space-y-8 pb-4">
+            <div className="relative pl-6 md:pl-8">
+              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1 border-4 border-white shadow-sm"></div>
+              <strong className="text-emerald-700 block text-lg mb-1">07:00 - Sarapan Pagi</strong>
+              <p className="text-stone-600 text-sm leading-relaxed m-0">Bangun pagi, hirup udara yang 100% bersih, dan nikmati kopi hangat serta sarapan ditemani lautan kabut yang perlahan naik dari perkebunan.</p>
+            </div>
+            <div className="relative pl-6 md:pl-8">
+              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1 border-4 border-white shadow-sm"></div>
+              <strong className="text-emerald-700 block text-lg mb-1">08:30 - Persiapan Petualangan</strong>
+              <p className="text-stone-600 text-sm leading-relaxed m-0">Waktunya berkumpul di <i>basecamp</i>. Tim instruktur kami akan membagikan perlengkapan keamanan (helm, pelampung) dan memberikan <i>briefing</i> singkat agar aman terkendali.</p>
+            </div>
+            <div className="relative pl-6 md:pl-8">
+              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1 border-4 border-white shadow-sm"></div>
+              <strong className="text-emerald-700 block text-lg mb-1">09:00 - Mulai Aktivitas Inti</strong>
+              <p className="text-stone-600 text-sm leading-relaxed m-0">Saatnya basah-basahan! Terjun ke Sungai Palayangan untuk Rafting, atur strategi di arena Paintball, atau teriak lepas menembus lumpur menggunakan ATV atau Offroad Land Rover.</p>
+            </div>
+            <div className="relative pl-6 md:pl-8">
+              <div className="absolute w-4 h-4 bg-emerald-500 rounded-full -left-[9px] top-1 border-4 border-white shadow-sm"></div>
+              <strong className="text-emerald-700 block text-lg mb-1">12:00 - Bersih-bersih & Check-out</strong>
+              <p className="text-stone-600 text-sm leading-relaxed m-0">Puas berpetualang, bilas badan dengan air hangat, <i>packing</i> barang, nikmati makan siang terakhir, dan bersiaplah menyetir kembali ke rutinitas ibukota dengan energi penuh!</p>
+            </div>
+          </div>
+        </div>
+
+        {/* SOFT SELLING PRODUCT INJECTION */}
+        <div className="bg-stone-900 rounded-3xl p-6 sm:p-10 my-12 shadow-2xl relative overflow-hidden">
+          <div className="relative z-10">
+            <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">Jangan Pusing Jadi Panitia, Pilih Paket "Terima Beres"</h2>
+            <p className="text-stone-300 leading-relaxed mb-8">
+              Saya tahu apa yang kamu pikirkan: <i>"Jadwalnya sih seru, tapi siapa yang mau repot urus booking villa, cari vendor rafting, beli arang buat BBQ, sampai pesan makan siang?"</i><br/><br/>
+              Menjadi panitia liburan itu berat. Karena itulah, kami di Go Pangalengan punya jalan pintas paling cemerlang untukmu:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Card Corporate */}
+              <div className="bg-white rounded-2xl p-6 border-b-4 border-emerald-500 flex flex-col h-full hover:-translate-y-1 transition duration-300">
+                <div className="bg-stone-100 text-stone-600 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-max mb-4">Rombongan Kantor</div>
+                <h3 className="text-xl font-black text-stone-900 mb-2">Paket Feast & Fun</h3>
+                <p className="text-sm text-stone-500 mb-4 flex-grow">Lupakan stres negosiasi vendor. Villa, Rafting, Paintball, 3x Makan, BBQ, Live Music, hingga Video Cinematic. Panitia cukup bawa koper!</p>
+                <a href="/paket/paket-outing-perusahaan-2-hari-1-malam-bestseller" className="text-emerald-600 font-bold text-sm inline-flex items-center group mt-auto">
+                  Lihat Detail Paket <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </div>
+
+              {/* Card Family */}
+              <div className="bg-white rounded-2xl p-6 border-b-4 border-emerald-500 flex flex-col h-full hover:-translate-y-1 transition duration-300">
+                <div className="bg-stone-100 text-stone-600 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-max mb-4">Keluarga & Circle</div>
+                <h3 className="text-xl font-black text-stone-900 mb-2">Glamping & Offroad / ATV</h3>
+                <p className="text-sm text-stone-500 mb-4 flex-grow">Tidur intim di tenda Glamping VIP yang hangat, lalu siang harinya dijemput Land Rover/ATV untuk menembus hutan pinus. Urusan makan dan kayu bakar sudah siap di depan tendamu.</p>
+                <a href="/paket/paket-glamping-offroad-pangalengan" className="text-emerald-600 font-bold text-sm inline-flex items-center group mt-auto">
+                  Lihat Detail Paket <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CLOSING */}
+        <h2 className="text-2xl font-bold text-stone-900 mt-10 mb-4">Amankan Tanggalmu Sekarang Sebelum Penuh!</h2>
+        <p className="text-stone-600 leading-relaxed mb-4">
+          Pangalengan kini bukan lagi permata yang tersembunyi. Setiap akhir pekan tiba, villa-villa berfasilitas lengkap dan slot perahu <i>rafting</i> favorit selalu ludes terpesan berminggu-minggu sebelumnya.
+        </p>
+        <p className="text-stone-600 leading-relaxed mb-8">
+          Jangan biarkan wacana <i>healing</i> grupmu berujung jadi wacana selamanya. Berhenti pusing menjadi panitia sendirian. Klik tombol di bawah ini, sapa admin kami, ceritakan berapa orang yang akan ikut, dan biarkan kami yang mengurus sisanya!
+        </p>
+
+        <a 
+          href={generateWALink("Halo Go Pangalengan, saya butuh bantuan mengatur jadwal liburan 2 Hari 1 Malam untuk rombongan saya dari Jakarta/Bekasi.")} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-full text-center transition flex justify-center items-center gap-2 shadow-xl w-full sm:w-auto inline-flex"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.864-1.048l-3.281-.525a1.125 1.125 0 00-1.22.59l-1.92 3.84a16.03 16.03 0 01-8.25-8.25l3.84-1.92c.28-.14.5-.38.59-1.22l-.525-3.28a1.125 1.125 0 00-1.048-.865H3.75A2.25 2.25 0 002.25 6.75z" /></svg>
+          Konsultasi & Booking via WhatsApp
+        </a>
+      </>
+    )
+  },
+  {
+    slug: "daftar-harga-wahana-seru-pangalengan-atv-offroad-paintball", 
+    judul: "Daftar Harga Wahana Seru di Pangalengan: Offroad Land Rover, ATV, hingga Paintball",
+    kategori: "Info Wahana", 
+    tanggal: "10 Mei 2026",
+    waktuBaca: "5 Menit Baca",
+    image: "/keluarga-seru.jpg", 
+    excerpt: "Jangan cuma duduk ngopi! Cek daftar harga terbaru 2026 untuk wahana ekstrem di Pangalengan: Offroad, ATV, Paintball, dan Flying Fox.",
+    content: (
+      <>
+        <p className="text-stone-600 leading-relaxed mb-5 sm:mb-6 text-base sm:text-lg">
+          Banyak teman-teman dari luar kota yang mengira kalau liburan ke Pangalengan itu hanya tentang duduk manis menyeruput teh hangat sambil melihat kabut. Padahal, daratan di selatan Bandung ini menyimpan arena bermain yang sayang banget kalau dilewatkan.
+        </p>
+        <p className="text-stone-600 leading-relaxed mb-5 sm:mb-6 text-base sm:text-lg">
+          Setelah puas menikmati ketenangan alam, ini saatnya menaikkan sedikit detak jantungmu. Ada banyak pilihan wisata adrenalin Pangalengan yang siap menantang nyalimu dan rombongan.
+        </p>
+        <p className="text-stone-600 leading-relaxed mb-8 sm:mb-10 text-base sm:text-lg">
+          Biar kamu gampang mengatur <i>budget</i> patungan, saya sudah merekap daftar harga wahana Pangalengan edisi terbaru 2026, mulai dari rute darat yang berlumpur hingga berbagai wahana di Situ Cileunca. Yuk, kita bedah satu per satu!
+        </p>
+
+        {/* WAHANA 1: OFFROAD */}
+        <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-10 mb-4 flex items-center gap-2">
+          <span className="text-2xl sm:text-3xl">🚙</span> Eksplorasi Ekstrem: Offroad Land Rover
+        </h2>
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-5 shadow-sm group">
+          <img src="/offroad.jpg" alt="Offroad Land Rover Pangalengan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-stone-900/90 backdrop-blur-sm text-emerald-400 text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full shadow-md flex items-center gap-1">
+            <span className="animate-pulse w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Sering Full Booked
+          </div>
+        </div>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
+          Malas jalan kaki menembus hutan, tapi ingin melihat sisi Pangalengan yang tersembunyi? Ini jawabannya. Bayangkan kamu dan teman-teman satu geng duduk di kap belakang mobil klasik Land Rover yang tangguh. 
+        </p>
+        
+        <div className="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 mb-10 shadow-sm relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 relative z-10">
+            <div className="w-full sm:w-1/3 shrink-0">
+              <div className="bg-stone-50 text-stone-800 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center border border-stone-200">
+                <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-0.5 text-stone-500">Harga Sewa</span>
+                <span className="text-2xl sm:text-3xl font-black text-emerald-700">Rp 220k</span>
+                <span className="block text-[10px] sm:text-xs font-medium text-stone-500 mt-0.5">/ Orang (Pax)</span>
+              </div>
+            </div>
+            <div className="w-full sm:w-2/3">
+              <h4 className="font-bold text-stone-800 text-sm sm:text-base mb-2">Fasilitas All-In Termasuk:</h4>
+              <ul className="text-xs sm:text-sm text-stone-600 space-y-1.5 mb-4">
+                <li className="flex items-center gap-2"><span className="text-emerald-500 font-bold">✓</span> Unit mobil Land Rover klasik</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500 font-bold">✓</span> Driver handal (merangkap fotografer)</li>
+                <li className="flex items-center gap-2"><span className="text-emerald-500 font-bold">✓</span> Air mineral & Asuransi</li>
+              </ul>
+              <a href="/paket/offroad-land-rover-pangalengan" className="inline-block w-full sm:w-auto bg-stone-900 hover:bg-emerald-600 text-white text-xs sm:text-sm font-bold text-center px-4 py-2 sm:px-6 sm:py-2.5 rounded-lg transition-colors">
+                Detail & Galeri →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* WAHANA 2: ATV */}
+        <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-10 mb-4 flex items-center gap-2">
+          <span className="text-2xl sm:text-3xl">🏎️</span> Pacu Adrenalin Sendiri: ATV Adventure
+        </h2>
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-5 shadow-sm group">
+          <img src="/keluarga-seru.jpg" alt="Sewa ATV Pangalengan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-emerald-600/90 backdrop-blur-sm text-white text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full shadow-md">
+            Aktivitas Terfavorit
+          </div>
+        </div>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
+          Kamu akan memacu kendaraan roda empat ini menyusuri lintasan tanah sejauh 4 kilometer yang membelah area perkebunan teh. <strong>Tips penting:</strong> Wajib bawa setelan baju ganti! Kubangan lumpur di sepanjang jalur pasti akan meninggalkan jejak seru di pakaianmu.
+        </p>
+        
+        <div className="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 mb-10 shadow-sm">
+          <h4 className="font-bold text-stone-800 text-sm sm:text-base mb-3 border-b border-stone-100 pb-2">Opsi Sewa ATV Pangalengan:</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
+            <div className="bg-stone-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-stone-200">
+              <span className="block text-xs sm:text-sm font-bold text-stone-800 mb-0.5">ATV Single</span>
+              <span className="block text-[10px] sm:text-xs text-stone-500 mb-1.5">1 Motor untuk 1 Orang</span>
+              <span className="text-xl sm:text-2xl font-black text-emerald-700">Rp 175.000</span>
+            </div>
+            <div className="bg-stone-50 rounded-lg sm:rounded-xl p-3 sm:p-4 border border-stone-200">
+              <span className="block text-xs sm:text-sm font-bold text-stone-800 mb-0.5">ATV Tandem</span>
+              <span className="block text-[10px] sm:text-xs text-stone-500 mb-1.5">1 Motor berdua (Opsi Hemat!)</span>
+              <span className="text-xl sm:text-2xl font-black text-emerald-700">Rp 225.000</span>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 mt-2">
+            <p className="text-[10px] sm:text-xs text-stone-500 italic text-center sm:text-left">*Termasuk peminjaman helm, sepatu boots, & instruktur.</p>
+            <a href="/paket/sewa-atv-pangalengan" className="w-full sm:w-auto shrink-0 bg-stone-900 hover:bg-emerald-600 text-white text-xs sm:text-sm font-bold text-center px-4 py-2 sm:px-6 sm:py-2.5 rounded-lg transition-colors">
+              Cek Rute ATV →
+            </a>
+          </div>
+        </div>
+
+        {/* WAHANA 3: PAINTBALL */}
+        <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-10 mb-4 flex items-center gap-2">
+          <span className="text-2xl sm:text-3xl">🔫</span> Adu Strategi Tim: Paintball Battle
+        </h2>
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-5 shadow-sm group">
+          <img src="/paintball.jpg" alt="Paintball Situ Cileunca Pangalengan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
+          Ini adalah ajang yang paling pas untuk membalas dendam pada bos atau teman kerjamu—tentunya dengan cara yang aman! Keselamatannya sangat terjamin karena setiap peserta wajib memakai <i>goggle mask</i> dan rompi tebal di area Paintball Situ Cileunca.
+        </p>
+
+        <div className="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 mb-10 shadow-sm flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+          <div className="w-full sm:w-1/3 shrink-0">
+            <div className="bg-stone-50 text-stone-800 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center border border-stone-200">
+              <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-0.5 text-stone-500">Super Murah</span>
+              <span className="text-2xl sm:text-3xl font-black text-emerald-700">Rp 85k</span>
+              <span className="block text-[10px] sm:text-xs font-medium text-stone-500 mt-0.5">/ Orang (Pax)</span>
+            </div>
+          </div>
+          <div className="w-full sm:w-2/3">
+            <ul className="text-xs sm:text-sm text-stone-600 space-y-2 font-medium mb-4">
+              <li className="flex items-center gap-2"><span className="text-emerald-500 font-black">✓</span> Senjata gas & Perlengkapan safety lengkap</li>
+              <li className="flex items-center gap-2"><span className="text-emerald-500 font-black">✓</span> 30 peluru cat per orang</li>
+              <li className="flex items-center gap-2"><span className="text-emerald-500 font-black">✓</span> Wasit lapangan & Set arena tempur</li>
+            </ul>
+            <a href="/paket/paket-paintball-pangalengan" className="inline-block w-full sm:w-auto bg-stone-900 hover:bg-emerald-600 text-white text-xs sm:text-sm font-bold text-center px-4 py-2 sm:px-6 sm:py-2.5 rounded-lg transition-colors">
+              Intip Arena Tempur →
+            </a>
+          </div>
+        </div>
+
+        {/* WAHANA 4: FLYING FOX */}
+        <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-10 mb-4 flex items-center gap-2">
+          <span className="text-2xl sm:text-3xl">🦅</span> Singkat Namun Mendebarkan: Flying Fox
+        </h2>
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-5 shadow-sm group">
+          <img src="/flyingfox.jpg" alt="Flying Fox Pangalengan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+        </div>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
+          Ini bukan <i>flying fox</i> biasa; kamu akan meluncur cepat sepanjang kurang lebih 300 meter dengan pemandangan langsung ke arah danau atau hamparan kebun teh yang hijau.
+        </p>
+        
+        <div className="bg-stone-50 rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-stone-200 flex flex-col sm:flex-row justify-between items-center sm:items-start gap-3 sm:gap-4 mb-10">
+          <div className="text-center sm:text-left">
+            <h4 className="font-bold text-stone-900 mb-0.5 text-base sm:text-lg">Tiket Zipline / Flying Fox</h4>
+            <p className="text-[10px] sm:text-xs text-stone-500 max-w-xs">Pemandangan estetik meluncur di atas danau.</p>
+          </div>
+          <div className="text-center sm:text-right shrink-0">
+            <span className="text-2xl sm:text-3xl font-black text-emerald-700 block mb-2">Rp 35.000</span>
+            <a href="/paket/tiket-flying-fox-situ-cileunca" className="bg-stone-900 hover:bg-emerald-600 text-white text-[11px] sm:text-xs font-bold px-4 py-1.5 sm:px-5 sm:py-2 rounded-lg transition-colors inline-block w-full sm:w-auto">
+              Detail Tiket
+            </a>
+          </div>
+        </div>
+
+        {/* BAGIAN PENUTUP & CALL TO ACTION */}
+        <div className="bg-stone-900 rounded-2xl sm:rounded-3xl p-5 sm:p-10 my-10 shadow-xl relative overflow-hidden">
+          <div className="relative z-10">
+            <span className="inline-block bg-stone-700 text-emerald-400 text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2.5 py-1 sm:px-3 sm:py-1 rounded-full mb-3 sm:mb-4 shadow-sm border border-stone-600">🚨 Rahasia Orang Dalam</span>
+            <h2 className="text-xl sm:text-3xl font-black text-white mb-3 sm:mb-4 leading-tight">Trik Cerdas: Jangan Beli Tiket Eceran di Lokasi!</h2>
+            <p className="text-stone-300 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
+              Risiko kehabisan kuota unit Land Rover dan ATV sangat tinggi karena sering dibooking berminggu-minggu sebelumnya. Selain itu, tiket loket dadakan biasanya lebih mahal.
+            </p>
+            <div className="bg-stone-800/80 border border-stone-700 rounded-lg sm:rounded-xl p-4 sm:p-5 mb-6 sm:mb-8">
+              <p className="text-emerald-400 text-sm sm:text-base font-medium leading-relaxed m-0">
+                <strong className="text-white">💡 Solusi Cerdas:</strong> Di Go Pangalengan, kamu bisa menggabungkan aktivitas utama (Rafting) dengan wahana tambahan dalam satu <a href="/katalog-wisata" className="text-white underline decoration-emerald-500 underline-offset-4 hover:text-emerald-300 transition">Paket Bundling Diskon</a>. Jauh lebih hemat, dan jadwal main pasti aman!
+              </p>
+            </div>
+
+            <div className="pt-2 sm:pt-4">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Amankan Slot Bermainmu!</h3>
+              <p className="text-xs sm:text-sm text-stone-400 mb-5 sm:mb-6">
+                Sudah kebayang serunya kotor-kotoran naik ATV atau main Paintball? Hubungi kami untuk cek jadwal kosong.
+              </p>
+              <a 
+                href={generateWALink("Halo Go Pangalengan, saya mau tanya ketersediaan tiket ATV/Offroad/Paintball untuk rombongan saya...")} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base px-6 py-3 sm:px-8 sm:py-4 rounded-full text-center transition flex justify-center items-center gap-2 shadow-lg w-full sm:w-auto inline-flex hover:scale-105 duration-300"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.864-1.048l-3.281-.525a1.125 1.125 0 00-1.22.59l-1.92 3.84a16.03 16.03 0 01-8.25-8.25l3.84-1.92c.28-.14.5-.38.59-1.22l-.525-3.28a1.125 1.125 0 00-1.048-.865H3.75A2.25 2.25 0 002.25 6.75z" /></svg>
+                Cek Jadwal via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  },
+  {
+    slug: "harga-glamping-dan-camping-pangalengan-riverside-situ-cileunca", 
+    judul: "Harga Glamping & Camping di Pangalengan: Sensasi Tidur Pinggir Sungai dan Danau",
+    kategori: "Info Penginapan", 
+    tanggal: "10 Mei 2026",
+    waktuBaca: "6 Menit Baca",
+    image: "/family-camp-a.JPG", 
+    excerpt: "Lupakan kamar hotel yang membosankan. Cari tahu bedanya Glamping Riverside dan Camping Situ Cileunca, lengkap dengan bocoran harganya di sini!",
+    content: (
+      <>
+        <p className="text-stone-600 leading-relaxed mb-5 sm:mb-6 text-base sm:text-lg">
+          Tidur di kasur hotel berbintang dengan pendingin ruangan yang sejuk mungkin sudah jadi hal biasa bagi kita yang tinggal di ibukota. Tapi, pernahkah kamu merasakan sensasi tidur di atas kasur yang empuk, berselimut tebal, namun dengan atap berbahan kanvas dan lagu pengantar tidur berupa suara aliran sungai langsung di depan pintu kamarmu?
+        </p>
+        <p className="text-stone-600 leading-relaxed mb-5 sm:mb-6 text-base sm:text-lg">
+          Jika kamu mencari pengalaman menginap yang benar-benar bisa menekan tombol <i>reset</i> dari stres pekerjaan, maka Glamping (<i>Glamorous Camping</i>) dan Camping adalah jawabannya. Ini jelas memberikan nyawa liburan yang jauh berbeda dibandingkan sekadar mengunci diri di dalam kamar <i>homestay</i> atau villa biasa.
+        </p>
+        <p className="text-stone-600 leading-relaxed mb-8 sm:mb-10 text-base sm:text-lg">
+          Bagi kamu yang sedang memburu lokasi glamping Pangalengan rating tertinggi atau sekadar mencari area camping Pangalengan kebun teh yang tenang, mari kita bedah satu per satu daya tariknya—termasuk bocoran <i>budget</i> yang perlu disiapkan.
+        </p>
+
+        {/* SECTION 1: RIVERSIDE */}
+        <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-10 mb-4 flex items-center gap-2">
+          <span className="text-2xl sm:text-3xl">🌊</span> Glamping Riverside (Pinggir Sungai)
+        </h2>
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-5 shadow-sm">
+          <img src="/family-camp-b.JPG" alt="Glamping Riverside Pangalengan" className="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
+          Ini dia tren akomodasi yang sedang merajai lini masa media sosial. Area hutan pinus yang dilalui aliran Sungai Palayangan kini disulap menjadi kawasan elit perkemahan modern.
+        </p>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+          Memilih <strong>glamping Pangalengan riverside</strong> berarti kamu memadukan alam liar dengan kenyamanan absolut. Bayangkan kamu membuka resleting tenda di pagi hari, menyeduh secangkir kopi panas, dan hal pertama yang kamu lihat adalah aliran sungai yang jernih membelah pepohonan pinus.
+        </p>
+        <div className="bg-emerald-50/50 border border-emerald-100 rounded-xl p-4 sm:p-5 mb-10">
+          <p className="text-emerald-800 text-sm sm:text-base leading-relaxed m-0 font-medium">
+            <strong>Bukan Kemping Biasa:</strong> Kata Glamping di sini menonjolkan aspek <i>glamorous</i>-nya. Tenda sudah berdiri kokoh, ada <i>spring bed</i> empuk, selimut tebal menahan hawa dingin, colokan listrik untuk <i>gadget</i>, hingga sarapan pagi yang diantarkan ke depan tenda.
+          </p>
+        </div>
+
+        {/* SECTION 2: SITU CILEUNCA */}
+        <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-10 mb-4 flex items-center gap-2">
+          <span className="text-2xl sm:text-3xl">🌅</span> Syahdunya Camping Tepi Danau
+        </h2>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
+          Bagaimana jika kamu adalah tipe orang yang lebih menyukai keheningan tanpa suara arus air sungai yang terlalu bergemuruh? Arahkan pilihanmu pada <strong>camping Pangalengan Situ Cileunca</strong>. Tepi danau seluas 1.400 hektar ini adalah area pelarian sempurna bagi kamu yang mencari kedamaian batin.
+        </p>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-10">
+          Daya tarik utamanya ada pada pantulan cahaya matahari. Saat sore, air danau akan memantulkan siluet lembayung senja yang magis. Di pagi hari, kamu bisa menikmati sarapan sambil melihat kabut perlahan menghilang dari permukaan danau. Sangat <i>kids-friendly</i> karena permukaannya yang datar.
+        </p>
+
+        {/* SECTION 3: ESTIMASI HARGA */}
+        <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-10 mb-4 flex items-center gap-2">
+          <span className="text-2xl sm:text-3xl">💰</span> Berapa Kisaran Harganya?
+        </h2>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+          Mari kita bicara angka agar kamu bisa menakar ekspektasi saat memburu kueri <i>glamping Pangalengan harga</i> bersahabat atau mencari <i>camping Pangalengan murah</i>.
+        </p>
+        
+        <div className="space-y-3 sm:space-y-4 mb-10">
+          <div className="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row gap-3 sm:gap-6 items-start sm:items-center">
+            <div className="bg-stone-50 text-stone-700 px-4 py-2 rounded-lg font-bold shrink-0 text-sm w-full sm:w-auto text-center sm:text-left">
+              Rp 30k - 50k
+            </div>
+            <div>
+              <h4 className="font-bold text-stone-800 text-sm sm:text-base mb-1">🏕️ Sewa Lahan (Mandiri)</h4>
+              <p className="text-xs sm:text-sm text-stone-500 m-0">Sangat murah jika kamu punya peralatan <i>outdoor</i> sendiri (tenda, matras, kompor) dan hanya menyewa lahan di pinggir danau atau kebun teh.</p>
+            </div>
+          </div>
+          
+          <div className="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row gap-3 sm:gap-6 items-start sm:items-center">
+            <div className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg font-bold shrink-0 text-sm w-full sm:w-auto text-center sm:text-left border border-emerald-100">
+              Rp 150k - 250k
+            </div>
+            <div>
+              <h4 className="font-bold text-stone-800 text-sm sm:text-base mb-1">⛺ Sewa Tenda Biasa (Terima Beres)</h4>
+              <p className="text-xs sm:text-sm text-stone-500 m-0">Jika tidak bawa alat, pengelola menyewakan tenda dome lengkap dengan matras dan <i>sleeping bag</i> (Kapasitas 3-4 orang).</p>
+            </div>
+          </div>
+
+          <div className="bg-white border border-stone-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row gap-3 sm:gap-6 items-start sm:items-center">
+            <div className="bg-amber-50 text-amber-700 px-4 py-2 rounded-lg font-bold shrink-0 text-sm w-full sm:w-auto text-center sm:text-left border border-amber-100">
+              Rp 600k - 1.5M+
+            </div>
+            <div>
+              <h4 className="font-bold text-stone-800 text-sm sm:text-base mb-1">✨ Glamping VIP</h4>
+              <p className="text-xs sm:text-sm text-stone-500 m-0">Tenda estetik bergaya safari/kabin dengan fasilitas <i>spring bed</i>, selimut, dan terkadang kamar mandi dalam (<i>water heater</i>).</p>
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 4: PRODUCT INJECTION (FAMILY CAMP) */}
+        <div className="bg-stone-900 rounded-2xl sm:rounded-3xl p-5 sm:p-8 my-10 shadow-xl">
+          <div className="text-center mb-6 sm:mb-8 border-b border-stone-700 pb-5 sm:pb-6">
+            <span className="inline-block bg-emerald-500/20 text-emerald-400 text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-3 border border-emerald-500/30">Rekomendasi Go Pangalengan</span>
+            <h2 className="text-xl sm:text-2xl font-black text-white mb-3">Jangan Cuma Tidur, Ambil Paket Family Camp!</h2>
+            <p className="text-sm sm:text-base text-stone-300 leading-relaxed max-w-lg mx-auto">
+              Sayang banget kan sudah bayar untuk glamping di alam terbuka, tapi siang harinya mati gaya? Daripada menyewa glamping dan wahana secara terpisah, coba lirik paket petualangan <i>all-in</i> kami ini:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+            {/* Pakat 1 */}
+            <div className="bg-stone-800 rounded-xl p-4 sm:p-5 border border-stone-700 hover:border-emerald-500 transition-colors flex flex-col h-full">
+              <h4 className="text-white font-bold text-sm sm:text-base mb-1">Classic Glamping</h4>
+              <span className="text-emerald-400 font-black text-lg sm:text-xl mb-3 block">Rp 395k <span className="text-xs text-stone-400 font-normal">/pax</span></span>
+              <p className="text-[11px] sm:text-xs text-stone-400 leading-relaxed flex-grow">
+                Opsi paling ramah di kantong. Sudah dapat tenda, 1x sarapan hangat, ditambah bonus petualangan main Rafting dan Flying Fox!
+              </p>
+              <a href="/paket/paket-camping-keluarga-pangalengan" className="text-emerald-400 hover:text-white text-xs font-bold mt-4 inline-flex items-center gap-1">Lihat Detail →</a>
+            </div>
+
+            {/* Pakat 2 */}
+            <div className="bg-stone-800 rounded-xl p-4 sm:p-5 border border-stone-700 hover:border-emerald-500 transition-colors flex flex-col h-full relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[8px] sm:text-[9px] font-black uppercase px-2 py-1 rounded-bl-lg">Terlaris</div>
+              <h4 className="text-white font-bold text-sm sm:text-base mb-1">Glamping & ATV</h4>
+              <span className="text-emerald-400 font-black text-lg sm:text-xl mb-3 block">Rp 495k <span className="text-xs text-stone-400 font-normal">/pax</span></span>
+              <p className="text-[11px] sm:text-xs text-stone-400 leading-relaxed flex-grow">
+                Tidur estetik di malam hari, siangnya lanjut kotor-kotoran main lumpur memacu motor ATV melintasi kebun teh. <i>Perfect!</i>
+              </p>
+              <a href="/paket/paket-glamping-atv-pangalengan" className="text-emerald-400 hover:text-white text-xs font-bold mt-4 inline-flex items-center gap-1">Lihat Detail →</a>
+            </div>
+
+            {/* Pakat 3 */}
+            <div className="bg-stone-800 rounded-xl p-4 sm:p-5 border border-stone-700 hover:border-emerald-500 transition-colors flex flex-col h-full">
+              <h4 className="text-white font-bold text-sm sm:text-base mb-1">Glamping & Offroad</h4>
+              <span className="text-emerald-400 font-black text-lg sm:text-xl mb-3 block">Rp 620k <span className="text-xs text-stone-400 font-normal">/pax</span></span>
+              <p className="text-[11px] sm:text-xs text-stone-400 leading-relaxed flex-grow">
+                Kasta tertinggi liburan <i>circle</i>-mu. Tidur VIP, paginya langsung dijemput Land Rover untuk menembus hutan pinus.
+              </p>
+              <a href="/paket/paket-glamping-offroad-pangalengan" className="text-emerald-400 hover:text-white text-xs font-bold mt-4 inline-flex items-center gap-1">Lihat Detail →</a>
+            </div>
+          </div>
+          <p className="text-center text-[10px] sm:text-xs text-stone-500 mt-5 italic">*Semua paket sudah termasuk fasilitas api unggun, asuransi, tiket kawasan, dan dokumentasi foto.</p>
+        </div>
+
+        {/* CLOSING */}
+        <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-10 mb-4">Waktunya Mengamankan Tenda Estetikmu!</h2>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
+          Harus kami akui, jumlah unit <i>glamping</i> di pinggir sungai (Riverside) atau tepi danau ini jumlahnya sangat terbatas. Percayalah, slot untuk akhir pekan (Sabtu-Minggu) seringkali sudah ludes terpesan berminggu-minggu sebelumnya.
+        </p>
+        <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-8">
+          Jangan biarkan wacana liburan estetikmu gagal hanya karena keduluan <i>circle</i> lain. Klik tombol di bawah ini, sapa admin kami, dan mari berdiskusi untuk mencocokkan jadwal serta memilih spot tenda terbaik untuk rombonganmu.
+        </p>
+
+        <a 
+          href={generateWALink("Halo Go Pangalengan, saya mau tanya ketersediaan dan harga tenda Glamping/Camping untuk rombongan saya...")} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-full text-center transition flex justify-center items-center gap-2 shadow-xl w-full sm:w-auto inline-flex hover:scale-105 duration-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.864-1.048l-3.281-.525a1.125 1.125 0 00-1.22.59l-1.92 3.84a16.03 16.03 0 01-8.25-8.25l3.84-1.92c.28-.14.5-.38.59-1.22l-.525-3.28a1.125 1.125 0 00-1.048-.865H3.75A2.25 2.25 0 002.25 6.75z" /></svg>
+          Konsultasi Tenda Glamping
+        </a>
+      </>
+    )
+  },
+  {
     slug: "rekomendasi-penginapan-pangalengan-terbaik", 
     judul: "Rekomendasi Penginapan di Pangalengan: View Bagus, Pinggir Sungai, hingga Air Panas",
     kategori: "Info Penginapan",
