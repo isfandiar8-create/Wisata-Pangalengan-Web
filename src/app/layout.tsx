@@ -113,8 +113,10 @@ export default function RootLayout({
               "description": "Agen perjalanan wisata dan event organizer terpercaya di Pangalengan. Menyediakan paket Rafting, Sewa Villa, Glamping, dan Corporate Outing.",
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "Jl. Raya Situ Cileunca, Warnasari", // Masukkan alamat spesifik basecamp/kantor Anda
                 "addressLocality": "Pangalengan",
                 "addressRegion": "Jawa Barat",
+                "postalCode": "40378", // Kode pos Pangalengan
                 "addressCountry": "ID"
               },
               "telephone": "+6285717075116",
