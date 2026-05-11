@@ -386,8 +386,7 @@ const masterKatalog = [
     image: "/corporate-1n-c.jpg", 
     deskripsi: "Pengalaman outing 1 hari yang super padat dan premium. Anda sebagai panitia cukup duduk tenang, kami yang mengeksekusi seluruh jadwalnya. Biarkan karyawan Anda dimanjakan dengan fasilitas berkelas dan rentetan petualangan ekstrem yang akan menjadi perbincangan hangat di kantor berbulan-bulan lamanya." 
   },
-
-  // COMBO CORPORATE 2 HARI
+  
 // ─── COMBO CORPORATE MENGINAP (2 HARI 1 MALAM) ───
   { 
     id: "paket-gathering-kantor-2-hari-1-malam-hemat", 
@@ -641,173 +640,214 @@ export default function DetailPaket() {
   const itinerary = getItinerary(paket.kategori, paket.durasi);
   const waLink = generateWALink(`Halo Go Pangalengan, saya tertarik dengan paket *${paket.nama}* (${paket.harga}). Boleh minta info tanggal yang kosong?`);
 
-  return (
-    <div className="min-h-screen bg-stone-50 text-stone-800 pb-28 sm:pb-32 font-sans relative">
-      
-      {/* 1. HERO IMAGE (Bersih, Tanpa Elemen Mengambang) */}
-      <div className="relative w-full h-[40vh] sm:h-[50vh] bg-stone-900">
-        <Image src={paket.image} alt={paket.nama} fill className="object-cover opacity-70" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent opacity-80"></div>
-      </div>
+  // ─── FUNGSI PEMBERSIH HARGA UNTUK SCHEMA ───
+  // Mengubah "Rp 165.000" menjadi "165000"
+  const cleanPrice = (priceString: string) => {
+    return priceString.replace(/[^0-9]/g, '');
+  };
 
-      {/* 2. KONTEN UTAMA (Body) */}
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-16 relative z-20">
-        <div className="bg-white rounded-[2rem] shadow-xl border border-stone-100 p-6 sm:p-10">
-          
-          {/* Header Info */}
-          <div className="border-b border-stone-100 pb-6 mb-6">
-            <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="text-[10px] font-black uppercase px-2.5 py-1 rounded bg-stone-100 text-stone-500">
-                {paket.kategori}
-              </span>
-              
-              {/* BADGE DENGAN TEMA EMERALD */}
-              {paket.label && (
-                <span className="text-[10px] font-black uppercase px-3 py-1 rounded-md bg-emerald-500 text-white shadow-sm animate-pulse tracking-wider">
-                  {paket.label}
+  // ─── KODE SCHEMA MARKUP (JSON-LD) UNTUK PRODUK ───
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": paket.nama,
+    "image": [
+      `https://www.gopangalengan.id${paket.image}`
+    ],
+    "description": paket.deskripsi,
+    "sku": paket.id,
+    "brand": {
+      "@type": "Brand",
+      "name": "Go Pangalengan"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://www.gopangalengan.id/paket/${paket.id}`,
+      "priceCurrency": "IDR",
+      "price": cleanPrice(paket.harga),
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Go Pangalengan"
+      }
+    }
+  };
+
+  return (
+    <>
+      {/* SUNTIKAN JSON-LD KE DALAM HALAMAN */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <div className="min-h-screen bg-stone-50 text-stone-800 pb-28 sm:pb-32 font-sans relative">
+        
+        {/* 1. HERO IMAGE (Bersih, Tanpa Elemen Mengambang) */}
+        <div className="relative w-full h-[40vh] sm:h-[50vh] bg-stone-900">
+          <Image src={paket.image} alt={paket.nama} fill className="object-cover opacity-70" priority />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent opacity-80"></div>
+        </div>
+
+        {/* 2. KONTEN UTAMA (Body) */}
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-16 relative z-20">
+          <div className="bg-white rounded-[2rem] shadow-xl border border-stone-100 p-6 sm:p-10">
+            
+            {/* Header Info */}
+            <div className="border-b border-stone-100 pb-6 mb-6">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="text-[10px] font-black uppercase px-2.5 py-1 rounded bg-stone-100 text-stone-500">
+                  {paket.kategori}
                 </span>
-              )}
+                
+                {/* BADGE DENGAN TEMA EMERALD */}
+                {paket.label && (
+                  <span className="text-[10px] font-black uppercase px-3 py-1 rounded-md bg-emerald-500 text-white shadow-sm animate-pulse tracking-wider">
+                    {paket.label}
+                  </span>
+                )}
+              </div>
+              
+              <h1 className="text-2xl sm:text-4xl font-extrabold text-stone-800 tracking-tight leading-tight mb-4">
+                {paket.nama}
+              </h1>
+              <p className="text-sm sm:text-base text-stone-500 leading-relaxed font-medium">
+                {paket.deskripsi}
+              </p>
+            </div>
+
+            {/* Bagian Grid: Fasilitas & Itinerary */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {/* Fasilitas */}
+              <div>
+                <h2 className="text-lg font-bold text-stone-800 mb-4 flex items-center gap-2">
+                  <span className="text-emerald-500">✨</span> Apa yang Anda Dapatkan
+                </h2>
+                <ul className="space-y-3">
+                  {paket.fasilitas.map((fas, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-stone-600 font-medium">
+                      <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 font-bold text-[10px] mt-0.5">✓</span>
+                      <span className="leading-relaxed">{fas}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Itinerary */}
+              <div>
+                <h2 className="text-lg font-bold text-stone-800 mb-5 flex items-center gap-2">
+                  <span className="text-emerald-500">⏱️</span> Rencana Perjalanan
+                </h2>
+                <div className="relative border-l-2 border-stone-100 ml-3 space-y-6">
+                  {itinerary.map((item, i) => (
+                    <div key={i} className="relative pl-6">
+                      <span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full border-4 border-white bg-emerald-400 shadow-sm"></span>
+                      <h4 className="text-[11px] font-black text-emerald-600 uppercase tracking-wider mb-0.5">{item.waktu}</h4>
+                      <p className="text-sm text-stone-600 font-medium leading-relaxed">{item.kegiatan}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* SESI BARU: OPSI TIER HARGA (Muncul jika ada data) */}
+            {paket.opsiHarga && (
+              <div className="mt-10 p-6 bg-emerald-50/50 rounded-2xl border border-emerald-100">
+                <h3 className="font-bold text-emerald-800 mb-4 flex items-center gap-2 text-base">
+                  <span className="text-xl">💰</span> Pilihan Tier Paket
+                </h3>
+                <div className="space-y-3">
+                  {paket.opsiHarga.map((opsi, i) => (
+                    <div key={i} className="flex justify-between items-center bg-white p-3 sm:p-4 rounded-xl border border-emerald-100 shadow-sm">
+                      <span className="text-sm font-bold text-stone-700">{opsi.nama}</span>
+                      <span className="text-sm font-black text-emerald-600">{opsi.harga}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* SESI BARU: PERSIAPAN (Muncul jika ada data) */}
+            {paket.persiapan && (
+              <div className="mt-8 bg-amber-50 rounded-2xl p-6 border border-amber-100">
+                <h3 className="font-bold text-amber-800 mb-4 flex items-center gap-2 text-base">
+                  <span className="text-xl">🎒</span> Perlu Kamu Siapkan!
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {paket.persiapan.map((item, i) => (
+                    <li key={i} className="text-xs font-medium text-amber-700 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* SESI BARU: VIDEO SHORT LOCAL (Dari folder public) */}
+            {paket.video && (
+              <div className="mt-12 pt-8 border-t border-stone-100 text-center">
+                <h2 className="text-lg font-bold text-stone-800 mb-2 flex items-center justify-center gap-2">
+                  <span className="text-emerald-500">🎬</span> Cuplikan Keseruan
+                </h2>
+                <p className="text-xs text-stone-500 mb-6">Lihat aksi nyatanya sebelum Anda merasakannya langsung!</p>
+                
+                <div className="relative aspect-[9/16] w-full max-w-[280px] mx-auto rounded-3xl overflow-hidden shadow-2xl bg-stone-100 border-4 border-white group">
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls 
+                    preload="metadata" 
+                    playsInline
+                  >
+                    <source src={paket.video} type="video/mp4" />
+                    Browser Anda tidak mendukung pemutar video ini.
+                  </video>
+                </div>
+              </div>
+            )}
+
+            {/* SESI BARU: REKOMENDASI PAKET LAIN */}
+            <div className="mt-16 pt-8 border-t border-stone-100">
+              <h2 className="text-lg font-bold text-stone-800 mb-6 text-center">Mungkin Kamu Juga Suka</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {masterKatalog.filter(p => p.id !== id).slice(0, 2).map((item) => (
+                  <Link 
+                    key={item.id}
+                    href={`/paket/${item.id}`}
+                    className="group flex items-center gap-4 bg-white p-3 rounded-2xl border border-stone-200 hover:border-emerald-400 hover:shadow-md transition"
+                  >
+                    <div className="w-16 h-16 relative rounded-xl overflow-hidden shrink-0">
+                      <Image src={item.image} alt={item.nama} fill className="object-cover group-hover:scale-110 transition duration-500" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-stone-800 line-clamp-1 group-hover:text-emerald-600 transition">{item.nama}</h4>
+                      <p className="text-[11px] text-emerald-600 font-black mt-0.5">{item.harga}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* 3. STICKY BOTTOM BAR */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-stone-200 p-4 sm:px-8 sm:py-5 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
+          <div className="mx-auto max-w-4xl flex items-center justify-between gap-4">
+            <div className="flex flex-col">
+              <span className="text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest mb-0.5">Mulai Dari</span>
+              <div className="flex items-baseline gap-2">
+                <span className="text-lg sm:text-2xl font-black text-emerald-700 tracking-tight">{paket.harga}</span>
+                <span className="text-[10px] sm:text-xs text-stone-500 font-medium">/pax</span>
+              </div>
             </div>
             
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-stone-800 tracking-tight leading-tight mb-4">
-              {paket.nama}
-            </h1>
-            <p className="text-sm sm:text-base text-stone-500 leading-relaxed font-medium">
-              {paket.deskripsi}
-            </p>
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-6 sm:px-10 py-3 sm:py-3.5 rounded-full transition-all shadow-md hover:shadow-lg shrink-0">
+              Pesan Sekarang
+            </a>
           </div>
-
-          {/* Bagian Grid: Fasilitas & Itinerary */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Fasilitas */}
-            <div>
-              <h2 className="text-lg font-bold text-stone-800 mb-4 flex items-center gap-2">
-                <span className="text-emerald-500">✨</span> Apa yang Anda Dapatkan
-              </h2>
-              <ul className="space-y-3">
-                {paket.fasilitas.map((fas, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-stone-600 font-medium">
-                    <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 font-bold text-[10px] mt-0.5">✓</span>
-                    <span className="leading-relaxed">{fas}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Itinerary */}
-            <div>
-              <h2 className="text-lg font-bold text-stone-800 mb-5 flex items-center gap-2">
-                <span className="text-emerald-500">⏱️</span> Rencana Perjalanan
-              </h2>
-              <div className="relative border-l-2 border-stone-100 ml-3 space-y-6">
-                {itinerary.map((item, i) => (
-                  <div key={i} className="relative pl-6">
-                    <span className="absolute -left-[9px] top-1 w-4 h-4 rounded-full border-4 border-white bg-emerald-400 shadow-sm"></span>
-                    <h4 className="text-[11px] font-black text-emerald-600 uppercase tracking-wider mb-0.5">{item.waktu}</h4>
-                    <p className="text-sm text-stone-600 font-medium leading-relaxed">{item.kegiatan}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* SESI BARU: OPSI TIER HARGA (Muncul jika ada data) */}
-          {paket.opsiHarga && (
-            <div className="mt-10 p-6 bg-emerald-50/50 rounded-2xl border border-emerald-100">
-              <h3 className="font-bold text-emerald-800 mb-4 flex items-center gap-2 text-base">
-                <span className="text-xl">💰</span> Pilihan Tier Paket
-              </h3>
-              <div className="space-y-3">
-                {paket.opsiHarga.map((opsi, i) => (
-                  <div key={i} className="flex justify-between items-center bg-white p-3 sm:p-4 rounded-xl border border-emerald-100 shadow-sm">
-                    <span className="text-sm font-bold text-stone-700">{opsi.nama}</span>
-                    <span className="text-sm font-black text-emerald-600">{opsi.harga}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* SESI BARU: PERSIAPAN (Muncul jika ada data) */}
-          {paket.persiapan && (
-            <div className="mt-8 bg-amber-50 rounded-2xl p-6 border border-amber-100">
-              <h3 className="font-bold text-amber-800 mb-4 flex items-center gap-2 text-base">
-                <span className="text-xl">🎒</span> Perlu Kamu Siapkan!
-              </h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {paket.persiapan.map((item, i) => (
-                  <li key={i} className="text-xs font-medium text-amber-700 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* SESI BARU: VIDEO SHORT LOCAL (Dari folder public) */}
-          {paket.video && (
-            <div className="mt-12 pt-8 border-t border-stone-100 text-center">
-              <h2 className="text-lg font-bold text-stone-800 mb-2 flex items-center justify-center gap-2">
-                <span className="text-emerald-500">🎬</span> Cuplikan Keseruan
-              </h2>
-              <p className="text-xs text-stone-500 mb-6">Lihat aksi nyatanya sebelum Anda merasakannya langsung!</p>
-              
-              <div className="relative aspect-[9/16] w-full max-w-[280px] mx-auto rounded-3xl overflow-hidden shadow-2xl bg-stone-100 border-4 border-white group">
-                <video 
-                  className="w-full h-full object-cover"
-                  controls // Menampilkan tombol play/pause bawaan browser
-                  preload="metadata" // Agar tidak berat saat loading halaman pertama kali
-                  playsInline
-                >
-                  <source src={paket.video} type="video/mp4" />
-                  Browser Anda tidak mendukung pemutar video ini.
-                </video>
-              </div>
-            </div>
-          )}
-
-          {/* SESI BARU: REKOMENDASI PAKET LAIN */}
-          <div className="mt-16 pt-8 border-t border-stone-100">
-            <h2 className="text-lg font-bold text-stone-800 mb-6 text-center">Mungkin Kamu Juga Suka</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {masterKatalog.filter(p => p.id !== id).slice(0, 2).map((item) => (
-                <Link 
-                  key={item.id}
-                  href={`/paket/${item.id}`}
-                  className="group flex items-center gap-4 bg-white p-3 rounded-2xl border border-stone-200 hover:border-emerald-400 hover:shadow-md transition"
-                >
-                  <div className="w-16 h-16 relative rounded-xl overflow-hidden shrink-0">
-                    <Image src={item.image} alt={item.nama} fill className="object-cover group-hover:scale-110 transition duration-500" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-stone-800 line-clamp-1 group-hover:text-emerald-600 transition">{item.nama}</h4>
-                    <p className="text-[11px] text-emerald-600 font-black mt-0.5">{item.harga}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
         </div>
-      </div>
 
-      {/* 3. STICKY BOTTOM BAR */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-stone-200 p-4 sm:px-8 sm:py-5 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
-        <div className="mx-auto max-w-4xl flex items-center justify-between gap-4">
-          <div className="flex flex-col">
-            <span className="text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-widest mb-0.5">Mulai Dari</span>
-            <div className="flex items-baseline gap-2">
-              <span className="text-lg sm:text-2xl font-black text-emerald-700 tracking-tight">{paket.harga}</span>
-              <span className="text-[10px] sm:text-xs text-stone-500 font-medium">/pax</span>
-            </div>
-          </div>
-          
-          <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base px-6 sm:px-10 py-3 sm:py-3.5 rounded-full transition-all shadow-md hover:shadow-lg shrink-0">
-            Pesan Sekarang
-          </a>
-        </div>
       </div>
-
-    </div>
+    </>
   );
 }
