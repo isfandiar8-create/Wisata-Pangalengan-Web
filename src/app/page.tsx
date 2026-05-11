@@ -537,7 +537,7 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* 8. SESI JURNAL & INSPIRASI (Nurturing) */}
+          {/* 8. SESI JURNAL & INSPIRASI (Desain Compact Horizontal Slider) */}
           <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 border-y border-stone-200">
             <div className="mx-auto max-w-6xl">
               
@@ -547,88 +547,114 @@ export default function Home() {
                     Jurnal & Inspirasi Liburan
                   </h2>
                   <p className="max-w-2xl text-sm text-stone-500 font-medium">
-                    Temukan panduan, tips, dan cerita seru seputar destinasi wisata di Pangalengan.
+                    Panduan, rute, dan cerita seru seputar destinasi di Pangalengan.
                   </p>
                 </div>
                 <Link 
-                  href="/jurnal" 
+                  href="/artikel" 
                   className="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
                 >
                   Lihat Semua Artikel <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {/* Slider Horizontal Ringkas */}
+              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden px-1">
                 
-                <Link href="/jurnal" className="group flex flex-col bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-300">
-                  <div className="relative h-48 w-full overflow-hidden bg-stone-200">
-                    <Image src="/nimo-hero.jpg" alt="Artikel Wisata" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider text-emerald-700">
-                      Destinasi
+                {/* Kartu Artikel 1 */}
+                <Link href="/artikel/panduan-lengkap-wisata-pangalengan" className="group flex flex-col w-[75vw] sm:w-[320px] shrink-0 snap-start bg-white rounded-2xl border border-stone-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300">
+                  <div className="relative h-40 w-full overflow-hidden bg-stone-200 rounded-t-2xl">
+                    <Image src="/wayang.jpg" alt="Panduan Wisata" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider text-emerald-700">
+                      Panduan Liburan
                     </div>
                   </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <span className="text-[10px] text-stone-400 font-medium mb-2 block">12 Mei 2026 • 3 Menit Baca</span>
-                    <h3 className="text-base font-bold text-stone-800 mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
-                      5 Spot Foto Rahasia di Nimo Highland yang Jarang Diketahui
+                  <div className="p-4 flex flex-col flex-1">
+                    <h3 className="text-sm font-bold text-stone-800 mb-1.5 group-hover:text-emerald-600 transition-colors line-clamp-2 leading-snug">
+                      Panduan Lengkap Wisata Pangalengan: Lokasi, Rute, dan Destinasi Populer
                     </h3>
-                    <p className="text-xs text-stone-500 line-clamp-2 mb-4">
-                      Panduan lengkap menemukan sudut paling estetik untuk memori liburan tanpa antre panjang.
+                    <p className="text-[11px] text-stone-500 line-clamp-2 mb-4 leading-relaxed">
+                      Baru pertama kali ke Pangalengan? Temukan panduan arah, rute dari Jakarta, hingga daftar spot wisata estetik.
                     </p>
-                    <div className="mt-auto text-xs font-bold text-emerald-600 flex items-center gap-1">
-                      Baca Selengkapnya <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    <div className="mt-auto flex justify-between items-center text-[10px] text-stone-400 font-medium">
+                      <span>09 Mei 2026</span>
+                      <span className="font-bold text-emerald-600 group-hover:translate-x-1 transition-transform">Baca &rarr;</span>
                     </div>
                   </div>
                 </Link>
 
-                <Link href="/jurnal" className="group flex flex-col bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-300">
-                  <div className="relative h-48 w-full overflow-hidden bg-stone-200">
-                    <Image src="/rafting.jpg" alt="Artikel Tips" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider text-emerald-700">
-                      Tips & Trik
+                {/* Kartu Artikel 2 */}
+                <Link href="/artikel/harga-tiket-wisata-dan-biaya-rafting-pangalengan" className="group flex flex-col w-[75vw] sm:w-[320px] shrink-0 snap-start bg-white rounded-2xl border border-stone-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300">
+                  <div className="relative h-40 w-full overflow-hidden bg-stone-200 rounded-t-2xl">
+                    <Image src="/rafting.jpg" alt="Biaya Wisata" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider text-emerald-700">
+                      Panduan Budget
                     </div>
                   </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <span className="text-[10px] text-stone-400 font-medium mb-2 block">08 Mei 2026 • 4 Menit Baca</span>
-                    <h3 className="text-base font-bold text-stone-800 mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
-                      Persiapan Wajib Sebelum Rafting di Sungai Palayangan untuk Pemula
+                  <div className="p-4 flex flex-col flex-1">
+                    <h3 className="text-sm font-bold text-stone-800 mb-1.5 group-hover:text-emerald-600 transition-colors line-clamp-2 leading-snug">
+                      Daftar Harga Tiket Wisata & Estimasi Biaya Rafting Pangalengan Terbaru
                     </h3>
-                    <p className="text-xs text-stone-500 line-clamp-2 mb-4">
-                      Simak perlengkapan apa saja yang wajib dibawa agar pengalaman arung jeram lebih aman dan nyaman.
+                    <p className="text-[11px] text-stone-500 line-clamp-2 mb-4 leading-relaxed">
+                      Berapa budget yang disiapkan? Temukan bocoran harga tiket Nimo Highland hingga biaya Rafting.
                     </p>
-                    <div className="mt-auto text-xs font-bold text-emerald-600 flex items-center gap-1">
-                      Baca Selengkapnya <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    <div className="mt-auto flex justify-between items-center text-[10px] text-stone-400 font-medium">
+                      <span>09 Mei 2026</span>
+                      <span className="font-bold text-emerald-600 group-hover:translate-x-1 transition-transform">Baca &rarr;</span>
                     </div>
                   </div>
                 </Link>
 
-                <Link href="/jurnal" className="group flex flex-col bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-300">
-                  <div className="relative h-48 w-full overflow-hidden bg-stone-200">
-                    <Image src="/corporate-1d-b.JPG" alt="Artikel Corporate" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider text-emerald-700">
-                      Corporate
+                {/* Kartu Artikel 3 */}
+                <Link href="/artikel/itinerary-wisata-pangalengan-2-hari-1-malam-dari-jakarta" className="group flex flex-col w-[75vw] sm:w-[320px] shrink-0 snap-start bg-white rounded-2xl border border-stone-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300">
+                  <div className="relative h-40 w-full overflow-hidden bg-stone-200 rounded-t-2xl">
+                    <Image src="/corporate-1n-b.JPG" alt="Itinerary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider text-emerald-700">
+                      Itinerary & Rute
                     </div>
                   </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <span className="text-[10px] text-stone-400 font-medium mb-2 block">02 Mei 2026 • 5 Menit Baca</span>
-                    <h3 className="text-base font-bold text-stone-800 mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
-                      Ide Susunan Acara (Rundown) Gathering Perusahaan 2 Hari 1 Malam
+                  <div className="p-4 flex flex-col flex-1">
+                    <h3 className="text-sm font-bold text-stone-800 mb-1.5 group-hover:text-emerald-600 transition-colors line-clamp-2 leading-snug">
+                      Panduan Itinerary Liburan Pangalengan 2 Hari 1 Malam (Start Jakarta)
                     </h3>
-                    <p className="text-xs text-stone-500 line-clamp-2 mb-4">
-                      Bocoran itinerary paling efektif untuk merekatkan kekompakan tim, lengkap dengan sesi Gala Dinner dan Outbound.
+                    <p className="text-[11px] text-stone-500 line-clamp-2 mb-4 leading-relaxed">
+                      Bingung menyusun jadwal dari Jakarta? Contek itinerary 2D1N paling seimbang ini. Anti-ribet!
                     </p>
-                    <div className="mt-auto text-xs font-bold text-emerald-600 flex items-center gap-1">
-                      Baca Selengkapnya <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    <div className="mt-auto flex justify-between items-center text-[10px] text-stone-400 font-medium">
+                      <span>10 Mei 2026</span>
+                      <span className="font-bold text-emerald-600 group-hover:translate-x-1 transition-transform">Baca &rarr;</span>
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Kartu Artikel 4 */}
+                <Link href="/artikel/rekomendasi-penginapan-pangalengan-terbaik" className="group flex flex-col w-[75vw] sm:w-[320px] shrink-0 snap-start bg-white rounded-2xl border border-stone-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300">
+                  <div className="relative h-40 w-full overflow-hidden bg-stone-200 rounded-t-2xl">
+                    <Image src="/saung-rungkun.jpg" alt="Rekomendasi Penginapan" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider text-emerald-700">
+                      Info Penginapan
+                    </div>
+                  </div>
+                  <div className="p-4 flex flex-col flex-1">
+                    <h3 className="text-sm font-bold text-stone-800 mb-1.5 group-hover:text-emerald-600 transition-colors line-clamp-2 leading-snug">
+                      Rekomendasi Penginapan: View Bagus, Pinggir Sungai, hingga Air Panas
+                    </h3>
+                    <p className="text-[11px] text-stone-500 line-clamp-2 mb-4 leading-relaxed">
+                      Simak panduan memilih villa dan glamping berdasarkan view, fasilitas air panas, hingga kapasitas.
+                    </p>
+                    <div className="mt-auto flex justify-between items-center text-[10px] text-stone-400 font-medium">
+                      <span>09 Mei 2026</span>
+                      <span className="font-bold text-emerald-600 group-hover:translate-x-1 transition-transform">Baca &rarr;</span>
                     </div>
                   </div>
                 </Link>
 
               </div>
 
-              <div className="mt-8 sm:hidden flex justify-center">
+              <div className="mt-6 sm:hidden flex justify-center">
                 <Link 
-                  href="/jurnal" 
-                  className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-stone-200 bg-white px-8 py-3.5 text-sm font-bold text-stone-700 hover:bg-stone-50 hover:border-emerald-300 transition-all"
+                  href="/artikel" 
+                  className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-stone-200 bg-white px-8 py-3 text-sm font-bold text-stone-700 hover:bg-stone-50 hover:border-emerald-300 transition-all"
                 >
                   Jelajahi Semua Artikel
                 </Link>
