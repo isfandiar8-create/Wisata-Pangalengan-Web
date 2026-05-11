@@ -89,30 +89,22 @@ const kategoriPetualangan: PaketItem[] = [
 ];
 
 const paketCombo = [
-  // --- KELUARGA 1 HARI ---
   { id: "paket-wisata-keluarga-hemat", nama: "Hemat & Praktis", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-hemat.JPG" },
   { id: "paket-wisata-keluarga-seru", nama: "Seru Maksimal", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV Adventure", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-seru.jpg" },
   { id: "paket-wisata-keluarga-premium", nama: "Puas Eksplorasi", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", fasilitas: ["Rafting & Flying Fox", "Offroad Land Rover", "Makan & Air", "Dokumentasi"], color: "text-sky-700 bg-sky-100", image: "/keluarga-puas.jpg" },
-  
-  // --- CORPORATE 1 HARI ---
   { id: "paket-outing-kantor-1-hari-adventure", nama: "Adventure Plus", tag: "Corporate", durasi: "1 Hari", harga: "Rp 360.000", fasilitas: ["Rafting & Paintball", "ATV", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-a.jpeg" },
   { id: "paket-gathering-perusahaan-1-hari", nama: "Synergy Build", tag: "Corporate", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-b.JPG" },
   { id: "paket-outing-corporate-offroad-1-hari", nama: "Xtreme Offroad", tag: "Corporate", durasi: "1 Hari", harga: "Rp 549.000", fasilitas: ["Rafting & Offroad", "Paintball & Ice Breaking", "Makan Siang", "Foto Rafting"], color: "text-slate-700 bg-slate-100", image: "/corporate-1n-c.jpg" },
-  
-  // --- CORPORATE 2 Hari ---
   { id: "paket-gathering-kantor-2-hari-1-malam-hemat", nama: "Essential Trip", tag: "Corporate", durasi: "2 Hari", harga: "Rp 239.000", fasilitas: ["Fresh Rafting", "Paintball", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-a.JPG" },
   { id: "paket-outing-perusahaan-2-hari-1-malam-bestseller", nama: "Feast & Fun", tag: "Corporate", durasi: "2 Hari", harga: "Rp 650.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Kambing Guling"], color: "text-indigo-700 bg-indigo-100", image: "/corporate-1n-b.JPG" },
   { id: "paket-gathering-corporate-2-hari-1-malam-all-in", nama: "All-Inclusive", tag: "Corporate", durasi: "2 Hari", harga: "Rp 450.000", fasilitas: ["Penginapan", "Rafting, Paintball, Flying Fox", "3x Makan", "Tour Leader"], color: "text-indigo-700 bg-indigo-100", image: "/rafting.jpg" },
   { id: "paket-outing-kantor-2-hari-1-malam-relax", nama: "Relax & Retreat", tag: "Corporate", durasi: "2 Hari", harga: "Rp 200.000", fasilitas: ["Rafting", "Fun Games", "Makan", "Dokumentasi Rafting"], color: "text-indigo-700 bg-indigo-100", image: "/paket3.jpg" },
   { id: "paket-gathering-perusahaan-vip-premium", nama: "VIP Executive", tag: "Corporate", durasi: "2 Hari", harga: "Rp 1.099.000", fasilitas: ["Villa VIP", "3x Makan", "Rafting & Team Building", "Offroad, Paintball"], color: "text-yellow-700 bg-yellow-50 border border-yellow-200", image: "/corporate-vip.JPG" },
-  
-  // --- FAMILY CAMP ---
   { id: "paket-glamping-atv-pangalengan", nama: "Glamping & ATV", tag: "Keluarga", durasi: "2 Hari", harga: "Rp 495.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & ATV", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-a.JPG" },
   { id: "paket-glamping-offroad-pangalengan", nama: "Glamping & Offroad", tag: "Keluarga", durasi: "2 Hari", harga: "Rp 620.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting & Offroad", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/family-camp-b.JPG" },
   { id: "paket-camping-keluarga-pangalengan", nama: "Classic Glamping", tag: "Keluarga", durasi: "2 Hari", harga: "Rp 395.000", fasilitas: ["Glamping", "Sarapan & Tea Break", "Rafting", "Flying Fox"], color: "text-emerald-700 bg-emerald-100", image: "/flyingfox.jpg" },
 ];
 
-// ─── DATA BARU 2026: PENGINAPAN ─────────────────
 const kategoriPenginapan: PaketItem[] = [
   { id: "penginapan-saung-cinta", nama: "Saung Cinta", harga: "", hargaAsli: "", hargaDiskon: "Rp 750.000", fasilitas: ["Max 20 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-cinta.jpg", deskripsi: "Cottage luas dengan kolam renang, pas untuk menghangatkan momen keluarga." },
   { id: "penginapan-saung-gadis", nama: "Saung Gadis", harga: "", hargaAsli: "", hargaDiskon: "Rp 850.000", fasilitas: ["Max 10 Orang", "Kolam Renang", "Dekat Cileunca"], label: "Budget", image: "/saung-gadis.JPG", deskripsi: "Fasilitas lengkap berkapasitas besar, sempurna untuk kumpul santai akhir pekan." },
@@ -141,100 +133,26 @@ const sortedPenginapan = [...kategoriPenginapan].sort((a, b) => {
   return hargaA - hargaB;
 });
 
-// ─── KOMPONEN: Slider Otomatis untuk Combo ────────────────────
-function ComboSlider({ items }: { items: any[] }) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (isHovered) return;
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        if (scrollLeft + clientWidth >= scrollWidth - 10) {
-          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
-        }
-      }
-    }, 3500); 
-    return () => clearInterval(interval);
-  }, [isHovered]);
-
-  return (
-    <div 
-      className="relative mt-16 w-full pt-12 border-t border-emerald-200/60"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={() => setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
-    >
-      <div className="text-center mb-8 space-y-1.5">
-         <h3 className="text-2xl font-bold text-stone-800 sm:text-3xl">Paket Combo Wisata</h3>
-         <p className="max-w-2xl text-sm text-stone-500 font-medium mx-auto">Solusi liburan praktis, hemat, dan paling lengkap.</p>
-      </div>
-
-      <div className="relative group">
-        <div ref={scrollRef} className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-1">
-          {items.map((pkt, idx) => (
-            <Link 
-              href={`/paket/${pkt.id}`} 
-              key={idx}
-              className="w-[85vw] sm:w-[320px] shrink-0 snap-start flex items-center gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5"
-            >
-              <div className="w-20 h-20 sm:w-24 sm:h-24 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
-                <Image src={pkt.image} alt={pkt.nama} fill className="object-cover" />
-                <span className="absolute top-0 left-0 text-[8px] font-black uppercase px-2.5 py-1 rounded-br-xl bg-stone-900/80 backdrop-blur-sm text-emerald-400 shadow-sm">
-                  {pkt.durasi}
-                </span>
-              </div>
-              <div className="flex-1 flex flex-col justify-center">
-                <div className="flex justify-between items-start mb-0.5">
-                   <span className={`text-[8px] font-black uppercase px-1.5 py-0.5 rounded ${pkt.color}`}>{pkt.tag}</span>
-                </div>
-                <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight mt-0.5">{pkt.nama}</h4>
-                <p className="text-[10px] sm:text-xs text-stone-500 line-clamp-2 mt-1 mb-2 leading-relaxed">
-                  {pkt.fasilitas.join(" • ")}
-                </p>
-                <div className="mt-auto flex justify-between items-center">
-                  <span className="font-black text-emerald-700 text-sm sm:text-base">{pkt.harga}</span>
-                  <span className="bg-stone-100 text-stone-600 hover:bg-emerald-100 hover:text-emerald-700 text-[10px] font-bold px-2.5 py-1.5 rounded-lg transition-colors">Lihat &rarr;</span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── HALAMAN UTAMA (Diurutkan Sesuai Psikologi Marketing) ────────────────
 export default function Home() {
   const [showAllDestinasi, setShowAllDestinasi] = useState(false); 
   const [showAllPenginapan, setShowAllPenginapan] = useState(false);
+  
   const penginapanRef = useRef<HTMLDivElement>(null);
   const [activePenginapan, setActivePenginapan] = useState(0);
-  // Karena datanya dibagi 2 baris, jumlah titiknya adalah (Total Data dibagi 2)
   const totalPenginapanCols = Math.ceil(sortedPenginapan.length / 2);
   const handlePenginapanScroll = () => {
     if (!penginapanRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = penginapanRef.current;
-    // Hitung jarak maksimal yang bisa digeser
     const maxScroll = scrollWidth - clientWidth;
-    if (maxScroll <= 0) return; // Abaikan jika layar sudah cukup lebar (tidak bisa digeser)
-    // Hitung persentase geseran lalu ubah menjadi urutan titik (index)
+    if (maxScroll <= 0) return;
     const scrollPercentage = scrollLeft / maxScroll;
     const currentIndex = Math.round(scrollPercentage * (totalPenginapanCols - 1));
     setActivePenginapan(currentIndex);
   };
-  // --- 2. SENSOR PETUALANGAN SATUAN (DIREVISI MENJADI 2 BARIS) ---
+
   const petualanganRef = useRef<HTMLDivElement>(null);
   const [activePetualangan, setActivePetualangan] = useState(0);
-  
-  // PERUBAHAN: Karena sekarang 2 baris, total titik adalah jumlah data dibagi 2
   const totalPetualanganCols = Math.ceil(kategoriPetualangan.length / 2);
-  
   const handlePetualanganScroll = () => {
     if (!petualanganRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = petualanganRef.current;
@@ -242,10 +160,9 @@ export default function Home() {
     if (maxScroll <= 0) return;
     setActivePetualangan(Math.round((scrollLeft / maxScroll) * (totalPetualanganCols - 1)));
   };
-  // --- 3. SENSOR PAKET COMBO (BARU) ---
+
   const comboRef = useRef<HTMLDivElement>(null);
   const [activeCombo, setActiveCombo] = useState(0);
-  // Combo formatnya 2 baris, jadi jumlah titiknya = total data dibagi 2
   const totalComboCols = Math.ceil(paketCombo.length / 2);
   const handleComboScroll = () => {
     if (!comboRef.current) return;
@@ -254,12 +171,12 @@ export default function Home() {
     if (maxScroll <= 0) return;
     setActiveCombo(Math.round((scrollLeft / maxScroll) * (totalComboCols - 1)));
   };
-  // ---------------------------------------
+
   return (
     <div className="min-h-screen bg-stone-50 text-stone-800 font-sans">
       <main className="flex flex-col">
         
-        {/* 1. HERO SECTION (Attention) */}
+        {/* 1. HERO SECTION */}
         <section className="relative flex min-h-[80vh] w-full flex-col items-center justify-center bg-stone-900 px-4 text-center sm:px-6 lg:px-8 overflow-hidden">
           <Image src="/hero1.jpg" alt="Go Pangalengan" fill className="object-cover opacity-60" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-stone-900/90"></div>
@@ -297,7 +214,7 @@ export default function Home() {
         </section>
 
         <FadeIn>
-          {/* 2. SPOT IKONIK DESTINASI (Interest - Format Grid 2x2 Mobile / 3x2 Desktop) */}
+          {/* 2. SPOT IKONIK DESTINASI */}
           <section className="bg-white px-4 py-16 sm:py-24 sm:px-6 lg:px-8" id="destinasi">
             <div className="mx-auto max-w-6xl">
               
@@ -306,7 +223,6 @@ export default function Home() {
                 <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Temukan relaksasi di sudut-sudut paling fotogenik di Pangalengan.</p>
               </div>
 
-              {/* Grid Layout: 2 Kolom di HP, 3 Kolom di Desktop */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
                 {[
                   { nama: "Nimo Highland", desc: "Hamparan kebun teh 360°", img: "/nimo.jpg" },
@@ -319,7 +235,6 @@ export default function Home() {
                   <Link 
                     href={`/destinasi/${dest.nama.toLowerCase().replace(/ /g, '-')}`} 
                     key={idx} 
-                    // Trik Magis: Item ke-5 & ke-6 (idx >= 4) disembunyikan di HP jika tombol belum diklik, tapi selalu muncul di Desktop (md:block)
                     className={`group relative overflow-hidden rounded-2xl bg-stone-100 aspect-square border border-stone-200 shadow-sm ${
                       idx >= 4 && !showAllDestinasi ? 'hidden md:block' : 'block'
                     }`}
@@ -340,7 +255,6 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Tombol Dropdown Khusus Mobile (Disembunyikan di Layar Desktop) */}
               <div className="mt-8 flex justify-center md:hidden">
                 <button
                   onClick={() => setShowAllDestinasi(!showAllDestinasi)}
@@ -359,11 +273,10 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* 4. KATALOG PETUALANGAN & COMBO (Kini Semuanya Geser Manual yang Stabil) */}
+          {/* 3. KATALOG PETUALANGAN & COMBO */}
           <section id="petualangan" className="bg-emerald-50/60 px-4 py-16 sm:py-24 sm:px-6 lg:px-8 border-b border-emerald-100/50">
             <div className="mx-auto max-w-6xl">
               
-              {/* --- KATALOG PETUALANGAN SATUAN (2 Baris) --- */}
               <div className="mb-8 space-y-1.5 text-center">
                 <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Katalog Wisata</h2>
                 <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Pilih keseruan Anda. Format ringkas dengan harga ter-update 2026.</p>
@@ -373,7 +286,6 @@ export default function Home() {
                 <div 
                   ref={petualanganRef}
                   onScroll={handlePetualanganScroll}
-                  // PERUBAHAN DI SINI: grid-rows-1 diubah menjadi grid-rows-2
                   className="grid grid-rows-2 grid-flow-col gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-1"
                 >
                   {kategoriPetualangan.map((item, idx) => (
@@ -394,7 +306,6 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* INDIKATOR TITIK: Petualangan Satuan */}
                 <div className="mt-4 flex justify-center items-center gap-1.5">
                   {Array.from({ length: totalPetualanganCols }).map((_, i) => (
                     <div
@@ -407,7 +318,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* --- PAKET COMBO (2 Baris) --- */}
               <div className="mt-16 pt-12 border-t border-emerald-200/60">
                 <div className="text-center mb-8 space-y-1.5">
                    <h3 className="text-2xl font-bold text-stone-800 sm:text-3xl">Paket Combo Wisata</h3>
@@ -441,7 +351,6 @@ export default function Home() {
                     ))}
                   </div>
 
-                  {/* INDIKATOR TITIK: Paket Combo */}
                   <div className="mt-4 flex justify-center items-center gap-1.5">
                     {Array.from({ length: totalComboCols }).map((_, i) => (
                       <div
@@ -455,7 +364,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Tombol ke Halaman Katalog Full */}
               <div className="mt-14 flex justify-center">
                 <Link href="/katalog-wisata" className="group inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white shadow-sm">
                   Lihat Seluruh Daftar Wisata 2026
@@ -468,7 +376,7 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* 5. KATALOG PENGINAPAN (Dengan Indikator Titik Estetik) */}
+          {/* 4. KATALOG PENGINAPAN */}
           <section id="penginapan" className="bg-white px-4 py-16 sm:py-24 sm:px-6 lg:px-8 border-b border-stone-100">
             <div className="mx-auto max-w-6xl">
               
@@ -477,7 +385,6 @@ export default function Home() {
                 <p className="max-w-2xl mx-auto text-sm text-stone-500 font-medium">Dari cottage hangat hingga vila eksklusif. Temukan tempat istirahat sempurna Anda.</p>
               </div>
 
-              {/* PASANG SENSOR: ref dan onScroll ditambahkan di sini */}
               <div 
                 ref={penginapanRef}
                 onScroll={handlePenginapanScroll}
@@ -517,8 +424,6 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* INDIKATOR TITIK (DOTS) */}
-              {/* Desain pil memanjang (w-5) untuk yang aktif, dan titik kecil (w-1.5) untuk yang belum disentuh */}
               <div className="mt-4 mb-8 flex justify-center items-center gap-1.5">
                 {Array.from({ length: totalPenginapanCols }).map((_, i) => (
                   <div
@@ -530,7 +435,6 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Tombol ke Halaman Pricelist */}
               <div className="mt-8 flex justify-center">
                 <Link href="/penginapan" className="group flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-sm font-bold text-emerald-700 transition hover:bg-emerald-600 hover:text-white">
                   Lihat Pricelist Lengkap Penginapan 2026
@@ -543,7 +447,7 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* 5. SESI: VIDEO SHORTS (Intip Keseruannya) */}
+          {/* 5. VIDEO SHORTS */}
           <section className="bg-stone-50 px-4 py-20 sm:px-6 lg:px-8 border-y border-stone-200">
             <div className="mx-auto max-w-4xl text-center">
               
@@ -553,7 +457,6 @@ export default function Home() {
               </div>
               
               <div className="flex flex-wrap justify-center gap-6">
-                {/* Video 1: Cinematic Loop 1 */}
                 <div className="w-[60vw] sm:w-[220px] rounded-2xl bg-white p-2 shadow-md border border-stone-200 shrink-0">
                   <div className="relative w-full overflow-hidden rounded-xl bg-stone-100 aspect-[9/16]">
                     <video className="absolute inset-0 h-full w-full object-cover" autoPlay loop muted playsInline>
@@ -562,7 +465,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Video 2: Cinematic Loop 2 (Muncul di layar menengah-besar) */}
                 <div className="hidden sm:block w-[220px] rounded-2xl bg-white p-2 shadow-md border border-stone-200 shrink-0">
                   <div className="relative w-full overflow-hidden rounded-xl bg-stone-100 aspect-[9/16]">
                     <video className="absolute inset-0 h-full w-full object-cover" autoPlay loop muted playsInline>
@@ -572,7 +474,6 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Tombol Call to Action Sosmed */}
               <div className="pt-8 flex flex-wrap gap-4 justify-center w-full">
                 <a href="https://www.instagram.com/gopangalengan/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 px-6 py-3 text-sm font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 transition-transform group-hover:scale-110"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z"/></svg>
@@ -589,7 +490,7 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* 6. BANNER CUSTOM TRIP (Penawaran Alternatif) */}
+          {/* 6. BANNER CUSTOM TRIP */}
           <section className="relative w-full px-4 py-20 sm:py-28 sm:px-6 lg:px-8 text-center text-white overflow-hidden border-b border-stone-800">
             <Image src="/rafting.jpg" alt="Custom Trip Background" fill className="object-cover" />
             <div className="absolute inset-0 bg-stone-900/85 backdrop-blur-[2px]"></div> 
@@ -611,7 +512,7 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* 7. JASA LAYANAN ANTAR (Value Add) */}
+          {/* 7. JASA LAYANAN ANTAR */}
           <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-5xl">
               <div className="flex flex-col overflow-hidden rounded-[2rem] bg-emerald-50 border border-emerald-100 sm:flex-row shadow-sm hover:shadow-md transition-shadow">
@@ -636,76 +537,137 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn>
-          {/* SESI: MITRA KLIEN (Telah Dipercaya Oleh) */}
-          <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 border-b border-stone-200">
-            <div className="mx-auto max-w-6xl overflow-hidden">
+          {/* 8. SESI JURNAL & INSPIRASI (Nurturing) */}
+          <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 border-y border-stone-200">
+            <div className="mx-auto max-w-6xl">
               
-              <div className="space-y-1.5 text-center mb-12">
-                <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Telah Dipercaya Oleh</h2>
-                <p className="text-sm text-stone-500 font-medium">Korporasi besar, institusi pendidikan, dan mitra desa.</p>
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+                <div className="space-y-2 text-center sm:text-left">
+                  <h2 className="text-2xl font-bold tracking-tight text-stone-900 sm:text-3xl">
+                    Jurnal & Inspirasi Liburan
+                  </h2>
+                  <p className="max-w-2xl text-sm text-stone-500 font-medium">
+                    Temukan panduan, tips, dan cerita seru seputar destinasi wisata di Pangalengan.
+                  </p>
+                </div>
+                <Link 
+                  href="/jurnal" 
+                  className="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
+                >
+                  Lihat Semua Artikel <span aria-hidden="true">&rarr;</span>
+                </Link>
               </div>
-              
-              <div className="relative flex flex-col gap-6 sm:gap-8 w-full" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
-                {/* Baris 1: Kanan ke Kiri */}
-                <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ ease: "linear", duration: 25, repeat: Infinity }} className="flex w-max items-center gap-10 sm:gap-14 px-4">
-                  {[1, 2, 3].map((set) => (
-                    <div key={set} className="flex items-center gap-10 sm:gap-14">
-                      {['bca', 'mandiri', 'bni', 'bri'].map((logo) => (
-                        <div key={logo} className="relative h-10 w-24 sm:h-12 sm:w-28 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                          <Image src={`/logos/${logo}.png`} alt={logo} fill className="object-contain" />
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </motion.div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 
-                {/* Baris 2: Kiri ke Kanan */}
-                <motion.div animate={{ x: ["-50%", "0%"] }} transition={{ ease: "linear", duration: 30, repeat: Infinity }} className="flex w-max items-center gap-10 sm:gap-14 px-4">
-                  {[1, 2, 3].map((set) => (
-                    <div key={set} className="flex items-center gap-10 sm:gap-14">
-                       {['unpad', 'unpar', 'koperasi', 'pemkab'].map((logo) => (
-                        <div key={logo} className="relative h-12 w-28 sm:h-14 sm:w-32 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                          <Image src={`/logos/${logo}.png`} alt={logo} fill className="object-contain" />
-                        </div>
-                      ))}
+                <Link href="/jurnal" className="group flex flex-col bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-300">
+                  <div className="relative h-48 w-full overflow-hidden bg-stone-200">
+                    <Image src="/nimo-hero.jpg" alt="Artikel Wisata" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider text-emerald-700">
+                      Destinasi
                     </div>
-                  ))}
-                </motion.div>
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="text-[10px] text-stone-400 font-medium mb-2 block">12 Mei 2026 • 3 Menit Baca</span>
+                    <h3 className="text-base font-bold text-stone-800 mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                      5 Spot Foto Rahasia di Nimo Highland yang Jarang Diketahui
+                    </h3>
+                    <p className="text-xs text-stone-500 line-clamp-2 mb-4">
+                      Panduan lengkap menemukan sudut paling estetik untuk memori liburan tanpa antre panjang.
+                    </p>
+                    <div className="mt-auto text-xs font-bold text-emerald-600 flex items-center gap-1">
+                      Baca Selengkapnya <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </div>
+                  </div>
+                </Link>
+
+                <Link href="/jurnal" className="group flex flex-col bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-300">
+                  <div className="relative h-48 w-full overflow-hidden bg-stone-200">
+                    <Image src="/rafting.jpg" alt="Artikel Tips" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider text-emerald-700">
+                      Tips & Trik
+                    </div>
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="text-[10px] text-stone-400 font-medium mb-2 block">08 Mei 2026 • 4 Menit Baca</span>
+                    <h3 className="text-base font-bold text-stone-800 mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                      Persiapan Wajib Sebelum Rafting di Sungai Palayangan untuk Pemula
+                    </h3>
+                    <p className="text-xs text-stone-500 line-clamp-2 mb-4">
+                      Simak perlengkapan apa saja yang wajib dibawa agar pengalaman arung jeram lebih aman dan nyaman.
+                    </p>
+                    <div className="mt-auto text-xs font-bold text-emerald-600 flex items-center gap-1">
+                      Baca Selengkapnya <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </div>
+                  </div>
+                </Link>
+
+                <Link href="/jurnal" className="group flex flex-col bg-white rounded-2xl border border-stone-200 shadow-sm overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-300">
+                  <div className="relative h-48 w-full overflow-hidden bg-stone-200">
+                    <Image src="/corporate-1d-b.JPG" alt="Artikel Corporate" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider text-emerald-700">
+                      Corporate
+                    </div>
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="text-[10px] text-stone-400 font-medium mb-2 block">02 Mei 2026 • 5 Menit Baca</span>
+                    <h3 className="text-base font-bold text-stone-800 mb-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                      Ide Susunan Acara (Rundown) Gathering Perusahaan 2 Hari 1 Malam
+                    </h3>
+                    <p className="text-xs text-stone-500 line-clamp-2 mb-4">
+                      Bocoran itinerary paling efektif untuk merekatkan kekompakan tim, lengkap dengan sesi Gala Dinner dan Outbound.
+                    </p>
+                    <div className="mt-auto text-xs font-bold text-emerald-600 flex items-center gap-1">
+                      Baca Selengkapnya <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </div>
+                  </div>
+                </Link>
+
+              </div>
+
+              <div className="mt-8 sm:hidden flex justify-center">
+                <Link 
+                  href="/jurnal" 
+                  className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-stone-200 bg-white px-8 py-3.5 text-sm font-bold text-stone-700 hover:bg-stone-50 hover:border-emerald-300 transition-all"
+                >
+                  Jelajahi Semua Artikel
+                </Link>
               </div>
 
             </div>
           </section>
         </FadeIn>
 
-        {/* 8. MENGAPA MEMILIH KAMI (Objection Killers - Dipindah ke Bawah) */}
-        <section id="kenapa-kami" className="bg-stone-100 px-4 py-20 sm:px-6 lg:px-8 border-y border-stone-200">
-          <div className="mx-auto max-w-6xl space-y-16">
-            <div className="text-center space-y-3">
-              <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Mengapa Memilih Kami?</h2>
-              <p className="max-w-2xl text-sm text-stone-500 font-medium mx-auto">Kami mengutamakan ketenangan pikiran Anda dari mulai reservasi hingga perjalanan pulang.</p>
+        <FadeIn>
+          {/* 9. MENGAPA MEMILIH KAMI */}
+          <section id="kenapa-kami" className="bg-stone-100 px-4 py-20 sm:px-6 lg:px-8 border-y border-stone-200">
+            <div className="mx-auto max-w-6xl space-y-16">
+              <div className="text-center space-y-3">
+                <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Mengapa Memilih Kami?</h2>
+                <p className="max-w-2xl text-sm text-stone-500 font-medium mx-auto">Kami mengutamakan ketenangan pikiran Anda dari mulai reservasi hingga perjalanan pulang.</p>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+                {[
+                  { icon: "📞", title: "Layanan 24 Jam", desc: "Responsif kapanpun dibutuhkan." },
+                  { icon: "🛡️", title: "Asuransi Penuh", desc: "Mitra resmi asuransi BUMIDA." },
+                  { icon: "✅", title: "Tim Tersertifikasi", desc: "Pemandu ahli dan profesional." },
+                  { icon: "📄", title: "Legalitas Resmi", desc: "Badan usaha wisata berizin." }
+                ].map((k, i) => (
+                  <div key={i} className="rounded-2xl border border-stone-200 bg-white p-5 text-center shadow-sm transition hover:-translate-y-1">
+                    <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-xl">{k.icon}</div>
+                    <h3 className="text-sm font-bold text-stone-800">{k.title}</h3>
+                    <p className="mt-1.5 text-xs text-stone-500">{k.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-              {[
-                { icon: "📞", title: "Layanan 24 Jam", desc: "Responsif kapanpun dibutuhkan." },
-                { icon: "🛡️", title: "Asuransi Penuh", desc: "Mitra resmi asuransi BUMIDA." },
-                { icon: "✅", title: "Tim Tersertifikasi", desc: "Pemandu ahli dan profesional." },
-                { icon: "📄", title: "Legalitas Resmi", desc: "Badan usaha wisata berizin." }
-              ].map((k, i) => (
-                <div key={i} className="rounded-2xl border border-stone-200 bg-white p-5 text-center shadow-sm transition hover:-translate-y-1">
-                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-xl">{k.icon}</div>
-                  <h3 className="text-sm font-bold text-stone-800">{k.title}</h3>
-                  <p className="mt-1.5 text-xs text-stone-500">{k.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        </FadeIn>
 
         <FadeIn>
-          {/* 9. TRUST METRICS & TESTIMONI (Social Proof Terakhir) */}
+          {/* 10. TRUST METRICS & TESTIMONI */}
           <section className="bg-white border-b border-stone-100">
-            {/* Trust Metrics */}
             <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
               <div className="grid grid-cols-2 gap-6 md:grid-cols-4 divide-x divide-stone-100">
                 <div className="text-center px-4">
@@ -727,12 +689,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Testimoni */}
             <div className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
               <div className="flex items-end justify-between gap-4 mb-12">
                 <div className="space-y-1.5 text-center sm:text-left w-full sm:w-auto">
                   <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Kata Mereka</h2>
-                  <p className="max-w-2xl text-sm text-stone-500 font-medium">Pengalaman jujur dari mereka yang telah berlibur bersama kami.</p>
+                  <p className="max-w-2xl text-sm text-stone-500 font-medium">Pengalaman jujur dari teman-teman yang telah berlibur bersama kami.</p>
                 </div>
                 <div className="hidden sm:flex shrink-0 gap-2">
                   <button onClick={() => {document.getElementById('rel-testi')?.scrollBy({left: -320, behavior: 'smooth'})}} className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-500 shadow-sm hover:bg-stone-50 hover:text-emerald-700 transition"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-5 w-5"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg></button>
@@ -745,7 +706,7 @@ export default function Home() {
                   { id: "1", role: "Liburan Keluarga", quote: "Awalnya ragu bawa orang tua dan anak kecil, tapi ternyata guide-nya sangat telaten bantuin kita. Glamping-nya bersih banget dan udaranya seger. Bakal balik lagi sih ini!", name: "Ibu Dinda" },
                   { id: "2", role: "Corporate Outing", quote: "Acara kantor paling pecah sejauh ini! Rundown rapi, gak ada waktu ngaret. Makan siang dan kambing gulingnya juara, semua staf di kantor puas banget.", name: "Siska (Tim HRD)" },
                   { id: "3", role: "Trip Teman Kampus", quote: "Offroad Land Rover-nya bener-bener mantap menantang adrenalin. Mang Ade driver-nya asik diajak ngobrol. Pemandangan kebun tehnya ga ada obat.", name: "Reza Pratama" },
-                  { id: "4", role: "Custom Trip", quote: "Gampang banget request ini itu. Kita minta tambahan BBQ dadakan malem-malam langsung disiapin dong sama tim layanannya. Pelayanan bintang 5!", name: "Dina Mariana" }
+                  { id: "4", role: "Teman dari Luar Kota", quote: "Gampang banget request ini itu. Kita minta tambahan BBQ dadakan malem-malam langsung disiapin dong sama tim layanannya. Pelayanan bintang 5!", name: "Dina Mariana" }
                 ].map((t) => (
                   <article key={t.id} className="w-[85vw] sm:w-[350px] shrink-0 snap-start rounded-3xl border border-stone-200 bg-white p-6 sm:p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:border-emerald-200 transition-colors">
                     <div className="flex gap-1 mb-4 text-emerald-500 text-sm">★★★★★</div>
@@ -763,35 +724,38 @@ export default function Home() {
           </section>
         </FadeIn>
 
-        {/* 10. Final CTA & Footer Maps */}
-        <section className="py-20 bg-stone-50 overflow-hidden">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-              
-              <div className="w-full md:w-[40%] space-y-6 text-center md:text-left">
-                <span className="text-emerald-600 font-bold uppercase tracking-widest text-xs bg-emerald-50 px-3 py-1 rounded-full">
-                  Konsultasi Gratis
-                </span>
-                <h2 className="text-3xl sm:text-4xl font-black text-stone-900 leading-tight">
-                  Mulai Rencanakan Perjalanan <span className="text-emerald-600">Tanpa Beban.</span>
-                </h2>
-                <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-                  Tim kami siap merancang itinerary, mengurus logistik, dan memastikan keamanan Anda. Hubungi kami untuk penawaran terbaik.
-                </p>
-                <div className="pt-4">
-                  <a href={generateWALink("Halo Tim Go Pangalengan, saya ingin konsultasi untuk rencana liburan/outing saya.")} target="_blank" rel="noopener noreferrer" className="inline-block bg-emerald-600 text-white px-8 py-4 rounded-full font-black text-sm shadow-xl hover:bg-emerald-700 transition-all hover:-translate-y-1">
-                    Konsultasi via WhatsApp
-                  </a>
+        <FadeIn>
+          {/* 11. Final CTA & Footer Maps */}
+          <section className="py-20 bg-stone-50 overflow-hidden">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                
+                <div className="w-full md:w-[40%] space-y-6 text-center md:text-left">
+                  <span className="text-emerald-600 font-bold uppercase tracking-widest text-xs bg-emerald-50 px-3 py-1 rounded-full">
+                    Konsultasi Gratis
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl font-black text-stone-900 leading-tight">
+                    Mulai Rencanakan Perjalanan <span className="text-emerald-600">Tanpa Beban.</span>
+                  </h2>
+                  <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
+                    Tim kami siap merancang itinerary, mengurus logistik, dan memastikan keamanan perjalanan. Hubungi kami untuk penawaran terbaik.
+                  </p>
+                  <div className="pt-4">
+                    <a href={generateWALink("Halo Tim Go Pangalengan, saya ingin konsultasi untuk rencana liburan/outing saya.")} target="_blank" rel="noopener noreferrer" className="inline-block bg-emerald-600 text-white px-8 py-4 rounded-full font-black text-sm shadow-xl hover:bg-emerald-700 transition-all hover:-translate-y-1">
+                      Konsultasi via WhatsApp
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              <div className="w-full md:w-[60%] h-[300px] sm:h-[450px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white relative">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d494.8078186487863!2d107.5546903!3d-7.1879434!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e689143386830cf%3A0xb2daa8146a071f96!2sGo%20Pangalengan%20-%20Paket%20Wisata%20%26%20Rafting%20Situ%20Cileunca!5e0!3m2!1sid!2sid!4v1777244658863!5m2!1sid!2sid" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="grayscale-[0.1] hover:grayscale-0 transition-all duration-500"></iframe>
-              </div>
+                <div className="w-full md:w-[60%] h-[300px] sm:h-[450px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white relative">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d494.8078186487863!2d107.5546903!3d-7.1879434!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e689143386830cf%3A0xb2daa8146a071f96!2sGo%20Pangalengan%20-%20Paket%20Wisata%20%26%20Rafting%20Situ%20Cileunca!5e0!3m2!1sid!2sid!4v1777244658863!5m2!1sid!2sid" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="grayscale-[0.1] hover:grayscale-0 transition-all duration-500"></iframe>
+                </div>
 
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </FadeIn>
+
       </main>
     </div>
   );

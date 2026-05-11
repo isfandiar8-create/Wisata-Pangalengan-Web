@@ -120,338 +120,316 @@ export default function KatalogPetualangan() {
     return item.kategori === activeAktivitasFilter;
   });
 
-  // ─── KTP DIGITAL (SCHEMA) ITEMLIST UNTUK ETALASE ───
-  // Menggabungkan kedua array secara otomatis dengan spread operator (...)
-  const semuaPaket = [...aktivitasSatuan, ...paketCombo];
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Katalog Paket Wisata Go Pangalengan",
-    "description": "Daftar lengkap paket wisata satuan dan paket combo hemat untuk keluarga dan corporate outing di Pangalengan.",
-    "itemListElement": semuaPaket.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "url": `https://www.gopangalengan.id/paket/${item.id}`,
-      "name": item.nama
-    }))
-  };
-
   return (
-    <>
-      {/* SUNTIKAN KTP KE HALAMAN */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <div className="min-h-screen bg-stone-50 text-stone-800 font-sans pb-20">
+    <div className="min-h-screen bg-stone-50 text-stone-800 font-sans pb-20">
+      
+      {/* 1. HERO HEADER (Lebih Bersih Tanpa Back Arrow) */}
+      <section className="relative w-full pt-28 pb-16 sm:pt-32 sm:pb-20 px-4 text-center sm:px-6 lg:px-8 overflow-hidden bg-stone-900">
+        <Image src="/rafting.jpg" alt="Katalog Wisata Pangalengan" fill className="object-cover opacity-50" priority />
+        <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[2px]"></div>
         
-        {/* 1. HERO HEADER (Lebih Bersih Tanpa Back Arrow) */}
-        <section className="relative w-full pt-28 pb-16 sm:pt-32 sm:pb-20 px-4 text-center sm:px-6 lg:px-8 overflow-hidden bg-stone-900">
-          <Image src="/rafting.jpg" alt="Katalog Wisata Pangalengan" fill className="object-cover opacity-50" priority />
-          <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-[2px]"></div>
+        <div className="relative z-10 mx-auto max-w-3xl space-y-5">
+          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl drop-shadow-sm">
+            Katalog Wisata <br className="hidden sm:block" />
+            <span className="text-emerald-400 font-light italic tracking-wide mt-2 inline-block">Terbaru 2026</span>
+          </h1>
           
-          <div className="relative z-10 mx-auto max-w-3xl space-y-5">
-            <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl drop-shadow-sm">
-              Katalog Wisata <br className="hidden sm:block" />
-              <span className="text-emerald-400 font-light italic tracking-wide mt-2 inline-block">Terbaru 2026</span>
-            </h1>
-            
-            <p className="text-sm text-stone-200 sm:text-base font-medium max-w-xl mx-auto leading-relaxed drop-shadow-sm">
-              Pilih aktivitas satuan sesuka hati, atau hemat budget Anda dengan memilih Paket Combo. Transparan, aman, dan tanpa biaya tersembunyi.
-            </p>
+          <p className="text-sm text-stone-200 sm:text-base font-medium max-w-xl mx-auto leading-relaxed drop-shadow-sm">
+            Pilih aktivitas satuan sesuka hati, atau hemat budget Anda dengan memilih Paket Combo. Transparan, aman, dan tanpa biaya tersembunyi.
+          </p>
+        </div>
+      </section>
+
+      {/* 2. SESI: AKTIVITAS SATUAN (Dilengkapi Filter UI Penginapan) */}
+      <section className="px-4 py-12 sm:py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          
+          <div className="mb-8 text-center space-y-1.5">
+            <h2 className="text-2xl font-bold text-stone-800 sm:text-3xl">Aktivitas Satuan</h2>
+            <p className="text-sm text-stone-500 font-medium">Bebas pilih petualangan tunggal sesuai keinginan Anda.</p>
           </div>
-        </section>
 
-        {/* 2. SESI: AKTIVITAS SATUAN (Dilengkapi Filter UI Penginapan) */}
-        <section className="px-4 py-12 sm:py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-6xl">
+          {/* FILTER UI KATEGORI (Estetika Bulatan Panjang / Kapsul) */}
+          <div className="flex flex-col items-center mb-10 w-full">
             
-            <div className="mb-8 text-center space-y-1.5">
-              <h2 className="text-2xl font-bold text-stone-800 sm:text-3xl">Aktivitas Satuan</h2>
-              <p className="text-sm text-stone-500 font-medium">Bebas pilih petualangan tunggal sesuai keinginan Anda.</p>
+            {/* Garis Solid Pembatas Estetik */}
+            <div className="flex items-center gap-3 mb-5 w-full max-w-xs sm:max-w-sm">
+              <div className="h-[1px] bg-stone-200 flex-1 rounded-full"></div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-stone-400 shrink-0">
+                Pilihan Kategori Aktivitas
+              </span>
+              <div className="h-[1px] bg-stone-200 flex-1 rounded-full"></div>
             </div>
-
-            {/* FILTER UI KATEGORI (Estetika Bulatan Panjang / Kapsul) */}
-            <div className="flex flex-col items-center mb-10 w-full">
-              
-              {/* Garis Solid Pembatas Estetik */}
-              <div className="flex items-center gap-3 mb-5 w-full max-w-xs sm:max-w-sm">
-                <div className="h-[1px] bg-stone-200 flex-1 rounded-full"></div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-stone-400 shrink-0">
-                  Pilihan Kategori Aktivitas
-                </span>
-                <div className="h-[1px] bg-stone-200 flex-1 rounded-full"></div>
-              </div>
-              
-              {/* Pembungkus Bulatan Panjang (Pill) */}
-              <div className="inline-flex bg-white p-1.5 rounded-2xl sm:rounded-full border border-stone-200 shadow-sm overflow-x-auto max-w-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                {aktivitasFilters.map((kat) => (
-                  <button
-                    key={kat}
-                    onClick={() => setActiveAktivitasFilter(kat)}
-                    className={`relative shrink-0 px-5 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
-                      activeAktivitasFilter === kat
-                        ? "bg-emerald-600 text-white shadow-md transform scale-[1.02]"
-                        : "bg-transparent text-stone-500 hover:text-emerald-600 hover:bg-stone-50"
-                    }`}
-                  >
-                    {kat}
-                  </button>
-                ))}
-              </div>
+            
+            {/* Pembungkus Bulatan Panjang (Pill) */}
+            
+            {/* Pembungkus Bulatan Panjang (Pill) */}
+            <div className="inline-flex bg-white p-1.5 rounded-2xl sm:rounded-full border border-stone-200 shadow-sm overflow-x-auto max-w-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {aktivitasFilters.map((kat) => (
+                <button
+                  key={kat}
+                  onClick={() => setActiveAktivitasFilter(kat)}
+                  className={`relative shrink-0 px-5 py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+                    activeAktivitasFilter === kat
+                      ? "bg-emerald-600 text-white shadow-md transform scale-[1.02]"
+                      : "bg-transparent text-stone-500 hover:text-emerald-600 hover:bg-stone-50"
+                  }`}
+                >
+                  {kat}
+                </button>
+              ))}
             </div>
-
-            {/* Hasil Filter Aktivitas */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredAktivitas.length > 0 ? (
-                filteredAktivitas.map((item) => (
-                  <CompactCard key={item.id} item={item} />
-                ))
-              ) : (
-                <div className="col-span-full py-10 text-center text-stone-500 font-medium">
-                  Belum ada aktivitas di kategori ini.
-                </div>
-              )}
-            </div>
-
           </div>
-        </section>
 
-        {/* 3. SESI: PAKET COMBO WISATA (Desain Silo dengan Data Master Baru) */}
-        <section className="px-4 py-16 sm:py-24 sm:px-6 lg:px-8 bg-emerald-50/50 border-y border-emerald-100">
-          <div className="mx-auto max-w-6xl">
+          {/* Hasil Filter Aktivitas */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filteredAktivitas.length > 0 ? (
+              filteredAktivitas.map((item) => (
+                <CompactCard key={item.id} item={item} />
+              ))
+            ) : (
+              <div className="col-span-full py-10 text-center text-stone-500 font-medium">
+                Belum ada aktivitas di kategori ini.
+              </div>
+            )}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. SESI: PAKET COMBO WISATA (Desain Silo dengan Data Master Baru) */}
+      <section className="px-4 py-16 sm:py-24 sm:px-6 lg:px-8 bg-emerald-50/50 border-y border-emerald-100">
+        <div className="mx-auto max-w-6xl">
+          
+          <div className="mb-10 text-center space-y-1.5">
+            <h2 className="text-2xl font-bold text-stone-800 sm:text-3xl">Katalog Paket Combo</h2>
+            <p className="text-sm text-stone-500 font-medium max-w-2xl mx-auto">Dirancang khusus untuk rombongan. Pilih paket yang paling sesuai dengan kebutuhan Anda.</p>
+          </div>
+
+          {/* FILTER DURASI ELEGAN (Dilengkapi Garis Pembatas Solid) */}
+          <div className="flex flex-col items-center mb-16 w-full">
             
-            <div className="mb-10 text-center space-y-1.5">
-              <h2 className="text-2xl font-bold text-stone-800 sm:text-3xl">Katalog Paket Combo</h2>
-              <p className="text-sm text-stone-500 font-medium max-w-2xl mx-auto">Dirancang khusus untuk rombongan. Pilih paket yang paling sesuai dengan kebutuhan Anda.</p>
+            {/* Garis Solid Pembatas Estetik (Nuansa Emerald) */}
+            <div className="flex items-center gap-3 mb-5 w-full max-w-[16rem] sm:max-w-md">
+              <div className="h-[1px] bg-emerald-200/80 flex-1 rounded-full"></div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600/80 shrink-0">
+                Filter Waktu dan Rombongan
+              </span>
+              <div className="h-[1px] bg-emerald-200/80 flex-1 rounded-full"></div>
             </div>
 
-            {/* FILTER DURASI ELEGAN (Dilengkapi Garis Pembatas Solid) */}
-            <div className="flex flex-col items-center mb-16 w-full">
+            {/* Pembungkus Bulatan Panjang (Pill) */}
+            <div className="inline-flex bg-white/60 p-1.5 rounded-2xl sm:rounded-full border border-emerald-200/60 shadow-[0_4px_20px_-10px_rgba(5,150,105,0.15)] backdrop-blur-sm overflow-x-auto max-w-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {durasiFilters.map((durasi) => (
+                <button
+                  key={durasi}
+                  onClick={() => setActiveDurasiFilter(durasi)}
+                  className={`relative shrink-0 px-6 py-3 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
+                    activeDurasiFilter === durasi 
+                      ? "bg-emerald-600 text-white shadow-md transform scale-[1.02]" 
+                      : "bg-transparent text-emerald-800/70 hover:text-emerald-900 hover:bg-emerald-50/80"
+                  }`}
+                >
+                  <span className={`text-base leading-none ${activeDurasiFilter === durasi ? 'opacity-100' : 'opacity-60 grayscale'}`}>
+                    {durasi === "Semua Waktu" ? "✨" : durasi === "1 Hari" ? "☀️" : "⛺"}
+                  </span>
+                  {durasi}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* MAPPING SETIAP KATEGORI (SILO RINGKAS) */}
+          <div className="space-y-16 sm:space-y-20">
+            {[
+              { 
+                id: "keluarga", 
+                nama: "👨‍👩‍👧‍👦 Liburan Keluarga", 
+                desc: "Hangat, aman, dan penuh tawa untuk segala usia.", 
+                targetKat: ["Keluarga"] 
+              },
+              { 
+                id: "corporate", 
+                nama: "🏢 Corporate & Outing", 
+                desc: "Dari kegiatan satu hari yang padat hingga malam keakraban.", 
+                targetKat: ["Corporate"] 
+              },
+              { 
+                id: "camp", 
+                nama: "⛺ Glamping & Camp", 
+                desc: "Sensasi tidur di alam bebas dengan fasilitas eksklusif.", 
+                targetKat: ["Family Camp"] 
+              }
+            ].map((kategoriSesi) => {
               
-              {/* Garis Solid Pembatas Estetik (Nuansa Emerald) */}
-              <div className="flex items-center gap-3 mb-5 w-full max-w-[16rem] sm:max-w-md">
-                <div className="h-[1px] bg-emerald-200/80 flex-1 rounded-full"></div>
-                <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600/80 shrink-0">
-                  Filter Waktu dan Rombongan
-                </span>
-                <div className="h-[1px] bg-emerald-200/80 flex-1 rounded-full"></div>
-              </div>
+              let paketDiSesiIni = paketCombo.filter(p => kategoriSesi.targetKat.includes(p.kategori));
 
-              {/* Pembungkus Bulatan Panjang (Pill) */}
-              <div className="inline-flex bg-white/60 p-1.5 rounded-2xl sm:rounded-full border border-emerald-200/60 shadow-[0_4px_20px_-10px_rgba(5,150,105,0.15)] backdrop-blur-sm overflow-x-auto max-w-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                {durasiFilters.map((durasi) => (
-                  <button
-                    key={durasi}
-                    onClick={() => setActiveDurasiFilter(durasi)}
-                    className={`relative shrink-0 px-6 py-3 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
-                      activeDurasiFilter === durasi 
-                        ? "bg-emerald-600 text-white shadow-md transform scale-[1.02]" 
-                        : "bg-transparent text-emerald-800/70 hover:text-emerald-900 hover:bg-emerald-50/80"
-                    }`}
-                  >
-                    <span className={`text-base leading-none ${activeDurasiFilter === durasi ? 'opacity-100' : 'opacity-60 grayscale'}`}>
-                      {durasi === "Semua Waktu" ? "✨" : durasi === "1 Hari" ? "☀️" : "⛺"}
-                    </span>
-                    {durasi}
-                  </button>
-                ))}
-              </div>
-            </div>
+              if (activeDurasiFilter !== "Semua Waktu") {
+                paketDiSesiIni = paketDiSesiIni.filter(p => p.durasi === activeDurasiFilter);
+              }
 
-            {/* MAPPING SETIAP KATEGORI (SILO RINGKAS) */}
-            <div className="space-y-16 sm:space-y-20">
-              {[
-                { 
-                  id: "keluarga", 
-                  nama: "👨‍👩‍👧‍👦 Liburan Keluarga", 
-                  desc: "Hangat, aman, dan penuh tawa untuk segala usia.", 
-                  targetKat: ["Keluarga"] 
-                },
-                { 
-                  id: "corporate", 
-                  nama: "🏢 Corporate & Outing", 
-                  desc: "Dari kegiatan satu hari yang padat hingga malam keakraban.", 
-                  targetKat: ["Corporate"] 
-                },
-                { 
-                  id: "camp", 
-                  nama: "⛺ Glamping & Camp", 
-                  desc: "Sensasi tidur di alam bebas dengan fasilitas eksklusif.", 
-                  targetKat: ["Family Camp"] 
-                }
-              ].map((kategoriSesi) => {
-                
-                let paketDiSesiIni = paketCombo.filter(p => kategoriSesi.targetKat.includes(p.kategori));
+              if (paketDiSesiIni.length === 0) return null;
 
-                if (activeDurasiFilter !== "Semua Waktu") {
-                  paketDiSesiIni = paketDiSesiIni.filter(p => p.durasi === activeDurasiFilter);
-                }
-
-                if (paketDiSesiIni.length === 0) return null;
-
-                return (
-                  <div 
-                    key={kategoriSesi.id} 
-                    id={kategoriSesi.id} 
-                    className="space-y-5 sm:space-y-6 scroll-mt-28" 
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 border-b border-emerald-100 pb-3">
-                      <div>
-                        <h3 className="text-xl font-bold text-emerald-900">{kategoriSesi.nama}</h3>
-                        <p className="text-xs text-emerald-700/70 mt-1 font-medium">{kategoriSesi.desc}</p>
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-500 bg-emerald-50 px-3 py-1 rounded-full w-fit shrink-0">
-                        {paketDiSesiIni.length} Paket
-                      </span>
+              return (
+                <div 
+                  key={kategoriSesi.id} 
+                  id={kategoriSesi.id} 
+                  className="space-y-5 sm:space-y-6 scroll-mt-28" 
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 border-b border-emerald-100 pb-3">
+                    <div>
+                      <h3 className="text-xl font-bold text-emerald-900">{kategoriSesi.nama}</h3>
+                      <p className="text-xs text-emerald-700/70 mt-1 font-medium">{kategoriSesi.desc}</p>
                     </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-500 bg-emerald-50 px-3 py-1 rounded-full w-fit shrink-0">
+                      {paketDiSesiIni.length} Paket
+                    </span>
+                  </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                      {paketDiSesiIni.map((pkt) => (
-                        <Link 
-                          href={`/paket/${pkt.id}`} 
-                          key={pkt.id} 
-                          className="group flex items-center gap-3 sm:gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-sm transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5 relative"
-                        >
-                          <div className="w-24 h-28 sm:w-28 sm:h-32 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
-                            <Image 
-                              src={pkt.image} 
-                              alt={pkt.nama} 
-                              fill 
-                              className="object-cover transition-transform duration-700 group-hover:scale-110" 
-                              sizes="(max-width: 768px) 100px, 120px"
-                            />
-                            <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors"></div>
-                            <span className="absolute top-0 left-0 bg-stone-900/80 backdrop-blur-sm text-white text-[8px] font-black uppercase px-2 py-1 rounded-br-xl shadow-sm">
-                              {pkt.durasi}
-                            </span>
-                          </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                    {paketDiSesiIni.map((pkt) => (
+                      <Link 
+                        href={`/paket/${pkt.id}`} 
+                        key={pkt.id} 
+                        className="group flex items-center gap-3 sm:gap-4 bg-white p-3 rounded-2xl border border-stone-200 shadow-sm transition-all duration-300 hover:border-emerald-400 hover:shadow-md hover:-translate-y-0.5 relative"
+                      >
+                        <div className="w-24 h-28 sm:w-28 sm:h-32 relative rounded-xl overflow-hidden shrink-0 bg-stone-100">
+                          <Image 
+                            src={pkt.image} 
+                            alt={pkt.nama} 
+                            fill 
+                            className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                            sizes="(max-width: 768px) 100px, 120px"
+                          />
+                          <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors"></div>
+                          <span className="absolute top-0 left-0 bg-stone-900/80 backdrop-blur-sm text-white text-[8px] font-black uppercase px-2 py-1 rounded-br-xl shadow-sm">
+                            {pkt.durasi}
+                          </span>
+                        </div>
 
-                          <div className="flex-1 flex flex-col py-1 h-full justify-between overflow-hidden">
-                            <div>
-                              {pkt.label && (
-                                <div className="mb-1">
-                                  <span className="inline-block bg-amber-50 text-amber-700 border border-amber-200/60 text-[8px] font-black uppercase px-2 py-0.5 rounded-md shadow-sm">
-                                    {pkt.label}
-                                  </span>
-                                </div>
-                              )}
-                              <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight mt-0.5 group-hover:text-emerald-700 transition-colors truncate">
-                                {pkt.nama}
-                              </h4>
-                              <p className="text-[10px] sm:text-xs text-stone-500 line-clamp-2 mt-1 mb-2 leading-relaxed">
-                                {pkt.deskripsi}
-                              </p>
-                            </div>
-                            <div className="mt-auto flex justify-between items-end">
-                              <div className="flex flex-col">
-                                {pkt.hargaAsli && (
-                                  <span className="text-[9px] sm:text-[10px] text-rose-400/90 font-bold line-through decoration-rose-400/50 mb-0.5">
-                                    {pkt.hargaAsli}
-                                  </span>
-                                )}
-                                <span className="font-black text-emerald-700 text-sm sm:text-base leading-none">
-                                  {pkt.harga}
+                        <div className="flex-1 flex flex-col py-1 h-full justify-between overflow-hidden">
+                          <div>
+                            {pkt.label && (
+                              <div className="mb-1">
+                                <span className="inline-block bg-amber-50 text-amber-700 border border-amber-200/60 text-[8px] font-black uppercase px-2 py-0.5 rounded-md shadow-sm">
+                                  {pkt.label}
                                 </span>
                               </div>
-                              <span className="bg-emerald-50 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-lg transition-colors shrink-0 ml-2">
-                                Detail &rarr;
+                            )}
+                            <h4 className="font-bold text-stone-800 text-sm sm:text-base leading-tight mt-0.5 group-hover:text-emerald-700 transition-colors truncate">
+                              {pkt.nama}
+                            </h4>
+                            <p className="text-[10px] sm:text-xs text-stone-500 line-clamp-2 mt-1 mb-2 leading-relaxed">
+                              {pkt.deskripsi}
+                            </p>
+                          </div>
+                          <div className="mt-auto flex justify-between items-end">
+                            <div className="flex flex-col">
+                              {pkt.hargaAsli && (
+                                <span className="text-[9px] sm:text-[10px] text-rose-400/90 font-bold line-through decoration-rose-400/50 mb-0.5">
+                                  {pkt.hargaAsli}
+                                </span>
+                              )}
+                              <span className="font-black text-emerald-700 text-sm sm:text-base leading-none">
+                                {pkt.harga}
                               </span>
                             </div>
+                            <span className="bg-emerald-50 text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-lg transition-colors shrink-0 ml-2">
+                              Detail &rarr;
+                            </span>
                           </div>
-                        </Link>
-                      ))}
-                    </div>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                );
-              })}
-            </div>
-
+                </div>
+              );
+            })}
           </div>
-        </section>
+
+        </div>
+      </section>
+      
+      {/* 3.5 BANNER CUSTOM TRIP (JARING PENGAMAN) */}
+      <section className="relative w-full px-4 py-16 sm:py-20 sm:px-6 lg:px-8 text-center text-white overflow-hidden bg-stone-900 border-y border-stone-800">
+        <Image src="/rafting.jpg" alt="Custom Trip Background" fill className="object-cover opacity-30" />
+        <div className="absolute inset-0 bg-stone-900/85 backdrop-blur-[2px]"></div> 
         
-        {/* 3.5 BANNER CUSTOM TRIP (JARING PENGAMAN) */}
-        <section className="relative w-full px-4 py-16 sm:py-20 sm:px-6 lg:px-8 text-center text-white overflow-hidden bg-stone-900 border-y border-stone-800">
-          <Image src="/rafting.jpg" alt="Custom Trip Background" fill className="object-cover opacity-30" />
-          <div className="absolute inset-0 bg-stone-900/85 backdrop-blur-[2px]"></div> 
-          
-          <div className="relative z-10 mx-auto max-w-3xl space-y-5">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-emerald-400">Belum Menemukan Kombinasi yang Pas?</h2>
-            <p className="text-stone-300 text-sm sm:text-base leading-relaxed mx-auto max-w-2xl font-medium">
-              Setiap rombongan punya gaya liburannya masing-masing. Jangan kompromi! Rancang itinerary Anda sendiri menggunakan Kalkulator Custom Trip kami secara langsung dan transparan.
-            </p>
-            <div className="pt-4">
-              <Link href="/custom-trip" className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg transition hover:bg-emerald-500 hover:-translate-y-1">
-                Buka Kalkulator Custom Trip
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-              </Link>
-            </div>
+        <div className="relative z-10 mx-auto max-w-3xl space-y-5">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-emerald-400">Belum Menemukan Kombinasi yang Pas?</h2>
+          <p className="text-stone-300 text-sm sm:text-base leading-relaxed mx-auto max-w-2xl font-medium">
+            Setiap rombongan punya gaya liburannya masing-masing. Jangan kompromi! Rancang itinerary Anda sendiri menggunakan Kalkulator Custom Trip kami secara langsung dan transparan.
+          </p>
+          <div className="pt-4">
+            <Link href="/custom-trip" className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg transition hover:bg-emerald-500 hover:-translate-y-1">
+              Buka Kalkulator Custom Trip
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 4. TRUST SECTION RINGKAS */}
-        <section className="bg-white border-b border-stone-200 px-4 py-12 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 divide-y sm:divide-y-0 sm:divide-x divide-stone-100">
-            <div className="flex flex-col items-center text-center sm:px-4 pt-6 sm:pt-0 first:pt-0">
-              <span className="text-3xl mb-3">🦺</span>
-              <h3 className="text-sm font-bold text-stone-800 mb-1">Standar Keamanan</h3>
-              <p className="text-[11px] text-stone-500 font-medium">Peralatan secara rutin dirawat dan dicek sebelum digunakan.</p>
-            </div>
-            <div className="flex flex-col items-center text-center sm:px-4 pt-6 sm:pt-0">
-              <span className="text-3xl mb-3">🛡️</span>
-              <h3 className="text-sm font-bold text-stone-800 mb-1">Asuransi BUMIDA</h3>
-              <p className="text-[11px] text-stone-500 font-medium">Seluruh aktivitas dilindungi penuh oleh asuransi resmi.</p>
-            </div>
-            <div className="flex flex-col items-center text-center sm:px-4 pt-6 sm:pt-0">
-              <span className="text-3xl mb-3">👨‍✈️</span>
-              <h3 className="text-sm font-bold text-stone-800 mb-1">Pemandu Ahli</h3>
-              <p className="text-[11px] text-stone-500 font-medium">Tim tersertifikasi yang sigap, ramah, dan berpengalaman.</p>
-            </div>
+      {/* 4. TRUST SECTION RINGKAS */}
+      <section className="bg-white border-b border-stone-200 px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-10 divide-y sm:divide-y-0 sm:divide-x divide-stone-100">
+          <div className="flex flex-col items-center text-center sm:px-4 pt-6 sm:pt-0 first:pt-0">
+            <span className="text-3xl mb-3">🦺</span>
+            <h3 className="text-sm font-bold text-stone-800 mb-1">Standar Keamanan</h3>
+            <p className="text-[11px] text-stone-500 font-medium">Peralatan secara rutin dirawat dan dicek sebelum digunakan.</p>
           </div>
-        </section>
-
-        {/* 5. FAQ (PERTANYAAN UMUM) */}
-        <section className="px-4 py-16 sm:py-24 sm:px-6 lg:px-8 bg-stone-50">
-          <div className="mx-auto max-w-3xl">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Pertanyaan Seputar Paket</h2>
-              <p className="text-sm text-stone-500 font-medium mt-2">Biar liburan makin tenang, simak jawaban dari pertanyaan yang sering diajukan.</p>
-            </div>
-            <div className="bg-white rounded-[2rem] p-6 sm:p-10 shadow-sm border border-stone-200">
-              <FAQItem 
-                q="Apakah Rafting aman untuk pemula dan anak-anak?" 
-                a="Sangat aman! Arus sungai Palayangan cocok untuk pemula. Peserta anak-anak dengan usia minimal 7 tahun diperbolehkan ikut karena akan dipandu 1 instruktur ahli di setiap perahu." 
-              />
-              <FAQItem 
-                q="Apakah ada minimal orang untuk booking Paket Combo?" 
-                a="Untuk paket Combo Keluarga minimal booking adalah 4-5 Pax (orang). Jika peserta kurang dari kuota minimum, harga dapat disesuaikan atau bisa digabung (join trip) dengan rombongan lain." 
-              />
-              <FAQItem 
-                q="Bagaimana jika turun hujan?" 
-                a="Aktivitas seperti Rafting dan Offroad justru semakin seru saat gerimis! Namun jika cuaca dinilai membahayakan keselamatan oleh instruktur kami, jadwal akan ditunda sementara hingga aman." 
-              />
-              <FAQItem 
-                q="Apakah bisa request jadwal (itinerary) sendiri?" 
-                a="Tentu saja! Anda bisa membuka halaman Kalkulator Custom Trip kami atau langsung chat admin untuk merakit jadwal liburan sesuai keinginan Anda tanpa tambahan biaya konsultasi." 
-              />
-            </div>
+          <div className="flex flex-col items-center text-center sm:px-4 pt-6 sm:pt-0">
+            <span className="text-3xl mb-3">🛡️</span>
+            <h3 className="text-sm font-bold text-stone-800 mb-1">Asuransi BUMIDA</h3>
+            <p className="text-[11px] text-stone-500 font-medium">Seluruh aktivitas dilindungi penuh oleh asuransi resmi.</p>
           </div>
-        </section>
+          <div className="flex flex-col items-center text-center sm:px-4 pt-6 sm:pt-0">
+            <span className="text-3xl mb-3">👨‍✈️</span>
+            <h3 className="text-sm font-bold text-stone-800 mb-1">Pemandu Ahli</h3>
+            <p className="text-[11px] text-stone-500 font-medium">Tim tersertifikasi yang sigap, ramah, dan berpengalaman.</p>
+          </div>
+        </div>
+      </section>
 
-        {/* 6. FLOATING ACTION BUTTON (WA) */}
-        <a 
-          href={generateWALink("Halo Go Pangalengan, saya mau tanya detail harga dan ketersediaan paket di Katalog Wisata nih.")} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl hover:bg-emerald-600 hover:scale-110 transition-all duration-300"
-          aria-label="Chat WhatsApp"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-            <path d="M12.013 2.015c-5.506 0-9.988 4.473-9.99 9.98a9.964 9.964 0 001.332 5.01L2 22l5.148-1.352a9.97 9.97 0 004.865 1.26h.004c5.503 0 9.985-4.475 9.987-9.983 0-2.668-1.04-5.176-2.926-7.065A9.916 9.916 0 0012.013 2.015zM12.018 20c-1.545 0-3.056-.416-4.382-1.202l-.314-.187-3.256.853.867-3.174-.205-.327a8.318 8.318 0 01-1.274-4.444c.002-4.606 3.75-8.354 8.358-8.356 2.235.001 4.335.872 5.914 2.454a8.336 8.336 0 012.449 5.912c-.002 4.607-3.748 8.354-8.354 8.354zm4.584-6.262c-.251-.126-1.488-.736-1.718-.82-.23-.085-.398-.126-.565.126-.168.252-.647.82-.793.988-.146.168-.293.189-.544.063-.251-.126-1.06-.39-2.018-1.196-.745-.626-1.25-1.4-1.396-1.652-.146-.252-.016-.388.11-.514.113-.112.251-.293.377-.44.126-.146.168-.252.251-.419.084-.168.042-.315-.021-.44-.063-.126-.565-1.363-.774-1.867-.203-.491-.41-.424-.565-.432-.146-.008-.314-.01-.482-.01s-.44.063-.67.315c-.23.252-.88 8.61 10.364 8.61 10.364zm0 0c-1.11 1.05-2.908 1.408-4.08 1.408-1.504 0-3.41-.532-4.836-1.567l-3.21-.634z" />
-          </svg>
-        </a>
-      </div>
-    </>
+      {/* 5. FAQ (PERTANYAAN UMUM) */}
+      <section className="px-4 py-16 sm:py-24 sm:px-6 lg:px-8 bg-stone-50">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold tracking-tight text-stone-800 sm:text-3xl">Pertanyaan Seputar Paket</h2>
+            <p className="text-sm text-stone-500 font-medium mt-2">Biar liburan makin tenang, simak jawaban dari pertanyaan yang sering diajukan.</p>
+          </div>
+          <div className="bg-white rounded-[2rem] p-6 sm:p-10 shadow-sm border border-stone-200">
+            <FAQItem 
+              q="Apakah Rafting aman untuk pemula dan anak-anak?" 
+              a="Sangat aman! Arus sungai Palayangan cocok untuk pemula. Peserta anak-anak dengan usia minimal 7 tahun diperbolehkan ikut karena akan dipandu 1 instruktur ahli di setiap perahu." 
+            />
+            <FAQItem 
+              q="Apakah ada minimal orang untuk booking Paket Combo?" 
+              a="Untuk paket Combo Keluarga minimal booking adalah 4-5 Pax (orang). Jika peserta kurang dari kuota minimum, harga dapat disesuaikan atau bisa digabung (join trip) dengan rombongan lain." 
+            />
+            <FAQItem 
+              q="Bagaimana jika turun hujan?" 
+              a="Aktivitas seperti Rafting dan Offroad justru semakin seru saat gerimis! Namun jika cuaca dinilai membahayakan keselamatan oleh instruktur kami, jadwal akan ditunda sementara hingga aman." 
+            />
+            <FAQItem 
+              q="Apakah bisa request jadwal (itinerary) sendiri?" 
+              a="Tentu saja! Anda bisa membuka halaman Kalkulator Custom Trip kami atau langsung chat admin untuk merakit jadwal liburan sesuai keinginan Anda tanpa tambahan biaya konsultasi." 
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FLOATING ACTION BUTTON (WA) */}
+      <a 
+        href={generateWALink("Halo Go Pangalengan, saya mau tanya detail harga dan ketersediaan paket di Katalog Wisata nih.")} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl hover:bg-emerald-600 hover:scale-110 transition-all duration-300"
+        aria-label="Chat WhatsApp"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+          <path d="M12.013 2.015c-5.506 0-9.988 4.473-9.99 9.98a9.964 9.964 0 001.332 5.01L2 22l5.148-1.352a9.97 9.97 0 004.865 1.26h.004c5.503 0 9.985-4.475 9.987-9.983 0-2.668-1.04-5.176-2.926-7.065A9.916 9.916 0 0012.013 2.015zM12.018 20c-1.545 0-3.056-.416-4.382-1.202l-.314-.187-3.256.853.867-3.174-.205-.327a8.318 8.318 0 01-1.274-4.444c.002-4.606 3.75-8.354 8.358-8.356 2.235.001 4.335.872 5.914 2.454a8.336 8.336 0 012.449 5.912c-.002 4.607-3.748 8.354-8.354 8.354zm4.584-6.262c-.251-.126-1.488-.736-1.718-.82-.23-.085-.398-.126-.565.126-.168.252-.647.82-.793.988-.146.168-.293.189-.544.063-.251-.126-1.06-.39-2.018-1.196-.745-.626-1.25-1.4-1.396-1.652-.146-.252-.016-.388.11-.514.113-.112.251-.293.377-.44.126-.146.168-.252.251-.419.084-.168.042-.315-.021-.44-.063-.126-.565-1.363-.774-1.867-.203-.491-.41-.424-.565-.432-.146-.008-.314-.01-.482-.01s-.44.063-.67.315c-.23.252-.88 8.61 10.364 8.61 10.364zm0 0c-1.11 1.05-2.908 1.408-4.08 1.408-1.504 0-3.41-.532-4.836-1.567l-3.21-.634z" />
+        </svg>
+      </a>
+    </div>
   );
 }
