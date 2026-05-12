@@ -139,7 +139,7 @@ const masterKatalog = [
       "Uang saku ekstra (Paket belum termasuk makan siang & tiket parkir)"
     ],
     label: "Favorit HRD", 
-    image: "/teambuilding1.jpeg", 
+    image: "/teambuilding1.jpg", 
     deskripsi: "Rangkaian permainan interaktif yang dirancang khusus untuk memecah ketegangan (ice breaking), membangun solidaritas, dan menumbuhkan kerja sama tim. Sangat direkomendasikan untuk rombongan keluarga besar maupun divisi perusahaan yang ingin me-refresh kekompakan." 
   },
   { 
@@ -242,7 +242,7 @@ const masterKatalog = [
       "Sunblock, minyak telon/kayu putih, dan obat-obatan pribadi keluarga"
     ],
     label: "Lebih Hemat", 
-    image: "/keluarga-hemat.JPG", 
+    image: "/keluarga-hemat.jpg", 
     deskripsi: "Berikan senyuman dan liburan terbaik untuk keluarga tanpa harus merogoh kocek dalam. Paket All-In One Day Trip ini dirancang khusus untuk menciptakan quality time yang bebas ribet. Anda sekeluarga tinggal datang, bermain aman, makan siang dengan nikmat, dan pulang membawa puluhan foto kenangan manis." 
   },
 
@@ -331,7 +331,7 @@ const masterKatalog = [
       "Kantong plastik tebal untuk memisahkan pakaian kotor",
       "Flashdisk/Hardisk dari panitia untuk mengamankan file dokumentasi mentah"
     ],
-    image: "/corporate-1d-a.jpeg", 
+    image: "/corporate-1d-a.jpg", 
     deskripsi: "Satu hari penuh aksi untuk melepaskan penat dari rutinitas kantor! Kombinasi sempurna antara petualangan air, lumpur (ATV), dan strategi tempur (Paintball) yang akan memompa semangat dan energi baru bagi tim Anda." 
   },
   { 
@@ -357,7 +357,7 @@ const masterKatalog = [
       "Topi & Sunblock pelindung dari terik matahari"
     ],
     label: "⚡ Favorit HRD", 
-    image: "/corporate-1d-b.JPG", 
+    image: "/corporate-1d-b.jpg", 
     deskripsi: "Senjata rahasia para HRD! Paket ini dirancang khusus untuk meruntuhkan sekat senioritas, mencairkan kekakuan antar divisi (Ice Breaking), melatih komunikasi tim di bawah tekanan (Paintball), dan diakhiri dengan tawa lepas bersama di derasnya sungai (Rafting)." 
   },
   { 
@@ -410,7 +410,7 @@ const masterKatalog = [
       "Cemilan ekstra atau bahan makanan (jika ingin masak/bakar-bakar sendiri malam hari)",
       "Obat-obatan pribadi yang spesifik"
     ],
-    image: "/corporate-1n-a.JPG", 
+    image: "/corporate-1n-a.jpg", 
     deskripsi: "Solusi cerdas untuk rombongan mahasiswa, komunitas, atau perusahaan dengan budget ketat. Paket ekonomis ini memastikan Anda tetap mendapatkan pengalaman petualangan maksimal (Rafting & Paintball) serta kehangatan berkumpul mengelilingi api unggun di malam hari." 
   },
   { 
@@ -437,7 +437,7 @@ const masterKatalog = [
       "Flashdisk berkapasitas besar (dari panitia) untuk file dokumentasi"
     ],
     label: "Bestseller", 
-    image: "/corporate-1n-b.JPG", 
+    image: "/corporate-1n-b.jpg", 
     deskripsi: "Standar Emas (Gold Standard) untuk Outing Perusahaan! Bebaskan panitia dari rasa pusing. Kami urus jadwal dari Anda datang hingga pulang. Siang hari dipacu adrenalinnya, malam hari dimanjakan dengan lezatnya Kambing Guling sambil bernyanyi bersama iringan Live Music. Sempurna!" 
   },
   { 
@@ -511,7 +511,7 @@ const masterKatalog = [
       "Flashdisk berkapasitas besar untuk menerima ratusan file foto & video resolusi tinggi"
     ],
     label: "⭐ VIP", 
-    image: "/corporate-vip.JPG", 
+    image: "/corporate-vip.jpg", 
     deskripsi: "Layanan karpet merah khusus untuk Jajaran Direksi (BOD), Manajer, atau tim dengan pencapaian target tertinggi. Nikmati kemewahan penginapan VIP, menu makan berkelas, hingga dokumentasi megah dari udara menggunakan Drone. Kami melayani Anda layaknya keluarga kerajaan selama di Pangalengan." 
   },
   // ─── FAMILY CAMP / GLAMPING MENGINAP (2 HARI 1 MALAM) ───
@@ -537,7 +537,7 @@ const masterKatalog = [
       "Baju ganti cadangan untuk aktivitas Rafting & ATV keesokan harinya",
       "Powerbank (Meskipun ada aliran listrik, powerbank berguna saat di luar tenda)"
     ],
-    image: "/family-camp-a.JPG", 
+    image: "/family-camp-a.jpg", 
     deskripsi: "Camping tanpa ribet! Nikmati suasana malam bertabur bintang dan syahdunya api unggun di depan tenda estetik yang sudah kami siapkan lengkap dengan kasur empuk. Pagi harinya, Anda langsung disambut dengan rentetan petualangan seru melintasi air, udara, dan lumpur daratan." 
   },
   { 
@@ -563,7 +563,7 @@ const masterKatalog = [
       "Obat-obatan pribadi keluarga"
     ],
     label: "Rekomendasi", 
-    image: "/family-camp-b.JPG",  
+    image: "/family-camp-b.jpg",  
     deskripsi: "Kasta tertinggi dari paket Family Camp kami. Ganti ATV dengan sensasi menembus rimbunnya hutan pinus menggunakan mobil tangguh Offroad Land Rover. Pilihan paling sempurna dan estetik bagi keluarga yang mencari harmoni antara ketenangan tidur di alam dan adrenalin tinggi di siang hari." 
   },
   { 

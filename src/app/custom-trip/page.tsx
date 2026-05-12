@@ -6,14 +6,14 @@ import { masterPenginapan } from "@/data/penginapan";
 
 // ─── DATA MINI KATALOG & AKTIVITAS ───
 const miniKatalog = [
-  { id: "paket-wisata-keluarga-hemat", nama: "Hemat & Praktis", durasi: "1 Hari", hargaNum: 199000, hargaTxt: "Rp 199.000", image: "/keluarga-hemat.JPG" },
+  { id: "paket-wisata-keluarga-hemat", nama: "Hemat & Praktis", durasi: "1 Hari", hargaNum: 199000, hargaTxt: "Rp 199.000", image: "/keluarga-hemat.jpg" },
   { id: "paket-wisata-keluarga-seru", nama: "Seru Maksimal (ATV)", durasi: "1 Hari", hargaNum: 299000, hargaTxt: "Rp 299.000", image: "/keluarga-seru.jpg" },
-  { id: "paket-gathering-perusahaan-1-hari", nama: "Synergy Build", durasi: "1 Hari", hargaNum: 350000, hargaTxt: "Rp 350.000", image: "/corporate-1d-b.JPG" },
+  { id: "paket-gathering-perusahaan-1-hari", nama: "Synergy Build", durasi: "1 Hari", hargaNum: 350000, hargaTxt: "Rp 350.000", image: "/corporate-1d-b.jpg" },
   { id: "paket-outing-corporate-offroad-1-hari", nama: "Xtreme Offroad", durasi: "1 Hari", hargaNum: 549000, hargaTxt: "Rp 549.000", image: "/corporate-1n-c.jpg" },
-  { id: "paket-outing-kantor-2-hari-1-malam-relax", nama: "Relax & Retreat 2D", durasi: "2 Hari", hargaNum: 200000, hargaTxt: "Rp 200.000", image: "/teambuilding1.jpeg" },
+  { id: "paket-outing-kantor-2-hari-1-malam-relax", nama: "Relax & Retreat 2D", durasi: "2 Hari", hargaNum: 200000, hargaTxt: "Rp 200.000", image: "/teambuilding1.jpg" },
   { id: "paket-camping-keluarga-pangalengan", nama: "Classic Glamping", durasi: "2 Hari", hargaNum: 395000, hargaTxt: "Rp 395.000", image: "/flyingfox.jpg" },
-  { id: "paket-outing-perusahaan-2-hari-1-malam-bestseller", nama: "Feast & Fun 2D", durasi: "2 Hari", hargaNum: 650000, hargaTxt: "Rp 650.000", image: "/corporate-1n-b.JPG" },
-  { id: "paket-gathering-perusahaan-vip-premium", nama: "VIP Executive 2D", durasi: "2 Hari", hargaNum: 1099000, hargaTxt: "Rp 1.099.000", image: "/corporate-vip.JPG" }
+  { id: "paket-outing-perusahaan-2-hari-1-malam-bestseller", nama: "Feast & Fun 2D", durasi: "2 Hari", hargaNum: 650000, hargaTxt: "Rp 650.000", image: "/corporate-1n-b.jpg" },
+  { id: "paket-gathering-perusahaan-vip-premium", nama: "VIP Executive 2D", durasi: "2 Hari", hargaNum: 1099000, hargaTxt: "Rp 1.099.000", image: "/corporate-vip.jpg" }
 ];
 
 const aktivitasSatuan = [

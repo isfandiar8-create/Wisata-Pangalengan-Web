@@ -302,7 +302,7 @@ export const masterArtikel = [
     kategori: "Itinerary & Rute",
     tanggal: "10 Mei 2026",
     waktuBaca: "6 Menit Baca",
-    image: "/corporate-1n-b.JPG", // Gambar rombongan Feast & Fun atau Land Rover
+    image: "/corporate-1n-b.jpg", // Gambar rombongan Feast & Fun atau Land Rover
     excerpt: "Bingung menyusun jadwal liburan dari Jakarta? Contek itinerary 2D1N paling seimbang ini. Bebas macet, anti-ribet, dan langsung bisa terima beres!",
     content: (
       <>
@@ -649,7 +649,7 @@ export const masterArtikel = [
     kategori: "Info Penginapan", 
     tanggal: "10 Mei 2026",
     waktuBaca: "6 Menit Baca",
-    image: "/family-camp-a.JPG", 
+    image: "/family-camp-a.jpg", 
     excerpt: "Lupakan kamar hotel yang membosankan. Cari tahu bedanya Glamping Riverside dan Camping Situ Cileunca, lengkap dengan bocoran harganya di sini!",
     content: (
       <>
@@ -668,7 +668,7 @@ export const masterArtikel = [
           <span className="text-2xl sm:text-3xl">🌊</span> Glamping Riverside (Pinggir Sungai)
         </h2>
         <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-5 shadow-sm">
-          <img src="/family-camp-b.JPG" alt="Glamping Riverside Pangalengan" className="w-full h-full object-cover" loading="lazy" />
+          <img src="/family-camp-b.jpg" alt="Glamping Riverside Pangalengan" className="w-full h-full object-cover" loading="lazy" />
         </div>
         <p className="text-stone-600 text-sm sm:text-base leading-relaxed mb-4">
           Ini dia tren akomodasi yang sedang merajai lini masa media sosial. Area hutan pinus yang dilalui aliran Sungai Palayangan kini disulap menjadi kawasan elit perkemahan modern.
@@ -896,7 +896,7 @@ export const masterArtikel = [
             </a>
             <a href="/penginapan/penginapan-saung-gadis" className="flex items-center gap-4 bg-white p-3 rounded-xl border border-stone-200 hover:border-emerald-400 hover:shadow-md transition group">
               <div className="w-16 h-16 bg-stone-200 rounded-lg overflow-hidden shrink-0">
-                <img src="/saung-gadis.JPG" alt="Saung Gadis" className="w-full h-full object-cover group-hover:scale-110 transition" />
+                <img src="/saung-gadis.jpg" alt="Saung Gadis" className="w-full h-full object-cover group-hover:scale-110 transition" />
               </div>
               <div>
                 <strong className="text-stone-800 block text-sm group-hover:text-emerald-700 transition">Saung Gadis</strong>

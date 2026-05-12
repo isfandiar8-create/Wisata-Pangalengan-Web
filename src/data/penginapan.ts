@@ -56,7 +56,7 @@ export const masterPenginapan = [
         "TV, WiFi, Dispenser, Area Parkir & CCTV"
       ],
       label: "Bestseller",
-      image: "/saung-gadis.JPG", // Menggunakan image ekstraksi
+      image: "/saung-gadis.jpg", // Menggunakan image ekstraksi
       deskripsi: "Cottage premium berkapasitas besar dengan harga yang sangat bersahabat. Punya area khusus untuk BBQ di malam hari dan akses kolam renang. Tersedia 2 unit yang bisa disewa bersamaan untuk rombongan lebih besar!"
     },
     {
