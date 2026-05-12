@@ -7,7 +7,7 @@ import { masterPenginapan } from "@/data/penginapan";
 // ─── DATA MINI KATALOG & AKTIVITAS ───
 const miniKatalog = [
   { id: "paket-wisata-keluarga-hemat", nama: "Hemat & Praktis", durasi: "1 Hari", hargaNum: 199000, hargaTxt: "Rp 199.000", image: "/keluarga-hemat.jpg" },
-  { id: "paket-wisata-keluarga-seru", nama: "Seru Maksimal (ATV)", durasi: "1 Hari", hargaNum: 299000, hargaTxt: "Rp 299.000", image: "/keluarga-seru.jpg" },
+  { id: "paket-wisata-keluarga-seru", nama: "Seru Maksimal (ATV)", durasi: "1 Hari", hargaNum: 299000, hargaTxt: "Rp 299.000", image: "/atv.jpg" },
   { id: "paket-gathering-perusahaan-1-hari", nama: "Synergy Build", durasi: "1 Hari", hargaNum: 350000, hargaTxt: "Rp 350.000", image: "/corporate-1d-b.jpg" },
   { id: "paket-outing-corporate-offroad-1-hari", nama: "Xtreme Offroad", durasi: "1 Hari", hargaNum: 549000, hargaTxt: "Rp 549.000", image: "/corporate-1n-c.jpg" },
   { id: "paket-outing-kantor-2-hari-1-malam-relax", nama: "Relax & Retreat 2D", durasi: "2 Hari", hargaNum: 200000, hargaTxt: "Rp 200.000", image: "/teambuilding1.jpg" },
@@ -18,7 +18,7 @@ const miniKatalog = [
 
 const aktivitasSatuan = [
   { id: "paket-rafting-pangalengan", nama: "Rafting Arus Deras", harga: "Rp 165.000", image: "/rafting.jpg", vibe: "Basah-basahan" },
-  { id: "sewa-atv-pangalengan", nama: "ATV Adventure", harga: "Rp 175.000", image: "/keluarga-seru.jpg", vibe: "Ekstrem & Darat" },
+  { id: "sewa-atv-pangalengan", nama: "ATV Adventure", harga: "Rp 175.000", image: "/atv.jpg", vibe: "Ekstrem & Darat" },
   { id: "offroad-land-rover-pangalengan", nama: "Offroad Land Rover", harga: "Rp 220.000", image: "/offroad.jpg", vibe: "Ekstrem & Darat" },
   { id: "paket-paintball-pangalengan", nama: "Paintball Battle", harga: "Rp 85.000", image: "/paintball.jpg", vibe: "Kompetisi Tim" },
   { id: "tour-perahu-situ-cileunca", nama: "Tour Perahu Danau", harga: "Rp 20.000", image: "/perahu.jpg", vibe: "Santai & Healing" },

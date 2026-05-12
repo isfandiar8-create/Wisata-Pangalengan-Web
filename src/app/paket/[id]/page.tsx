@@ -64,7 +64,7 @@ const masterKatalog = [
       "Handuk dan perlengkapan mandi pribadi"
     ],
     label: "Super Seru", 
-    image: "/keluarga-seru.jpg", 
+    image: "/atv.jpg", 
     deskripsi: "Wisata adventure memacu adrenalin menjelajahi hamparan perkebunan teh dan pegunungan dengan lintasan sepanjang 4 KM. Ditemani udara sejuk Pangalengan dan tour guide profesional." 
   },
   { 
@@ -271,7 +271,7 @@ const masterKatalog = [
       "Sepatu tertutup yang siap kotor (untuk ATV) & sandal gunung (untuk Rafting)", 
       "Kantong plastik tebal untuk memisahkan pakaian basah dan pakaian berlumpur"
     ],
-    image: "/keluarga-seru.jpg", 
+    image: "/atv.jpg", 
     deskripsi: "Tingkatkan level petualangan akhir pekan keluarga Anda! Rasakan sensasi 'Triple Action': membelah angin di atas danau (Flying Fox), memacu adrenalin di jalur berlumpur (ATV), dan menantang arus sungai (Rafting). Paket komplit yang dijamin akan membuat anak-anak lepas dari layar gadget mereka seharian penuh." 
   },
 

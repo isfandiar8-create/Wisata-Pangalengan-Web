@@ -79,7 +79,7 @@ function LiveRollingCounter() {
 // ─── DATA: 8 Petualangan ─────────────────────────────────────────
 const kategoriPetualangan: PaketItem[] = [
   { id: "paket-rafting-pangalengan", nama: "Rafting Palayangan", harga: "Rp 190.000", hargaAsli: "", hargaDiskon: "Rp 165.000", fasilitas: [], label: "⚡ Terlaris", image: "/rafting.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
-  { id: "sewa-atv-pangalengan", nama: "ATV Adventure", harga: "Rp 175.000", hargaAsli: "", hargaDiskon: "Rp 175.000", fasilitas: [], image: "/keluarga-seru.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
+  { id: "sewa-atv-pangalengan", nama: "ATV Adventure", harga: "Rp 175.000", hargaAsli: "", hargaDiskon: "Rp 175.000", fasilitas: [], image: "/atv.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
   { id: "offroad-land-rover-pangalengan", nama: "Offroad Land Rover", harga: "Rp 220.000", hargaAsli: "", hargaDiskon: "Rp 220.000", fasilitas: [], label: "Seru!", image: "/offroad.jpg", deskripsi: "Eksplorasi menembus hutan pinus liar menggunakan mobil tangguh." },
   { id: "paket-paintball-pangalengan", nama: "Paintball Battle", harga: "Rp 85.000", hargaAsli: "", hargaDiskon: "Rp 85.000", fasilitas: [], image: "/paintball.jpg", deskripsi: "Simulasi tempur di tengah hutan. Strategi, ketegangan, dan keseruan tim." },
   { id: "paket-team-building-fun-games", nama: "Team Building", harga: "Rp 99.000", hargaAsli: "", hargaDiskon: "Rp 99.000", fasilitas: [], image: "/teambuilding1.jpg", deskripsi: "Rangkaian games seru untuk merekatkan kekompakan dan kehangatan tim." },
@@ -90,7 +90,7 @@ const kategoriPetualangan: PaketItem[] = [
 
 const paketCombo = [
   { id: "paket-wisata-keluarga-hemat", nama: "Hemat & Praktis", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", fasilitas: ["Rafting & Flying Fox", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-hemat.jpg" },
-  { id: "paket-wisata-keluarga-seru", nama: "Seru Maksimal", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV Adventure", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/keluarga-seru.jpg" },
+  { id: "paket-wisata-keluarga-seru", nama: "Seru Maksimal", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", fasilitas: ["Rafting & Flying Fox", "ATV Adventure", "Makan & Air Mineral", "Dokumentasi Foto"], color: "text-sky-700 bg-sky-100", image: "/atv.jpg" },
   { id: "paket-wisata-keluarga-premium", nama: "Puas Eksplorasi", tag: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", fasilitas: ["Rafting & Flying Fox", "Offroad Land Rover", "Makan & Air", "Dokumentasi"], color: "text-sky-700 bg-sky-100", image: "/keluarga-puas.jpg" },
   { id: "paket-outing-kantor-1-hari-adventure", nama: "Adventure Plus", tag: "Corporate", durasi: "1 Hari", harga: "Rp 360.000", fasilitas: ["Rafting & Paintball", "ATV", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-a.jpg" },
   { id: "paket-gathering-perusahaan-1-hari", nama: "Synergy Build", tag: "Corporate", durasi: "1 Hari", harga: "Rp 350.000", fasilitas: ["Rafting & Paintball", "Team Building", "Makan Siang", "Dokumentasi"], color: "text-slate-700 bg-slate-100", image: "/corporate-1d-b.jpg" },

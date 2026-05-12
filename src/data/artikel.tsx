@@ -467,7 +467,7 @@ export const masterArtikel = [
     kategori: "Info Wahana", 
     tanggal: "10 Mei 2026",
     waktuBaca: "5 Menit Baca",
-    image: "/keluarga-seru.jpg", 
+    image: "/atv.jpg", 
     excerpt: "Jangan cuma duduk ngopi! Cek daftar harga terbaru 2026 untuk wahana ekstrem di Pangalengan: Offroad, ATV, Paintball, dan Flying Fox.",
     content: (
       <>
@@ -523,7 +523,7 @@ export const masterArtikel = [
           <span className="text-2xl sm:text-3xl">🏎️</span> Pacu Adrenalin Sendiri: ATV Adventure
         </h2>
         <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-xl sm:rounded-2xl overflow-hidden mb-4 sm:mb-5 shadow-sm group">
-          <img src="/keluarga-seru.jpg" alt="Sewa ATV Pangalengan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+          <img src="/atv.jpg" alt="Sewa ATV Pangalengan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
           <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-emerald-600/90 backdrop-blur-sm text-white text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full shadow-md">
             Aktivitas Terfavorit
           </div>

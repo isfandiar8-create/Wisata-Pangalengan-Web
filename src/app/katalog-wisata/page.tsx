@@ -8,7 +8,7 @@ import { generateWALink } from "@/config/contact";
 // ─── DATA: AKTIVITAS SATUAN ───────────────────────────────────────────────
 const aktivitasSatuan = [
   { id: "paket-rafting-pangalengan", nama: "Rafting Palayangan", kategori: "Air", harga: "Rp 165.000", hargaAsli: "Rp 200.000", label: "⚡ Terlaris", image: "/rafting.jpg", deskripsi: "Taklukkan derasnya arus. Tawa lepas dan adrenalin bersatu di alam bebas." },
-  { id: "sewa-atv-pangalengan", nama: "ATV Adventure", kategori: "Darat", harga: "Rp 175.000", hargaAsli: "Rp 240.000", image: "/keluarga-seru.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
+  { id: "sewa-atv-pangalengan", nama: "ATV Adventure", kategori: "Darat", harga: "Rp 175.000", hargaAsli: "Rp 240.000", image: "/atv.jpg", deskripsi: "Pacu adrenalin di jalur berlumpur dan hamparan kebun teh yang menantang." },
   { id: "offroad-land-rover-pangalengan", nama: "Offroad Land Rover", kategori: "Darat", harga: "Rp 220.000", hargaAsli: "Rp 300.000", label: "Seru!", image: "/offroad.jpg", deskripsi: "Eksplorasi menembus hutan pinus liar menggunakan mobil tangguh." },
   { id: "paket-paintball-pangalengan", nama: "Paintball Battle", kategori: "Grup & Game", harga: "Rp 85.000", hargaAsli: "Rp 125.000", image: "/paintball.jpg", deskripsi: "Simulasi tempur di tengah hutan. Strategi, ketegangan, dan keseruan tim." },
   { id: "paket-team-building-fun-games", nama: "Team Building", kategori: "Grup & Game", harga: "Rp 99.000", hargaAsli: "Rp 150.000", image: "/teambuilding1.jpg", deskripsi: "Rangkaian games seru untuk merekatkan kekompakan dan kehangatan tim." },
@@ -21,7 +21,7 @@ const aktivitasSatuan = [
 const paketCombo = [
   // KELUARGA
   { id: "paket-wisata-keluarga-hemat", nama: "Hemat & Praktis", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 199.000", hargaAsli: "Rp 250.000", label: "Lebih Hemat", image: "/keluarga-hemat.jpg", deskripsi: "Rafting, Flying Fox, Makan & Dokumentasi. Paket dasar terlengkap." },
-  { id: "paket-wisata-keluarga-seru", nama: "Seru Maksimal", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", hargaAsli: "Rp 380.000", image: "/keluarga-seru.jpg", deskripsi: "Ekstra petualangan dengan ATV! Pilihan pas untuk keluarga petualang." },
+  { id: "paket-wisata-keluarga-seru", nama: "Seru Maksimal", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 299.000", hargaAsli: "Rp 380.000", image: "/atv.jpg", deskripsi: "Ekstra petualangan dengan ATV! Pilihan pas untuk keluarga petualang." },
   { id: "paket-wisata-keluarga-premium", nama: "Puas Eksplorasi", kategori: "Keluarga", durasi: "1 Hari", harga: "Rp 410.000", hargaAsli: "Rp 480.000", label: "Rekomendasi", image: "/keluarga-puas.jpg", deskripsi: "Rafting, Flying Fox & Offroad Land Rover. Paket premium tanpa lelah." },
 
   // CORPORATE
