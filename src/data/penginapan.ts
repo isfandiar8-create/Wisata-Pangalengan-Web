@@ -21,6 +21,46 @@ export const masterPenginapan = [
       deskripsi: "Berarsitektur klasik Belanda yang megah dan nyaman. Dengan kapasitas raksasa hingga 30 orang, Villa Wantea adalah pilihan paling sempurna untuk memboyong seluruh keluarga besar atau divisi kantor Anda. Tersedia hiburan Billiard dan Karaoke!"
     },
     {
+      id: "harmony-riverside",
+      nama: "Harmony Riverside",
+      kategori: "Cabin Premium",
+      kapasitas: "4 - 8 Orang",
+      hargaWeekday: "Rp 1.750.000",
+      hargaWeekend: "Rp 2.250.000",
+      extraBed: "Rp 150.000 (Termasuk Sarapan)",
+      label: "VIP",
+      image: "/rahong-1.jpg", // Pastikan gambar ini ada di folder public
+      deskripsi: "Cabin Harmony Riverside merupakan cabin premium pinggir sungai Pangalengan, Bandung yang bisa menjadi pilihan pertama kamu untuk menginap dengan fasilitas lengkap. Berada tepat di sisi sungai, menawarkan relaksasi maksimal bergaya sultan.",
+      fasilitas: [
+        "1 Kamar Tidur (2 Kasur Queen Size)",
+        "Kamar Mandi (Water Heater & Toilet Duduk)",
+        "Ruang Tengah (TV, Dispenser & WiFi)",
+        "Termasuk Breakfast (Sarapan)",
+        "Area Lapang untuk Fun Games",
+        "Mini Cafe & Mushola"
+      ]
+    },
+    {
+      id: "villa-palayangan", // Pastikan ID ini sama persis dengan yang ada di page.tsx
+      nama: "Villa Palayangan A",
+      kategori: "Villa Kapasitas Besar",
+      kapasitas: "20 - 30 Orang",
+      hargaWeekday: "Rp 2.000.000",
+      hargaWeekend: "Rp 2.250.000",
+      extraBed: "Rp 100.000",
+      label: "Big Size",
+      image: "/villa-palayangan.jpg", // Pastikan gambar ini ada di folder public
+      deskripsi: "Villa Palayangan Village Pangalengan merupakan villa dengan fasilitas lengkap. Cocok banget buat liburan bareng keluarga besar, reuni, acara arisan hingga outing bersama rekan kerja. View langsung menghadap ke danau Situ Cileunca dan sangat dekat dengan titik start Rafting.",
+      fasilitas: [
+        "4 Kamar Tidur (1 Private + 2 Shared)",
+        "3 Kamar Mandi dengan Water Heater",
+        "Ruang Tengah Lengkap (Smart TV, Sofa, WiFi 24 Jam)",
+        "Dapur & Peralatan Masak/Makan Lengkap",
+        "Perapian & Gazebo Halaman Belakang",
+        "Parkiran Luas (Masuk 6 Mobil / Bus Medium)"
+      ]
+    },
+    {
       id: "penginapan-saung-rungkun",
       nama: "Saung Rungkun",
       kategori: "Cottage & Pool",
