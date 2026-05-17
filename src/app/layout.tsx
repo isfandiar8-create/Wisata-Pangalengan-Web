@@ -4,6 +4,9 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar"; 
 import Footer from "@/components/Footer"; 
+// ─── IMPORT TRACKER & SUSPENSE ───
+import ReferralTracker from "@/components/ReferralTracker";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -97,6 +100,12 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <body className={inter.className}>
+        
+        {/* ─── CCTV PELACAK REFERAL (Berjalan di latar belakang) ─── */}
+        <Suspense fallback={null}>
+          <ReferralTracker />
+        </Suspense>
+
         <Navbar />
         {children}
         <Footer />
@@ -109,14 +118,14 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "TravelAgency",
               "name": "Go Pangalengan",
-              "image": "https://www.gopangalengan.id/logo-go-pangalengan.png", // Pastikan file logo ini ada di folder public Anda
+              "image": "https://www.gopangalengan.id/logo-go-pangalengan.png", 
               "description": "Agen perjalanan wisata dan event organizer terpercaya di Pangalengan. Menyediakan paket Rafting, Sewa Villa, Glamping, dan Corporate Outing.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Jl. Raya Situ Cileunca, Warnasari", // Masukkan alamat spesifik basecamp/kantor Anda
+                "streetAddress": "Jl. Raya Situ Cileunca, Warnasari", 
                 "addressLocality": "Pangalengan",
                 "addressRegion": "Jawa Barat",
-                "postalCode": "40378", // Kode pos Pangalengan
+                "postalCode": "40378", 
                 "addressCountry": "ID"
               },
               "telephone": "+6285717075116",
